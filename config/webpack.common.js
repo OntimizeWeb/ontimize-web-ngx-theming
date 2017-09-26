@@ -26,7 +26,7 @@ module.exports = function (options) {
   return {
 
     entry: {
-      'ontimize-web-ngx-theming': helpers.root('index.ts')
+      'ontimize-web-ngx-theming': helpers.root('tmp/index.ts')
     },
 
     resolve: {
@@ -44,7 +44,7 @@ module.exports = function (options) {
       rules: [
         {
           test: /\.ts$/,
-          loaders: ['awesome-typescript-loader?configFileName=tsconfig-webpack.json', 'angular2-template-loader'],
+          loaders: ['awesome-typescript-loader?configFileName=config/tsconfig.webpack.json', 'angular2-template-loader'],
           exclude: [/\.(spec|e2e)\.ts$/]
         },
         /* Embed files. */
