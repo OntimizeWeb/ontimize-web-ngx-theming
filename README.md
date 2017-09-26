@@ -1,2 +1,2 @@
-# ontimize-web-ng2-theming
+# ontimize-web-ngx-theming
 Ontimize web module for applications theming
