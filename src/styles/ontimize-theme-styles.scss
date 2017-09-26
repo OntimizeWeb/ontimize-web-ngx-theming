@@ -1,6 +1,6 @@
 @import 'node_modules/@angular/material/theming';
 
-@mixin ontimize-styles($theme) {
+@mixin ontimize-theme-styles($theme) {
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     // $warn: map-get($theme, warn);
