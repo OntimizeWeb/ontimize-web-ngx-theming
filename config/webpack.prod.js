@@ -13,7 +13,6 @@ const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplaceme
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 /**
  * Webpack Constants
  */
@@ -30,7 +29,7 @@ module.exports = function (env) {
       path: helpers.root('dist/bundles'),
       publicPath: '/',
       filename: '[name].umd.js',
-      library: 'ontimize-web-ng2-theming',
+      library: 'ontimize-web-ngx-theming',
       libraryTarget: 'umd'
     },
 

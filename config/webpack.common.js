@@ -4,11 +4,9 @@ const helpers = require('./helpers');
 /*
  * Webpack Plugins
  */
-// problem with copy-webpack-plugin
 const AssetsPlugin = require('assets-webpack-plugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ngcWebpack = require('ngc-webpack');
@@ -18,7 +16,7 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
  */
 const AOT = helpers.hasNpmFlag('aot');
 const METADATA = {
-  title: 'Ontimize web ng2 theming webpack',
+  title: 'Ontimize web theming webpack',
   baseUrl: '/',
   isDevServer: false
 };
@@ -28,7 +26,7 @@ module.exports = function (options) {
   return {
 
     entry: {
-      'ontimize-web-ng2-theming': helpers.root('index.ts')
+      'ontimize-web-ngx-theming': helpers.root('index.ts')
     },
 
     resolve: {
@@ -96,17 +94,6 @@ module.exports = function (options) {
         /angular(\\|\/)core(\\|\/)@angular/,
         helpers.root('./src')
       ),
-
-      new CopyWebpackPlugin([
-        { from: '.npmignore', to: '../' },
-        { from: 'CHANGELOG.md', to: '../' },
-        { from: 'LICENSE', to: '../' },
-        { from: 'README.md', to: '../' },
-        { from: 'package.json', to: '../' },
-        { from: 'styles.scss', to: '../' },
-        { from: 'src/**/*.scss', to: '../' },
-        { from: 'src/**/*.html', to: '../' }
-      ]),
 
       new ngcWebpack.NgcWebpackPlugin({
         disabled: false,
