@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-theming",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An implementation of themes manager for Ontimize Web applications",
   "scripts": {
     "preinstall": "npm config set package-lock false",
