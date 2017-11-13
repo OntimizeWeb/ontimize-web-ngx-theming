@@ -154,8 +154,36 @@
     font-family: $mat-font-family;
     font-weight: 400;
 
-    .o-table-container .dt-buttons {
+    .o-table-container .toolbar .buttons {
 
+      .mat-button.custom-generic-action,
+      .mat-button.generic-action.generic-action {
+        line-height: inherit;
+        padding-left:$basic-padding-size;
+      }
+
+      .mat-button.custom-generic-action::after,
+      .mat-button.generic-action.generic-action::before {
+        line-height: $button-line-height;
+        padding: 0 $basic-padding-size;
+      }
+
+      .mat-button.generic-action > span,
+      .mat-button.custom-generic-action > span {
+        line-height: $button-line-height;
+      }
+
+      .mat-button:not(.hidden-action-text),
+      .mat-button:not(.hidden-action-text):not(.disabled):hover {
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        margin: 0 $basic-padding-size;
+      }
+
+    }
+    /* styles datatable*/
+    .o-table-container .dt-buttons {
+      
       .dt-button.custom-generic-action::after,
       .dt-button.generic-action.generic-action::before {
         line-height: $button-line-height;
