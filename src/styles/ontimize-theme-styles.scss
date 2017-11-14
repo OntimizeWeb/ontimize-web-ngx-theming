@@ -11,6 +11,7 @@
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
+  $tabs-header-border: 1px solid mat-color($foreground, divider);
 
   $mat-font-family: 'Lato', sans-serif !default;
 
@@ -111,7 +112,7 @@
       .mat-tab-label-container .mat-tab-label {
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
-        background: #dcdcdc;
+
         opacity: .8;
         &.mat-tab-label-active {
           background: $container-background;
@@ -123,11 +124,37 @@
     .mat-tab-body-wrapper {
       background : $container-background;
       border-radius: $border-radius;
-      border-top-left-radius: 0px;
+      border-top: $tabs-header-border;
     }
 
     md-ink-bar {
       display : none;
+    }
+  }
+
+  .mat-tab-group .mat-tab-group {
+    .mat-tab-header {
+
+      .mat-tab-label-container .mat-tab-label {
+        border-top-left-radius: initial;
+        border-top-right-radius: initial;
+
+        opacity: .8;
+        &.mat-tab-label-active {
+          background: initial;
+          opacity: 1;
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      background :initial;
+      border-radius: initial;
+      border-top: $tabs-header-border;
+    }
+
+    md-ink-bar {
+      display: initial;
     }
   }
 
@@ -183,7 +210,7 @@
     }
     /* styles datatable*/
     .o-table-container .dt-buttons {
-      
+
       .dt-button.custom-generic-action::after,
       .dt-button.generic-action.generic-action::before {
         line-height: $button-line-height;
@@ -273,6 +300,28 @@
       thead tr th.sorting_desc_disabled::after {
         margin-top: 4px;
       }
+    }
+  }
+
+  /* O-TABLE */
+  .o-table {
+
+    .o-table-wrapper {
+        padding-top: $basic-padding-size;
+        margin-bottom: $basic-padding-size;
+        background : $container-background;
+        border-radius: $border-radius;
+    }
+
+    .o-table-container .mat-table {
+      .mat-header-row {
+        background-color: initial;
+        .mat-header-cell {
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+
     }
   }
 }
