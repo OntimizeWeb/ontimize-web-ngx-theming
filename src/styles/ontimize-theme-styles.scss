@@ -159,7 +159,7 @@
       .mat-button.custom-generic-action,
       .mat-button.generic-action.generic-action {
         line-height: inherit;
-        padding-left:$basic-padding-size;
+        padding-left:0;
       }
 
       .mat-button.custom-generic-action::after,
@@ -202,6 +202,12 @@
         margin: 0 $basic-padding-size;
       }
 
+    }
+
+    .o-table-menu  {
+      .o-table-option-active {
+        background: mat-color($foreground, divider);
+      }
     }
 
     .expandable-container {
