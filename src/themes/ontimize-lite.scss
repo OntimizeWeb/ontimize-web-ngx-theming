@@ -1,0 +1,54 @@
+@import 'node_modules/@angular/material/theming';
+
+// $custom-typography: mat-typography-config(
+//   $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+//   $display-4:     mat-typography-level(112px, 112px, 300),
+//   $display-3:     mat-typography-level(56px, 56px, 400),
+//   $display-2:     mat-typography-level(45px, 48px, 400),
+//   $display-1:     mat-typography-level(34px, 40px, 400),
+//   $headline:      mat-typography-level(24px, 32px, 400),
+//   $title:         mat-typography-level(20px, 32px, 500),
+//   $subheading-2:  mat-typography-level(16px, 28px, 400),
+//   $subheading-1:  mat-typography-level(15px, 24px, 400),
+//   $body-2:        mat-typography-level(14px, 24px, 500),
+//   $body-1:        mat-typography-level(14px, 20px, 400),
+//   $caption:       mat-typography-level(12px, 20px, 400),
+//   $button:        mat-typography-level(14px, 14px, 500),
+//   // Line-height must be unit-less fraction of the font-size.
+//   $input:         mat-typography-level(16px, 1.125, 400)
+// );
+
+
+$custom-typography: mat-typography-config(
+ /* $font-family:   'Roboto, "Helvetica Neue", sans-serif',*/
+  $display-4:     mat-typography-level(84px, 92px, 300),
+  $display-3:     mat-typography-level(42px, 42px, 400),
+  $display-2:     mat-typography-level(34px, 36px, 400),
+  $display-1:     mat-typography-level(26px, 30px, 400),
+  $headline:      mat-typography-level(18px, 24px, 400),
+  $title:         mat-typography-level(15px, 24px, 500),
+  $subheading-2:  mat-typography-level(12px, 21px, 400),
+  $subheading-1:  mat-typography-level(12px, 18px, 400),
+  $body-2:        mat-typography-level(12px, 18px, 500),
+  $body-1:        mat-typography-level(12px, 15px, 400),
+  $caption:       mat-typography-level(9px, 15px, 400),
+  $button:        mat-typography-level(12px, 12px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(14px, 1.125, 400)
+);
+
+// $mat-calendar-body-font-size: 13px !default;
+// $mat-calendar-weekday-table-font-size: 11px !default;
+$mat-calendar-body-font-size: 11px;
+$mat-calendar-weekday-table-font-size: 9px;
+
+// // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+// @include mat-base-typography($custom-typography);
+
+// // Override typography for a specific Angular Material components.
+// @include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+@import '../styles/ontimize-theme-styles-lite.scss';
+@include ontimize-theme-styles-lite($custom-typography);

@@ -22,7 +22,7 @@ gulp.task('copy-files', ['concat.themes.scss'], (callback) => {
 });
 
 const THEMES_STYLES_CONF = {
-  STYLES_SRC: './src/styles/*.scss',
+  STYLES_SRC: './src/styles/**/*.scss',
   STYLES_TMP: './tmp/src/styles',
   TMP_SRC: './tmp/src/themes/*.scss',
   DIST: './dist/src/themes',
@@ -43,7 +43,7 @@ gulp.task('copy.themes.files', (callback) => {
 });
 
 gulp.task('copy.styles.files', (callback) => {
-  copyfiles(['src/styles/*.scss', 'dist/src'], 1, callback);
+  copyfiles(['src/styles/**/*.scss', 'dist/src'], 1, callback);
 });
 
 gulp.task('delete.angular.imports', function () {

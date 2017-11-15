@@ -11,6 +11,9 @@
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
+  // $tabs-header-border: 1px solid mat-color($foreground, divider);
+  $tabs-header-border: none;
+  $inactive-tab-opacity: 0.35;
 
   $mat-font-family: 'Lato', sans-serif !default;
 
@@ -111,8 +114,8 @@
       .mat-tab-label-container .mat-tab-label {
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
-        background: #dcdcdc;
-        opacity: .8;
+
+        opacity: $inactive-tab-opacity;
         &.mat-tab-label-active {
           background: $container-background;
           opacity: 1;
@@ -123,11 +126,38 @@
     .mat-tab-body-wrapper {
       background : $container-background;
       border-radius: $border-radius;
-      border-top-left-radius: 0px;
+      border-top: $tabs-header-border;
+      border-top-left-radius: initial;
     }
 
     md-ink-bar {
       display : none;
+    }
+  }
+
+  .mat-tab-group .mat-tab-group {
+    .mat-tab-header {
+
+      .mat-tab-label-container .mat-tab-label {
+        border-top-left-radius: initial;
+        border-top-right-radius: initial;
+
+        opacity: $inactive-tab-opacity;
+        &.mat-tab-label-active {
+          background: initial;
+          opacity: 1;
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      background : initial;
+      border-radius: initial;
+      border-top: $tabs-header-border;
+    }
+
+    md-ink-bar {
+      display: initial;
     }
   }
 
@@ -154,26 +184,10 @@
     font-family: $mat-font-family;
     font-weight: 400;
 
-    .o-table-container .dt-buttons {
-
-      .dt-button.custom-generic-action::after,
-      .dt-button.generic-action.generic-action::before {
-        line-height: $button-line-height;
-        padding: 0 $basic-padding-size;
+    .o-table-menu  {
+      .o-table-option-active {
+        background: mat-color($foreground, divider);
       }
-
-      .dt-button.generic-action > span,
-      .dt-button.custom-generic-action > span {
-        line-height: $button-line-height;
-      }
-
-      a:not(.hidden-action-text),
-      a:not(.hidden-action-text):not(.disabled):hover {
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        margin: 0 $basic-padding-size;
-      }
-
     }
 
     .expandable-container {
@@ -184,60 +198,138 @@
         border-radius: $border-radius;
     }
 
-    .o-table-container table {
+    .o-table-container {
+      .toolbar .buttons {
 
-      &:not(.fixedHeader-floating) {
-        margin-top: 16px;
-        margin-bottom: 16px;
+        .mat-button.custom-generic-action,
+        .mat-button.generic-action.generic-action {
+          line-height: inherit;
+          padding-left:0;
+          height: 32px;
+        }
+
+        .mat-button.custom-generic-action::after,
+        .mat-button.generic-action.generic-action::before {
+          line-height: $button-line-height;
+          padding: 0 $basic-padding-size;
+        }
+
+        .mat-button.generic-action > span,
+        .mat-button.custom-generic-action > span {
+          line-height: $button-line-height;
+        }
+
+        .mat-button:not(.hidden-action-text),
+        .mat-button:not(.hidden-action-text):not(.disabled):hover {
+          border: 1px solid mat-color($primary);
+          border-radius: $border-radius;
+          margin: 0 $basic-padding-size;
+        }
+
       }
 
-      thead tr th {
-        font-weight: 700;
-        font-size: 24px;
+      .dt-buttons {
+
+        .dt-button.custom-generic-action::after,
+        .dt-button.generic-action.generic-action::before {
+          line-height: $button-line-height;
+          padding: 0 $basic-padding-size;
+        }
+
+        .dt-button.generic-action > span,
+        .dt-button.custom-generic-action > span {
+          line-height: $button-line-height;
+        }
+
+        a:not(.hidden-action-text),
+        a:not(.hidden-action-text):not(.disabled):hover {
+          border: 1px solid mat-color($primary);
+          border-radius: $border-radius;
+          margin: 0 $basic-padding-size;
+        }
+
       }
 
-      thead th,
-      tbody td {
-        border-bottom: 1px solid mat-color($foreground, divider);
-      }
+      table {
 
-      thead tr th:first-child:not(.o-table-column-select-checkbox),
-      tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
-        border-right: none;
-      }
+        &:not(.fixedHeader-floating) {
+          margin-top: 16px;
+          margin-bottom: 16px;
+        }
 
-      thead tr th:last-child:not(.o-table-column-action),
-      thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-      tbody td:last-child:not(.o-table-column-action),
-      tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-        border-left: none;
-      }
+        &.small tr th {
+          font-size: 16px;
+        }
+        &.medium tr th {
+          font-size: 20px;
+        }
+        thead tr th {
+          font-weight: 700;
+          font-size: 24px;
+        }
 
-      tbody tr.even,
-      thead tr {
+        thead th,
+        tbody td {
+          border-bottom: 1px solid mat-color($foreground, divider);
+        }
+
+        thead tr th:first-child:not(.o-table-column-select-checkbox),
+        tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+          border-right: none;
+        }
+
+        thead tr th:last-child:not(.o-table-column-action),
+        thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+        tbody td:last-child:not(.o-table-column-action),
+        tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
+          border-left: none;
+        }
+
+        tbody tr.even,
+        thead tr {
+          background-color: initial;
+        }
+
+        thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+        tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+          background-color: mat-color($accent);
+        }
+
+        thead tr th.sorting::before,
+        thead tr th.sorting_asc::before,
+        thead tr th.sorting_desc::before,
+        thead tr th.sorting_asc_disabled::before,
+        thead tr th.sorting_desc_disabled::before {
+          margin-top: 4px;
+        }
+
+        thead tr th.sorting::after,
+        thead tr th.sorting_asc::after,
+        thead tr th.sorting_desc::after,
+        thead tr th.sorting_asc_disabled::after,
+        thead tr th.sorting_desc_disabled::after {
+          margin-top: 4px;
+        }
+      }
+    }
+
+  }
+
+  /* O-TABLE */
+  .o-table {
+    .o-table-container .mat-table {
+      .mat-header-row {
         background-color: initial;
+        .mat-header-cell {
+          font-weight: 700;
+          font-size: 24px;
+        }
       }
-
-      thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-      tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-        background-color: mat-color($accent);
+      &.small .mat-header-cell {
+        font-size: 16px;
       }
-
-
-      thead tr th.sorting::before,
-      thead tr th.sorting_asc::before,
-      thead tr th.sorting_desc::before,
-      thead tr th.sorting_asc_disabled::before,
-      thead tr th.sorting_desc_disabled::before {
-        margin-top: 4px;
-      }
-
-      thead tr th.sorting::after,
-      thead tr th.sorting_asc::after,
-      thead tr th.sorting_desc::after,
-      thead tr th.sorting_asc_disabled::after,
-      thead tr th.sorting_desc_disabled::after {
-        margin-top: 4px;
+      &.medium .mat-header-cell {
+        font-size: 20px;
       }
     }
   }

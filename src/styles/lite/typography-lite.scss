@@ -1,0 +1,430 @@
+@mixin o-table-typography-lite($config) {
+  .o-table.o-table {
+    .o-table-container {
+      .mat-table {
+
+        &.small {
+          .mat-header-row,
+          .mat-row {
+            padding: 0px;
+          }
+
+          .mat-header-row {
+            min-height: 28px;
+            max-height: 28px;
+            line-height: 28px;
+            .mat-header-cell {
+              font-size: 16px;
+            }
+          }
+          .mat-row {
+            min-height: 24px;
+            max-height: 24px;
+            .mat-cell {
+              font-size: 11px;
+              .image-avatar {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+
+        &.medium {
+          .mat-header-row,
+          .mat-row {
+            padding: 0 6px;
+          }
+
+          .mat-header-row {
+            min-height: 36px;
+            max-height: 36px;
+            line-height: 36px;
+            .mat-header-cell {
+              font-size: 16px;
+            }
+          }
+          .mat-row {
+            min-height: 32px;
+            max-height: 32px;
+            .mat-cell {
+              font-size: 12px;
+              .image-avatar {
+                width: 26px;
+                height: 26px;
+              }
+            }
+          }
+        }
+        &.large {
+          .mat-header-row {
+            min-height: 40px;
+            max-height: 40px;
+            line-height: 40px;
+            .mat-header-cell {
+              font-size: 16px;
+            }
+          }
+          .mat-row {
+            min-height: 36px;
+            max-height: 36px;
+            .mat-cell {
+              .image-avatar {
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@mixin o-mat-form-field-typography-lite($config) {
+  $line-height: mat-line-height($config, input);
+  $line-spacing: ($line-height - 1) / 2;
+  $infix-padding: 0.5em - ($line-spacing * 4);
+
+  $subscript-font-scale: 0.75;
+  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
+  $subscript-margin-top: 0.5em / $subscript-font-scale - ($line-spacing * 6);
+
+  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 1.25);
+
+  .mat-form-field {
+
+    .mat-form-field-wrapper {
+      padding-bottom: $wrapper-padding-bottom;
+    }
+
+    &.mat-form-field {
+      font-size: mat-font-size($config, input);
+    }
+
+    .mat-form-field-infix {
+      padding: $infix-padding 0;
+      border-top: $infix-margin-top solid transparent;
+    }
+
+    // &:not(.mat-focused) .mat-form-field-placeholder.mat-form-field-placeholder.mat-empty {
+    //   top: initial;
+    // }
+
+    .mat-form-field-subscript-wrapper {
+      margin-top: $subscript-margin-top;
+      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
+    }
+
+    .mat-form-field-autofill-float:-webkit-autofill + .mat-form-field-placeholder-wrapper .mat-form-field-float,
+    .mat-form-field-placeholder.mat-form-field-float:not(.mat-form-field-empty),
+    .mat-form-field-placeholder .mat-focused &.mat-form-field-float,
+    &.mat-focused .mat-form-field-placeholder.mat-form-field-float {
+      @include _mat-form-field-placeholder-floating($subscript-font-scale,
+          $infix-padding, $infix-margin-top);
+    }
+
+    .mat-form-field-placeholder {
+      top: $infix-margin-top + $infix-padding;
+    }
+  }
+
+}
+
+@mixin o-datatable-typography-lite($config) {
+  .o-table.o-table .o-table-container table {
+    &.small,
+    &.medium {
+      .o-table-column.o-table-column-action md-icon {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+    .dt-buttons a {
+      font-size: 12px;
+    }
+  }
+
+  .o-table.o-table .o-table-container table.small {
+
+    thead tr th:nth-child(2),
+    tbody td:nth-child(2):not(.o-table-column-action),
+    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:first-child:not(.o-table-column-select-checkbox),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+      padding: 0 12px 0 8px !important;
+    }
+
+    thead tr th:first-child.o-table-column-image {
+      padding-right: 20px !important;
+    }
+
+    thead tr th {
+      &.sorting::before,
+      &.sorting_asc::before,
+      &.sorting_desc::before,
+      &.sorting_asc_disabled::before,
+      &.sorting_desc_disabled::before,
+      &.sorting::after,
+      &.sorting_asc::after,
+      &.sorting_desc::after,
+      &.sorting_asc_disabled::after,
+      &.sorting_desc_disabled::after {
+        font-size: 12px;
+      }
+
+      &.o-table-column-action {
+        padding: 0 10px !important;
+        &:last-child {
+          padding-right: 16px !important;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        font-size: 11px;
+        .image-avatar {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      tr {
+        height: 24px;
+      }
+    }
+
+    thead tr {
+      height: 28px;
+      th {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .o-table.o-table .o-table-container table.medium {
+
+    thead tr th:nth-child(2),
+    tbody td:nth-child(2):not(.o-table-column-action),
+    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:first-child:not(.o-table-column-select-checkbox),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+      padding: 0 16px 0 12px !important;
+    }
+
+    thead tr th:first-child.o-table-column-image {
+      padding-right: 32px !important;
+    }
+
+    thead tr th {
+      &.sorting::before,
+      &.sorting_asc::before,
+      &.sorting_desc::before,
+      &.sorting_asc_disabled::before,
+      &.sorting_desc_disabled::before,
+      &.sorting::after,
+      &.sorting_asc::after,
+      &.sorting_desc::after,
+      &.sorting_asc_disabled::after,
+      &.sorting_desc_disabled::after {
+        font-size: 12px;
+      }
+      &.o-table-column-action {
+        padding: 0 12px !important;
+
+        &:last-child {
+          padding-right: 20px !important;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        font-size: 12px;
+        .image-avatar {
+          width: 28px;
+          height: 28px;
+        }
+      }
+      tr {
+        height: 32px;
+      }
+    }
+    thead tr {
+      height: 36px;
+      th {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .o-table.o-table .o-table-container table.large {
+
+    thead tr th:nth-child(2),
+    tbody td:nth-child(2):not(.o-table-column-action),
+    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+    thead tr th:first-child:not(.o-table-column-select-checkbox),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+      padding: 0 20px 0 16px !important;
+    }
+
+    thead tr th:first-child.o-table-column-image {
+      padding-right: 32px !important;
+    }
+
+    thead tr th {
+      &.sorting::before,
+      &.sorting_asc::before,
+      &.sorting_desc::before,
+      &.sorting_asc_disabled::before,
+      &.sorting_desc_disabled::before,
+      &.sorting::after,
+      &.sorting_asc::after,
+      &.sorting_desc::after,
+      &.sorting_asc_disabled::after,
+      &.sorting_desc_disabled::after {
+        font-size: 13px;
+      }
+    }
+
+    .o-table-column.o-table-column-action md-icon {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    thead tr {
+      height: 40px;
+      th {
+        font-size: 18px;
+      }
+    }
+    tbody tr {
+      height: 36px;
+    }
+  }
+}
+
+@mixin o-combo-typography-lite($config) {
+  $line-height: mat-line-height($config, input);
+  $line-spacing: ($line-height - 1) / 2;
+  $infix-padding: 0.5em - ($line-spacing * 4);
+
+  $subscript-font-scale: 0.75;
+  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
+  $subscript-margin-top: 0.5em / $subscript-font-scale - ($line-spacing * 6);
+
+  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 1.25);
+
+  .mat-combo-container {
+    &.mat-combo-container {
+      font-size: mat-font-size($config, input);
+      padding-bottom: $wrapper-padding-bottom;
+      height: 100%;
+
+      md-select.mat-combo {
+        font-size: mat-font-size($config, input);
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+        .mat-select-trigger {
+          font-size: mat-font-size($config, input);
+          box-sizing: content-box;
+          padding: $infix-padding 0;
+          border-top: $infix-margin-top solid transparent;
+          margin: 0;
+          height: mat-font-size($config, input);
+
+          .mat-select-placeholder {
+            &.mat-floating-placeholder {
+              padding-left: 0px;
+              // background: #5fc585;
+              top: 2px !important;
+              left: 0px !important;
+              @include _mat-form-field-placeholder-floating($subscript-font-scale,
+                $infix-padding, $infix-margin-top);
+            }
+          }
+
+          .mat-select-underline {
+            bottom: -3px;
+          }
+        }
+      }
+    }
+  }
+
+  // o-combo .mat-combo-container md-select.mat-combo  {
+
+  //   .mat-select-trigger {
+  //     // height: 28px;
+  //     // height: 17px;
+  //     // margin-top: 0px;
+  //     // padding: 0px;
+  //     // box-sizing: content-box;
+  //     // font-size: mat-font-size($config, input);
+
+  //     // .mat-select-value {
+  //     //   bottom: -10px;
+  //     // }
+  //     // .mat-select-arrow {
+  //     //   margin-top: 0.75em;
+  //     // }
+
+  //   }
+
+  // }
+}
+
+@mixin o-common-typography-lite($config) {
+  /*
+  *  O-COLUMN, O-ROW
+  */
+  o-column .o-container .container-content,
+  o-row .o-container .container-content {
+    padding: 12px 8px 4px 8px;
+  }
+
+  /*
+  *  O-APP-LAYOUT
+  */
+  .o-app-sidenav.o-app-sidenav {
+    .o-app-header {
+      .application-header {
+        padding: 0 16px 0 0;
+        .sidenav-toggle {
+          padding: 8px 8px;
+        }
+      }
+    }
+
+    .application-layout-content-wrapper {
+      top: 40px;
+    }
+
+    o-form-toolbar.o-form-toolbar-floating {
+      top: 40px !important;
+    }
+  }
+
+  /* MD-TAB-GROUP */
+  .mat-tab-group .mat-tab-label {
+    height: 32px;
+    padding: 0 6px;
+  }
+
+  /* O-LIST-PICKER-DIALOG */
+  .o-list-picker-dialog {
+    .mat-toolbar {
+      padding: 0 8px;
+    }
+    .mat-dialog-content {
+      padding: 0 12px;
+    }
+    .mat-dialog-custom .mat-dialog-actions {
+      padding: 6px 12px;
+    }
+  }
+}
