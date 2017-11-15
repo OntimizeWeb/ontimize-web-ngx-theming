@@ -1,0 +1,16 @@
+
+@import 'node_modules/@angular/material/theming';
+
+@import './lite/layout-lite.scss';
+@import './lite/typography-lite.scss';
+
+
+@mixin ontimize-theme-styles-lite($config) {
+  @include o-table-typography-lite($config);
+  @include o-mat-form-field-typography-lite($config);
+  @include o-datatable-typography-lite($config);
+  @include o-combo-typography-lite($config);
+  @include o-common-typography-lite($config);
+
+  @include layout-padding-margin-lite();
+}
