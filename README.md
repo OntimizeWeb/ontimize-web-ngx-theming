@@ -19,3 +19,6 @@ Ontimize web module for applications theming through '*scss*' files loading .
   In other case you can define your own theme, and, if you want, use the ontimize styles for a better component rendering including the following lines:
     * `@import '../styles/ontimize-theme-styles.scss';`
     * `@include ontimize-theme-styles($theme);`
+
+  Also, if you want to use compact styles for *'Ontimize Web'* components, you have to load the following file:
+  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-lite.scss';`
