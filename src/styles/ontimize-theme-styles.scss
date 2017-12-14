@@ -252,7 +252,7 @@
 
       table {
 
-        &:not(.fixedHeader-floating) {
+        &:not(.o-table-fixed) {
           margin-top: 16px;
           margin-bottom: 16px;
         }
@@ -333,4 +333,12 @@
       }
     }
   }
+
+   /* TABLE FIXED */
+   .ontimize-table.o-table.o-table-fixed {
+      .expandable-container {
+        height : calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
+          
+      }
+    }
 }
