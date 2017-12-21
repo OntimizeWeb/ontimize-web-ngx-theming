@@ -39,6 +39,7 @@
   }
 
   /*APP LAYOUT*/
+  .o-form-layout-dialog-overlay .mat-dialog-container,
   .application-layout-content-wrapper {
     background: #eeeeee;
   }
@@ -73,17 +74,17 @@
     font-weight: 700;
   }
 
- /*FORM*/
- o-form-toolbar {
-  padding: 0 8px;
-  display:block;
+  /*FORM*/
+  o-form-toolbar {
+    padding: 0 8px;
+    display:block;
 
-  &.o-form-toolbar-floating {
-    top: 0px;
-    padding-top: 8px;
-    background: #eeeeee;
-    padding:12x;
-  }
+    &.o-form-toolbar-floating {
+      top: 0px;
+      padding-top: 8px;
+      background: #eeeeee;
+      padding:12x;
+    }
 
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
@@ -201,34 +202,6 @@
     }
 
     .o-table-container {
-      .toolbar .buttons {
-
-        .mat-button.custom-generic-action,
-        .mat-button.generic-action.generic-action {
-          line-height: inherit;
-          padding-left:0;
-          height: 32px;
-        }
-
-        .mat-button.custom-generic-action::after,
-        .mat-button.generic-action.generic-action::before {
-          line-height: $button-line-height;
-          padding: 0 $basic-padding-size;
-        }
-
-        .mat-button.generic-action > span,
-        .mat-button.custom-generic-action > span {
-          line-height: $button-line-height;
-        }
-
-        .mat-button:not(.hidden-action-text),
-        .mat-button:not(.hidden-action-text):not(.disabled):hover {
-          border: 1px solid mat-color($primary);
-          border-radius: $border-radius;
-          margin: 0 $basic-padding-size;
-        }
-
-      }
 
       .dt-buttons {
 
@@ -318,8 +291,28 @@
   }
 
   /* O-TABLE */
-  .o-table {
-    .o-table-container .mat-table {
+  .o-table.o-table .o-table-container {
+
+    .toolbar {
+      margin: 0px 0px 4px 0px;
+
+      .buttons .o-table-button .mat-button {
+        line-height: inherit;
+        height: 32px;
+        &.hidden-action-text {
+          width: 32px;
+        }
+        &:not(.hidden-action-text),
+        &:not(.hidden-action-text):not(.disabled):hover {
+          border: 1px solid mat-color($primary);
+          border-radius: $border-radius;
+          margin: 0 $basic-padding-size;
+        }
+      }
+
+    }
+
+    .mat-table {
       .mat-header-row {
         background-color: initial;
         .mat-header-cell {
@@ -336,11 +329,10 @@
     }
   }
 
-   /* TABLE FIXED */
-   .ontimize-table.o-table.o-table-fixed {
-      .expandable-container {
-        height : calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
-          
-      }
+  /* TABLE FIXED */
+  .ontimize-table.o-table.o-table-fixed {
+    .expandable-container {
+      height : calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
     }
+  }
 }
