@@ -75,12 +75,14 @@
 
   /*FORM*/
   o-form-toolbar {
-    padding: 0 16px;
+    padding: 0 8px;
+    display:block;
 
     &.o-form-toolbar-floating {
-      top: 56px!important;
+      top: 0px;
       padding-top: 8px;
       background: #eeeeee;
+      padding:12x;
     }
 
     .mat-toolbar {
