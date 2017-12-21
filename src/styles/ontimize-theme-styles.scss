@@ -73,15 +73,17 @@
     font-weight: 700;
   }
 
-  /*FORM*/
-  o-form-toolbar {
-    padding: 0 16px;
+ /*FORM*/
+ o-form-toolbar {
+  padding: 0 8px;
+  display:block;
 
-    &.o-form-toolbar-floating {
-      top: 56px!important;
-      padding-top: 8px;
-      background: #eeeeee;
-    }
+  &.o-form-toolbar-floating {
+    top: 0px;
+    padding-top: 8px;
+    background: #eeeeee;
+    padding:12x;
+  }
 
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
