@@ -1,3 +1,7 @@
+#1.0.3 (2017-12-21)
+### Features
+* **styles:** updating styles.
+
 #1.0.2 (2017-11-15)
 ### Features
 * **styles:** adding new lite styles for all components ([b9c8dc1](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b9c8dc1)). Import '*node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss*' in your application stylesheet for using it.
