@@ -75,13 +75,21 @@
   }
 
   /*FORM*/
+  .o-form-container-breadcrumb {
+    .o-breadcrumb {
+      o-form-toolbar.o-form-toolbar-floating {
+        padding-top: 0px;
+      }
+    }
+  }
+
   o-form-toolbar {
-    padding: 0 8px;
+    padding: 0 $basic-padding-size;
     display:block;
 
     &.o-form-toolbar-floating {
-      top: 0px;
-      padding-top: 8px;
+      padding-top: $basic-padding-size;
+
       background: #eeeeee;
       padding:12x;
     }
