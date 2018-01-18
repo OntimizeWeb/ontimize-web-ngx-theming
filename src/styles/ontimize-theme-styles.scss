@@ -33,9 +33,6 @@
     .inner-form {
       padding: $basic-padding-size;
     }
-    .o-form-content-wrapper {
-      margin-top: 32px;
-    }
   }
 
   /*APP LAYOUT*/
@@ -75,23 +72,14 @@
   }
 
   /*FORM*/
-  .o-form-container-breadcrumb {
-    .o-breadcrumb {
-      o-form-toolbar.o-form-toolbar-floating {
-        padding-top: 0px;
-      }
-    }
-  }
 
   o-form-toolbar {
     padding: 0 $basic-padding-size;
-    display:block;
+    display: block;
 
     &.o-form-toolbar-floating {
-      padding-top: $basic-padding-size;
-
       background: #eeeeee;
-      padding:12x;
+      padding: 0 $basic-padding-size;
     }
 
     .mat-toolbar {
@@ -211,21 +199,21 @@
 
     .o-table-container {
 
-      .dt-buttons {
+      .dt-buttons .dt-button {
 
-        .dt-button.custom-generic-action::after,
-        .dt-button.generic-action.generic-action::before {
+        &.custom-generic-action::after,
+        &.generic-action.generic-action::before {
           line-height: $button-line-height;
           padding: 0 $basic-padding-size;
         }
 
-        .dt-button.generic-action > span,
-        .dt-button.custom-generic-action > span {
+        &.generic-action > span,
+        &.custom-generic-action > span {
           line-height: $button-line-height;
         }
 
-        a:not(.hidden-action-text),
-        a:not(.hidden-action-text):not(.disabled):hover {
+        &:not(.hidden-action-text),
+        &:not(.hidden-action-text):not(.disabled):hover {
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
