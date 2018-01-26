@@ -195,6 +195,7 @@
         margin-bottom: $basic-padding-size;
         background : $container-background;
         border-radius: $border-radius;
+        box-sizing: border-box;
     }
 
     .o-table-container {
