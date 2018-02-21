@@ -8,6 +8,8 @@ const cssimport = require("gulp-cssimport");
 const replace = require('gulp-replace');
 
 const FILES = [
+  'ontimize-theme.scss',
+  'ontimize-theme-lite.scss',
   'CHANGELOG.md',
   'LICENSE',
   'README.md',

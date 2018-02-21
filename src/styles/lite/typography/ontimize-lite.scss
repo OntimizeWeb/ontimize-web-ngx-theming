@@ -17,10 +17,11 @@
 //   // Line-height must be unit-less fraction of the font-size.
 //   $input:         mat-typography-level(16px, 1.125, 400)
 // );
+// $mat-calendar-body-font-size: 13px !default;
+// $mat-calendar-weekday-table-font-size: 11px !default;
 
-
-$custom-typography: mat-typography-config(
- /* $font-family:   'Roboto, "Helvetica Neue", sans-serif',*/
+$lite-typography: mat-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
   $display-4:     mat-typography-level(84px, 92px, 300),
   $display-3:     mat-typography-level(42px, 42px, 400),
   $display-2:     mat-typography-level(34px, 36px, 400),
@@ -36,19 +37,5 @@ $custom-typography: mat-typography-config(
   // Line-height must be unit-less fraction of the font-size.
   $input:         mat-typography-level(14px, 1.125, 400)
 );
-
-// $mat-calendar-body-font-size: 13px !default;
-// $mat-calendar-weekday-table-font-size: 11px !default;
 $mat-calendar-body-font-size: 11px;
 $mat-calendar-weekday-table-font-size: 9px;
-
-// // Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
-// @include mat-base-typography($custom-typography);
-
-// // Override typography for a specific Angular Material components.
-// @include mat-checkbox-typography($custom-typography);
-
-// Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
-@import '../styles/ontimize-theme-styles-lite.scss';
-@include ontimize-theme-styles-lite($custom-typography);

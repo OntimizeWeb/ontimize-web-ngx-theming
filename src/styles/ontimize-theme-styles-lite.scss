@@ -3,14 +3,24 @@
 
 @import './lite/layout-lite.scss';
 @import './lite/typography-lite.scss';
+@import './lite/typography/ontimize-lite.scss';
 
+@import './ontimize-theme-styles.scss';
 
-@mixin ontimize-theme-styles-lite($config) {
-  @include o-table-typography-lite($config);
-  @include o-mat-form-field-typography-lite($config);
-  @include o-datatable-typography-lite($config);
-  @include o-combo-typography-lite($config);
-  @include o-common-typography-lite($config);
+@mixin ontimize-theme-styles-lite($theme, $typography: null) {
+  @include ontimize-theme-styles($theme);
+
+  @if $typography == null {
+    $typography: $lite-typography;
+  } else {
+    $typography: map-merge($lite-typography, $typography);
+  }
+
+  @include o-table-typography-lite($typography);
+  @include o-mat-form-field-typography-lite($typography);
+  @include o-datatable-typography-lite($typography);
+  @include o-combo-typography-lite($typography);
+  @include o-common-typography-lite($typography);
 
   @include layout-padding-margin-lite();
 }

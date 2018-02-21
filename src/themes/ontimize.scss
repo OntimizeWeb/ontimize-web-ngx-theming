@@ -72,18 +72,10 @@ $mat-custom-accent: (
   )
 );
 
-
 // Define a theme.
 $primary: mat-palette($mat-custom-primary);
 $accent:  mat-palette($mat-custom-accent);
-
 /* Light theme */
 $theme: mat-light-theme($primary, $accent);
-
 /* Dark theme */
-/*$theme: md-dark-theme($primary, $accent);*/
-
-// Include all theme styles for the components.
-@include angular-material-theme($theme);
-@import '../styles/ontimize-theme-styles.scss';
-@include ontimize-theme-styles($theme);
+$dark-theme: mat-dark-theme($primary, $accent);
