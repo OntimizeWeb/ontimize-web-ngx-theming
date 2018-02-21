@@ -1,4 +1,4 @@
-#1.0.5
+#1.0.5 (2018-02.21)
 ### BREAKING CHANGES
 * **preconfigured themes**: '*o-deepurple-amber*', '*o-indigo-pink*', '*o-pink-bluegrey*' and '*o-purple-green*' no longer exists ([99dd854](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/99dd854))
 * **ontimize-lite**: exported file 'src/themes/ontimize-lite.scss' no longer exists ([99dd854](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/99dd854))

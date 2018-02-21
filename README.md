@@ -8,17 +8,13 @@ Ontimize web module for applications theming through '*scss*' files loading .
     * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-deeppurple-amber.scss';`
     * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-pink-bluegrey.scss';`
     * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/md-purple-green.scss';`
-  * Otherwise, if you to load a pre-built theme of '*@angular/material*' and the default preconfigured ontimize style, load one of the following files:
-    * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/o-indigo-pink.scss';`
-    * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/o-deeppurple-amber.scss';`
-    * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/o-pink-bluegrey.scss';`
-    * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/o-purple-green.scss';`
   * Finally if you want to use the default ontimize theme and styles, just load:
     * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';`
 
   In other case you can define your own theme, and, if you want, use the ontimize styles for a better component rendering including the following lines:
-    * `@import '../styles/ontimize-theme-styles.scss';`
+    * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';`
     * `@include ontimize-theme-styles($theme);`
 
-  Also, if you want to use compact styles for *'Ontimize Web'* components, you have to load the following file:
-  * `@import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize-lite.scss';`
+  Also, if you want to use compact styles for *'Ontimize Web'* components, you have to include the following lines (theme definition is mandatory, optionally you can add a angular material typography configuration):
+  * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';`
+  * `@include ontimize-theme-styles-lite($theme, $typography);`
