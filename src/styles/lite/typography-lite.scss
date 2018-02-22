@@ -379,6 +379,11 @@
 }
 
 @mixin o-common-typography-lite($config) {
+
+  span:not([class^="mat-"]) {
+    font-size: mat-font-size($config, input);
+  }
+
   /*
   *  O-COLUMN, O-ROW
   */
