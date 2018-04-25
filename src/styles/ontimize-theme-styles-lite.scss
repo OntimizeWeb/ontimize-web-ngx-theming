@@ -19,7 +19,6 @@
   @include o-table-typography-lite($typography);
   @include o-mat-form-field-typography-lite($typography);
   @include o-datatable-typography-lite($typography);
-  @include o-combo-typography-lite($typography);
   @include o-common-typography-lite($typography);
 
   @include layout-padding-margin-lite();

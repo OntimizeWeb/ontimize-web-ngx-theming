@@ -117,14 +117,6 @@
       top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
 
-    .mat-form-field-autofill-float:-webkit-autofill + .mat-form-field-placeholder-wrapper .mat-form-field-float,
-    .mat-form-field-placeholder.mat-form-field-float:not(.mat-form-field-empty),
-    .mat-form-field-placeholder .mat-focused &.mat-form-field-float,
-    &.mat-focused .mat-form-field-placeholder.mat-form-field-float {
-      @include _mat-form-field-placeholder-floating($subscript-font-scale,
-          $infix-padding, $infix-margin-top);
-    }
-
     .mat-form-field-placeholder {
       top: $infix-margin-top + $infix-padding;
     }
@@ -136,7 +128,7 @@
   .o-table.o-table .o-table-container table {
     &.small,
     &.medium {
-      .o-table-column.o-table-column-action md-icon {
+      .o-table-column.o-table-column-action mat-icon {
         font-size: 14px;
         line-height: 18px;
       }
@@ -305,77 +297,6 @@
       height: 36px;
     }
   }
-}
-
-@mixin o-combo-typography-lite($config) {
-  $line-height: mat-line-height($config, input);
-  $line-spacing: ($line-height - 1) / 2;
-  $infix-padding: 0.5em - ($line-spacing * 4);
-
-  $subscript-font-scale: 0.75;
-  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
-  $subscript-margin-top: 0.5em / $subscript-font-scale - ($line-spacing * 6);
-
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 1.25);
-
-  .mat-combo-container {
-    &.mat-combo-container {
-      font-size: mat-font-size($config, input);
-      padding-bottom: $wrapper-padding-bottom;
-      height: 100%;
-
-      md-select.mat-combo {
-        font-size: mat-font-size($config, input);
-        padding-top: 0px;
-        padding-bottom: 0px;
-
-        .mat-select-trigger {
-          font-size: mat-font-size($config, input);
-          box-sizing: content-box;
-          padding: $infix-padding 0;
-          border-top: $infix-margin-top solid transparent;
-          margin: 0;
-          height: mat-font-size($config, input);
-
-          .mat-select-placeholder {
-            &.mat-floating-placeholder {
-              padding-left: 0px;
-              // background: #5fc585;
-              top: 2px !important;
-              left: 0px !important;
-              @include _mat-form-field-placeholder-floating($subscript-font-scale,
-                $infix-padding, $infix-margin-top);
-            }
-          }
-
-          .mat-select-underline {
-            bottom: -3px;
-          }
-        }
-      }
-    }
-  }
-
-  // o-combo .mat-combo-container md-select.mat-combo  {
-
-  //   .mat-select-trigger {
-  //     // height: 28px;
-  //     // height: 17px;
-  //     // margin-top: 0px;
-  //     // padding: 0px;
-  //     // box-sizing: content-box;
-  //     // font-size: mat-font-size($config, input);
-
-  //     // .mat-select-value {
-  //     //   bottom: -10px;
-  //     // }
-  //     // .mat-select-arrow {
-  //     //   margin-top: 0.75em;
-  //     // }
-
-  //   }
-
-  // }
 }
 
 @mixin o-common-typography-lite($config) {
