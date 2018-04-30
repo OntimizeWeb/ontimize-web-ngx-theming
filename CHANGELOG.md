@@ -1,3 +1,7 @@
+#1.1.0 (2018-04-30)
+### Features
+* **styles:** updating styles for '*ontimize-web-ngx@3.0.0-rc.0*'
+
 #1.0.6 (2018-02-22)
 #Bug Fixing
 * **styles**: fixing styling bugs.
