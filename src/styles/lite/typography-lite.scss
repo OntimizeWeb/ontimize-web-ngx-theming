@@ -2,26 +2,29 @@
   .o-table.o-table {
     .o-table-container {
       .mat-table {
-
         &.small {
           .mat-header-row,
           .mat-row {
-            padding: 0px;
+            padding: 0;
           }
 
           .mat-header-row {
             min-height: 28px;
             max-height: 28px;
             line-height: 28px;
+
             .mat-header-cell {
               font-size: 16px;
             }
           }
+
           .mat-row {
             min-height: 24px;
             max-height: 24px;
+
             .mat-cell {
               font-size: 11px;
+
               .image-avatar {
                 width: 20px;
                 height: 20px;
@@ -40,15 +43,19 @@
             min-height: 36px;
             max-height: 36px;
             line-height: 36px;
+
             .mat-header-cell {
               font-size: 16px;
             }
           }
+
           .mat-row {
             min-height: 32px;
             max-height: 32px;
+
             .mat-cell {
               font-size: 12px;
+
               .image-avatar {
                 width: 26px;
                 height: 26px;
@@ -56,18 +63,22 @@
             }
           }
         }
+
         &.large {
           .mat-header-row {
             min-height: 40px;
             max-height: 40px;
             line-height: 40px;
+
             .mat-header-cell {
               font-size: 16px;
             }
           }
+
           .mat-row {
             min-height: 36px;
             max-height: 36px;
+
             .mat-cell {
               .image-avatar {
                 width: 30px;
@@ -81,26 +92,33 @@
   }
 
 }
-
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;
-  $infix-padding: 0.5em - ($line-spacing * 4);
+  $infix-padding: .5em - ($line-spacing * 4);
 
-  $subscript-font-scale: 0.75;
+  $subscript-font-scale: .75;
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
-  $subscript-margin-top: 0.5em / $subscript-font-scale - ($line-spacing * 6);
+  $subscript-margin-top: .5em / $subscript-font-scale - ($line-spacing * 6);
 
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 1.25);
 
   .mat-form-field {
-
     .mat-form-field-wrapper {
       padding-bottom: $wrapper-padding-bottom;
     }
 
     &.mat-form-field {
       font-size: mat-font-size($config, input);
+
+      &.icon-field {
+        .mat-form-field-suffix {
+          .icon-btn,
+          .mat-icon {
+            font-size: 16px;
+          }
+        }
+      }
     }
 
     .mat-form-field-infix {
@@ -108,44 +126,35 @@
       border-top: $infix-margin-top solid transparent;
     }
 
-    // &:not(.mat-focused) .mat-form-field-placeholder.mat-form-field-placeholder.mat-empty {
-    //   top: initial;
-    // }
-
     .mat-form-field-subscript-wrapper {
       margin-top: $subscript-margin-top;
       top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
-
-    .mat-form-field-placeholder {
-      top: $infix-margin-top + $infix-padding;
-    }
   }
 
 }
-
 @mixin o-datatable-typography-lite($config) {
   .o-table.o-table .o-table-container table {
-    &.small,
-    &.medium {
+    &.medium,
+    &.small {
       .o-table-column.o-table-column-action mat-icon {
         font-size: 14px;
         line-height: 18px;
       }
     }
+
     .dt-buttons .dt-button {
       font-size: 12px;
     }
   }
 
   .o-table.o-table .o-table-container table.small {
-
-    thead tr th:nth-child(2),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
     tbody td:nth-child(2):not(.o-table-column-action),
     tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
     thead tr th:first-child:not(.o-table-column-select-checkbox),
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+    thead tr th:nth-child(2),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
       padding: 0 12px 0 8px !important;
     }
 
@@ -154,21 +163,22 @@
     }
 
     thead tr th {
-      &.sorting::before,
-      &.sorting_asc::before,
-      &.sorting_desc::before,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc_disabled::before,
       &.sorting::after,
+      &.sorting::before,
       &.sorting_asc::after,
-      &.sorting_desc::after,
+      &.sorting_asc::before,
       &.sorting_asc_disabled::after,
-      &.sorting_desc_disabled::after {
+      &.sorting_asc_disabled::before,
+      &.sorting_desc::after,
+      &.sorting_desc::before,
+      &.sorting_desc_disabled::after,
+      &.sorting_desc_disabled::before {
         font-size: 12px;
       }
 
       &.o-table-column-action {
         padding: 0 10px !important;
+
         &:last-child {
           padding-right: 16px !important;
         }
@@ -178,11 +188,13 @@
     tbody {
       td {
         font-size: 11px;
+
         .image-avatar {
           width: 20px;
           height: 20px;
         }
       }
+
       tr {
         height: 24px;
       }
@@ -190,6 +202,7 @@
 
     thead tr {
       height: 28px;
+
       th {
         font-size: 16px;
       }
@@ -197,13 +210,12 @@
   }
 
   .o-table.o-table .o-table-container table.medium {
-
-    thead tr th:nth-child(2),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
     tbody td:nth-child(2):not(.o-table-column-action),
     tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
     thead tr th:first-child:not(.o-table-column-select-checkbox),
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+    thead tr th:nth-child(2),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
       padding: 0 16px 0 12px !important;
     }
 
@@ -212,18 +224,19 @@
     }
 
     thead tr th {
-      &.sorting::before,
-      &.sorting_asc::before,
-      &.sorting_desc::before,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc_disabled::before,
       &.sorting::after,
+      &.sorting::before,
       &.sorting_asc::after,
-      &.sorting_desc::after,
+      &.sorting_asc::before,
       &.sorting_asc_disabled::after,
-      &.sorting_desc_disabled::after {
+      &.sorting_asc_disabled::before,
+      &.sorting_desc::after,
+      &.sorting_desc::before,
+      &.sorting_desc_disabled::after,
+      &.sorting_desc_disabled::before {
         font-size: 12px;
       }
+
       &.o-table-column-action {
         padding: 0 12px !important;
 
@@ -236,17 +249,21 @@
     tbody {
       td {
         font-size: 12px;
+
         .image-avatar {
           width: 28px;
           height: 28px;
         }
       }
+
       tr {
         height: 32px;
       }
     }
+
     thead tr {
       height: 36px;
+
       th {
         font-size: 16px;
       }
@@ -254,13 +271,12 @@
   }
 
   .o-table.o-table .o-table-container table.large {
-
-    thead tr th:nth-child(2),
+    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
     tbody td:nth-child(2):not(.o-table-column-action),
     tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
     thead tr th:first-child:not(.o-table-column-select-checkbox),
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
+    thead tr th:nth-child(2),
+    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
       padding: 0 20px 0 16px !important;
     }
 
@@ -269,16 +285,16 @@
     }
 
     thead tr th {
-      &.sorting::before,
-      &.sorting_asc::before,
-      &.sorting_desc::before,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc_disabled::before,
       &.sorting::after,
+      &.sorting::before,
       &.sorting_asc::after,
-      &.sorting_desc::after,
+      &.sorting_asc::before,
       &.sorting_asc_disabled::after,
-      &.sorting_desc_disabled::after {
+      &.sorting_asc_disabled::before,
+      &.sorting_desc::after,
+      &.sorting_desc::before,
+      &.sorting_desc_disabled::after,
+      &.sorting_desc_disabled::before {
         font-size: 13px;
       }
     }
@@ -287,20 +303,21 @@
       font-size: 16px;
       line-height: 20px;
     }
+
     thead tr {
       height: 40px;
+
       th {
         font-size: 18px;
       }
     }
+
     tbody tr {
       height: 36px;
     }
   }
 }
-
 @mixin o-common-typography-lite($config) {
-
   span:not([class^="mat-"]) {
     font-size: mat-font-size($config, input);
   }
@@ -310,7 +327,7 @@
   */
   o-column .o-container .container-content,
   o-row .o-container .container-content {
-    padding: 12px 8px 4px 8px;
+    padding: 12px 8px 4px;
   }
 
   /*
@@ -320,8 +337,9 @@
     .o-app-header {
       .application-header {
         padding: 0 16px 0 0;
+
         .sidenav-toggle {
-          padding: 8px 8px;
+          padding: 8px;
         }
       }
     }
@@ -346,9 +364,11 @@
     .mat-toolbar {
       padding: 0 8px;
     }
+
     .mat-dialog-content {
       padding: 0 12px;
     }
+
     .mat-dialog-custom .mat-dialog-actions {
       padding: 6px 12px;
     }
