@@ -1,4 +1,5 @@
 @import 'node_modules/@angular/material/theming';
+
 @mixin ontimize-theme-styles($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -6,21 +7,21 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  $container-background: #ffffff;
+  $container-background : #ffffff;
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
   $tabs-header-border: none;
-  $inactive-tab-opacity: .35;
+  $inactive-tab-opacity: 0.35;
 
   // $mat-font-family: 'Lato', sans-serif !default;
 
   /*CONTAINER*/
   .rounded-panel,
-  .standalone-chart-container,
-  .standalone-form-container .o-form-content-wrapper {
-    background: $container-background;
+  .standalone-form-container .o-form-content-wrapper,
+  .standalone-chart-container {
+    background:$container-background;
     border-radius: $border-radius;
   }
 
@@ -35,19 +36,17 @@
   }
 
   /*APP LAYOUT*/
-  .application-layout-content-wrapper,
-  .o-form-layout-dialog-overlay .mat-dialog-container {
+  .o-form-layout-dialog-overlay .mat-dialog-container,
+  .application-layout-content-wrapper {
     background: #eeeeee;
   }
 
-  o-list-picker-dialog mat-toolbar o-search-input {
+  o-list-picker-dialog  mat-toolbar  o-search-input {
     span.icon-btn {
-      color: mat-color($primary, default-contrast);
+      color:  mat-color($primary, default-contrast);
     }
-
     &.list-picker-search .mat-input-underline {
       border-color: mat-color($primary, default-contrast, 0.78);
-
       .mat-input-ripple {
         background-color: mat-color($primary, default-contrast);
       }
@@ -74,12 +73,12 @@
 
     &.o-form-toolbar-floating {
       background: #eeeeee;
-      padding: 0 $basic-padding-size;
+      padding: $basic-padding-size 0px;
     }
 
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-      background: $container-background;
+      background:$container-background;
       border-radius: $border-radius;
       min-height: initial;
 
@@ -89,7 +88,6 @@
         }
 
         color: mat-color($foreground, secondary-text);
-
         mat-icon {
           color: mat-color($foreground, secondary-text);
         }
@@ -111,7 +109,6 @@
         border-top-right-radius: $border-radius;
 
         opacity: $inactive-tab-opacity;
-
         &.mat-tab-label-active {
           background: $container-background;
           opacity: 1;
@@ -120,25 +117,25 @@
     }
 
     .mat-tab-body-wrapper {
-      background: $container-background;
+      background : $container-background;
       border-radius: $border-radius;
       border-top: $tabs-header-border;
       border-top-left-radius: initial;
     }
 
     mat-ink-bar {
-      display: none;
+      display : none;
     }
   }
 
   .mat-tab-group .mat-tab-group {
     .mat-tab-header {
+
       .mat-tab-label-container .mat-tab-label {
         border-top-left-radius: initial;
         border-top-right-radius: initial;
 
         opacity: $inactive-tab-opacity;
-
         &.mat-tab-label-active {
           background: initial;
           opacity: 1;
@@ -147,7 +144,7 @@
     }
 
     .mat-tab-body-wrapper {
-      background: initial;
+      background : initial;
       border-radius: initial;
       border-top: $tabs-header-border;
     }
@@ -169,9 +166,8 @@
           font-weight: 400;
         }
       }
-
       .container-content {
-        padding: 24px 30px 8px;
+        padding: 24px 30px 8px 30px;
       }
     }
   }
@@ -180,31 +176,33 @@
   .ontimize-table.o-table {
     font-weight: 400;
 
-    .o-table-menu {
+    .o-table-menu  {
       .o-table-option-active {
         background: mat-color($foreground, divider);
       }
     }
 
     .expandable-container {
-      border: none;
-      padding-top: $basic-padding-size;
-      // margin-bottom: $basic-padding-size;
-      background: $container-background;
-      border-radius: $border-radius;
-      box-sizing: border-box;
+        border: none;
+        padding-top: $basic-padding-size;
+        // margin-bottom: $basic-padding-size;
+        background : $container-background;
+        border-radius: $border-radius;
+        box-sizing: border-box;
     }
 
     .o-table-container {
+
       .dt-buttons .dt-button {
+
         &.custom-generic-action::after,
         &.generic-action.generic-action::before {
           line-height: $button-line-height;
           padding: 0 $basic-padding-size;
         }
 
-        &.custom-generic-action > span,
-        &.generic-action > span {
+        &.generic-action > span,
+        &.custom-generic-action > span {
           line-height: $button-line-height;
         }
 
@@ -218,6 +216,7 @@
       }
 
       table {
+
         &:not(.o-table-fixed) {
           margin-top: 16px;
           margin-bottom: 16px;
@@ -226,30 +225,28 @@
         &.small tr th {
           font-size: 16px;
         }
-
         &.medium tr th {
           font-size: 20px;
         }
-
         thead tr th {
           font-weight: 700;
           font-size: 24px;
         }
 
-        tbody td,
-        thead th {
+        thead th,
+        tbody td {
           border-bottom: 1px solid mat-color($foreground, divider);
         }
 
-        tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-        thead tr th:first-child:not(.o-table-column-select-checkbox) {
+        thead tr th:first-child:not(.o-table-column-select-checkbox),
+        tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox) {
           border-right: none;
         }
 
-        tbody td:last-child:not(.o-table-column-action),
-        tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
         thead tr th:last-child:not(.o-table-column-action),
-        thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
+        thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
+        tbody td:last-child:not(.o-table-column-action),
+        tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
           border-left: none;
         }
 
@@ -258,53 +255,43 @@
           background-color: initial;
         }
 
-        tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-        thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+        thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+        tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
           background-color: mat-color($accent);
         }
 
         thead tr th.sorting::before,
         thead tr th.sorting_asc::before,
-        thead tr th.sorting_asc_disabled::before,
         thead tr th.sorting_desc::before,
+        thead tr th.sorting_asc_disabled::before,
         thead tr th.sorting_desc_disabled::before {
           margin-top: 4px;
         }
 
         thead tr th.sorting::after,
         thead tr th.sorting_asc::after,
-        thead tr th.sorting_asc_disabled::after,
         thead tr th.sorting_desc::after,
+        thead tr th.sorting_asc_disabled::after,
         thead tr th.sorting_desc_disabled::after {
           margin-top: 4px;
         }
       }
     }
 
-    .o-table-body.horizontal-scroll {
-      &::-webkit-scrollbar-thumb {
-        border-color: $container-background;
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        border-color: $container-background;
-      }
-    }
   }
 
   /* O-TABLE */
   .o-table.o-table .o-table-container {
+
     .toolbar {
-      margin: 0 0 4px;
+      margin: 0px 0px 4px 0px;
 
       .buttons .o-table-button .mat-button {
         line-height: inherit;
         height: 32px;
-
         &.hidden-action-text {
           width: 32px;
         }
-
         &:not(.hidden-action-text),
         &:not(.hidden-action-text):not(.disabled):hover {
           border: 1px solid mat-color($primary);
@@ -318,17 +305,14 @@
     .mat-table {
       .mat-header-row {
         background-color: initial;
-
         .mat-header-cell {
           font-weight: 700;
           font-size: 24px;
         }
       }
-
       &.small .mat-header-cell {
         font-size: 16px;
       }
-
       &.medium .mat-header-cell {
         font-size: 20px;
       }
@@ -338,7 +322,7 @@
   /* TABLE FIXED */
   .ontimize-table.o-table.o-table-fixed {
     .expandable-container {
-      height: calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
+      height : calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
     }
   }
 }
