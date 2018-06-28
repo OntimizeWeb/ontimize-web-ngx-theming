@@ -7,8 +7,7 @@
     "rimraf": "rimraf",
     "clean": "rimraf dist tmp",
     "end-common": "gulp copy-files",
-    "build": "npm run clean && npm run end-common",
-    "pack": "npm run build && cd dist && npm pack"
+    "build": "npm run clean && npm run end-common"
   },
   "keywords": [
     "angular2",
