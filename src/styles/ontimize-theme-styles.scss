@@ -68,14 +68,6 @@
   /*FORM*/
 
   o-form-toolbar {
-    padding: 0 $basic-padding-size;
-    display: block;
-
-    &.o-form-toolbar-floating {
-      background: #eeeeee;
-      padding: 0 $basic-padding-size;
-    }
-
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
       background:$container-background;
