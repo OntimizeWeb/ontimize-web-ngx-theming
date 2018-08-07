@@ -5,7 +5,6 @@
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-
   $container-background: #ffffff;
   $border-radius: 6px;
   $button-line-height: 30px;
@@ -13,10 +12,9 @@
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
-
   // $mat-font-family: 'Lato', sans-serif !default;
 
-  /*CONTAINER*/
+  /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
   .standalone-form-container .o-form-content-wrapper {
@@ -34,7 +32,7 @@
     }
   }
 
-  /*APP LAYOUT*/
+  /* APP LAYOUT */
   .application-layout-content-wrapper,
   .o-form-layout-dialog-overlay .mat-dialog-container {
     background: #eeeeee;
@@ -54,20 +52,19 @@
     }
   }
 
-  /*APP SIDENAV*/
+  /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
 
-  /*USER INFO*/
-  o-app-header .application-header-title,
+  /* USER INFO */
+  o-app-header .o-app-header-title,
   o-user-info {
     font-weight: 700;
   }
 
-  /*FORM*/
-
+  /* FORM */
   o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
@@ -79,7 +76,6 @@
         &[disabled] {
           border: 1px solid mat-color($background, disabled-button);
         }
-
         color: mat-color($foreground, secondary-text);
 
         mat-icon {
@@ -95,7 +91,6 @@
 
   /* TABS */
   .mat-tab-group {
-
     // Ontimize tabs
     &.o-tab-ontimize {
       > .mat-tab-header {
@@ -124,12 +119,10 @@
         border-top-left-radius: initial;
       }
     }
-
     // Material tabs
     &.o-tab-material {
       // default angular material styles
     }
-
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -138,7 +131,7 @@
     }
   }
 
-  /*CONTAINERS*/
+  /* CONTAINERS */
   o-column,
   o-row {
     .o-container {
@@ -157,7 +150,7 @@
     }
   }
 
-  /*TABLE*/
+  /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
 
@@ -195,7 +188,6 @@
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
         }
-
       }
 
       table {
@@ -261,7 +253,6 @@
         }
       }
     }
-
   }
 
   /* O-TABLE */
@@ -284,7 +275,6 @@
           margin: 0 $basic-padding-size;
         }
       }
-
     }
 
     .mat-table {
