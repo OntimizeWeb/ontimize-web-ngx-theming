@@ -73,18 +73,25 @@
       min-height: initial;
 
       button.mat-button {
-        &[disabled] {
-          border: 1px solid mat-color($background, disabled-button);
-        }
         color: mat-color($foreground, secondary-text);
-
-        mat-icon {
-          color: mat-color($foreground, secondary-text);
-        }
         border: 1px solid mat-color($primary);
         border-radius: $border-radius;
         margin: 0 $basic-padding-size;
         line-height: $button-line-height;
+
+        &[disabled] {
+          border: 1px solid mat-color($background, disabled-button);
+        }
+      }
+
+      button.mat-icon-button {
+        color: mat-color($foreground, secondary-text);
+        margin: 0 $basic-padding-size;
+        line-height: $button-line-height;
+
+        &:not([disabled]) mat-icon {
+          color: mat-color($foreground, secondary-text);
+        }
       }
     }
   }
