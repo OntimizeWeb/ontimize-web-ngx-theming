@@ -182,8 +182,11 @@
           line-height: $button-line-height;
         }
 
-        &:not(.hidden-action-text),
-        &:not(.hidden-action-text):not(.disabled):hover {
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        margin: 0 $basic-padding-size;
+
+        &:not(.disabled):hover {
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
@@ -264,12 +267,11 @@
         line-height: inherit;
         height: 32px;
 
-        &.hidden-action-text {
-          width: 32px;
-        }
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        margin: 0 $basic-padding-size;
 
-        &:not(.hidden-action-text),
-        &:not(.hidden-action-text):not(.disabled):hover {
+        &:not(.disabled):hover {
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
