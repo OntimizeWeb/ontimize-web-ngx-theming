@@ -5,7 +5,6 @@
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-
   $container-background: #ffffff;
   $border-radius: 6px;
   $button-line-height: 30px;
@@ -13,10 +12,9 @@
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
-
   // $mat-font-family: 'Lato', sans-serif !default;
 
-  /*CONTAINER*/
+  /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
   .standalone-form-container .o-form-content-wrapper {
@@ -34,7 +32,7 @@
     }
   }
 
-  /*APP LAYOUT*/
+  /* APP LAYOUT */
   .application-layout-content-wrapper,
   .o-form-layout-dialog-overlay .mat-dialog-container {
     background: #eeeeee;
@@ -54,20 +52,19 @@
     }
   }
 
-  /*APP SIDENAV*/
+  /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
 
-  /*USER INFO*/
-  o-app-header .application-header-title,
+  /* USER INFO */
+  o-app-header .o-app-header-title,
   o-user-info {
     font-weight: 700;
   }
 
-  /*FORM*/
-
+  /* FORM */
   o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
@@ -76,26 +73,31 @@
       min-height: initial;
 
       button.mat-button {
-        &[disabled] {
-          border: 1px solid mat-color($background, disabled-button);
-        }
-
         color: mat-color($foreground, secondary-text);
-
-        mat-icon {
-          color: mat-color($foreground, secondary-text);
-        }
         border: 1px solid mat-color($primary);
         border-radius: $border-radius;
         margin: 0 $basic-padding-size;
         line-height: $button-line-height;
+
+        &[disabled] {
+          border: 1px solid mat-color($background, disabled-button);
+        }
+      }
+
+      button.mat-icon-button {
+        color: mat-color($foreground, secondary-text);
+        margin: 0 $basic-padding-size;
+        line-height: $button-line-height;
+
+        &:not([disabled]) mat-icon {
+          color: mat-color($foreground, secondary-text);
+        }
       }
     }
   }
 
   /* TABS */
   .mat-tab-group {
-
     // Ontimize tabs
     &.o-tab-ontimize {
       > .mat-tab-header {
@@ -124,12 +126,10 @@
         border-top-left-radius: initial;
       }
     }
-
     // Material tabs
     &.o-tab-material {
       // default angular material styles
     }
-
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -138,7 +138,7 @@
     }
   }
 
-  /*CONTAINERS*/
+  /* CONTAINERS */
   o-column,
   o-row {
     .o-container {
@@ -157,7 +157,7 @@
     }
   }
 
-  /*TABLE*/
+  /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
 
@@ -190,13 +190,15 @@
           line-height: $button-line-height;
         }
 
-        &:not(.hidden-action-text),
-        &:not(.hidden-action-text):not(.disabled):hover {
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        margin: 0 $basic-padding-size;
+
+        &:not(.disabled):hover {
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
         }
-
       }
 
       table {
@@ -281,18 +283,16 @@
         line-height: inherit;
         height: 32px;
 
-        &.hidden-action-text {
-          width: 32px;
-        }
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        margin: 0 $basic-padding-size;
 
-        &:not(.hidden-action-text),
-        &:not(.hidden-action-text):not(.disabled):hover {
+        &:not(.disabled):hover {
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
         }
       }
-
     }
 
     .mat-table {
