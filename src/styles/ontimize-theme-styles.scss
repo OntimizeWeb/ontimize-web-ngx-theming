@@ -176,6 +176,7 @@
       box-sizing: border-box;
     }
 
+    
     .o-table-container {
       .dt-buttons .dt-button {
         &.custom-generic-action::after,
@@ -262,6 +263,13 @@
       }
     }
 
+    .o-scrollable-container{
+      height:calc(100% -  #{$basic-padding-size} - #{$basic-padding-size});
+      
+      .o-table-container {
+        height:auto;
+      }
+    }
   }
 
   /* O-TABLE */
@@ -312,5 +320,14 @@
     .expandable-container {
       height: calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
     }
+
+    .o-scrollable-container{
+      height:calc(100% -  #{$basic-padding-size} - #{$basic-padding-size});
+      
+      .o-table-container {
+        height:auto;
+      }
+    }
   }
+ 
 }
