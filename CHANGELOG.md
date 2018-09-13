@@ -1,3 +1,11 @@
+#1.2.0 (2018-09-13)
+### Features
+* **styles:** updating styles for '*ontimize-web-ngx@3.1.0*'
+
+#1.1.2 (2018-07-24)
+### Features
+* **styles:** updating styles for '*ontimize-web-ngx@3.0.0*'
+
 #1.1.1 (2018-07-02)
 ### Features
 * **styles:** updating styles for '*ontimize-web-ngx@3.0.0-rc.1*'
