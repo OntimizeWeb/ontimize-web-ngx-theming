@@ -9,9 +9,7 @@
           }
 
           .mat-header-row {
-            min-height: 28px;
-            max-height: 28px;
-            line-height: 28px;
+            height: 28px;
 
             .mat-header-cell {
               font-size: 16px;
@@ -19,8 +17,7 @@
           }
 
           .mat-row {
-            min-height: 24px;
-            max-height: 24px;
+            height: 24px;
 
             .mat-cell {
               font-size: 11px;
@@ -40,9 +37,7 @@
           }
 
           .mat-header-row {
-            min-height: 36px;
-            max-height: 36px;
-            line-height: 36px;
+            height: 36px;
 
             .mat-header-cell {
               font-size: 16px;
@@ -50,8 +45,7 @@
           }
 
           .mat-row {
-            min-height: 32px;
-            max-height: 32px;
+            height: 32px;
 
             .mat-cell {
               font-size: 12px;
@@ -66,9 +60,7 @@
 
         &.large {
           .mat-header-row {
-            min-height: 40px;
-            max-height: 40px;
-            line-height: 40px;
+            height: 40px;
 
             .mat-header-cell {
               font-size: 16px;
@@ -76,8 +68,7 @@
           }
 
           .mat-row {
-            min-height: 36px;
-            max-height: 36px;
+            height: 36px;
 
             .mat-cell {
               .image-avatar {
@@ -91,6 +82,7 @@
     }
   }
 }
+
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;
