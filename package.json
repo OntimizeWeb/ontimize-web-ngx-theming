@@ -3,7 +3,6 @@
   "version": "4.0.0",
   "description": "An implementation of themes manager for Ontimize Web applications",
   "scripts": {
-    "preinstall": "npm config set package-lock false",
     "rimraf": "rimraf",
     "clean": "rimraf dist tmp",
     "end-common": "gulp copy-files",
@@ -11,7 +10,7 @@
     "pack": "npm run build && cd dist && npm pack && cd.."
   },
   "keywords": [
-    "angular2",
+    "angular",
     "ontimize-web-ngx",
     "ontimize-web-ngx-theming"
   ],
@@ -27,16 +26,11 @@
   "peerDependencies": {},
   "dependencies": {},
   "devDependencies": {
-    "@angular/common": "6.1.10",
-    "@angular/core": "6.1.10",
-    "node-sass": "4.7.2",
-    "rimraf": "2.6.2",
-    "gulp": "3.9.1",
+    "copyfiles": "1.2.0",
+    "gulp": "4.0.0",
     "gulp-cssimport": "6.0.0",
-    "gulp-inline-ng2-template": "4.1.0",
     "gulp-replace": "0.6.1",
-    "copyfiles": "^1.2.0",
-    "rxjs": "6.3.3",
-    "zone.js": "0.8.26"
+    "node-sass": "4.9.4",
+    "rimraf": "2.6.2"
   }
 }
