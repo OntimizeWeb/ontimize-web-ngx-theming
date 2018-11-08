@@ -196,6 +196,8 @@
       }
 
       table.mat-table {
+        background: $container-background;
+        
         &.small tr th {
           font-size: 16px;
         }
@@ -209,28 +211,11 @@
           font-size: 24px;
         }
 
-        tbody td,
-        thead th {
-          border-bottom: 1px solid mat-color($foreground, divider);
-        }
-
-        tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-        thead tr th:first-child:not(.o-table-column-select-checkbox) {
-          border-right: none;
-        }
-
-        tbody td:last-child:not(.o-table-column-action),
-        tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-        thead tr th:last-child:not(.o-table-column-action),
-        thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-          border-left: none;
-        }
 
         tbody tr.even,
         thead tr {
           background-color: inherit;
         }
-
         tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
         thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
           background-color: mat-color($accent);
