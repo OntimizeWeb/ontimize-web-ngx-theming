@@ -126,10 +126,7 @@
         border-top-left-radius: initial;
       }
     }
-    // Material tabs
-    &.o-tab-material {
-      // default angular material styles
-    }
+
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -176,7 +173,6 @@
       box-sizing: border-box;
     }
 
-    
     .o-table-container {
       .dt-buttons .dt-button {
         &.custom-generic-action::after,
@@ -265,11 +261,11 @@
       }
     }
 
-    .o-scrollable-container{
-      height:calc(100% -  #{$basic-padding-size} - #{$basic-padding-size});
-      
+    .o-scrollable-container {
+      height: calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
+
       .o-table-container {
-        height:auto;
+        height: auto;
       }
     }
   }
@@ -286,6 +282,10 @@
         border: 1px solid mat-color($primary);
         border-radius: $border-radius;
         margin: 0 $basic-padding-size;
+
+        &.disabled {
+          border: 1px solid mat-color($background, disabled-button);
+        }
 
         &:not(.disabled):hover {
           border: 1px solid mat-color($primary);
@@ -320,11 +320,12 @@
     .expandable-container {
       height: calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
     }
-      .o-scrollable-container{
-        .o-table-container {
-          height:100%;
-        }
+
+    .o-scrollable-container {
+      .o-table-container {
+        height: 100%;
+      }
     }
   }
- 
+
 }
