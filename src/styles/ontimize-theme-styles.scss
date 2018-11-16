@@ -126,10 +126,7 @@
         border-top-left-radius: initial;
       }
     }
-    // Material tabs
-    &.o-tab-material {
-      // default angular material styles
-    }
+
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -181,6 +178,10 @@
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
 
+          &.disabled {
+            border: 1px solid mat-color($background, disabled-button);
+          }
+
           &:not(.disabled):hover {
             border: 1px solid mat-color($primary);
             border-radius: $border-radius;
@@ -197,7 +198,7 @@
 
       table.mat-table {
         background: $container-background;
-        
+
         &.small tr th {
           font-size: 16px;
         }
