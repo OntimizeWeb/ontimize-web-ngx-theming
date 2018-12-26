@@ -35,7 +35,7 @@ $lite-typography: mat-typography-config(
   $caption:       mat-typography-level(9px, 15px, 400),
   $button:        mat-typography-level(12px, 12px, 500),
   // Line-height must be unit-less fraction of the font-size.
-  $input:         mat-typography-level(14px, 1.1, 400)
+  $input:         mat-typography-level(14px, 1, 400)
 );
 $mat-calendar-body-font-size: 11px;
 $mat-calendar-weekday-table-font-size: 9px;

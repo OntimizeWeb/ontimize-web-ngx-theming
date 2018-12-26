@@ -94,11 +94,12 @@
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;
+
   $infix-padding: .5em - ($line-spacing * 4);
   $subscript-font-scale: .75;
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
   $subscript-margin-top: .5em / $subscript-font-scale - ($line-spacing * 6);
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 1.25);
+  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 0.9);
 
   .mat-form-field {
     .mat-form-field-wrapper {
@@ -314,15 +315,11 @@
   }
 }
 @mixin o-common-typography-lite($config) {
-  span:not([class^="mat-"]) {
-    font-size: mat-font-size($config, input);
-  }
-
-  /* O-COLUMN, O-ROW */
-  o-column .o-container .container-content,
-  o-row .o-container .container-content {
-    padding: 12px 8px 4px;
-  }
+   /* O-COLUMN, O-ROW */
+   o-column .o-container .container-content,
+   o-row .o-container .container-content {
+     padding: 6px 6px 6px 18px;
+   }
 
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
@@ -338,9 +335,6 @@
       }
     }
 
-    .application-layout-content-wrapper {
-      top: 40px;
-    }
   }
 
   /* MD-TAB-GROUP */
@@ -379,5 +373,40 @@
       max-height: calc(100% - 105px);
       min-height: calc(100% - 105px);
     }
+  }
+}
+@mixin o-form-theme() {
+  $mat-toolbar-height-desktop: 36px !important;
+  $margin-buttom: 6px !important;
+
+  .o-form {
+    .o-form-toolbar {
+      .o-form-toolbar-header {
+        min-height: $mat-toolbar-height-desktop;
+        max-height: $mat-toolbar-height-desktop;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      &[layout-padding] {
+        padding: 0;
+      }
+
+      .mat-button {
+        min-width: auto;
+        margin: 0 $margin-buttom;
+
+        .mat-icon {
+          height: 20px;
+          width: 20px;
+        }
+
+        .mat-icon+span {
+          display: none;
+        }
+      }
+    }
+
   }
 }
