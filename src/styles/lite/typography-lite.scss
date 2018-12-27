@@ -1,3 +1,9 @@
+@import './form-field/o-form-field-theme.scss';
+@import './form-field/o-form-field-fill-theme.scss';
+@import './form-field/o-form-field-legacy-theme.scss';
+@import './form-field/o-form-field-outline-theme.scss';
+@import './form-field/o-form-field-standard-theme.scss';
+
 @mixin o-table-typography-lite($config) {
   .o-table.o-table {
     .o-table-container {
@@ -85,43 +91,91 @@
 
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
-  $line-spacing: ($line-height - 1) / 2;
 
-  $infix-padding: .5em - ($line-spacing * 4);
-  $subscript-font-scale: .75;
-  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
-  $subscript-margin-top: .5em / $subscript-font-scale - ($line-spacing * 6);
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 0.9);
+  // The amount to scale the font for the floating label and subscript.
+  $subscript-font-scale: 0.75;
+  // The amount to scale the font for the prefix and suffix icons.
+  $prefix-suffix-icon-font-scale: 1;
 
-  .mat-form-field {
-    .mat-form-field-wrapper {
-      padding-bottom: $wrapper-padding-bottom;
+  // The padding on the infix. Mocks show half of the text size.
+  $infix-padding: 0.5em;
+  // The margin applied to the form-field-infix to reserve space for the floating label.
+  $infix-margin-top: 0.5em * $line-height * $subscript-font-scale;
+  // Font size to use for the label and subscript text.
+  $subscript-font-size: $subscript-font-scale * 100%;
+  // Font size to use for the for the prefix and suffix icons.
+  $prefix-suffix-icon-font-size: $prefix-suffix-icon-font-scale * 100%;
+  // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
+  // Mocks show half of the text size, but this margin is applied to an element with the subscript
+  // text font size, so we need to divide by the scale factor to make it half of the original text
+  // size.
+  $subscript-margin-top: 0.5em / $subscript-font-scale;
+  // The padding applied to the form-field-wrapper to reserve space for the subscript, since it's
+  // absolutely positioned. This is a combination of the subscript's margin and line-height, but we
+  // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
+  //$wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale;
+  $wrapper-padding-bottom: 0;
+
+  .mat-form-field-wrapper {
+    padding-bottom: $wrapper-padding-bottom!important;
+  }
+
+  .mat-form-field-prefix,
+  .mat-form-field-suffix {
+    // Allow icons in a prefix or suffix to adapt to the correct size.
+    .mat-icon {
+      font-size: $prefix-suffix-icon-font-size!important;
+      line-height: $line-height!important;
     }
 
-    &.mat-form-field {
-      font-size: mat-font-size($config, input);
+    // Allow icon buttons in a prefix or suffix to adapt to the correct size.
+    .mat-icon-button {
+      height: $prefix-suffix-icon-font-scale * 1em!important;
+      width: $prefix-suffix-icon-font-scale * 1em!important;
 
-      &.icon-field {
-        .mat-form-field-suffix {
-          .icon-btn,
-          .mat-icon {
-            font-size: 16px;
-          }
-        }
+      .mat-icon {
+        height: $line-height * 1em!important;
+        line-height: $line-height!important;
       }
     }
-
-    .mat-form-field-infix {
-      padding: $infix-padding 0;
-      border-top: $infix-margin-top solid transparent;
-    }
-
-    .mat-form-field-subscript-wrapper {
-      margin-top: $subscript-margin-top;
-      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
-    }
   }
+
+  .mat-form-field-infix {
+    padding: $infix-padding 0;
+    // Throws off the baseline if we do it as a real margin, so we do it as a border instead.
+    border-top: $infix-margin-top solid transparent;
+  }
+
+ 
+
+  .mat-form-field-label-wrapper {
+    top: -$infix-margin-top!important;
+    padding-top: $infix-margin-top!important;
+  }
+
+  .mat-form-field-label {
+    top: $infix-margin-top + $infix-padding!important;
+  }
+
+  .mat-form-field-underline {
+    // We want the underline to start at the end of the content box, not the padding box,
+    // so we move it up by the padding amount.
+    bottom: $wrapper-padding-bottom!important;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    font-size: $subscript-font-size!important;
+    margin-top: $subscript-margin-top!important;
+
+    // We want the subscript to start at the end of the content box, not the padding box,
+    // so we move it up by the padding amount (adjusted for the smaller font size);
+    top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale})!important;
+  }
+  @include o-mat-form-field-legacy-typography($config);
+  @include o-mat-form-field-fill-typography($config);
+  @include o-mat-form-field-outline-typography($config);
 }
+
 @mixin o-datatable-typography-lite($config) {
   .o-table.o-table .o-table-container table {
     &.medium,
@@ -307,11 +361,11 @@
   }
 }
 @mixin o-common-typography-lite($config) {
-   /* O-COLUMN, O-ROW */
-   o-column .o-container .container-content,
-   o-row .o-container .container-content {
-     padding: 6px 6px 6px 18px;
-   }
+  /* O-COLUMN, O-ROW */
+  o-column .o-container .container-content,
+  o-row .o-container .container-content {
+    padding: 6px 6px 6px 18px;
+  }
 
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
