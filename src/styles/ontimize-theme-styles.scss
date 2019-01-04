@@ -154,6 +154,33 @@
     }
   }
 
+  o-column.appearance-outline,
+  o-row.appearance-outline {
+    margin-top:10px;
+    > .o-container {
+      padding-top:$basic-padding-size;
+      .container-title {
+        position: absolute;
+        border-bottom: 0;
+        margin-top:-$basic-padding-size;;
+        span {
+          font-size:0.75em;
+          font-weight: 600;
+          padding:$basic-padding-size/2;
+          color: mat-color($foreground, text);
+          background-color: mat-color($background, background);
+          border-radius: 6px;
+        }
+      }
+
+      .container-content {
+        border: 1px solid mat-color($primary);
+        border-radius: $border-radius;
+        padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size $basic-padding-size;
+      }
+    }
+  }
+
   /* TABLE */
   .ontimize-table.o-table {
 
