@@ -1,15 +1,13 @@
-
-
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
 
   // The amount to scale the font for the floating label and subscript.
-  $subscript-font-scale: 0.75;
+  $subscript-font-scale: .75;
   // The amount to scale the font for the prefix and suffix icons.
   $prefix-suffix-icon-font-scale: 1.5;
 
   // The padding on the infix. Mocks show half of the text size.
-  $infix-padding: 0.3em;
+  $infix-padding: .3em;
 
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
   // Font size to use for the label and subscript text.
@@ -20,23 +18,55 @@
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size.
-  $subscript-margin-top: 0.3em / $subscript-font-scale;
+  $subscript-margin-top: .3em / $subscript-font-scale;
   // The padding applied to the form-field-wrapper to reserve space for the subscript, since it's
   // absolutely positioned. This is a combination of the subscript's margin and line-height, but we
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale * 0.2;
+  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale * .3;
   //$wrapper-padding-bottom: 0;
 
   .mat-form-field-wrapper {
-    padding-bottom: $wrapper-padding-bottom!important;
+    padding-bottom: $wrapper-padding-bottom !important;
+
+  }
+
+  .mat-form-field.mat-form-field-invalid {
+    .mat-error {
+      display: none;
+    }
+  }
+
+  .mat-form-field.mat-form-field-invalid.mat-focused,
+  .mat-form-field.mat-form-field-invalid:hover {
+    .mat-form-field-subscript-wrapper {
+      top: 100%;
+      z-index: 5;
+      max-width: 100%;
+      padding: .25em 0;
+      background: #f44336;
+      border-radius: 3px;
+
+      .mat-error {
+        display: block;
+        color:#FFFFFF;
+      }
+    }
+
+  }
+
+
+  .mat-form-field {
+    font-size: mat-font-size($config, input);
   }
 
   .mat-form-field-prefix,
   .mat-form-field-suffix {
     // Allow icons in a prefix or suffix to adapt to the correct size.
+    padding: $infix-padding 0 !important;
     .mat-icon {
       font-size: $prefix-suffix-icon-font-size!important;
-      line-height: $line-height!important;
+     // line-height: $line-height!important;
+      height: $line-height * 1em!important;
     }
 
     // Allow icon buttons in a prefix or suffix to adapt to the correct size.
@@ -59,27 +89,25 @@
   .mat-form-field-can-float {
     &.mat-form-field-should-float .mat-form-field-label,
     .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-      @include o_mat-form-field-label-floating(
-              $subscript-font-scale, $infix-padding, $infix-margin-top);
+      @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
     }
 
     // Server-side rendered matInput with a label attribute but label not shown
     // (used as a pure CSS stand-in for mat-form-field-should-float).
-    .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-        .mat-form-field-label {
-      @include o_mat-form-field-label-floating(
-              $subscript-font-scale, $infix-padding, $infix-margin-top);
+    .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+      @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
     }
   }
 
   .mat-form-field-label-wrapper {
     top: -$infix-margin-top!important;
-    padding-top: $infix-margin-top!important;
+    padding-top: $infix-margin-top !important;
   }
 
   .mat-form-field-label {
     top: $infix-margin-top + $infix-padding!important;
   }
+
   .mat-form-field-underline {
     // We want the underline to start at the end of the content box, not the padding box,
     // so we move it up by the padding amount.
@@ -88,22 +116,39 @@
 
   .mat-form-field-subscript-wrapper {
     font-size: $subscript-font-size!important;
-    margin-top: $subscript-margin-top!important;
+    margin-top: $subscript-margin-top !important;
 
     // We want the subscript to start at the end of the content box, not the padding box,
     // so we move it up by the padding amount (adjusted for the smaller font size);
     top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale})!important;
   }
+  @include o-mat-checkbox-typography($config);
   @include o-mat-form-field-legacy-typography($config);
   @include o-mat-form-field-fill-typography($config);
   @include o-mat-form-field-outline-typography($config);
   @include o-mat-form-field-standard-typography($config);
 }
-
 @mixin o_mat-form-field-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-dedupe)
-             scale($font-scale) !important; 
+  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-dedupe) scale($font-scale) !important;
   width: 100% / $font-scale + $mat-form-field-dedupe;
 
-  $mat-form-field-dedupe: $mat-form-field-dedupe + 0.00001 !global;
+  $mat-form-field-dedupe: $mat-form-field-dedupe + .00001 !global;
+}
+
+/*it's necessary redefined the font size of the checkbox*/
+@mixin o-mat-checkbox-typography($config) {
+  // The ripple size of the checkbox
+  $_mat-checkbox-ripple-radius: 17px;
+
+  .mat-checkbox {
+    font-size: mat-font-size($config, input);
+  }
+ 
+
+  .mat-checkbox-ripple {
+    left: calc(50% - #{$_mat-checkbox-ripple-radius})!important;
+    top: calc(50% - #{$_mat-checkbox-ripple-radius})!important;
+    height: $_mat-checkbox-ripple-radius * 2!important;
+    width: $_mat_checkbox-ripple-radius * 2!important;
+  }
 }

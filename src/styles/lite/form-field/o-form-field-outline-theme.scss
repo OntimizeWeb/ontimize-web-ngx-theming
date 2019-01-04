@@ -2,58 +2,54 @@
   // The unit-less line-height from the font config.
   $line-height: mat-line-height($config, input);
   // The amount to scale the font for the floating label and subscript.
-  $subscript-font-scale: 0.75;
+  $subscript-font-scale: .75;
   // The padding above and below the infix.
-  $infix-padding: 0.3em;
+  $infix-padding: .3em;
   // The margin applied to the form-field-infix to reserve space for the floating label.
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
   // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size.
-  $subscript-margin-top: 0.5em / $subscript-font-scale;
+  $subscript-margin-top: .5em / $subscript-font-scale;
 
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale;
   // The amount we offset the label from the input text in the outline appearance.
   $outline-appearance-label-offset: -0.25em;
 
+  
   .mat-form-field-appearance-outline {
-    .mat-form-field-wrapper{
-      margin:0!important;
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
     }
 
     .mat-form-field-infix {
-      padding: $infix-padding 0 $infix-padding 0!important;
+      padding: $infix-padding 0 !important;
     }
 
     .mat-form-field-label {
       top: $infix-margin-top + $infix-padding!important;
-      margin-top: $outline-appearance-label-offset!important;
+      margin-top: $outline-appearance-label-offset !important;
     }
+
     &.mat-form-field-can-float {
       &.mat-form-field-should-float .mat-form-field-label,
       .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-        @include o_mat-form-field-outline-label-floating(
-                $subscript-font-scale, $infix-padding + $outline-appearance-label-offset,
-                $infix-margin-top);
+        @include o_mat-form-field-outline-label-floating( $subscript-font-scale, $infix-padding + $outline-appearance-label-offset, $infix-margin-top);
       }
 
       // Server-side rendered matInput with a label attribute but label not shown
       // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-      .mat-form-field-label {
-        @include o_mat-form-field-outline-label-floating(
-                $subscript-font-scale, $infix-padding + $outline-appearance-label-offset,
-                $infix-margin-top);
+      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+        @include o_mat-form-field-outline-label-floating( $subscript-font-scale, $infix-padding + $outline-appearance-label-offset, $infix-margin-top);
       }
     }
-     
+
   }
 }
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe)
-  scale($font-scale) !important;
+  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale) !important;
   width: 100% / $font-scale + $mat-form-field-outline-dedupe!important;
 
-  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + 0.00001 !important;
+  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + .00001 !important;
 }
