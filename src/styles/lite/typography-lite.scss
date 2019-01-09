@@ -271,8 +271,8 @@
     }
   }
 }
-
 @mixin o-common-typography-lite($config) {
+  $font-size-title-container: 0.75;
   /* O-COLUMN, O-ROW */
   o-column,
   o-row {
@@ -281,8 +281,8 @@
         border-bottom-width: 1px;
 
         span {
-          font-weight: 600;
           font-size: 14px;
+          font-weight: 600;
         }
       }
 
@@ -290,6 +290,29 @@
         padding: 6px 6px 6px 12px;
       }
     }
+  }
+
+  .o-column.appearance-outline,
+  .o-row.appearance-outline {
+    > .o-container {
+      .container-title {
+        span {
+          font-size: $font-size-title-container* 1em;
+        }
+      }
+    }
+
+    .container-outline {
+      .container-outline-end,
+      .container-outline-start {
+        border-width: 1px;
+      }
+
+      .container-outline-gap {
+        border-width: 1px;
+      }
+    }
+
   }
 
   /* O-APP-LAYOUT */

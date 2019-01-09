@@ -12,6 +12,7 @@
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
+  $font-size-title-container: 1;
   // $mat-font-family: 'Lato', sans-serif !default;
 
   /* CONTAINER */
@@ -154,31 +155,26 @@
     }
   }
 
+  $outline-label-offset: -0.25;
+
   o-column.appearance-outline,
   o-row.appearance-outline {
-    margin-top:10px;
     > .o-container {
-      padding-top:$basic-padding-size;
+      padding-top: $basic-padding-size;
+
       .container-title {
-        position: absolute;
-        border-bottom: 0;
-        margin-top:-$basic-padding-size;;
+        margin-top: $outline-label-offset* 1em;
+        padding:0;
         span {
-          font-size:0.75em;
-          font-weight: 600;
-          padding:$basic-padding-size/2;
           color: mat-color($foreground, text);
-          background-color: mat-color($background, background);
-          border-radius: 6px;
         }
       }
 
       .container-content {
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size $basic-padding-size;
+        padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size;
       }
     }
+
   }
 
   /* TABLE */
@@ -239,11 +235,11 @@
           font-size: 24px;
         }
 
-
         tbody tr.even,
         thead tr {
           background-color: inherit;
         }
+
         tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
         thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
           background-color: mat-color($accent);
