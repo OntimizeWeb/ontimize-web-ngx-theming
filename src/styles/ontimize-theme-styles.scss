@@ -135,25 +135,6 @@
     }
   }
 
-  /* CONTAINERS */
-  o-column,
-  o-row {
-    .o-container {
-      .container-title {
-        border-bottom-width: 2px;
-        border-bottom-color: mat-color($primary);
-
-        span {
-          font-weight: 400;
-        }
-      }
-
-      .container-content {
-        padding: 24px 30px 8px;
-      }
-    }
-  }
-
   /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
