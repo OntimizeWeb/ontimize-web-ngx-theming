@@ -137,24 +137,6 @@
   }
 
   /* CONTAINERS */
-  o-column,
-  o-row {
-    .o-container {
-      .container-title {
-        border-bottom-width: 2px;
-        border-bottom-color: mat-color($primary);
-
-        span {
-          font-weight: 400;
-        }
-      }
-
-      .container-content {
-        padding: 24px 30px 8px;
-      }
-    }
-  }
-
   $outline-label-offset: -0.25;
 
   o-column.appearance-outline,
@@ -164,7 +146,8 @@
 
       .container-title {
         margin-top: $outline-label-offset* 1em;
-        padding:0;
+        padding: 0;
+
         span {
           color: mat-color($foreground, text);
         }
@@ -174,7 +157,6 @@
         padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size;
       }
     }
-
   }
 
   /* TABLE */
