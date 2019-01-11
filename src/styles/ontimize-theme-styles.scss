@@ -137,23 +137,12 @@
   }
 
   /* CONTAINERS */
-  $outline-label-offset: -0.25;
-
-  o-column.appearance-outline,
-  o-row.appearance-outline {
+  o-column.o-appearance-outline,
+  o-row.o-appearance-outline {
     > .o-container {
       padding-top: $basic-padding-size;
 
-      .container-title {
-        margin-top: $outline-label-offset* 1em;
-        padding: 0;
-
-        span {
-          color: mat-color($foreground, text);
-        }
-      }
-
-      .container-content {
+      .o-container-content {
         padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size;
       }
     }
