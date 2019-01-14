@@ -136,18 +136,6 @@
     }
   }
 
-  /* CONTAINERS */
-  o-column.o-appearance-outline,
-  o-row.o-appearance-outline {
-    > .o-container {
-      padding-top: $basic-padding-size;
-
-      .o-container-content {
-        padding: $basic-padding-size*2 $basic-padding-size $basic-padding-size;
-      }
-    }
-  }
-
   /* TABLE */
   .ontimize-table.o-table {
 
