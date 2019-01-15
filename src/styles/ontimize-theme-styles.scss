@@ -143,7 +143,6 @@
 
     .o-table-container {
       border: none;
-      padding-top: $basic-padding-size;
       background: $container-background;
       border-radius: $border-radius;
       box-sizing: border-box;
@@ -151,6 +150,7 @@
       /*Toolbar*/
       .toolbar {
         margin: 0 0 4px;
+        padding-top: $basic-padding-size;
 
         .buttons .o-table-button .mat-button {
           line-height: inherit;
