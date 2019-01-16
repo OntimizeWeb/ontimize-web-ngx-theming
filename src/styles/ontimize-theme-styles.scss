@@ -1,4 +1,5 @@
 @import 'node_modules/@angular/material/theming';
+@import './lite/layout.scss';
 @mixin ontimize-theme-styles($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -15,6 +16,8 @@
   $font-size-title-container: 1;
   // $mat-font-family: 'Lato', sans-serif !default;
 
+
+  @include layout-padding-margin();
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
