@@ -1,10 +1,6 @@
-#4.0.0-rc.1
+#4.0.0-rc.1 (2019-01-16)
 ### Features
 * **styles:** updating styles for '*ontimize-web-ngx@4.0.0-rc.1*'
-
-#1.2.1
-### Features
-* **styles:** updating styles for '*ontimize-web-ngx@3.2.2*'
 
 #4.0.0-rc.0 (2018-11-16)
 ### Features
