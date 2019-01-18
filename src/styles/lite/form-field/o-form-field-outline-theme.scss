@@ -17,19 +17,18 @@
   // The amount we offset the label from the input text in the outline appearance.
   $outline-appearance-label-offset: -0.25em;
 
-  
-  .mat-form-field-appearance-outline {
+  .mat-form-field.mat-form-field-appearance-outline {
     .mat-form-field-wrapper {
-      padding-bottom: 0 !important;
+      padding-bottom: 0;
     }
 
     .mat-form-field-infix {
-      padding: $infix-padding 0 !important;
+      padding: $infix-padding 0;
     }
 
     .mat-form-field-label {
-      top: $infix-margin-top + $infix-padding!important;
-      margin-top: $outline-appearance-label-offset !important;
+      top: $infix-margin-top + $infix-padding;
+      margin-top: $outline-appearance-label-offset;
     }
 
     &.mat-form-field-can-float {
@@ -48,8 +47,8 @@
   }
 }
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale) !important;
-  width: 100% / $font-scale + $mat-form-field-outline-dedupe!important;
+  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale);
+  width: 100% / $font-scale + $mat-form-field-outline-dedupe;
 
-  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + .00001 !important;
+  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + .00001;
 }

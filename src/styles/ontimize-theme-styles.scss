@@ -15,8 +15,6 @@
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
   // $mat-font-family: 'Lato', sans-serif !default;
-
-
   @include layout-padding-margin();
   /* CONTAINER */
   .rounded-panel,
@@ -32,14 +30,20 @@
 
   .standalone-form-container {
     .inner-form {
-      padding: $basic-padding-size;
+      padding: $basic-padding-size*2;
     }
   }
 
   /* APP LAYOUT */
-  .application-layout-content-wrapper,
-  .o-form-layout-dialog-overlay .mat-dialog-container {
-    background: #eeeeee;
+  .o-app-sidenav {
+    .application-layout-content-wrapper {
+      padding: 18px;
+    }
+
+    .application-layout-content-wrapper,
+    .o-form-layout-dialog-overlay .mat-dialog-container {
+      background: #eeeeee;
+    }
   }
 
   o-list-picker-dialog mat-toolbar o-search-input {
