@@ -94,7 +94,6 @@
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;
-
   $infix-padding: .5em - ($line-spacing * 4);
   $subscript-font-scale: .75;
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
@@ -315,12 +314,6 @@
   }
 }
 @mixin o-common-typography-lite($config) {
-  /* O-COLUMN, O-ROW */
-  o-column .o-container .container-content,
-  o-row .o-container .container-content {
-    padding: 6px 6px 6px 18px;
-  }
-
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -334,15 +327,12 @@
         }
       }
     }
-
   }
-
   /* MD-TAB-GROUP */
   .mat-tab-group .mat-tab-label {
     height: 32px;
     padding: 0 6px;
   }
-
   /* O-LIST-PICKER-DIALOG */
   .o-list-picker-dialog.o-list-picker-dialog {
     .mat-toolbar {
@@ -351,7 +341,6 @@
 
     .mat-dialog-content {
       padding: 0 12px;
-
       // 100% - buttons (49px)
       max-height: calc(100% - 49px);
       min-height: calc(100% - 49px);
@@ -403,6 +392,5 @@
         }
       }
     }
-
   }
 }
