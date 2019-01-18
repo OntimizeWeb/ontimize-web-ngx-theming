@@ -315,11 +315,11 @@
   }
 }
 @mixin o-common-typography-lite($config) {
-   /* O-COLUMN, O-ROW */
-   o-column .o-container .container-content,
-   o-row .o-container .container-content {
-     padding: 6px 6px 6px 18px;
-   }
+  /* O-COLUMN, O-ROW */
+  o-column .o-container .container-content,
+  o-row .o-container .container-content {
+    padding: 6px 6px 6px 18px;
+  }
 
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
@@ -400,10 +400,6 @@
         .mat-icon {
           height: 20px;
           width: 20px;
-        }
-
-        .mat-icon+span {
-          display: none;
         }
       }
     }
