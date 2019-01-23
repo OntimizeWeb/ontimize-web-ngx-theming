@@ -6,7 +6,7 @@
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $container-background: #ffffff;
+  $container-background: mat-color($background, 'card');
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
@@ -40,10 +40,6 @@
       padding: 18px;
     }
 
-    .application-layout-content-wrapper,
-    .o-form-layout-dialog-overlay .mat-dialog-container {
-      background: #eeeeee;
-    }
   }
 
   o-list-picker-dialog mat-toolbar o-search-input {
@@ -76,7 +72,7 @@
   o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-      background: $container-background;
+
       border-radius: $border-radius;
       min-height: initial;
 
@@ -150,7 +146,6 @@
 
     .o-table-container {
       border: none;
-      background: $container-background;
       border-radius: $border-radius;
       box-sizing: border-box;
 
@@ -186,10 +181,9 @@
       }
 
       table.mat-table {
-        background: $container-background;
-
+       
         &.small tr th {
-          font-size: 16px;
+          font-size: 14px;
         }
 
         &.medium tr th {
@@ -217,7 +211,10 @@
         }
 
       }
-
+      
+      .mat-paginator{
+        background: inherit;
+      }
     }
 
   }

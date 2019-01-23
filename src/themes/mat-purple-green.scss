@@ -3,7 +3,7 @@
 // Include non-theme styles for core.
 @include mat-core();
 
-$primary: mat-palette($mat-purple);
+$primary: mat-palette($mat-purple, 700, 500, 800);
 $accent:  mat-palette($mat-green, A200, A100, A400);
 
 $theme: mat-light-theme($primary, $accent);

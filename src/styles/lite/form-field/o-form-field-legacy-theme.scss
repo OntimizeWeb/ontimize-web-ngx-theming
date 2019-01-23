@@ -22,7 +22,6 @@
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale*0.1;
   //$wrapper-padding-bottom: 0;
-
   .mat-form-field.mat-form-field-appearance-legacy {
     .mat-form-field-wrapper {
       padding-bottom: $wrapper-padding-bottom;
@@ -43,7 +42,7 @@
     }
 
     .mat-form-field-subscript-wrapper {
-      margin-top: $subscript-margin-top ;
+      margin-top: $subscript-margin-top;
 
       // We want the subscript to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount (adjusted for the smaller font size);
