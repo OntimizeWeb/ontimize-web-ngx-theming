@@ -50,7 +50,7 @@
           border-radius: 0;
         }
       }
-      
+
       .mat-paginator-container {
         min-height: 0;
 
@@ -252,7 +252,6 @@
 
     }
   }
-
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -266,9 +265,7 @@
         }
       }
     }
-
   }
-
   /* MD-TAB-GROUP */
   .mat-tab-group.mat-tab-group {
     > .mat-tab-header {
@@ -280,7 +277,6 @@
     }
 
   }
-
   /* O-LIST-PICKER-DIALOG */
   .o-list-picker-dialog.o-list-picker-dialog {
     .mat-toolbar {
@@ -289,7 +285,6 @@
 
     .mat-dialog-content {
       padding: 0 12px;
-
       // 100% - buttons (49px)
       max-height: calc(100% - 49px);
       min-height: calc(100% - 49px);
@@ -343,6 +338,5 @@
 
       }
     }
-
   }
 }
