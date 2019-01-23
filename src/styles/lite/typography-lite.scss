@@ -4,8 +4,76 @@
 @import './form-field/o-form-field-outline-theme.scss';
 @import './form-field/o-form-field-standard-theme.scss';
 @mixin o-table-typography-lite($config) {
+  $height-row-small: 24px !default;
+  $height-row-medium: 32px !default;
+  $height-row-large: 36px !default;
+
+  .o-table-menu {
+    &.small {
+      .mat-menu-item {
+        line-height: $height-row-small;
+        height: $height-row-small;
+      }
+    }
+
+    &.medium {
+      .mat-menu-item {
+        line-height: $height-row-medium;
+        height: $height-row-medium;
+      }
+    }
+
+    &.large {
+      .mat-menu-item {
+        line-height: $height-row-large;
+        height: $height-row-large;
+      }
+    }
+  }
+
   .o-table.o-table {
     .o-table-container {
+      .toolbar .buttons .o-table-button .mat-button {
+
+        height: 30px;
+        border: none;
+        padding: 0 6px;
+        border-radius: 0;
+
+        &.disabled {
+          border: none;
+          border-radius: 0;
+        }
+
+        &:not(.disabled):hover {
+          border: none;
+          border-radius: 0;
+        }
+      }
+      
+      .mat-paginator-container {
+        min-height: 0;
+
+        .mat-paginator-page-size {
+          align-items: center;
+
+          .mat-form-field-infix {
+            border-top: 0;
+          }
+        }
+        .mat-paginator-range-actions{
+          min-height: 0;
+        }
+      }
+
+      .o-table-quickfilter {
+        .quickFilter {
+          .mat-form-field-infix {
+            border-top: 0;
+          }
+        }
+      }
+
       .mat-table {
         &.small {
           .mat-header-row,
@@ -17,12 +85,12 @@
             height: 28px;
 
             .mat-header-cell {
-              font-size: 16px;
+              font-size: 14px;
             }
           }
 
           .mat-row {
-            height: 24px;
+            height: $height-row-small;
 
             .mat-cell {
               font-size: 11px;
@@ -45,12 +113,12 @@
             height: 36px;
 
             .mat-header-cell {
-              font-size: 16px;
+              font-size: 14px;
             }
           }
 
           .mat-row {
-            height: 32px;
+            height: $height-row-medium;
 
             .mat-cell {
               font-size: 12px;
@@ -73,7 +141,7 @@
           }
 
           .mat-row {
-            height: 36px;
+            height: $height-row-large;
 
             .mat-cell {
               .image-avatar {
@@ -274,18 +342,27 @@
 @mixin o-common-typography-lite($config) {
   $font-size-title-container: .75;
 
-  /* O-COLUMN, O-ROW */
+  .o-column,
+  .o-row {
+    > .o-container {
+      > .o-container-title {
+        height: 30px;
+      }
+    }
+  }
+
   .o-column,
   .o-column-collapsible,
   .o-row,
   .o-row-collapsible {
     > .o-container {
       > .o-container-title {
-        border-bottom-width: 1px;
-        height: 30px;
-
         span {
-          font-size: 14px;
+          font: {
+            size: mat-font-size($config, button);
+            weight: mat-font-weight($config, button);
+          }
+
         }
       }
     }
@@ -299,7 +376,7 @@
       > .o-container-title {
         margin: 0;
         padding: 0;
-        font-size: 14px;
+        //font-size: 14px;
 
         span {
           padding-left: 0;
@@ -322,7 +399,7 @@
       .mat-expansion-panel-header {
         .mat-expansion-panel-header-title {
           span {
-            font-size: 14px;
+            //font-size: 14px;
             padding-left: 0;
           }
         }
@@ -359,7 +436,6 @@
     }
   }
 
-
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -379,16 +455,13 @@
   /* MD-TAB-GROUP */
   .mat-tab-group.mat-tab-group {
     > .mat-tab-header {
-      margin: 8px 0;
+      padding-top: 8px;
 
       .mat-tab-label {
         height: 32px;
       }
     }
 
-    > .mat-tab-body-wrapper {
-      padding: 0;
-    }
   }
 
   /* O-LIST-PICKER-DIALOG */
