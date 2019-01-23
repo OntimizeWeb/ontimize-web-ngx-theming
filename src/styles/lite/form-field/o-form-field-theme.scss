@@ -31,24 +31,6 @@
     }
   }
 
-  .mat-form-field.mat-form-field-invalid.mat-focused,
-  .mat-form-field.mat-form-field-invalid:hover {
-    .mat-form-field-subscript-wrapper {
-      top: 100%;
-      z-index: 5;
-      max-width: 100%;
-      padding: .25em 0;
-      background: #f44336;
-      border-radius: 3px;
-
-      .mat-error {
-        display: block;
-        color: #FFFFFF;
-      }
-    }
-
-  }
-
   .mat-form-field {
     font-size: mat-font-size($config, input);
   }
