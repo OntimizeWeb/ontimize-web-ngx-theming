@@ -23,31 +23,31 @@
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale*0.1;
   //$wrapper-padding-bottom: 0;
 
-  .mat-form-field-appearance-legacy {
+  .mat-form-field.mat-form-field-appearance-legacy {
     .mat-form-field-wrapper {
-      padding-bottom: $wrapper-padding-bottom !important;
+      padding-bottom: $wrapper-padding-bottom;
     }
 
     .mat-form-field-infix {
-      padding: $infix-padding 0 !important;
+      padding: $infix-padding 0;
     }
 
     .mat-form-field-label {
-      top: $infix-margin-top + $infix-padding!important;
+      top: $infix-margin-top + $infix-padding;
     }
 
     .mat-form-field-underline {
       // We want the underline to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount.
-      bottom: $wrapper-padding-bottom!important;
+      bottom: $wrapper-padding-bottom;
     }
 
     .mat-form-field-subscript-wrapper {
-      margin-top: $subscript-margin-top !important;
+      margin-top: $subscript-margin-top ;
 
       // We want the subscript to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount (adjusted for the smaller font size);
-      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale})!important;
+      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
   }
 

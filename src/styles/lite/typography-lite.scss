@@ -89,48 +89,93 @@
 }
 
 @mixin o-common-typography-lite($config) {
-  $font-size-title-container: 0.75;
+  $font-size-title-container: .75;
+
   /* O-COLUMN, O-ROW */
-  o-column,
-  o-row {
-    .o-container {
-      .container-title {
+  .o-column,
+  .o-column-collapsible,
+  .o-row,
+  .o-row-collapsible {
+    > .o-container {
+      > .o-container-title {
         border-bottom-width: 1px;
+        height: 30px;
 
         span {
           font-size: 14px;
-          font-weight: 600;
         }
-      }
-
-      .container-content {
-        padding: 6px 6px 6px 12px;
       }
     }
   }
 
-  .o-column.appearance-outline,
-  .o-row.appearance-outline {
+  .o-column-collapsible:not(.o-appearance-outline),
+  .o-column:not(.o-appearance-outline),
+  .o-row-collapsible:not(.o-appearance-outline),
+  .o-row:not(.o-appearance-outline) {
     > .o-container {
-      .container-title {
+      > .o-container-title {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+
         span {
-          font-size: $font-size-title-container* 1em;
+          padding-left: 0;
         }
       }
     }
-
-    .container-outline {
-      .container-outline-end,
-      .container-outline-start {
-        border-width: 1px;
-      }
-
-      .container-outline-gap {
-        border-width: 1px;
-      }
-    }
-
   }
+
+  .o-column-collapsible:not(.o-appearance-outline),
+  .o-row-collapsible:not(.o-appearance-outline) {
+    > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .o-column-collapsible,
+  .o-row-collapsible {
+    > .o-container.mat-expansion-panel {
+      .mat-expansion-panel-header {
+        .mat-expansion-panel-header-title {
+          span {
+            font-size: 14px;
+            padding-left: 0;
+          }
+        }
+      }
+
+      .mat-expansion-panel-content .mat-expansion-panel-body {
+        > .o-container-scroll {
+          padding: 6px;
+        }
+      }
+
+    }
+  }
+
+  .o-column > .o-container .o-container-scroll.o-container-gap,
+  .o-row > .o-container .o-container-scroll.o-container-gap {
+    padding: 6px;
+  }
+
+  .o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+  .o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+    padding: 12px;
+  }
+
+  .o-column-collapsible.o-appearance-outline,
+  .o-row-collapsible.o-appearance-outline {
+    > .o-container.mat-expansion-panel {
+      .mat-expansion-panel-content .mat-expansion-panel-body {
+        > .o-container-scroll {
+          padding: 12px;
+        }
+      }
+
+    }
+  }
+
 
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
@@ -149,9 +194,18 @@
   }
 
   /* MD-TAB-GROUP */
-  .mat-tab-group .mat-tab-label {
-    height: 32px;
-    padding: 0 6px;
+  .mat-tab-group.mat-tab-group {
+    > .mat-tab-header {
+      margin: 8px 0;
+
+      .mat-tab-label {
+        height: 32px;
+      }
+    }
+
+    > .mat-tab-body-wrapper {
+      padding: 0;
+    }
   }
 
   /* O-LIST-PICKER-DIALOG */
@@ -197,6 +251,7 @@
         max-height: $mat-toolbar-height-desktop;
         padding: 0;
         box-shadow: none;
+        font-size: 16px;
       }
 
       // &[layout-padding] {
@@ -206,7 +261,6 @@
       .mat-button,
       .mat-button[disabled] {
         border: none;
-        height: 100%;
         border-radius: 0;
       }
 

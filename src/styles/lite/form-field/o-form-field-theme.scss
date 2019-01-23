@@ -4,7 +4,7 @@
   // The amount to scale the font for the floating label and subscript.
   $subscript-font-scale: .75;
   // The amount to scale the font for the prefix and suffix icons.
-  $prefix-suffix-icon-font-scale: 1.5;
+  $prefix-suffix-icon-font-scale: 1.4;
 
   // The padding on the infix. Mocks show half of the text size.
   $infix-padding: .3em;
@@ -22,11 +22,11 @@
   // The padding applied to the form-field-wrapper to reserve space for the subscript, since it's
   // absolutely positioned. This is a combination of the subscript's margin and line-height, but we
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale * .3;
+  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale * .0;
   //$wrapper-padding-bottom: 0;
 
   .mat-form-field-wrapper {
-    padding-bottom: $wrapper-padding-bottom !important;
+    padding-bottom: $wrapper-padding-bottom;
 
   }
 
@@ -48,41 +48,53 @@
 
       .mat-error {
         display: block;
-        color:#FFFFFF;
+        color: #FFFFFF;
       }
     }
 
   }
-
 
   .mat-form-field {
     font-size: mat-font-size($config, input);
   }
 
+  .mat-form-field.icon-field .mat-form-field-suffix .icon-btn,
+  .mat-form-field.icon-field .mat-form-field-suffix .mat-icon-button,
+  .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-prefix .mat-icon-button,
+  .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-wrapper .mat-form-field-suffix .mat-icon-button {
+    height: $prefix-suffix-icon-font-scale * 1em;
+    width: $prefix-suffix-icon-font-scale * 1em;
+  }
+  .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]){
+    height:20px;
+    width: 20px;
+  }
+  
   .mat-form-field-prefix,
   .mat-form-field-suffix {
     // Allow icons in a prefix or suffix to adapt to the correct size.
-    padding: $infix-padding 0 !important;
+    padding: $infix-padding 0;
+
     .mat-icon {
-      font-size: $prefix-suffix-icon-font-size!important;
-     // line-height: $line-height!important;
-      height: $line-height * 1em!important;
+      font-size: $prefix-suffix-icon-font-size;
+      // line-height: $line-height!important;
+      height: $line-height * 1em;
     }
 
     // Allow icon buttons in a prefix or suffix to adapt to the correct size.
     .mat-icon-button {
-      height: $prefix-suffix-icon-font-scale * 1em !important;
-      width: $prefix-suffix-icon-font-scale * 1em !important;
+      height: $prefix-suffix-icon-font-scale * 1em;
+      width: $prefix-suffix-icon-font-scale * 1em;
 
       .mat-icon {
-        height: $line-height * 1em!important;
-        line-height: $line-height!important;
+        height: $line-height * 1em;
+        line-height: $line-height;
       }
     }
   }
 
   .mat-form-field-infix {
-    padding: $infix-padding 0 !important;
+    padding: $infix-padding 0;
     border-top: $infix-margin-top solid transparent;
   }
 
@@ -100,27 +112,27 @@
   }
 
   .mat-form-field-label-wrapper {
-    top: -$infix-margin-top!important;
-    padding-top: $infix-margin-top !important;
+    top: -$infix-margin-top;
+    padding-top: $infix-margin-top;
   }
 
   .mat-form-field-label {
-    top: $infix-margin-top + $infix-padding!important;
+    top: $infix-margin-top + $infix-padding;
   }
 
   .mat-form-field-underline {
     // We want the underline to start at the end of the content box, not the padding box,
     // so we move it up by the padding amount.
-    bottom: $wrapper-padding-bottom!important;
+    bottom: $wrapper-padding-bottom;
   }
 
   .mat-form-field-subscript-wrapper {
-    font-size: $subscript-font-size!important;
-    margin-top: $subscript-margin-top !important;
+    font-size: $subscript-font-size;
+    margin-top: $subscript-margin-top;
 
     // We want the subscript to start at the end of the content box, not the padding box,
     // so we move it up by the padding amount (adjusted for the smaller font size);
-    top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale})!important;
+    top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
   }
   @include o-mat-checkbox-typography($config);
   @include o-mat-form-field-legacy-typography($config);
@@ -129,7 +141,7 @@
   @include o-mat-form-field-standard-typography($config);
 }
 @mixin o_mat-form-field-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-dedupe) scale($font-scale) !important;
+  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-dedupe) scale($font-scale);
   width: 100% / $font-scale + $mat-form-field-dedupe;
 
   $mat-form-field-dedupe: $mat-form-field-dedupe + .00001 !global;
@@ -140,15 +152,16 @@
   // The ripple size of the checkbox
   $_mat-checkbox-ripple-radius: 17px;
 
-  .mat-checkbox {
-    font-size: mat-font-size($config, input);
-  }
- 
+  .o-checkbox {
+    .mat-checkbox {
+      font-size: mat-font-size($config, input);
+    }
 
-  .mat-checkbox-ripple {
-    left: calc(50% - #{$_mat-checkbox-ripple-radius})!important;
-    top: calc(50% - #{$_mat-checkbox-ripple-radius})!important;
-    height: $_mat-checkbox-ripple-radius * 2!important;
-    width: $_mat_checkbox-ripple-radius * 2!important;
+    .mat-checkbox-ripple {
+      left: calc(50% - #{$_mat-checkbox-ripple-radius});
+      top: calc(50% - #{$_mat-checkbox-ripple-radius});
+      height: $_mat-checkbox-ripple-radius * 2;
+      width: $_mat_checkbox-ripple-radius * 2;
+    }
   }
 }
