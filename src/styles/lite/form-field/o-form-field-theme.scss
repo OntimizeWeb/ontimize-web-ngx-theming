@@ -25,11 +25,6 @@
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale * .0;
   //$wrapper-padding-bottom: 0;
 
-  .mat-form-field-wrapper {
-    padding-bottom: $wrapper-padding-bottom;
-
-  }
-
   .mat-form-field.mat-form-field-invalid {
     .mat-error {
       display: none;
@@ -65,74 +60,82 @@
     height: $prefix-suffix-icon-font-scale * 1em;
     width: $prefix-suffix-icon-font-scale * 1em;
   }
-  .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]){
-    height:20px;
+
+  .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
+    height: 20px;
     width: 20px;
   }
-  
-  .mat-form-field-prefix,
-  .mat-form-field-suffix {
-    // Allow icons in a prefix or suffix to adapt to the correct size.
-    padding: $infix-padding 0;
 
-    .mat-icon {
-      font-size: $prefix-suffix-icon-font-size;
-      // line-height: $line-height!important;
-      height: $line-height * 1em;
+  .mat-form-field {
+    .mat-form-field-wrapper {
+      padding-bottom: $wrapper-padding-bottom;
+
     }
 
-    // Allow icon buttons in a prefix or suffix to adapt to the correct size.
-    .mat-icon-button {
-      height: $prefix-suffix-icon-font-scale * 1em;
-      width: $prefix-suffix-icon-font-scale * 1em;
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      // Allow icons in a prefix or suffix to adapt to the correct size.
+      padding: $infix-padding 0;
 
       .mat-icon {
+        font-size: $prefix-suffix-icon-font-size;
+        // line-height: $line-height!important;
         height: $line-height * 1em;
-        line-height: $line-height;
+      }
+
+      // Allow icon buttons in a prefix or suffix to adapt to the correct size.
+      .mat-icon-button {
+        height: $prefix-suffix-icon-font-scale * 1em;
+        width: $prefix-suffix-icon-font-scale * 1em;
+
+        .mat-icon {
+          height: $line-height * 1em;
+          line-height: $line-height;
+        }
       }
     }
-  }
 
-  .mat-form-field-infix {
-    padding: $infix-padding 0;
-    border-top: $infix-margin-top solid transparent;
-  }
-
-  .mat-form-field-can-float {
-    &.mat-form-field-should-float .mat-form-field-label,
-    .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-      @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+    .mat-form-field-infix {
+      padding: $infix-padding 0;
+      border-top: $infix-margin-top solid transparent;
     }
 
-    // Server-side rendered matInput with a label attribute but label not shown
-    // (used as a pure CSS stand-in for mat-form-field-should-float).
-    .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-      @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+    .mat-form-field-can-float {
+      &.mat-form-field-should-float .mat-form-field-label,
+      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+        @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+      }
+
+      // Server-side rendered matInput with a label attribute but label not shown
+      // (used as a pure CSS stand-in for mat-form-field-should-float).
+      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+        @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+      }
     }
-  }
 
-  .mat-form-field-label-wrapper {
-    top: -$infix-margin-top;
-    padding-top: $infix-margin-top;
-  }
+    .mat-form-field-label-wrapper {
+      top: -$infix-margin-top;
+      padding-top: $infix-margin-top;
+    }
 
-  .mat-form-field-label {
-    top: $infix-margin-top + $infix-padding;
-  }
+    .mat-form-field-label {
+      top: $infix-margin-top + $infix-padding;
+    }
 
-  .mat-form-field-underline {
-    // We want the underline to start at the end of the content box, not the padding box,
-    // so we move it up by the padding amount.
-    bottom: $wrapper-padding-bottom;
-  }
+    .mat-form-field-underline {
+      // We want the underline to start at the end of the content box, not the padding box,
+      // so we move it up by the padding amount.
+      bottom: $wrapper-padding-bottom;
+    }
 
-  .mat-form-field-subscript-wrapper {
-    font-size: $subscript-font-size;
-    margin-top: $subscript-margin-top;
+    .mat-form-field-subscript-wrapper {
+      font-size: $subscript-font-size;
+      margin-top: $subscript-margin-top;
 
-    // We want the subscript to start at the end of the content box, not the padding box,
-    // so we move it up by the padding amount (adjusted for the smaller font size);
-    top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
+      // We want the subscript to start at the end of the content box, not the padding box,
+      // so we move it up by the padding amount (adjusted for the smaller font size);
+      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
+    }
   }
   @include o-mat-checkbox-typography($config);
   @include o-mat-form-field-legacy-typography($config);
