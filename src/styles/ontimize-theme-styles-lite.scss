@@ -1,6 +1,7 @@
 
 @import 'node_modules/@angular/material/theming';
 
+@import './lite/datatable-lite.scss';
 @import './lite/layout-lite.scss';
 @import './lite/typography-lite.scss';
 @import './lite/typography/ontimize-lite.scss';
@@ -19,7 +20,6 @@
 
   @include o-table-typography-lite($typography);
   @include o-mat-form-field-typography-lite($typography);
-  @include o-datatable-typography-lite($typography);
   @include o-common-typography-lite($typography);
   @include layout-padding-margin-lite();
 
