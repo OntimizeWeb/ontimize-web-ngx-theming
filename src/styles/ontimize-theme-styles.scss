@@ -1,13 +1,12 @@
 @import 'node_modules/@angular/material/theming';
 @import './lite/layout.scss';
-
 @mixin ontimize-theme-styles($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $container-background: mat-color($background, 'card');;
+  $container-background: mat-color($background, 'card');
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
@@ -69,12 +68,11 @@
     font-weight: 700;
   }
 
-
   /* FORM */
   o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-    
+
       border-radius: $border-radius;
       min-height: initial;
 
@@ -148,7 +146,6 @@
 
     .o-table-container {
       border: none;
-      background: $container-background;
       border-radius: $border-radius;
       box-sizing: border-box;
 
@@ -184,8 +181,7 @@
       }
 
       table.mat-table {
-        background: $container-background;
-
+       
         &.small tr th {
           font-size: 14px;
         }
@@ -215,7 +211,10 @@
         }
 
       }
-
+      
+      .mat-paginator{
+        background: inherit;
+      }
     }
 
   }
