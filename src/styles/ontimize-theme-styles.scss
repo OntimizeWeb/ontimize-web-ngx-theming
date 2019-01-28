@@ -65,33 +65,28 @@
   }
 
   /* FORM */
-  o-form-toolbar {
+  .o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
       background: $container-background;
       border-radius: $border-radius;
       min-height: initial;
 
-      button.mat-button {
+      .mat-icon-button:not([disabled]) .mat-icon {
         color: mat-color($foreground, secondary-text);
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        margin: 0 $basic-padding-size;
+      }
+
+      .o-form-toolbar-button {
         line-height: $button-line-height;
 
-        &[disabled] {
-          border: 1px solid mat-color($background, disabled-button);
+        &.mat-stroked-button {
+          color: mat-color($foreground, secondary-text);
+          margin: 0 $basic-padding-size;
         }
       }
 
-      button.mat-icon-button {
+      .o-form-navigation span {
         color: mat-color($foreground, secondary-text);
-        margin: 0 $basic-padding-size;
-        line-height: $button-line-height;
-
-        &:not([disabled]) mat-icon {
-          color: mat-color($foreground, secondary-text);
-        }
       }
     }
   }
