@@ -1,13 +1,21 @@
 $small-header-height: 28px;
 $small-row-height: 24px;
+$small-row-font-size: 11px;
 $medium-header-height: 36px;
 $medium-row-height: 32px;
+$medium-row-font-size: 12px;
 $large-header-height: 40px;
 $large-row-height: 36px;
 @mixin o-table-typography-lite($config) {
   .o-table.o-table {
     .o-table-container {
       .mat-table {
+        .mat-form-field {
+          .mat-form-field-infix {
+            border-top: 0;
+          }
+        }
+
         &.small {
           .mat-header-row,
           .mat-row {
@@ -29,7 +37,10 @@ $large-row-height: 36px;
             max-height: $small-row-height;
 
             .mat-cell {
-              font-size: 11px;
+              .mat-form-field {
+                font-size: $small-row-font-size;
+              }
+              font-size: $small-row-font-size;
 
               .image-avatar {
                 width: 20px;
@@ -60,7 +71,10 @@ $large-row-height: 36px;
             max-height: $medium-row-height;
 
             .mat-cell {
-              font-size: 12px;
+              .mat-form-field {
+                font-size: $medium-row-font-size;
+              }
+              font-size: $medium-row-font-size;
 
               .image-avatar {
                 width: 26px;
@@ -191,8 +205,23 @@ $large-row-height: 36px;
 
   .mat-tooltip-panel {
     .o-tooltip.mat-tooltip {
-      margin-top: 5px;
-      margin-bottom: 0;
+      &.after,
+      &.right {
+        margin-left: 5px;
+      }
+
+      &.before,
+      &.left {
+        margin-right: 5px;
+      }
+
+      &.above {
+        margin-bottom: -15px;
+      }
+
+      &.below {
+        margin-top: 5px;
+      }
     }
   }
   @media(max-width: 599px) {
@@ -221,9 +250,10 @@ $large-row-height: 36px;
         padding: 0;
       }
 
-      .mat-button {
+      .mat-stroked-button {
         min-width: auto;
         margin: 0 $margin-buttom;
+        border: none;
 
         .mat-icon {
           height: 20px;
