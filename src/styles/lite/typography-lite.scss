@@ -33,6 +33,30 @@
 
   .o-table.o-table {
     .o-table-container {
+      .mat-table.large,
+      .mat-table.medium,
+      .mat-table.small {
+        .mat-header-cell {
+          .header-title-container {
+            margin-right: 12px;
+          }
+
+          .column-filter-icon {
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+          }
+
+          .mat-sort-header-arrow {
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .o-table.o-table {
+    .o-table-container {
       .toolbar .buttons .o-table-button .mat-button {
 
         height: 30px;
@@ -61,7 +85,8 @@
             border-top: 0;
           }
         }
-        .mat-paginator-range-actions{
+
+        .mat-paginator-range-actions {
           min-height: 0;
         }
       }
@@ -155,7 +180,6 @@
     }
   }
 }
-
 @mixin o-common-typography-lite($config) {
   $font-size-title-container: .75;
 
@@ -257,12 +281,8 @@
     .o-app-header {
       height: 40px;
 
-      .o-app-header {
-        padding: 0 16px 0 0;
-
-        .sidenav-toggle {
-          padding: 8px;
-        }
+      .sidenav-toggle {
+        padding: 8px;
       }
     }
   }
