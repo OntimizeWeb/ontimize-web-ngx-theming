@@ -4,29 +4,34 @@
 @import './form-field/o-form-field-outline-theme.scss';
 @import './form-field/o-form-field-standard-theme.scss';
 @mixin o-table-typography-lite($config) {
-  $height-row-small: 24px !default;
-  $height-row-medium: 32px !default;
-  $height-row-large: 36px !default;
+  $small-header-height: 28px;
+  $small-row-height: 24px;
+  $small-row-font-size: 11px;
+  $medium-header-height: 36px;
+  $medium-row-height: 32px;
+  $medium-row-font-size: 12px;
+  $large-header-height: 40px;
+  $large-row-height: 36px;
 
   .o-table-menu {
     &.small {
       .mat-menu-item {
-        line-height: $height-row-small;
-        height: $height-row-small;
+        line-height: $small-row-height;
+        height: $small-row-height;
       }
     }
 
     &.medium {
       .mat-menu-item {
-        line-height: $height-row-medium;
-        height: $height-row-medium;
+        line-height: $medium-row-height;
+        height: $medium-row-height;
       }
     }
 
     &.large {
       .mat-menu-item {
-        line-height: $height-row-large;
-        height: $height-row-large;
+        line-height: $large-row-height;
+        height: $large-row-height;
       }
     }
   }
@@ -39,6 +44,7 @@
         .mat-header-cell {
           font-weight: 600;
           font-size: 14px;
+
           .header-title-container {
             margin-right: 12px;
           }
@@ -102,6 +108,12 @@
       }
 
       .mat-table {
+        .mat-form-field {
+          .mat-form-field-infix {
+            border-top: 0;
+          }
+        }
+
         &.small {
           .mat-header-row,
           .mat-row {
@@ -109,15 +121,17 @@
           }
 
           .mat-header-row {
-            height: 28px;
-
+            height: $small-header-height;
           }
 
           .mat-row {
-            height: $height-row-small;
+            height: $small-row-height;
 
             .mat-cell {
-              font-size: 11px;
+              .mat-form-field {
+                font-size: $small-row-font-size;
+              }
+              font-size: $small-row-font-size;
 
               .image-avatar {
                 width: 20px;
@@ -134,15 +148,17 @@
           }
 
           .mat-header-row {
-            height: 36px;
-
+            height: $medium-header-height;
           }
 
           .mat-row {
-            height: $height-row-medium;
+            height: $medium-row-height;
 
             .mat-cell {
-              font-size: 12px;
+              .mat-form-field {
+                font-size: $medium-row-font-size;
+              }
+              font-size: $medium-row-font-size;
 
               .image-avatar {
                 width: 26px;
@@ -154,12 +170,11 @@
 
         &.large {
           .mat-header-row {
-            height: 40px;
-
+            height: $large-header-height;
           }
 
           .mat-row {
-            height: $height-row-large;
+            height: $large-row-height;
 
             .mat-cell {
               .image-avatar {
@@ -217,107 +232,129 @@
         }
       }
     }
-  }
 
-  .o-column-collapsible:not(.o-appearance-outline),
-  .o-row-collapsible:not(.o-appearance-outline) {
-    > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-      padding: 0;
-      margin: 0;
+    .o-column-collapsible:not(.o-appearance-outline),
+    .o-row-collapsible:not(.o-appearance-outline) {
+      > .o-container.mat-expansion-panel .mat-expansion-panel-header {
+        padding: 0;
+        margin: 0;
+      }
     }
-  }
 
-  .o-column-collapsible,
-  .o-row-collapsible {
-    > .o-container.mat-expansion-panel {
-      .mat-expansion-panel-header {
-        .mat-expansion-panel-header-title {
-          span {
-            //font-size: 14px;
-            padding-left: 0;
+    .o-column-collapsible,
+    .o-row-collapsible {
+      > .o-container.mat-expansion-panel {
+        .mat-expansion-panel-header {
+          .mat-expansion-panel-header-title {
+            span {
+              //font-size: 14px;
+              padding-left: 0;
+            }
           }
         }
-      }
 
-      .mat-expansion-panel-content .mat-expansion-panel-body {
-        > .o-container-scroll {
-          padding: 6px;
+        .mat-expansion-panel-content .mat-expansion-panel-body {
+          > .o-container-scroll {
+            padding: 6px;
+          }
+        }
+
+      }
+    }
+
+    .o-column > .o-container .o-container-scroll.o-container-gap,
+    .o-row > .o-container .o-container-scroll.o-container-gap {
+      padding: 6px;
+    }
+
+    .o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
+    .o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
+      padding: 12px;
+    }
+
+    .o-column-collapsible.o-appearance-outline,
+    .o-row-collapsible.o-appearance-outline {
+      > .o-container.mat-expansion-panel {
+        .mat-expansion-panel-content .mat-expansion-panel-body {
+          > .o-container-scroll {
+            padding: 12px;
+          }
+        }
+
+      }
+    }
+    /* O-APP-LAYOUT */
+    .o-app-sidenav.o-app-sidenav {
+      .o-app-header {
+        height: 40px;
+
+        .sidenav-toggle {
+          padding: 8px;
+        }
+      }
+    }
+    /* MD-TAB-GROUP */
+    .mat-tab-group.mat-tab-group {
+      > .mat-tab-header {
+        padding-top: 8px;
+
+        .mat-tab-label {
+          height: 32px;
         }
       }
 
     }
-  }
+    /* O-LIST-PICKER-DIALOG */
+    .o-list-picker-dialog.o-list-picker-dialog {
+      .mat-toolbar {
+        padding-top: 8px;
+      }
 
-  .o-column > .o-container .o-container-scroll.o-container-gap,
-  .o-row > .o-container .o-container-scroll.o-container-gap {
-    padding: 6px;
-  }
+      .mat-dialog-content {
+        padding: 0 12px;
+        // 100% - buttons (49px)
+        max-height: calc(100% - 49px);
+        min-height: calc(100% - 49px);
 
-  .o-column.o-appearance-outline > .o-container .o-container-scroll.o-container-gap,
-  .o-row.o-appearance-outline > .o-container .o-container-scroll.o-container-gap {
-    padding: 12px;
-  }
-
-  .o-column-collapsible.o-appearance-outline,
-  .o-row-collapsible.o-appearance-outline {
-    > .o-container.mat-expansion-panel {
-      .mat-expansion-panel-content .mat-expansion-panel-body {
-        > .o-container-scroll {
-          padding: 12px;
+        &.o-list-picker-has-filter {
+          // 100% - toolbar (64px) - buttons (49px)
+          max-height: calc(100% - 113px);
+          min-height: calc(100% - 113px);
         }
       }
 
-    }
-  }
-  /* O-APP-LAYOUT */
-  .o-app-sidenav.o-app-sidenav {
-    .o-app-header {
-      height: 40px;
-
-      .sidenav-toggle {
-        padding: 8px;
-      }
-    }
-  }
-  /* MD-TAB-GROUP */
-  .mat-tab-group.mat-tab-group {
-    > .mat-tab-header {
-      padding-top: 8px;
-
-      .mat-tab-label {
-        height: 32px;
+      .mat-dialog-actions {
+        padding: 6px 12px;
       }
     }
 
-  }
-  /* O-LIST-PICKER-DIALOG */
-  .o-list-picker-dialog.o-list-picker-dialog {
-    .mat-toolbar {
-      padding-top: 8px;
-    }
+    .mat-tooltip-panel {
+      .o-tooltip.mat-tooltip {
+        &.after,
+        &.right {
+          margin-left: 5px;
+        }
 
-    .mat-dialog-content {
-      padding: 0 12px;
-      // 100% - buttons (49px)
-      max-height: calc(100% - 49px);
-      min-height: calc(100% - 49px);
+        &.before,
+        &.left {
+          margin-right: 5px;
+        }
 
-      &.o-list-picker-has-filter {
-        // 100% - toolbar (64px) - buttons (49px)
-        max-height: calc(100% - 113px);
-        min-height: calc(100% - 113px);
+        &.above {
+          margin-bottom: -15px;
+        }
+
+        &.below {
+          margin-top: 5px;
+        }
       }
     }
-
-    .mat-dialog-actions {
-      padding: 6px 12px;
-    }
-  }
-  @media(max-width: 599px) {
-    .o-list-picker-dialog.o-list-picker-dialog .mat-dialog-content.o-list-picker-has-filter {
-      // 100% - toolbar (56px) - buttons (49px)
-      max-height: calc(100% - 105px);
-      min-height: calc(100% - 105px);
+    @media(max-width: 599px) {
+      .o-list-picker-dialog.o-list-picker-dialog .mat-dialog-content.o-list-picker-has-filter {
+        // 100% - toolbar (56px) - buttons (49px)
+        max-height: calc(100% - 105px);
+        min-height: calc(100% - 105px);
+      }
     }
   }
 }
@@ -341,10 +378,10 @@
             border-radius: 0;
           }
 
-          .o-form-toolbar-button {
+          .mat-stroked-button {
             min-width: auto;
             margin: 0 $margin-buttom;
-
+            border: none;
           }
         }
       }
