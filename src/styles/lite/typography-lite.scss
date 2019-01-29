@@ -2,34 +2,24 @@
   .o-table.o-table {
     .o-table-container {
       .mat-table {
+        .mat-form-field {
+          .mat-form-field-infix {
+            border-top: 0;
+          }
+        }
+
         &.small {
           .mat-header-row,
           .mat-row {
             padding: 0;
           }
 
-          .mat-header-row {
-            min-height: 28px;
-            max-height: 28px;
-            line-height: 28px;
-
-            .mat-header-cell {
-              font-size: 16px;
+          .mat-row .mat-cell {
+            .image-avatar {
+              width: 20px;
+              height: 20px;
             }
-          }
 
-          .mat-row {
-            min-height: 24px;
-            max-height: 24px;
-
-            .mat-cell {
-              font-size: 11px;
-
-              .image-avatar {
-                width: 20px;
-                height: 20px;
-              }
-            }
           }
         }
 
@@ -39,51 +29,19 @@
             padding: 0 6px;
           }
 
-          .mat-header-row {
-            min-height: 36px;
-            max-height: 36px;
-            line-height: 36px;
-
-            .mat-header-cell {
-              font-size: 16px;
-            }
-          }
-
-          .mat-row {
-            min-height: 32px;
-            max-height: 32px;
-
-            .mat-cell {
-              font-size: 12px;
-
-              .image-avatar {
-                width: 26px;
-                height: 26px;
-              }
+          .mat-row .mat-cell {
+            .image-avatar {
+              width: 26px;
+              height: 26px;
             }
           }
         }
 
         &.large {
-          .mat-header-row {
-            min-height: 40px;
-            max-height: 40px;
-            line-height: 40px;
-
-            .mat-header-cell {
-              font-size: 16px;
-            }
-          }
-
-          .mat-row {
-            min-height: 36px;
-            max-height: 36px;
-
-            .mat-cell {
-              .image-avatar {
-                width: 30px;
-                height: 30px;
-              }
+          .mat-row .mat-cell {
+            .image-avatar {
+              width: 30px;
+              height: 30px;
             }
           }
         }
@@ -94,12 +52,13 @@
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
   $line-spacing: ($line-height - 1) / 2;
-
   $infix-padding: .5em - ($line-spacing * 4);
   $subscript-font-scale: .75;
   $infix-margin-top: 1em * $line-height * $subscript-font-scale;
   $subscript-margin-top: .5em / $subscript-font-scale - ($line-spacing * 6);
-  $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 0.9);
+
+  // $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 0.3);
+  $wrapper-padding-bottom: 0; //($subscript-margin-top + $line-height) * $subscript-font-scale * .3;
 
   .mat-form-field {
     .mat-form-field-wrapper {
@@ -124,203 +83,21 @@
       border-top: $infix-margin-top solid transparent;
     }
 
+    .mat-form-field-underline {
+      // We want the underline to start at the end of the content box, not the padding box,
+      // so we move it up by the padding amount.
+      bottom: 0; //$wrapper-padding-bottom!important;
+    }
+
     .mat-form-field-subscript-wrapper {
-      margin-top: $subscript-margin-top;
-      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
-    }
-  }
-}
-@mixin o-datatable-typography-lite($config) {
-  .o-table.o-table .o-table-container table {
-    &.medium,
-    &.small {
-      .o-table-column.o-table-column-action mat-icon {
-        font-size: 14px;
-        line-height: 18px;
-      }
-    }
-
-    .dt-buttons .dt-button {
-      font-size: 12px;
-    }
-  }
-
-  .o-table.o-table .o-table-container table.small {
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-    tbody td:nth-child(2):not(.o-table-column-action),
-    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:first-child:not(.o-table-column-select-checkbox),
-    thead tr th:nth-child(2),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-      padding: 0 12px 0 8px !important;
-    }
-
-    thead tr th:first-child.o-table-column-image {
-      padding-right: 20px !important;
-    }
-
-    thead tr th {
-      &.sorting::after,
-      &.sorting::before,
-      &.sorting_asc::after,
-      &.sorting_asc::before,
-      &.sorting_asc_disabled::after,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc::after,
-      &.sorting_desc::before,
-      &.sorting_desc_disabled::after,
-      &.sorting_desc_disabled::before {
-        font-size: 12px;
-      }
-
-      &.o-table-column-action {
-        padding: 0 10px !important;
-
-        &:last-child {
-          padding-right: 16px !important;
-        }
-      }
-    }
-
-    tbody {
-      td {
-        font-size: 11px;
-
-        .image-avatar {
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      tr {
-        height: 24px;
-      }
-    }
-
-    thead tr {
-      height: 28px;
-
-      th {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .o-table.o-table .o-table-container table.medium {
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-    tbody td:nth-child(2):not(.o-table-column-action),
-    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:first-child:not(.o-table-column-select-checkbox),
-    thead tr th:nth-child(2),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-      padding: 0 16px 0 12px !important;
-    }
-
-    thead tr th:first-child.o-table-column-image {
-      padding-right: 32px !important;
-    }
-
-    thead tr th {
-      &.sorting::after,
-      &.sorting::before,
-      &.sorting_asc::after,
-      &.sorting_asc::before,
-      &.sorting_asc_disabled::after,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc::after,
-      &.sorting_desc::before,
-      &.sorting_desc_disabled::after,
-      &.sorting_desc_disabled::before {
-        font-size: 12px;
-      }
-
-      &.o-table-column-action {
-        padding: 0 12px !important;
-
-        &:last-child {
-          padding-right: 20px !important;
-        }
-      }
-    }
-
-    tbody {
-      td {
-        font-size: 12px;
-
-        .image-avatar {
-          width: 28px;
-          height: 28px;
-        }
-      }
-
-      tr {
-        height: 32px;
-      }
-    }
-
-    thead tr {
-      height: 36px;
-
-      th {
-        font-size: 16px;
-      }
-    }
-  }
-
-  .o-table.o-table .o-table-container table.large {
-    tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-    tbody td:nth-child(2):not(.o-table-column-action),
-    tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-    thead tr th:first-child:not(.o-table-column-select-checkbox),
-    thead tr th:nth-child(2),
-    thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-      padding: 0 20px 0 16px !important;
-    }
-
-    thead tr th:first-child.o-table-column-image {
-      padding-right: 32px !important;
-    }
-
-    thead tr th {
-      &.sorting::after,
-      &.sorting::before,
-      &.sorting_asc::after,
-      &.sorting_asc::before,
-      &.sorting_asc_disabled::after,
-      &.sorting_asc_disabled::before,
-      &.sorting_desc::after,
-      &.sorting_desc::before,
-      &.sorting_desc_disabled::after,
-      &.sorting_desc_disabled::before {
-        font-size: 13px;
-      }
-    }
-
-    .o-table-column.o-table-column-action md-icon {
-      font-size: 16px;
-      line-height: 20px;
-    }
-
-    thead tr {
-      height: 40px;
-
-      th {
-        font-size: 18px;
-      }
-    }
-
-    tbody tr {
-      height: 36px;
+      // margin-top: $subscript-margin-top;
+      margin-top: 0;
+      top: 100%;
+      // top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
   }
 }
 @mixin o-common-typography-lite($config) {
-  /* O-COLUMN, O-ROW */
-  o-column .o-container .container-content,
-  o-row .o-container .container-content {
-    padding: 6px 6px 6px 18px;
-  }
-
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -332,9 +109,7 @@
         }
       }
     }
-
   }
-
   /* MD-TAB-GROUP */
   .mat-tab-group .mat-tab-label {
     > .mat-tab-header {
@@ -349,7 +124,6 @@
       }
     }
   }
-
   /* O-LIST-PICKER-DIALOG */
   .o-list-picker-dialog.o-list-picker-dialog {
     .mat-toolbar {
@@ -358,7 +132,6 @@
 
     .mat-dialog-content {
       padding: 0 12px;
-
       // 100% - buttons (49px)
       max-height: calc(100% - 49px);
       min-height: calc(100% - 49px);
@@ -372,6 +145,28 @@
 
     .mat-dialog-actions {
       padding: 6px 12px;
+    }
+  }
+
+  .mat-tooltip-panel {
+    .o-tooltip.mat-tooltip {
+      &.after,
+      &.right {
+        margin-left: 5px;
+      }
+
+      &.before,
+      &.left {
+        margin-right: 5px;
+      }
+
+      &.above {
+        margin-bottom: -15px;
+      }
+
+      &.below {
+        margin-top: 5px;
+      }
     }
   }
   @media(max-width: 599px) {
@@ -400,20 +195,16 @@
         padding: 0;
       }
 
-      .mat-button {
+      .mat-stroked-button {
         min-width: auto;
         margin: 0 $margin-buttom;
+        border: none;
 
         .mat-icon {
           height: 20px;
           width: 20px;
         }
-
-        .mat-icon+span {
-          display: none;
-        }
       }
     }
-
   }
 }

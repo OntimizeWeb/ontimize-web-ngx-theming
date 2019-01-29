@@ -20,7 +20,9 @@
 // $mat-calendar-body-font-size: 13px !default;
 // $mat-calendar-weekday-table-font-size: 11px !default;
 
-$lite-typography: mat-typography-config(
+@import './o-table-typography.scss';
+
+$o-mat-lite-typography: mat-typography-config(
   $font-family:   'Roboto, "Helvetica Neue", sans-serif',
   $display-4:     mat-typography-level(84px, 92px, 300),
   $display-3:     mat-typography-level(42px, 42px, 400),
@@ -37,5 +39,8 @@ $lite-typography: mat-typography-config(
   // Line-height must be unit-less fraction of the font-size.
   $input:         mat-typography-level(14px, 1, 400)
 );
+
+$lite-typography: map-merge($o-mat-lite-typography, $table-lite-typography);
+
 $mat-calendar-body-font-size: 11px;
 $mat-calendar-weekday-table-font-size: 9px;
