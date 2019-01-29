@@ -333,22 +333,20 @@
         padding: 0;
         box-shadow: none;
         font-size: 16px;
-      }
 
-      // &[layout-padding] {
-      //   padding: 0;
-      // }
+        .mat-toolbar-tools {
+          .o-form-toolbar-button,
+          .o-form-toolbar-button[disabled] {
+            border: none;
+            border-radius: 0;
+          }
 
-      .o-form-toolbar-button,
-      .o-form-toolbar-button[disabled] {
-        border: none;
-        border-radius: 0;
-      }
+          .o-form-toolbar-button {
+            min-width: auto;
+            margin: 0 $margin-buttom;
 
-      .o-form-toolbar-button {
-        min-width: auto;
-        margin: 0 $margin-buttom;
-
+          }
+        }
       }
     }
   }
