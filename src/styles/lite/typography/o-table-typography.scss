@@ -18,16 +18,20 @@
 
   // Declare an initial map with all of the levels.
   $config: (
-    small-header-height:  $small-header-height,
-    small-row-height:     $small-row-height,
-    small-row-font-size:  $small-row-font-size,
+    small-header-height:      $small-header-height,
+    small-row-height:         $small-row-height,
+    small-header-font-size:   $small-header-font-size,
+    small-row-font-size:      $small-row-font-size,
 
-    medium-header-height: $medium-header-height,
-    medium-row-height:    $medium-row-height,
-    medium-row-font-size: $medium-row-font-size,
+    medium-header-height:     $medium-header-height,
+    medium-row-height:        $medium-row-height,
+    medium-header-font-size:  $medium-header-font-size,
+    medium-row-font-size:     $medium-row-font-size,
 
-    large-header-height:  $large-header-height,
-    large-row-height:     $large-row-height
+    large-header-height:      $large-header-height,
+    large-row-height:         $large-row-height,
+    large-header-font-size:   $large-header-font-size,
+    large-row-font-size:      $large-row-font-size
   );
   @return $config;
 }
