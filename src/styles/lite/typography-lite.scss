@@ -4,29 +4,34 @@
 @import './form-field/o-form-field-outline-theme.scss';
 @import './form-field/o-form-field-standard-theme.scss';
 @mixin o-table-typography-lite($config) {
-  $height-row-small: 24px !default;
-  $height-row-medium: 32px !default;
-  $height-row-large: 36px !default;
+  $small-header-height: 28px;
+  $small-row-height: 24px;
+  $small-row-font-size: 11px;
+  $medium-header-height: 36px;
+  $medium-row-height: 32px;
+  $medium-row-font-size: 12px;
+  $large-header-height: 40px;
+  $large-row-height: 36px;
 
   .o-table-menu {
     &.small {
       .mat-menu-item {
-        line-height: $height-row-small;
-        height: $height-row-small;
+        line-height: $small-row-height;
+        height: $small-row-height;
       }
     }
 
     &.medium {
       .mat-menu-item {
-        line-height: $height-row-medium;
-        height: $height-row-medium;
+        line-height: $medium-row-height;
+        height: $medium-row-height;
       }
     }
 
     &.large {
       .mat-menu-item {
-        line-height: $height-row-large;
-        height: $height-row-large;
+        line-height: $large-row-height;
+        height: $large-row-height;
       }
     }
   }
@@ -39,6 +44,7 @@
         .mat-header-cell {
           font-weight: 600;
           font-size: 14px;
+
           .header-title-container {
             margin-right: 12px;
           }
@@ -115,12 +121,11 @@
           }
 
           .mat-header-row {
-            height: 28px;
-
+            height: $small-header-height;
           }
 
           .mat-row {
-            height: $height-row-small;
+            height: $small-row-height;
 
             .mat-cell {
               .mat-form-field {
@@ -143,12 +148,11 @@
           }
 
           .mat-header-row {
-            height: 36px;
-
+            height: $medium-header-height;
           }
 
           .mat-row {
-            height: $height-row-medium;
+            height: $medium-row-height;
 
             .mat-cell {
               .mat-form-field {
@@ -166,12 +170,11 @@
 
         &.large {
           .mat-header-row {
-            height: 40px;
-
+            height: $large-header-height;
           }
 
           .mat-row {
-            height: $height-row-large;
+            height: $large-row-height;
 
             .mat-cell {
               .image-avatar {
