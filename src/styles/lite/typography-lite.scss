@@ -98,6 +98,61 @@
   }
 }
 @mixin o-common-typography-lite($config) {
+  .o-column,
+  .o-row {
+    > .o-container {
+      > .o-container-title {
+        height: 30px;
+      }
+    }
+  }
+
+  .o-column,
+  .o-column-collapsible,
+  .o-row,
+  .o-row-collapsible {
+    > .o-container {
+      > .o-container-title {
+        span {
+          font: {
+            size: mat-font-size($config, button);
+            weight: mat-font-weight($config, button);
+          }
+
+        }
+      }
+    }
+  }
+
+  .o-column-collapsible,
+  .o-row-collapsible {
+    > .o-container.mat-expansion-panel {
+      .mat-expansion-panel-header {
+        padding: 0;
+        margin: 0;
+
+        .mat-expansion-panel-header-title {
+          span {
+            //font-size: 14px;
+            padding-left: 0;
+          }
+        }
+      }
+
+      .mat-expansion-panel-content .mat-expansion-panel-body {
+        > .o-container-scroll {
+          padding: 6px;
+        }
+      }
+
+    }
+  }
+
+  .o-column > .o-container .o-container-scroll.o-container-gap,
+  .o-row > .o-container .o-container-scroll.o-container-gap {
+    padding: 6px;
+  }
+
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -118,9 +173,6 @@
       .mat-tab-label {
         height: 32px;
 
-        .mat-tab-label {
-          height: 32px;
-        }
       }
     }
   }
@@ -188,21 +240,20 @@
         max-height: $mat-toolbar-height-desktop;
         padding: 0;
         box-shadow: none;
-        border-radius: 0;
-      }
+        font-size: 16px;
 
-      &[layout-padding] {
-        padding: 0;
-      }
+        .mat-toolbar-tools {
+          .o-form-toolbar-button,
+          .o-form-toolbar-button[disabled] {
+            border: none;
+            border-radius: 0;
+          }
 
-      .mat-stroked-button {
-        min-width: auto;
-        margin: 0 $margin-buttom;
-        border: none;
-
-        .mat-icon {
-          height: 20px;
-          width: 20px;
+          .mat-stroked-button {
+            min-width: auto;
+            margin: 0 $margin-buttom;
+            border: none;
+          }
         }
       }
     }
