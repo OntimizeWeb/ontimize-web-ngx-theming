@@ -37,6 +37,8 @@
       .mat-table.medium,
       .mat-table.small {
         .mat-header-cell {
+          font-weight: 600;
+          font-size: 14px;
           .header-title-container {
             margin-right: 12px;
           }
@@ -115,9 +117,6 @@
           .mat-header-row {
             height: 28px;
 
-            .mat-header-cell {
-              font-size: 14px;
-            }
           }
 
           .mat-row {
@@ -146,9 +145,6 @@
           .mat-header-row {
             height: 36px;
 
-            .mat-header-cell {
-              font-size: 14px;
-            }
           }
 
           .mat-row {
@@ -172,9 +168,6 @@
           .mat-header-row {
             height: 40px;
 
-            .mat-header-cell {
-              font-size: 16px;
-            }
           }
 
           .mat-row {
@@ -380,8 +373,8 @@
       //   padding: 0;
       // }
 
-      .mat-button,
-      .mat-button[disabled] {
+      .o-form-toolbar-button,
+      .o-form-toolbar-button[disabled] {
         border: none;
         border-radius: 0;
       }
@@ -390,7 +383,6 @@
         min-width: auto;
         margin: 0 $margin-buttom;
         border: none;
-
       }
     }
   }
