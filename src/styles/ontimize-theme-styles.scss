@@ -179,17 +179,8 @@
           margin-bottom: 16px;
         }
 
-        &.small tr th {
-          font-size: 16px;
-        }
-
-        &.medium tr th {
-          font-size: 20px;
-        }
-
         thead tr th {
           font-weight: 700;
-          font-size: 24px;
         }
 
         tbody td,
@@ -277,16 +268,7 @@
 
         .mat-header-cell {
           font-weight: 700;
-          font-size: 24px;
         }
-      }
-
-      &.small .mat-header-cell {
-        font-size: 16px;
-      }
-
-      &.medium .mat-header-cell {
-        font-size: 20px;
       }
     }
   }
