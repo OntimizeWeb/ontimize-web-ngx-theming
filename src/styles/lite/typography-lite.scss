@@ -315,11 +315,11 @@
   }
 }
 @mixin o-common-typography-lite($config) {
-   /* O-COLUMN, O-ROW */
-   o-column .o-container .container-content,
-   o-row .o-container .container-content {
-     padding: 6px 6px 6px 18px;
-   }
+  /* O-COLUMN, O-ROW */
+  o-column .o-container .container-content,
+  o-row .o-container .container-content {
+    padding: 6px 6px 6px 18px;
+  }
 
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
@@ -327,8 +327,6 @@
       height: 40px;
 
       .o-app-header {
-        padding: 0 16px 0 0;
-
         .sidenav-toggle {
           padding: 8px;
         }
@@ -339,8 +337,17 @@
 
   /* MD-TAB-GROUP */
   .mat-tab-group .mat-tab-label {
-    height: 32px;
-    padding: 0 6px;
+    > .mat-tab-header {
+      padding-top: 8px;
+
+      .mat-tab-label {
+        height: 32px;
+
+        .mat-tab-label {
+          height: 32px;
+        }
+      }
+    }
   }
 
   /* O-LIST-PICKER-DIALOG */
