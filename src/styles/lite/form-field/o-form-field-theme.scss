@@ -4,7 +4,7 @@
   // The amount to scale the font for the floating label and subscript.
   $subscript-font-scale: .75;
   // The amount to scale the font for the prefix and suffix icons.
-  $prefix-suffix-icon-font-scale: 1.4;
+  $prefix-suffix-icon-font-scale: 1.5;
 
   // The padding on the infix. Mocks show half of the text size.
   $infix-padding: .3em;
@@ -46,6 +46,17 @@
   .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
     height: 20px;
     width: 20px;
+  }
+
+  mat-form-field.mat-form-field.mat-form-field-appearance-legacy {
+    .mat-form-field-prefix,
+    .mat-form-field-suffix {
+      .mat-icon-button {
+        .mat-icon {
+          font-size: $prefix-suffix-icon-font-size;
+        }
+      }
+    }
   }
 
   .mat-form-field {
