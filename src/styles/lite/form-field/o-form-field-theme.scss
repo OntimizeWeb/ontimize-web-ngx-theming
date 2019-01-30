@@ -42,6 +42,10 @@
       width: $prefix-suffix-icon-font-scale * 1em;
     }
 
+    &.input-image.icon-field  .mat-input-infix.mat-form-field-infix{
+      line-height: 16px;
+    }
+
     &.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
       height: 20px;
       width: 20px;
