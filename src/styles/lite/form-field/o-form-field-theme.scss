@@ -51,6 +51,10 @@
       width: $prefix-suffix-icon-font-scale * 1em;
     }
 
+    &.input-image.icon-field  .mat-input-infix.mat-form-field-infix{
+      line-height: 16px;
+    }
+
     .mat-form-field-prefix,
     .mat-form-field-suffix {
       // Allow icons in a prefix or suffix to adapt to the correct size.
