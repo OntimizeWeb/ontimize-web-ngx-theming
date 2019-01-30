@@ -49,54 +49,7 @@
     }
   }
 }
-@mixin o-mat-form-field-typography-lite($config) {
-  $line-height: mat-line-height($config, input);
-  $line-spacing: ($line-height - 1) / 2;
-  $infix-padding: .5em - ($line-spacing * 4);
-  $subscript-font-scale: .75;
-  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
-  $subscript-margin-top: .5em / $subscript-font-scale - ($line-spacing * 6);
 
-  // $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * ($subscript-font-scale * 0.3);
-  $wrapper-padding-bottom: 0; //($subscript-margin-top + $line-height) * $subscript-font-scale * .3;
-
-  .mat-form-field {
-    .mat-form-field-wrapper {
-      padding-bottom: $wrapper-padding-bottom;
-    }
-
-    &.mat-form-field {
-      font-size: mat-font-size($config, input);
-
-      &.icon-field {
-        .mat-form-field-suffix {
-          .icon-btn,
-          .mat-icon {
-            font-size: 16px;
-          }
-        }
-      }
-    }
-
-    .mat-form-field-infix {
-      padding: $infix-padding 0;
-      border-top: $infix-margin-top solid transparent;
-    }
-
-    .mat-form-field-underline {
-      // We want the underline to start at the end of the content box, not the padding box,
-      // so we move it up by the padding amount.
-      bottom: 0; //$wrapper-padding-bottom!important;
-    }
-
-    .mat-form-field-subscript-wrapper {
-      // margin-top: $subscript-margin-top;
-      margin-top: 0;
-      top: 100%;
-      // top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
-    }
-  }
-}
 @mixin o-common-typography-lite($config) {
   .o-column,
   .o-row {
