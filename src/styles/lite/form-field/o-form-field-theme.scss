@@ -1,7 +1,7 @@
-@import './form-field/o-form-field-fill-theme.scss';
-@import './form-field/o-form-field-legacy-theme.scss';
-@import './form-field/o-form-field-outline-theme.scss';
-@import './form-field/o-form-field-standard-theme.scss';
+@import './o-form-field-fill-theme.scss';
+@import './o-form-field-legacy-theme.scss';
+@import './o-form-field-outline-theme.scss';
+@import './o-form-field-standard-theme.scss';
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat-line-height($config, input);
 
