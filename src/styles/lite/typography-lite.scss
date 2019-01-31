@@ -1,5 +1,4 @@
 @import './form-field/o-form-field-theme.scss';
-
 @mixin o-table-typography-lite($config) {
   $small-header-height: 28px;
   $small-row-height: 24px;
@@ -86,8 +85,16 @@
         .mat-paginator-page-size {
           align-items: center;
 
-          .mat-form-field-infix {
-            border-top: 0;
+          .mat-paginator-page-size-select {
+            margin: 6px 0;
+
+            .mat-select-arrow-wrapper {
+              transform: initial;
+            }
+
+            .mat-form-field-infix {
+              border-top: 0;
+            }
           }
         }
 
