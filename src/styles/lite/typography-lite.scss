@@ -22,12 +22,12 @@
           }
         }
 
-        &.small {
-          .mat-header-row,
-          .mat-row {
-            padding: 0;
-          }
+        .mat-header-row,
+        .mat-row {
+          padding: 0;
+        }
 
+        &.small {
           .mat-row .mat-cell {
             .image-avatar {
               width: 20px;
@@ -38,11 +38,6 @@
         }
 
         &.medium {
-          .mat-header-row,
-          .mat-row {
-            padding: 0 6px;
-          }
-
           .mat-row .mat-cell {
             .image-avatar {
               width: 26px;
@@ -63,7 +58,6 @@
     }
   }
 }
-
 @mixin o-common-typography-lite($config) {
   .o-column,
   .o-row {
