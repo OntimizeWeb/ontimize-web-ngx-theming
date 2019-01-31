@@ -1,8 +1,5 @@
 @import './form-field/o-form-field-theme.scss';
-@import './form-field/o-form-field-fill-theme.scss';
-@import './form-field/o-form-field-legacy-theme.scss';
-@import './form-field/o-form-field-outline-theme.scss';
-@import './form-field/o-form-field-standard-theme.scss';
+
 @mixin o-table-typography-lite($config) {
   $small-header-height: 28px;
   $small-row-height: 24px;
