@@ -85,8 +85,16 @@
         .mat-paginator-page-size {
           align-items: center;
 
-          .mat-form-field-infix {
-            border-top: 0;
+          .mat-paginator-page-size-select {
+            margin: 6px 0;
+
+            .mat-select-arrow-wrapper {
+              transform: initial;
+            }
+
+            .mat-form-field-infix {
+              border-top: 0;
+            }
           }
         }
 
