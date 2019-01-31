@@ -4,7 +4,7 @@
 @import './lite/layout-lite.scss';
 @import './lite/typography-lite.scss';
 @import './lite/typography/ontimize-lite.scss';
-
+@import './lite/form-field/o-form-field-theme.scss';
 @import './ontimize-theme-styles.scss';
 
 @mixin ontimize-theme-styles-lite($theme, $typography: null) {

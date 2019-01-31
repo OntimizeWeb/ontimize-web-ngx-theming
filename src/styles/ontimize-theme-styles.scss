@@ -175,43 +175,29 @@
         }
       }
 
-      table.mat-table {
-       
-        &.small tr th {
-          font-size: 14px;
-        }
-
-        &.medium tr th {
-          font-size: 20px;
-        }
-
-        thead tr th {
-          font-weight: 700;
-          font-size: 24px;
-        }
-
-        tbody tr.even,
-        thead tr {
-          background-color: inherit;
-        }
-
-        tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-        thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-          background-color: mat-color($accent);
-        }
-
-        .mat-header-cell {
-          font-weight: 700;
-          font-size: 24px;
-        }
-
+      thead tr th {
+        font-weight: 700;
       }
-      
-      .mat-paginator{
-        background: inherit;
+
+      tbody tr.even,
+      thead tr {
+        background-color: inherit;
       }
+
+      tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+      thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+        background-color: mat-color($accent);
+      }
+
+      .mat-header-cell {
+        font-weight: 700;
+      }
+
     }
 
+    .mat-paginator {
+      background: inherit;
+    }
   }
 
   .ontimize-table.o-table.o-table-fixed {
