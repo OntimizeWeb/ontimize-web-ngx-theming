@@ -1,5 +1,4 @@
 @import './form-field/o-form-field-theme.scss';
-
 @mixin o-table-typography-lite($config) {
   $small-header-height: 28px;
   $small-row-height: 24px;
@@ -112,11 +111,6 @@
         }
 
         &.small {
-          .mat-header-row,
-          .mat-row {
-            padding: 0;
-          }
-
           .mat-row .mat-cell {
             .image-avatar {
               width: 20px;
@@ -127,11 +121,6 @@
         }
 
         &.medium {
-          .mat-header-row,
-          .mat-row {
-            padding: 0 6px;
-          }
-
           .mat-row .mat-cell {
             .image-avatar {
               width: 26px;
@@ -146,6 +135,16 @@
               width: 30px;
               height: 30px;
             }
+          }
+        }
+
+        .mat-row .mat-cell {
+          &:not(.o-column-image):first-of-type {
+            padding-left: 12px;
+          }
+
+          &:last-of-type {
+            padding-right: 12px;
           }
         }
       }
@@ -182,23 +181,6 @@
   }
 
   .o-column-collapsible:not(.o-appearance-outline),
-  .o-column:not(.o-appearance-outline),
-  .o-row-collapsible:not(.o-appearance-outline),
-  .o-row:not(.o-appearance-outline) {
-    > .o-container {
-      > .o-container-title {
-        margin: 0;
-        padding: 0;
-        //font-size: 14px;
-
-        span {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-
-  .o-column-collapsible:not(.o-appearance-outline),
   .o-row-collapsible:not(.o-appearance-outline) {
     > .o-container.mat-expansion-panel .mat-expansion-panel-header {
       padding: 0;
@@ -212,7 +194,6 @@
       .mat-expansion-panel-header {
         .mat-expansion-panel-header-title {
           span {
-            //font-size: 14px;
             padding-left: 0;
           }
         }
