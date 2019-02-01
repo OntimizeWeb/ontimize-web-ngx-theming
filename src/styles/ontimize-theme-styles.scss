@@ -14,6 +14,11 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
+
+
+  $fill-background-input: mat-color($foreground, base,0.1);
+
+
   // $mat-font-family: 'Lato', sans-serif !default;
   @include layout-padding-margin();
   /* CONTAINER */
@@ -47,11 +52,30 @@
       color: mat-color($primary, default-contrast);
     }
 
-    &.list-picker-search .mat-input-underline {
-      border-color: mat-color($primary, default-contrast, 0.78);
+    .mat-form-field-appearance-fill,
+    .mat-form-field-appearance-outline {
+      .mat-form-field-flex {
+        .mat-input-element {
+          -webkit-text-fill-color: $container-background;
+        }
 
-      .mat-input-ripple {
-        background-color: mat-color($primary, default-contrast);
+        .mat-icon {
+          color: $container-background;
+        }
+      }
+    }
+
+    .mat-form-field-appearance-fill {
+      .mat-form-field-flex {
+        background-color: $fill-background-input;
+      }
+    }
+
+    .mat-form-field-appearance-outline {
+      &.mat-focused {
+        .mat-form-field-outline-thick {
+          color: $fill-background-input;
+        }
       }
     }
   }
