@@ -51,7 +51,7 @@
       width: $prefix-suffix-icon-font-scale * 1em;
     }
 
-    &.input-image.icon-field  .mat-input-infix.mat-form-field-infix{
+    &.input-image.icon-field .mat-input-infix.mat-form-field-infix {
       line-height: 16px;
     }
 
@@ -84,22 +84,17 @@
     &.mat-form-field-can-float {
       &.mat-form-field-should-float .mat-form-field-label,
       .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-        @include _mat-form-field-label-floating(
-                $subscript-font-scale, $infix-padding, $infix-margin-top);
+        @include _mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
       }
-  
-      .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
-          .mat-form-field-label {
-        @include _mat-form-field-label-floating(
-                $subscript-font-scale, $infix-padding, $infix-margin-top);
+
+      .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper .mat-form-field-label {
+        @include _mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
       }
-  
+
       // Server-side rendered matInput with a label attribute but label not shown
       // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper
-          .mat-form-field-label {
-        @include _mat-form-field-label-floating(
-                $subscript-font-scale, $infix-padding, $infix-margin-top);
+      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+        @include _mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
       }
     }
 
@@ -127,23 +122,30 @@
       top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
   }
+  @include o-mat-checkbox-typography($config)
 }
 
 /*it's necessary redefined the font size of the checkbox*/
 @mixin o-mat-checkbox-typography($config) {
   // The ripple size of the checkbox
-  $_mat-checkbox-ripple-radius: 17px;
+  $mat-checkbox-ripple-radius: 17px;
+  $mat-checkbox-size: 15px;
 
   .o-checkbox {
     .mat-checkbox {
       font-size: mat-font-size($config, input);
     }
 
+    .mat-checkbox-inner-container {
+      width: $mat-checkbox-size;
+      height: $mat-checkbox-size;
+    }
+
     .mat-checkbox-ripple {
-      left: calc(50% - #{$_mat-checkbox-ripple-radius});
-      top: calc(50% - #{$_mat-checkbox-ripple-radius});
-      height: $_mat-checkbox-ripple-radius * 2;
-      width: $_mat_checkbox-ripple-radius * 2;
+      left: calc(50% - #{$mat-checkbox-ripple-radius});
+      top: calc(50% - #{$mat-checkbox-ripple-radius});
+      height: $mat-checkbox-ripple-radius * 2;
+      width: $mat_checkbox-ripple-radius * 2;
     }
   }
 }
