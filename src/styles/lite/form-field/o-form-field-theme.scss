@@ -46,7 +46,7 @@
       width: $prefix-suffix-icon-font-scale * 1em;
     }
 
-    &.input-image.icon-field  .mat-input-infix.mat-form-field-infix{
+    &.input-image.icon-field .mat-input-infix.mat-form-field-infix {
       line-height: 16px;
     }
 
@@ -151,18 +151,24 @@
 /*it's necessary redefined the font size of the checkbox*/
 @mixin o-mat-checkbox-typography($config) {
   // The ripple size of the checkbox
-  $_mat-checkbox-ripple-radius: 17px;
+  $mat-checkbox-ripple-radius: 17px;
+  $mat-checkbox-size: 15px;
 
   .o-checkbox {
     .mat-checkbox {
       font-size: mat-font-size($config, input);
     }
 
+    .mat-checkbox-inner-container {
+      width: $mat-checkbox-size;
+      height: $mat-checkbox-size;
+    }
+
     .mat-checkbox-ripple {
-      left: calc(50% - #{$_mat-checkbox-ripple-radius});
-      top: calc(50% - #{$_mat-checkbox-ripple-radius});
-      height: $_mat-checkbox-ripple-radius * 2;
-      width: $_mat_checkbox-ripple-radius * 2;
+      left: calc(50% - #{$mat-checkbox-ripple-radius});
+      top: calc(50% - #{$mat-checkbox-ripple-radius});
+      height: $mat-checkbox-ripple-radius * 2;
+      width: $mat_checkbox-ripple-radius * 2;
     }
   }
 }
