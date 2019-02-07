@@ -1,49 +1,10 @@
 @import './form-field/o-form-field-theme.scss';
 @mixin o-table-typography-lite($config) {
-  $small-header-height: 28px;
-  $small-row-height: 24px;
-  $small-row-font-size: 11px;
-  $medium-header-height: 36px;
-  $medium-row-height: 32px;
-  $medium-row-font-size: 12px;
-  $large-header-height: 40px;
-  $large-row-height: 36px;
-
-  .o-table-menu {
-    &.small {
-      .mat-menu-item {
-        line-height: $small-row-height;
-        height: $small-row-height;
-      }
-    }
-
-    &.medium {
-      .mat-menu-item {
-        line-height: $medium-row-height;
-        height: $medium-row-height;
-      }
-    }
-
-    &.large {
-      .mat-menu-item {
-        line-height: $large-row-height;
-        height: $large-row-height;
-      }
-    }
-  }
-
   .o-table.o-table {
     .o-table-container {
-      .mat-table.large,
-      .mat-table.medium,
-      .mat-table.small {
+      .mat-table {
         .mat-header-cell {
           font-weight: 600;
-          font-size: 14px;
-
-          .header-title-container {
-            margin-right: 12px;
-          }
 
           .column-filter-icon {
             margin-right: 4px;
