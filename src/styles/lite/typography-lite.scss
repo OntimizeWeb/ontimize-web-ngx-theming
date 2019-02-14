@@ -215,8 +215,8 @@
   }
 }
 @mixin o-form-theme() {
-  $mat-toolbar-height-desktop: 36px !important;
-  $margin-buttom: 6px !important;
+  $mat-toolbar-height-desktop: 36px;
+  $margin-buttom: 6px;
 
   .o-form {
     .o-form-toolbar {
