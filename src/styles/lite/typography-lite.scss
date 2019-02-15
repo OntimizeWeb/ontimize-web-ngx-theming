@@ -1,6 +1,7 @@
 @mixin o-table-typography-lite($config) {
   .o-table-quickfilter-menu {
     $mat-checkbox-size: 16px;
+
     .mat-checkbox {
       font-size: mat-font-size($config, input);
 
@@ -76,6 +77,27 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .o-table-export-dialog {
+    .mat-raised-button {
+      width: 68px;
+      height: 68px;
+      min-width: 68px;
+
+      .mat-button-wrapper {
+        > div {
+          line-height: 1;
+        }
+      }
+
+      .mat-icon {
+        padding: 0 6px 6px;
+        width: 38px;
+        height: 38px;
+        font-size: 38px;
       }
     }
   }
