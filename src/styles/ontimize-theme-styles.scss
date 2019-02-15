@@ -80,10 +80,6 @@
           margin: 0 $basic-padding-size;
         }
       }
-
-      .o-form-navigation span {
-        color: mat-color($foreground, secondary-text);
-      }
     }
   }
 
@@ -189,6 +185,16 @@
 
     .mat-paginator {
       background: inherit;
+    }
+
+    .mat-table {
+      .mat-header-row {
+        background-color: initial;
+
+        .mat-header-cell {
+          font-weight: 700;
+        }
+      }
     }
   }
 
