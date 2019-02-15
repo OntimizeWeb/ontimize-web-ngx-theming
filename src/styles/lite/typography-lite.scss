@@ -128,7 +128,7 @@
     }
   }
 
-  .o-table-export-dialog {
+  .o-table-export-dialog.o-table-export-dialog {
     .mat-raised-button {
       width: 68px;
       height: 68px;
@@ -145,6 +145,14 @@
         width: 38px;
         height: 38px;
         font-size: 38px;
+      }
+    }
+  }
+
+  .o-dialog-class.o-dialog-class {
+    .mat-dialog-container {
+      .mat-dialog-title {
+        padding: 16px 20px 12px;
       }
     }
   }
@@ -307,7 +315,7 @@
 }
 @mixin o-form-theme() {
   $mat-toolbar-height-desktop: 36px;
-  $margin-buttom: 6px;
+  $margin-button: 6px;
 
   .o-form {
     .o-form-toolbar {
@@ -327,7 +335,7 @@
 
           .mat-stroked-button {
             min-width: auto;
-            margin: 0 $margin-buttom;
+            margin: 0 $margin-button;
             border: none;
           }
         }
