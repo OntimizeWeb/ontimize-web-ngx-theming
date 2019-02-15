@@ -237,7 +237,7 @@
 }
 @mixin o-form-theme() {
   $mat-toolbar-height-desktop: 36px;
-  $margin-buttom: 6px;
+  $margin-button: 6px;
 
   .o-form {
     .o-form-toolbar {
@@ -257,7 +257,7 @@
 
           .mat-stroked-button {
             min-width: auto;
-            margin: 0 $margin-buttom;
+            margin: 0 $margin-button;
             border: none;
           }
         }
