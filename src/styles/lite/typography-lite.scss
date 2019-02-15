@@ -56,7 +56,6 @@
               width: 20px;
               height: 20px;
             }
-
           }
         }
 
@@ -120,10 +119,9 @@
       > .o-container-title {
         span {
           font: {
-            size: mat-font-size($config, button);
-            weight: mat-font-weight($config, button);
+            size: mat-font-size($config, title);
+            weight: mat-font-weight($config, title);
           }
-
         }
       }
     }
@@ -149,7 +147,6 @@
           padding: 10px 6px 6px;
         }
       }
-
     }
   }
 
@@ -157,7 +154,6 @@
   .o-row > .o-container .o-container-scroll.o-container-gap {
     padding: 10px 6px 6px;
   }
-
   /* O-APP-LAYOUT */
   .o-app-sidenav.o-app-sidenav {
     .o-app-header {
@@ -170,7 +166,6 @@
       }
     }
   }
-
   /* MD-TAB-GROUP */
   .mat-tab-group .mat-tab-label {
     > .mat-tab-header {
@@ -178,11 +173,9 @@
 
       .mat-tab-label {
         height: 32px;
-
       }
     }
   }
-
   /* O-LIST-PICKER-DIALOG */
   .o-list-picker-dialog.o-list-picker-dialog {
     .mat-toolbar {
@@ -243,8 +236,8 @@
   }
 }
 @mixin o-form-theme() {
-  $mat-toolbar-height-desktop: 36px !important;
-  $margin-buttom: 6px !important;
+  $mat-toolbar-height-desktop: 36px;
+  $margin-buttom: 6px;
 
   .o-form {
     .o-form-toolbar {
