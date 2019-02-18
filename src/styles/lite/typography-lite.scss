@@ -89,9 +89,6 @@
         }
 
         &.small {
-          .mat-sort-header-arrow {
-            margin: 2px 0 0;
-          }
           .mat-row .mat-cell {
             .image-avatar {
               width: 20px;
@@ -101,8 +98,9 @@
         }
 
         &.medium {
+          .column-filter-icon,
           .mat-sort-header-arrow {
-            margin: 2px 0 0;
+            margin-top: 2px;
           }
           .mat-row .mat-cell {
             .image-avatar {
@@ -113,8 +111,9 @@
         }
 
         &.large {
+          .column-filter-icon,
           .mat-sort-header-arrow {
-            margin: 3px 0 0;
+            margin-top: 3px;
           }
           .mat-row .mat-cell {
             .image-avatar {
@@ -174,22 +173,6 @@
     > .o-container {
       > .o-container-title {
         height: 30px;
-      }
-    }
-  }
-
-  .o-column,
-  .o-column-collapsible,
-  .o-row,
-  .o-row-collapsible {
-    > .o-container {
-      > .o-container-title {
-        span {
-          font: {
-            size: mat-font-size($config, title);
-            weight: mat-font-weight($config, title);
-          }
-        }
       }
     }
   }

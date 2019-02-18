@@ -1,6 +1,11 @@
 @import 'node_modules/@angular/material/theming';
 @import './lite/layout.scss';
-@mixin ontimize-theme-styles($theme) {
+@mixin ontimize-theme-styles($theme, $typography: null) {
+
+  @if $typography == null {
+    $typography: mat-typography-config();
+  }
+
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   // $warn: map-get($theme, warn);
@@ -34,7 +39,7 @@
     }
   }
 
-  o-list-picker-dialog mat-toolbar o-search-input {
+  .o-list-picker-dialog .o-search-input {
     span.icon-btn {
       color: mat-color($primary, default-contrast);
     }
@@ -85,6 +90,13 @@
 
   /* TABS */
   .mat-tab-group {
+    .mat-tab-label,
+    .mat-tab-link {
+      font-family: mat-font-family($typography, input);
+      font-size: mat-font-size($typography, input);
+      font-weight: mat-font-weight($typography, input);
+    }
+
     // Ontimize tabs
     &.o-tab-ontimize {
       > .mat-tab-header {
