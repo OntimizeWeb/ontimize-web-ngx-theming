@@ -254,14 +254,9 @@
   }
   /* MD-TAB-GROUP */
   .mat-tab-group.mat-tab-group {
-    > .mat-tab-header {
-      padding-top: 8px;
-
-      .mat-tab-label {
-        height: 32px;
-      }
+    > .mat-tab-header .mat-tab-label {
+      height: 32px;
     }
-
   }
   /* O-LIST-PICKER-DIALOG */
   .o-list-picker-dialog.o-list-picker-dialog {
@@ -325,13 +320,14 @@
 @mixin o-form-theme() {
   $mat-toolbar-height-desktop: 36px;
   $margin-button: 6px;
+  $mat-icon-button-size: 30px;
 
   .o-form {
     .o-form-toolbar {
       .o-form-toolbar-header {
         min-height: $mat-toolbar-height-desktop;
         max-height: $mat-toolbar-height-desktop;
-        padding: 0;
+        padding: 0 4px;
         box-shadow: none;
         font-size: 16px;
 
@@ -340,6 +336,12 @@
           .o-form-toolbar-button[disabled] {
             border: none;
             border-radius: 0;
+
+            &.mat-icon-button {
+              height: $mat-icon-button-size;
+              line-height: $mat-icon-button-size;
+              width: $mat-icon-button-size;
+            }
           }
 
           .mat-stroked-button {
