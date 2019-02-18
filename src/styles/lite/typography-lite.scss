@@ -89,6 +89,9 @@
         }
 
         &.small {
+          .mat-sort-header-arrow {
+            margin: 2px 0 0;
+          }
           .mat-row .mat-cell {
             .image-avatar {
               width: 20px;
@@ -98,6 +101,9 @@
         }
 
         &.medium {
+          .mat-sort-header-arrow {
+            margin: 2px 0 0;
+          }
           .mat-row .mat-cell {
             .image-avatar {
               width: 26px;
@@ -107,6 +113,9 @@
         }
 
         &.large {
+          .mat-sort-header-arrow {
+            margin: 3px 0 0;
+          }
           .mat-row .mat-cell {
             .image-avatar {
               width: 30px;
