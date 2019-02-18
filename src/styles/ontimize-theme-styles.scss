@@ -39,38 +39,6 @@
     }
   }
 
-  o-list-picker-dialog mat-toolbar o-search-input {
-    span.icon-btn {
-      color: mat-color($primary, default-contrast);
-    }
-
-    .mat-form-field-appearance-fill,
-    .mat-form-field-appearance-outline {
-      .mat-form-field-flex {
-        .mat-input-element {
-          -webkit-text-fill-color: $container-background;
-        }
-
-        .mat-icon {
-          color: $container-background;
-        }
-      }
-    }
-
-    .mat-form-field-appearance-fill {
-      .mat-form-field-flex {
-        background-color: $fill-background-input;
-      }
-    }
-
-    .mat-form-field-appearance-outline {
-      &.mat-focused {
-        .mat-form-field-outline-thick {
-          color: $fill-background-input;
-        }
-      }
-    }
-  }
 
   /* APP SIDENAV */
   .o-app-sidenav {
