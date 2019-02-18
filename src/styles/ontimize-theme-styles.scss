@@ -32,19 +32,6 @@
     }
   }
 
-  o-list-picker-dialog mat-toolbar o-search-input {
-    span.icon-btn {
-      color: mat-color($primary, default-contrast);
-    }
-
-    &.list-picker-search .mat-input-underline {
-      border-color: mat-color($primary, default-contrast, 0.78);
-
-      .mat-input-ripple {
-        background-color: mat-color($primary, default-contrast);
-      }
-    }
-  }
 
   /* APP SIDENAV */
   .o-app-sidenav {
