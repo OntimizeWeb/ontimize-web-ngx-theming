@@ -19,6 +19,11 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
+
+
+  $fill-background-input: mat-color($foreground, base,0.1);
+
+
   // $mat-font-family: 'Lato', sans-serif !default;
   @include layout-padding-margin();
   /* CONTAINER */
@@ -39,19 +44,6 @@
     }
   }
 
-  .o-list-picker-dialog .o-search-input {
-    span.icon-btn {
-      color: mat-color($primary, default-contrast);
-    }
-
-    &.list-picker-search .mat-input-underline {
-      border-color: mat-color($primary, default-contrast, 0.78);
-
-      .mat-input-ripple {
-        background-color: mat-color($primary, default-contrast);
-      }
-    }
-  }
 
   /* APP SIDENAV */
   .o-app-sidenav {
