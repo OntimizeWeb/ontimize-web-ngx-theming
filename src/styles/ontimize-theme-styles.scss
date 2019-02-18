@@ -88,7 +88,7 @@
   .o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-
+      background-color: mat-color($primary, default-contrast, 400);
       border-radius: $border-radius;
       min-height: initial;
 
@@ -103,10 +103,6 @@
           color: mat-color($foreground, secondary-text);
           margin: 0 $basic-padding-size;
         }
-      }
-
-      .o-form-navigation span {
-        color: mat-color($foreground, secondary-text);
       }
     }
   }
@@ -213,6 +209,16 @@
 
     .mat-paginator {
       background: inherit;
+    }
+
+    .mat-table {
+      .mat-header-row {
+        background-color: initial;
+
+        .mat-header-cell {
+          font-weight: 700;
+        }
+      }
     }
   }
 
