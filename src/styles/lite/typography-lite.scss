@@ -330,7 +330,6 @@
         .mat-toolbar-tools {
           .o-form-toolbar-button,
           .o-form-toolbar-button[disabled] {
-            border: none;
             border-radius: 0;
 
             &.mat-icon-button {
@@ -343,7 +342,6 @@
           .mat-stroked-button {
             min-width: auto;
             margin: 0 $margin-button;
-            border: none;
           }
         }
       }
