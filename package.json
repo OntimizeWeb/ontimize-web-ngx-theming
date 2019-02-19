@@ -1,13 +1,12 @@
 {
   "name": "ontimize-web-ngx-theming",
-  "version": "4.0.0-rc.2",
+  "version": "4.0.0",
   "description": "An implementation of themes manager for Ontimize Web applications",
   "scripts": {
     "rimraf": "rimraf",
     "clean": "rimraf dist tmp",
     "end-common": "gulp copy-files",
-    "build": "npm run clean && npm run end-common",
-    "pack": "npm run build && cd dist && npm pack"
+    "build": "npm run clean && npm run end-common"
   },
   "keywords": [
     "angular",
