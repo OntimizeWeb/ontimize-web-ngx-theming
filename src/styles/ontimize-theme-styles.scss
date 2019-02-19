@@ -1,11 +1,9 @@
 @import 'node_modules/@angular/material/theming';
 @import './lite/layout.scss';
 @mixin ontimize-theme-styles($theme, $typography: null) {
-
-  @if $typography == null {
+   @if $typography == null{
     $typography: mat-typography-config();
   }
-
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   // $warn: map-get($theme, warn);
@@ -19,11 +17,7 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
-
-
   $fill-background-input: mat-color($foreground, base,0.1);
-
-
   // $mat-font-family: 'Lato', sans-serif !default;
   @include layout-padding-margin();
   /* CONTAINER */
@@ -43,20 +37,16 @@
       padding: $basic-padding-size*2;
     }
   }
-
-
   /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
-
   /* USER INFO */
   o-app-header .o-app-header-title,
   o-user-info {
     font-weight: 700;
   }
-
   /* FORM */
   .o-form-toolbar {
     .mat-toolbar {
@@ -79,7 +69,6 @@
       }
     }
   }
-
   /* TABS */
   .mat-tab-group {
     .mat-tab-label,
@@ -88,7 +77,6 @@
       font-size: mat-font-size($typography, input);
       font-weight: mat-font-weight($typography, input);
     }
-
     // Ontimize tabs
     &.o-tab-ontimize {
       > .mat-tab-header {
@@ -117,7 +105,6 @@
         border-top-left-radius: initial;
       }
     }
-
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -125,17 +112,14 @@
       }
     }
   }
-
   /* TABLE */
   .ontimize-table.o-table {
-
     font-weight: 400;
 
     .o-table-container {
       border: none;
       border-radius: $border-radius;
       box-sizing: border-box;
-
       /*Toolbar*/
       .toolbar {
         margin: 0 0 4px;
@@ -144,7 +128,6 @@
         .buttons .o-table-button .mat-button {
           line-height: inherit;
           height: 32px;
-
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
@@ -184,7 +167,6 @@
       .mat-header-cell {
         font-weight: 700;
       }
-
     }
 
     .mat-paginator {
@@ -209,4 +191,7 @@
     }
   }
 
+  .mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+    padding: 2px 0;
+  }
 }
