@@ -174,12 +174,8 @@
     }
 
     .mat-table {
-      .mat-header-row {
-        background-color: initial;
-
-        .mat-header-cell {
-          font-weight: 700;
-        }
+      .mat-header-row .mat-header-cell {
+        font-weight: 700;
       }
     }
   }
