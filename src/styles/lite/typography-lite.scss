@@ -309,6 +309,7 @@
   $mat-toolbar-height-desktop: 36px;
   $margin-button: 6px;
   $mat-icon-button-size: 30px;
+  $mat-toolbar-breadcrumb-height-desktop: 91px;
 
   .o-form {
     .o-form-toolbar {
@@ -318,6 +319,12 @@
         padding: 0 4px;
         box-shadow: none;
         font-size: 16px;
+
+        &.breadcrumb {
+          padding: 17px 33px 15px;
+          min-height: $mat-toolbar-breadcrumb-height-desktop;
+          max-height: $mat-toolbar-breadcrumb-height-desktop;
+        }
 
         .mat-toolbar-tools {
           .o-form-toolbar-button,
@@ -335,6 +342,10 @@
             min-width: auto;
             margin: 0 $margin-button;
           }
+        }
+
+        .o-breadcrumb {
+          height: 28px;
         }
       }
     }
