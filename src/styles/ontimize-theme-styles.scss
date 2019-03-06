@@ -1,19 +1,25 @@
 @import 'node_modules/@angular/material/theming';
-@mixin ontimize-theme-styles($theme) {
+@import './lite/layout.scss';
+@mixin ontimize-theme-styles($theme, $typography: null) {
+   @if $typography == null{
+    $typography: mat-typography-config();
+  }
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $container-background: #ffffff;
+  $container-background: mat-color($background, 'card');
   $border-radius: 6px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
+  $font-size-title-container: 1;
+  $fill-background-input: mat-color($foreground, base,0.1);
   // $mat-font-family: 'Lato', sans-serif !default;
-
+  @include layout-padding-margin();
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
@@ -28,76 +34,49 @@
 
   .standalone-form-container {
     .inner-form {
-      padding: $basic-padding-size;
+      padding: $basic-padding-size*2;
     }
   }
-
-  /* APP LAYOUT */
-  .application-layout-content-wrapper,
-  .o-form-layout-dialog-overlay .mat-dialog-container {
-    background: #eeeeee;
-  }
-
-  o-list-picker-dialog mat-toolbar o-search-input {
-    span.icon-btn {
-      color: mat-color($primary, default-contrast);
-    }
-
-    &.list-picker-search .mat-input-underline {
-      border-color: mat-color($primary, default-contrast, 0.78);
-
-      .mat-input-ripple {
-        background-color: mat-color($primary, default-contrast);
-      }
-    }
-  }
-
   /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
-
   /* USER INFO */
   o-app-header .o-app-header-title,
   o-user-info {
     font-weight: 700;
   }
-
   /* FORM */
-  o-form-toolbar {
+  .o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-      background: $container-background;
+      background-color: mat-color($background, background);
       border-radius: $border-radius;
       min-height: initial;
 
-      button.mat-button {
+      .mat-icon-button:not([disabled]) .mat-icon {
         color: mat-color($foreground, secondary-text);
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        margin: 0 $basic-padding-size;
-        line-height: $button-line-height;
-
-        &[disabled] {
-          border: 1px solid mat-color($background, disabled-button);
-        }
       }
 
-      button.mat-icon-button {
-        color: mat-color($foreground, secondary-text);
-        margin: 0 $basic-padding-size;
+      .o-form-toolbar-button {
         line-height: $button-line-height;
 
-        &:not([disabled]) mat-icon {
+        &.mat-stroked-button {
           color: mat-color($foreground, secondary-text);
+          margin: 0 $basic-padding-size;
         }
       }
     }
   }
-
   /* TABS */
   .mat-tab-group {
+    .mat-tab-label,
+    .mat-tab-link {
+      font-family: mat-font-family($typography, input);
+      font-size: mat-font-size($typography, input);
+      font-weight: mat-font-weight($typography, input);
+    }
     // Ontimize tabs
     &.o-tab-ontimize {
       > .mat-tab-header {
@@ -126,10 +105,6 @@
         border-top-left-radius: initial;
       }
     }
-    // Material tabs
-    &.o-tab-material {
-      // default angular material styles
-    }
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -137,194 +112,86 @@
       }
     }
   }
-
-  /* CONTAINERS */
-  o-column,
-  o-row {
-    .o-container {
-      .container-title {
-        border-bottom-width: 2px;
-        border-bottom-color: mat-color($primary);
-
-        span {
-          font-weight: 400;
-        }
-      }
-
-      .container-content {
-        padding: 24px 30px 8px;
-      }
-    }
-  }
-
   /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
 
-    .o-table-menu {
-      .o-table-option-active {
-        background: mat-color($foreground, divider);
-      }
-    }
-
-    .expandable-container {
+    .o-table-container {
       border: none;
-      padding-top: $basic-padding-size;
-      // margin-bottom: $basic-padding-size;
-      background: $container-background;
       border-radius: $border-radius;
       box-sizing: border-box;
-    }
+      /*Toolbar*/
+      .toolbar {
+        margin: 0 0 4px;
+        padding-top: $basic-padding-size;
 
-    
-    .o-table-container {
-      .dt-buttons .dt-button {
-        &.custom-generic-action::after,
-        &.generic-action.generic-action::before {
-          line-height: $button-line-height;
-          padding: 0 $basic-padding-size;
-        }
-
-        &.custom-generic-action > span,
-        &.generic-action > span {
-          line-height: $button-line-height;
-        }
-
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        margin: 0 $basic-padding-size;
-
-        &:not(.disabled):hover {
+        .buttons .o-table-button .mat-button {
+          line-height: inherit;
+          height: 32px;
           border: 1px solid mat-color($primary);
           border-radius: $border-radius;
           margin: 0 $basic-padding-size;
+
+          &.disabled {
+            border: 1px solid mat-color($background, disabled-button);
+          }
+
+          &:not(.disabled):hover {
+            border: 1px solid mat-color($primary);
+            border-radius: $border-radius;
+            margin: 0 $basic-padding-size;
+          }
         }
       }
 
-      table {
-        &:not(.o-table-fixed) {
-          margin-top: 16px;
-          margin-bottom: 16px;
+      .o-table-menu {
+        .o-table-option-active {
+          background: mat-color($foreground, divider);
         }
+      }
 
-        &.small tr th {
-          font-size: 16px;
-        }
+      thead tr th {
+        font-weight: 700;
+      }
 
-        &.medium tr th {
-          font-size: 20px;
-        }
+      tbody tr.even,
+      thead tr {
+        background-color: inherit;
+      }
 
-        thead tr th {
-          font-weight: 700;
-          font-size: 24px;
-        }
+      tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
+      thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
+        background-color: mat-color($accent);
+      }
 
-        tbody td,
-        thead th {
-          border-bottom: 1px solid mat-color($foreground, divider);
-        }
-
-        tbody td:first-child:not(.o-table-column-action):not(.o-table-column-select-checkbox),
-        thead tr th:first-child:not(.o-table-column-select-checkbox) {
-          border-right: none;
-        }
-
-        tbody td:last-child:not(.o-table-column-action),
-        tbody td:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action),
-        thead tr th:last-child:not(.o-table-column-action),
-        thead tr th:nth-child(n+3):nth-last-child(n+2):not(.o-table-column-action) {
-          border-left: none;
-        }
-
-        tbody tr.even,
-        thead tr {
-          background-color: initial;
-        }
-
-        tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
-        thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-          background-color: mat-color($accent);
-        }
-
-        thead tr th.sorting::before,
-        thead tr th.sorting_asc::before,
-        thead tr th.sorting_asc_disabled::before,
-        thead tr th.sorting_desc::before,
-        thead tr th.sorting_desc_disabled::before {
-          margin-top: 4px;
-        }
-
-        thead tr th.sorting::after,
-        thead tr th.sorting_asc::after,
-        thead tr th.sorting_asc_disabled::after,
-        thead tr th.sorting_desc::after,
-        thead tr th.sorting_desc_disabled::after {
-          margin-top: 4px;
-        }
+      .mat-header-cell {
+        font-weight: 700;
       }
     }
 
-    .o-scrollable-container{
-      height:calc(100% -  #{$basic-padding-size} - #{$basic-padding-size});
-      
-      .o-table-container {
-        height:auto;
-      }
-    }
-  }
-
-  /* O-TABLE */
-  .o-table.o-table .o-table-container {
-    .toolbar {
-      margin: 0 0 4px;
-
-      .buttons .o-table-button .mat-button {
-        line-height: inherit;
-        height: 32px;
-
-        border: 1px solid mat-color($primary);
-        border-radius: $border-radius;
-        margin: 0 $basic-padding-size;
-
-        &:not(.disabled):hover {
-          border: 1px solid mat-color($primary);
-          border-radius: $border-radius;
-          margin: 0 $basic-padding-size;
-        }
-      }
+    .mat-paginator {
+      background: inherit;
     }
 
     .mat-table {
-      .mat-header-row {
-        background-color: initial;
-
-        .mat-header-cell {
-          font-weight: 700;
-          font-size: 24px;
-        }
-      }
-
-      &.small .mat-header-cell {
-        font-size: 16px;
-      }
-
-      &.medium .mat-header-cell {
-        font-size: 20px;
+      .mat-header-row .mat-header-cell {
+        font-weight: 700;
       }
     }
   }
 
-  /* TABLE FIXED */
   .ontimize-table.o-table.o-table-fixed {
-    .expandable-container {
-      height: calc(100% - #{$basic-padding-size} - #{$basic-padding-size});
-    }
-      .o-scrollable-container{
-        .o-table-container {
-          height:100%;
-        }
+    .o-scrollable-container {
+      height: 100%;
+      overflow-y: auto;
     }
   }
- 
+
+  .mat-menu-panel.o-table-quickfilter-menu .mat-checkbox {
+    padding: 2px 0;
+  }
+
+  .mat-menu-panel.o-search-input-menu .mat-checkbox {
+    padding: 2px 0;
+  }
 }

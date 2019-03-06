@@ -1,3 +1,17 @@
+#4.0.0 (2019-02-19)
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@4.0.0*'
+  * Several improvements on Ontimize `Lite Theme`
+
+#4.0.0-rc.1 (2019-01-16)
+### Features
+* **styles:** updating styles for '*ontimize-web-ngx@4.0.0-rc.1*'
+
+#4.0.0-rc.0 (2018-11-16)
+### Features
+* **styles:** updating styles for '*ontimize-web-ngx@4.0.0-rc.0*'
+
 #1.2.0 (2018-09-13)
 ### Features
 * **styles:** updating styles for '*ontimize-web-ngx@3.1.0*'

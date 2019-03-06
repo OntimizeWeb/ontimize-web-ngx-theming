@@ -14,56 +14,9 @@
 // Layout
 // ------------------------------
 $baseline-grid: 4px !default;
-$layout-gutter-width: ($baseline-grid * 2) !default;
 $layout-gutter-width-vertical: $baseline-grid;
 $layout-gutter-width-horizontal: 14px !default;
-
-@mixin layout-padding-margin-lite() {
-  [layout-padding] > [flex-lt-md],
-  [layout-padding] > [flex-sm] {
-    padding: $layout-gutter-width / 4;
-  }
-
-  [layout-padding],
-  [layout-padding] > [flex-gt-sm],
-  [layout-padding] > [flex-lt-lg],
-  [layout-padding] > [flex-md],
-  [layout-padding] > [flex] {
-    padding: $layout-gutter-width / 2;
-    //padding: $layout-gutter-width / 2 $layout-gutter-width $layout-gutter-width / 2 $layout-gutter-width;
-  }
-
-  [layout-padding] > [flex-gt-md],
-  [layout-padding] > [flex-lg] {
-    padding: $layout-gutter-width / 1;
-  }
-
-  [layout-margin] > [flex-lt-md],
-  [layout-margin] > [flex-sm] {
-    margin: $layout-gutter-width / 4;
-  }
-
-  [layout-margin],
-  [layout-margin] > [flex-gt-sm],
-  [layout-margin] > [flex-lt-lg],
-  [layout-margin] > [flex-md],
-  [layout-margin] > [flex] {
-    margin: $layout-gutter-width / 2;
-  }
-
-  [layout-margin] > [flex-gt-md],
-  [layout-margin] > [flex-lg] {
-    margin: $layout-gutter-width / 1;
-  }
-
-  [layout-wrap] {
-    flex-wrap: wrap;
-  }
-
-  [layout-nowrap] {
-    flex-wrap: nowrap;
-  }
-
+@mixin layout-padding-margin() {
   [layout-padding-vertical] {
     padding: $layout-gutter-width-vertical 0;
   }
@@ -93,7 +46,7 @@ $layout-gutter-width-horizontal: 14px !default;
   }
 
   [layout-margin-right] {
-    margin-right: $layout-gutter-width-horizontal;
+    margin-right:$layout-gutter-width-horizontal;
   }
 
   [layout-padding-top] {

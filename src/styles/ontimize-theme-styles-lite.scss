@@ -4,11 +4,10 @@
 @import './lite/layout-lite.scss';
 @import './lite/typography-lite.scss';
 @import './lite/typography/ontimize-lite.scss';
-
+@import './lite/form-field/o-form-field-theme.scss';
 @import './ontimize-theme-styles.scss';
 
 @mixin ontimize-theme-styles-lite($theme, $typography: null) {
-  @include ontimize-theme-styles($theme);
 
   @if $typography != null {
     $typography: map-merge($lite-typography, $typography);
@@ -16,10 +15,13 @@
     $typography: $lite-typography;
   }
 
+  @include ontimize-theme-styles($theme, $typography);
+
   @include o-table-typography-lite($typography);
   @include o-mat-form-field-typography-lite($typography);
-  @include o-datatable-typography-lite($typography);
   @include o-common-typography-lite($typography);
-
   @include layout-padding-margin-lite();
+
+  @include o-form-theme();
+
 }
