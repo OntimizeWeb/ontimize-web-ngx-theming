@@ -304,12 +304,25 @@
       min-height: calc(100% - 105px);
     }
   }
+
+  .o-search-input-menu {
+    $mat-checkbox-size: 16px;
+
+    .mat-checkbox {
+      font-size: mat-font-size($config, input);
+
+      .mat-checkbox-inner-container {
+        width: $mat-checkbox-size;
+        height: $mat-checkbox-size;
+      }
+    }
+  }
 }
 @mixin o-form-theme() {
   $mat-toolbar-height-desktop: 36px;
   $margin-button: 6px;
   $mat-icon-button-size: 30px;
-  $mat-toolbar-breadcrumb-height-desktop: 91px;
+  $mat-toolbar-breadcrumb-height-desktop: 72px;
 
   .o-form {
     .o-form-toolbar {
@@ -321,7 +334,7 @@
         font-size: 16px;
 
         &.breadcrumb {
-          padding: 17px 33px 15px;
+          padding: 8px;
           min-height: $mat-toolbar-breadcrumb-height-desktop;
           max-height: $mat-toolbar-breadcrumb-height-desktop;
         }
