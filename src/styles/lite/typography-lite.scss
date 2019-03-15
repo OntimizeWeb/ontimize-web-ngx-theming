@@ -189,7 +189,7 @@
   .o-column-collapsible:not(.o-appearance-outline),
   .o-row-collapsible:not(.o-appearance-outline) {
     > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-      padding: 0;
+      padding-left: 0;
       margin: 0;
     }
   }
