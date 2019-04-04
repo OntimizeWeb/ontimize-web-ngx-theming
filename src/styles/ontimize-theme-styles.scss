@@ -63,8 +63,11 @@
         line-height: $button-line-height;
 
         &.mat-stroked-button {
-          color: mat-color($foreground, secondary-text);
           margin: 0 $basic-padding-size;
+        }
+
+        &.mat-stroked-button:not([disabled]) {
+          color: mat-color($foreground, secondary-text);
         }
       }
     }

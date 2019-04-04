@@ -1,3 +1,13 @@
+#4.0.2 (2019-04-04)
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@4.0.2*'
+
+#4.0.1 (2019-03-06)
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@4.0.1*'
+
 #4.0.0 (2019-02-19)
 ### Features
 * **styles:**:

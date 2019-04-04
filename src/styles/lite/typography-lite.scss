@@ -181,6 +181,7 @@
   .o-row {
     > .o-container {
       > .o-container-title {
+        line-height: 30px;
         height: 30px;
       }
     }
@@ -189,7 +190,7 @@
   .o-column-collapsible:not(.o-appearance-outline),
   .o-row-collapsible:not(.o-appearance-outline) {
     > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-      padding: 0;
+      padding-left: 0;
       margin: 0;
     }
   }
@@ -259,13 +260,6 @@
 
       .mat-dialog-content {
         padding: 0 12px;
-        max-height: calc(100% - 60px);
-        min-height: calc(100% - 60px);
-
-        &.o-list-picker-has-filter {
-          max-height: calc(100% - 108px);
-          min-height: calc(100% - 108px);
-        }
       }
     }
   }
