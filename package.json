@@ -30,7 +30,8 @@
     "gulp": "4.0.0",
     "gulp-cssimport": "6.0.0",
     "gulp-replace": "0.6.1",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
+    "lodash.mergewith": "4.6.2",
     "node-sass": "4.9.4",
     "rimraf": "2.6.2",
     "tar": "4.4.2"
