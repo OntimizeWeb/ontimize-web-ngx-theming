@@ -84,6 +84,8 @@
     &.o-tab-ontimize {
       > .mat-tab-header {
         border: none;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
 
         .mat-tab-label-container .mat-tab-label {
           border-top-left-radius: $border-radius;
@@ -92,6 +94,7 @@
 
           &.mat-tab-label-active {
             background: $container-background;
+            color: mat-color($foreground, secondary-text);
             opacity: 1;
           }
         }
