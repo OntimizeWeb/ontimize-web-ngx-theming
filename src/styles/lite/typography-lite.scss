@@ -337,6 +337,8 @@
           .o-form-toolbar-button,
           .o-form-toolbar-button[disabled] {
             border-radius: 0;
+            min-width: auto;
+            margin: 0 $margin-button;
 
             &.mat-icon-button {
               height: $mat-icon-button-size;
@@ -345,10 +347,6 @@
             }
           }
 
-          .mat-stroked-button {
-            min-width: auto;
-            margin: 0 $margin-button;
-          }
         }
 
         .o-breadcrumb {

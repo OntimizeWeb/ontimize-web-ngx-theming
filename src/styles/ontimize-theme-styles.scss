@@ -60,11 +60,9 @@
       }
 
       .o-form-toolbar-button {
-        line-height: $button-line-height;
-
-        &.mat-stroked-button {
-          margin: 0 $basic-padding-size;
-        }
+        line-height: $button-line-height;      
+        margin: 0 $basic-padding-size;
+        
 
         &.mat-stroked-button:not([disabled]) {
           color: mat-color($foreground, secondary-text);
