@@ -41,6 +41,15 @@
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
+
+    .o-app-sidenav-container {
+      .mat-drawer.o-app-sidenav-sidenav {
+        h3 {
+          font-size: mat-font-size($typography, subheading-2);
+          font-weight: mat-font-weight($typography, subheading-2),
+        }
+      }
+    }
   }
   /* USER INFO */
   o-app-header .o-app-header-title,
