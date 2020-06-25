@@ -33,7 +33,7 @@ Ontimize web module for applications theming through '*scss*' files loading .
 
   * `// After define theme, it is necessary to transfer typography to Ontimize Web framework and material components`
   * `@import 'node_modules/ontimize-web-ngx/theme.scss';`
-  * `@include ontimize-theme-styles-lite($theme, $custom-typography);`
+  * `@include ontimize-theme-styles-lite($theme, $lite-typography);`
   * `@include o-material-theme($theme, $lite-typography);`
 
 
