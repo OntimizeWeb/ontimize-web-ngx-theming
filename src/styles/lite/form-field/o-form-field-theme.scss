@@ -157,6 +157,13 @@
   .o-checkbox {
     .mat-checkbox {
       font-size: mat-font-size($config, input);
+
+      .mat-checkbox-ripple {
+        left: calc(50% - #{$mat-checkbox-ripple-radius});
+        top: calc(50% - #{$mat-checkbox-ripple-radius});
+        height: $mat-checkbox-ripple-radius * 2;
+        width: $mat_checkbox-ripple-radius * 2;
+      }
     }
 
     .mat-checkbox-inner-container {
@@ -164,11 +171,5 @@
       height: $mat-checkbox-size;
     }
 
-    .mat-checkbox-ripple {
-      left: calc(50% - #{$mat-checkbox-ripple-radius});
-      top: calc(50% - #{$mat-checkbox-ripple-radius});
-      height: $mat-checkbox-ripple-radius * 2;
-      width: $mat_checkbox-ripple-radius * 2;
-    }
   }
 }
