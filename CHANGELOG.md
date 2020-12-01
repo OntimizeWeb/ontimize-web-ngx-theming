@@ -1,3 +1,8 @@
+#8.0.0 (2020-11-30)
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@8.0.0*'
+
 #4.0.2 (2019-04-04)
 ### Features
 * **styles:**:
