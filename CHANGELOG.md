@@ -1,3 +1,7 @@
+#4.0.3 (2021-02-09)
+### Features
+* **o-collapsible-column**, **o-collapsible-row**: Update styles for matching no collapsible containers.
+
 #4.0.2 (2019-04-04)
 ### Features
 * **styles:**:
