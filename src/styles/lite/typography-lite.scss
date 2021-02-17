@@ -187,25 +187,16 @@
     }
   }
 
-  .o-column-collapsible:not(.o-appearance-outline),
-  .o-row-collapsible:not(.o-appearance-outline) {
+  .o-column-collapsible,
+  .o-row-collapsible {
     > .o-container.mat-expansion-panel .mat-expansion-panel-header {
-      padding-left: 0;
-      margin: 0;
+      padding-left: 4px;
     }
   }
 
   .o-column-collapsible,
   .o-row-collapsible {
     > .o-container.mat-expansion-panel {
-      .mat-expansion-panel-header {
-        .mat-expansion-panel-header-title {
-          span {
-            padding-left: 0;
-          }
-        }
-      }
-
       .mat-expansion-panel-content .mat-expansion-panel-body {
         > .o-container-scroll {
           padding: 10px 6px 6px;
