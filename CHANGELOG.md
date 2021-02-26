@@ -1,4 +1,4 @@
-# 8.0.1 (2020-02-26)
+# 8.0.1 (2021-02-26)
 * **styles:**:
   * Updated styles for '*ontimize-web-ngx@8.2.0*'
 
