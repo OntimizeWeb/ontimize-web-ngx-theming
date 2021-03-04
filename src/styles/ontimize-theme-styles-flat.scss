@@ -1,0 +1,322 @@
+@import 'node_modules/@angular/material/theming';
+@mixin ontimize-flat-styles($theme, $typography: null) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $success: #2ecc71;
+  $success-hover: #25a25a;
+  $danger: #e74c3c;
+  $danger-hover: #d62c1a;
+  $primary: #1ABC9C;
+  $primary-hover: #148f77;
+  $warning: #f1c40f;
+  $warning-hover: #c29d0b;
+  $info: #3498db;
+  $info-hover: #217dbb;
+
+  $default: #bdc3c7;
+  $inverse: #34495e;
+  $disable: #ECF0F1;
+
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1.1;
+    color: inherit;
+  }
+
+  .small,
+  small {
+    font-size: 83%;
+    line-height: 2.067;
+  }
+
+  .text-muted {
+    color: $default;
+  }
+
+  .text-inverse {
+    color: white;
+  }
+
+  .text-primary {
+    color: $primary;
+  }
+
+  a.text-primary:hover {
+    color: #148f77;
+  }
+
+  .text-warning {
+    color: $warning;
+  }
+
+  a.text-warning:hover {
+    color: $warning-hover;
+  }
+
+  .text-danger {
+    color: $danger;
+  }
+
+  a.text-danger:hover {
+    color: $danger-hover;
+  }
+
+  .text-success {
+    color: $success;
+  }
+
+  a.text-success:hover {
+    color: $success-hover;
+  }
+
+  .text-info {
+    color: $info;
+  }
+
+  a.text-info:hover {
+    color: $info-hover;
+  }
+
+  $typography: mat-typography-config( $font-family: 'Poppins,"Helvetica Neue", sans-serif', $headline: mat-typography-level(32px, 48px, 700), $body-1: mat-typography-level(16px, 24px, 500) );
+
+  .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-stroked-button,
+  button.mat-button-base:not(.mat-icon-button) {
+    min-width: 150px;
+  }
+
+  button,
+  button.mat-button-base {
+    border-radius: 0;
+    border: 0;
+
+    &.o-button-info {
+      color: white;
+      background-color: $info;
+    }
+
+    &.o-button-primary {
+      color: white;
+      background-color: $primary;
+    }
+
+    &.o-button-default {
+      button {
+        color: white;
+        background-color: $default;
+      }
+    }
+
+    &.o-button-success {
+      button {
+        color: white;
+        background-color: $success;
+      }
+    }
+
+    &.o-button-primary {
+      button {
+        color: white;
+        background-color: $primary;
+      }
+    }
+
+    &.o-button-danger {
+      button {
+        color: white;
+        background-color: $danger;
+      }
+    }
+  }
+
+  .o-button {
+    border: none;
+    border-radius: 0;
+    font-weight: normal;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
+
+    button {
+      border-radius: 0;
+    }
+
+    &.o-button-info {
+      button {
+        color: white;
+        background-color: $info;
+
+      }
+
+    }
+
+    &.o-button-default {
+      button {
+        color: white;
+        background-color: $default;
+      }
+    }
+
+    &.o-button-success {
+      button {
+        color: white;
+        background-color: $success;
+      }
+    }
+
+    &.o-button-primary {
+      button {
+        color: white;
+        background-color: $primary;
+      }
+    }
+
+    &.o-button-danger {
+      button {
+        color: white;
+        background-color: $danger;
+      }
+    }
+
+  }
+
+  .ontimize-table.o-table {
+    .o-table-button {
+      button.mat-stroked-button {
+        border: 0;
+        border-radius: 0;
+
+        :not([disabled]) {
+          color: #fff;
+        }
+      }
+
+      &.o-table-button-add button {
+        background-color: $primary;
+      }
+
+      &.o-table-button-refresh button {
+        background-color: $default;
+      }
+
+      &.o-table-button-delete button {
+        background-color: $danger;
+      }
+    }
+
+    div.o-table-container {
+      border-radius: 0;
+    }
+  }
+
+  //form
+  .o-form {
+    .o-form-toolbar-header.mat-toolbar {
+      border-radius: 0;
+    }
+
+    .o-form-toolbar > .mat-toolbar {
+      .mat-stroked-button {
+        border: 0;
+      }
+
+      .mat-button.o-form-toolbar-button,
+      .o-form-toolbar-button {
+        :not([disabled]) {
+          color: #fff;
+        }
+
+        &.o-form-toolbar-button-insert,
+        &.o-form-toolbar-button-new,
+        &.o-form-toolbar-button-save {
+          background-color: $primary;
+        }
+
+        &.o-form-toolbar-button-refresh {
+          background-color: $default;
+        }
+
+        &.o-form-toolbar-button-cancel,
+        &.o-form-toolbar-button-delete {
+          background-color: $danger;
+        }
+
+        &.o-form-toolbar-button-undo {
+          background-color: $warning;
+        }
+      }
+    }
+  }
+
+  o-app-sidenav.o-app-sidenav.header-layout {
+    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav {
+      box-shadow: none;
+      border-right: 1px solid mat-color($foreground, divider);
+    }
+
+    .o-app-header {
+      box-shadow: none;
+      border-bottom: 1px solid mat-color($foreground, divider);
+    }
+  }
+
+  .mat-menu-panel {
+    border: 1px solid mat-color($foreground, divider);
+  }
+
+  .o-app-header {
+    .o-user-info {
+      .o-user-info-wrapper {
+        font-weight: 500;
+        color: white;
+      }
+    }
+  }
+  //TABS
+
+  .mat-tab-group.o-tab-ontimize {
+    .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label,
+    div.mat-tab-body-wrapper {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-radius: 0;
+    }
+
+  }
+
+  //o-row, o-column
+  o-column.o-column,
+  o-row.o-row {
+    background: mat-color($background,background);
+    border-radius: 4px;
+
+    .o-container {
+      .o-container-title {
+
+        padding: 20px 0;
+
+        span {
+          color: mat-color($foreground, text);
+          font-weight: 500;
+        }
+      }
+    }
+
+  }
+
+}
+

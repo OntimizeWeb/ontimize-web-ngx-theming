@@ -39,6 +39,7 @@ gulp.task('concat.themes.scss', gulp.series('copy.themes.files', 'delete.angular
 const FILES = [
   'ontimize-theme.scss',
   'ontimize-theme-lite.scss',
+  'ontimize-theme-flat.scss',
   'CHANGELOG.md',
   'LICENSE',
   'README.md',
