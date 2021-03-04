@@ -21,30 +21,6 @@
   $inverse: #34495e;
   $disable: #ECF0F1;
 
-  .h1,
-  .h2,
-  .h3,
-  .h4,
-  .h5,
-  .h6,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: inherit;
-    font-weight: 700;
-    line-height: 1.1;
-    color: inherit;
-  }
-
-  .small,
-  small {
-    font-size: 83%;
-    line-height: 2.067;
-  }
-
   .text-muted {
     color: $default;
   }
@@ -93,7 +69,6 @@
     color: $info-hover;
   }
 
-  $typography: mat-typography-config( $font-family: 'Poppins,"Helvetica Neue", sans-serif', $headline: mat-typography-level(32px, 48px, 700), $body-1: mat-typography-level(16px, 24px, 500) );
 
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-stroked-button,
   button.mat-button-base:not(.mat-icon-button) {
