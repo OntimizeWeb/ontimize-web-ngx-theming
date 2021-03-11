@@ -69,7 +69,6 @@
     color: $info-hover;
   }
 
-
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-stroked-button,
   button.mat-button-base:not(.mat-icon-button) {
     min-width: 150px;
@@ -169,15 +168,24 @@
 
   }
 
+  .o-form .o-form-toolbar-header.mat-toolbar .o-form-toolbar-button,
+  .ontimize-table.o-table .o-table-button button.mat-stroked-button {
+    &[disabled] {
+      opacity: .65;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    &:not([disabled]) {
+      color: #fff;
+    }
+  }
+
   .ontimize-table.o-table {
     .o-table-button {
       button.mat-stroked-button {
         border: 0;
         border-radius: 0;
 
-        :not([disabled]) {
-          color: #fff;
-        }
       }
 
       &.o-table-button-add button {
@@ -209,9 +217,10 @@
         border: 0;
       }
 
-      .mat-button.o-form-toolbar-button,
-      .o-form-toolbar-button {
-        :not([disabled]) {
+      button.mat-button.o-form-toolbar-button,
+      button.o-form-toolbar-button {
+        &:not([disabled]),
+        &[disabled] {
           color: #fff;
         }
 
@@ -269,6 +278,7 @@
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-radius: 0;
+      padding: 0;
     }
 
   }
@@ -293,5 +303,20 @@
 
   }
 
-}
+  //dialog
+  .o-dialog-class {
+    mat-dialog-container.mat-dialog-container {
+      .mat-dialog-title {
+        border-bottom-color: $default;
+      }
 
+      .mat-dialog-actions {
+        button.mat-button-base[ng-reflect-dialog-result="0"],
+        button.mat-button-base[ng-reflect-dialog-result="true"] {
+          color: white;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
