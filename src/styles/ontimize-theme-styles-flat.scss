@@ -1,28 +1,11 @@
 @import 'node_modules/@angular/material/theming';
+@import './flat/variables.scss';
 @mixin ontimize-flat-styles($theme, $typography: null) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  $success: #2ecc71;
-  $success-hover: #25a25a;
-  $danger: #e74c3c;
-  $danger-hover: #d62c1a;
-  $primary: #1ABC9C;
-  $primary-hover: #148f77;
-  $warning: #f1c40f;
-  $warning-hover: #c29d0b;
-  $info: #3498db;
-  $info-hover: #217dbb;
-
-  $default: #bdc3c7;
-  $inverse: #34495e;
-  $disable: #ECF0F1;
-
   .text-muted {
-    color: $default;
+    color: $default-color;
   }
 
   .text-inverse {
@@ -30,142 +13,96 @@
   }
 
   .text-primary {
-    color: $primary;
+    color: $primary-color;
   }
 
   a.text-primary:hover {
-    color: #148f77;
+    color: $primary-color-hover;
   }
 
   .text-warning {
-    color: $warning;
+    color: $warning-color;
   }
 
   a.text-warning:hover {
-    color: $warning-hover;
+    color: $warning-color-hover;
   }
 
   .text-danger {
-    color: $danger;
+    color: $danger-color;
   }
 
   a.text-danger:hover {
-    color: $danger-hover;
+    color: $danger-color-hover;
   }
 
   .text-success {
-    color: $success;
+    color: $success-color;
   }
 
   a.text-success:hover {
-    color: $success-hover;
+    color: $success-color-hover;
   }
 
   .text-info {
-    color: $info;
+    color: $info-color;
   }
 
   a.text-info:hover {
-    color: $info-hover;
+    color: $info-color-hover;
   }
 
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-stroked-button,
-  button.mat-button-base:not(.mat-icon-button) {
-    min-width: 150px;
+  button.mat-button-base:not(.mat-icon-button):not(.mat-fab):not(.mat-mini-fab) {
+    min-width: 132px;
   }
 
+  /* Generic button class */
+  @include o-button-class();
+
+  /* MATERIAL BUTTON STYLES*/
   button,
-  button.mat-button-base {
-    border-radius: 0;
-    border: 0;
-
-    &.o-button-info {
-      color: white;
-      background-color: $info;
-    }
-
-    &.o-button-primary {
-      color: white;
-      background-color: $primary;
-    }
-
-    &.o-button-default {
-      button {
-        color: white;
-        background-color: $default;
-      }
-    }
-
-    &.o-button-success {
-      button {
-        color: white;
-        background-color: $success;
-      }
-    }
-
-    &.o-button-primary {
-      button {
-        color: white;
-        background-color: $primary;
-      }
-    }
-
-    &.o-button-danger {
-      button {
-        color: white;
-        background-color: $danger;
-      }
-    }
-  }
-
-  .o-button {
-    border: none;
-    border-radius: 0;
-    font-weight: normal;
-    -webkit-font-smoothing: subpixel-antialiased;
-    transition: border .25s linear, color .25s linear, background-color .25s linear;
-
-    button {
+  button.mat-button,
+  button.mat-stroked-button {
+    &:not(.mat-icon-button):not(.mat-fab):not(.mat-mini-fab) {
       border-radius: 0;
     }
 
-    &.o-button-info {
-      button {
-        color: white;
-        background-color: $info;
-
-      }
-
-    }
-
-    &.o-button-default {
-      button {
-        color: white;
-        background-color: $default;
+    &:hover {
+      .mat-button-focus-overlay {
+        opacity: .10;
       }
     }
+  }
 
-    &.o-button-success {
-      button {
-        color: white;
-        background-color: $success;
-      }
+  /* O-BUTTON STYLES */
+  .o-button {
+    border: none;
+    border-radius: 0;
+
+    button:not(.mat-button-base) {
+      color: white;
     }
 
-    &.o-button-primary {
-      button {
-        color: white;
-        background-color: $primary;
-      }
+    &.o-button-info button {
+      background-color: $info-color;
     }
 
-    &.o-button-danger {
-      button {
-        color: white;
-        background-color: $danger;
-      }
+    &.o-button-default button {
+      background-color: $default-color;
     }
 
+    &.o-button-success button {
+      background-color: $success-color;
+    }
+
+    &.o-button-primary button {
+      background-color: $primary-color;
+    }
+
+    &.o-button-danger button {
+      background-color: $danger-color;
+    }
   }
 
   .o-form .o-form-toolbar-header.mat-toolbar .o-form-toolbar-button,
@@ -174,30 +111,24 @@
       opacity: .65;
       color: rgba(255, 255, 255, 0.65);
     }
-
-    &:not([disabled]) {
-      color: #fff;
-    }
   }
 
   .ontimize-table.o-table {
     .o-table-button {
       button.mat-stroked-button {
         border: 0;
-        border-radius: 0;
-
       }
 
       &.o-table-button-add button {
-        background-color: $primary;
+        background-color: $primary-color;
       }
 
       &.o-table-button-refresh button {
-        background-color: $default;
+        background-color: $default-color;
       }
 
       &.o-table-button-delete button {
-        background-color: $danger;
+        background-color: $danger-color;
       }
     }
 
@@ -205,7 +136,6 @@
       border-radius: 0;
     }
   }
-
   //form
   .o-form {
     .o-form-toolbar-header.mat-toolbar {
@@ -227,51 +157,54 @@
         &.o-form-toolbar-button-insert,
         &.o-form-toolbar-button-new,
         &.o-form-toolbar-button-save {
-          background-color: $primary;
+          background-color: $primary-color;
         }
 
         &.o-form-toolbar-button-refresh {
-          background-color: $default;
+          background-color: $default-color;
         }
 
         &.o-form-toolbar-button-cancel,
         &.o-form-toolbar-button-delete {
-          background-color: $danger;
+          background-color: $danger-color;
         }
 
         &.o-form-toolbar-button-undo {
-          background-color: $warning;
+          background-color: $warning-color;
         }
       }
     }
   }
 
+  o-app-sidenav.o-app-sidenav,
   o-app-sidenav.o-app-sidenav.header-layout {
-    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav {
-      box-shadow: none;
-      border-right: 1px solid mat-color($foreground, divider);
+    .o-app-sidenav-container {
+      .o-app-header {
+        box-shadow: none;
+        border-bottom: 1px solid mat-color($foreground, divider);
+      }
+
+      mat-sidenav.mat-drawer.o-app-sidenav-sidenav {
+        box-shadow: none;
+        border-right: 1px solid mat-color($foreground, divider);
+      }
+
+    }
+
+    .mat-menu-panel {
+      border: 1px solid mat-color($foreground, divider);
     }
 
     .o-app-header {
-      box-shadow: none;
-      border-bottom: 1px solid mat-color($foreground, divider);
-    }
-  }
-
-  .mat-menu-panel {
-    border: 1px solid mat-color($foreground, divider);
-  }
-
-  .o-app-header {
-    .o-user-info {
-      .o-user-info-wrapper {
-        font-weight: 500;
-        color: white;
+      .o-user-info {
+        .o-user-info-wrapper {
+          font-weight: 500;
+          color: white;
+        }
       }
     }
   }
   //TABS
-
   .mat-tab-group.o-tab-ontimize {
     .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label,
     div.mat-tab-body-wrapper {
@@ -280,7 +213,6 @@
       border-radius: 0;
       padding: 0;
     }
-
   }
 
   //o-row, o-column
@@ -291,7 +223,6 @@
 
     .o-container {
       .o-container-title {
-
         padding: 20px 0;
 
         span {
@@ -300,23 +231,63 @@
         }
       }
     }
-
   }
 
   //dialog
   .o-dialog-class {
     mat-dialog-container.mat-dialog-container {
       .mat-dialog-title {
-        border-bottom-color: $default;
+        border-bottom-color: $default-color;
       }
 
       .mat-dialog-actions {
+        @include o-button-class();
+
         button.mat-button-base[ng-reflect-dialog-result="0"],
         button.mat-button-base[ng-reflect-dialog-result="true"] {
           color: white;
-          background-color: $primary;
+          background-color: $primary-color;
+        }
+
+        button.mat-button-base[ng-reflect-dialog-result="1"],
+        button.mat-button-base[ng-reflect-dialog-result="false"] {
+          color: white;
+          background-color: $default-color;
         }
       }
+    }
+  }
+}
+@mixin o-button-class() {
+  button {
+    &.o-button-danger,
+    &.o-button-default,
+    &.o-button-info,
+    &.o-button-primary,
+    &.o-button-success {
+      border: none;
+      border-radius: 0;
+      color: white;
+    }
+
+    &.o-button-info {
+      background-color: $info-color;
+    }
+
+    &.o-button-default {
+      background-color: $default-color;
+    }
+
+    &.o-button-success {
+      background-color: $success-color;
+    }
+
+    &.o-button-primary {
+      background-color: $primary-color;
+    }
+
+    &.o-button-danger {
+      background-color: $danger-color;
     }
   }
 }
