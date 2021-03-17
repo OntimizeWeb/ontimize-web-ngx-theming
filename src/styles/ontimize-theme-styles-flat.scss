@@ -56,7 +56,6 @@
   button.mat-stroked-button {
     &:not(.mat-icon-button):not(.mat-fab):not(.mat-mini-fab) {
       border-radius: 0;
-      border: none;
     }
 
     &:hover {
@@ -82,7 +81,7 @@
       }
     }
 
-    &.o-button-info button{
+    &.o-button-info button {
       background-color: $info-color;
     }
 
@@ -119,6 +118,7 @@
 
       button {
         color: white;
+        border: none;
       }
 
       &.o-table-button-add button {
@@ -146,7 +146,7 @@
 
     .o-form-toolbar > .mat-toolbar {
       .mat-stroked-button {
-        border: 0;
+        border: none;
       }
 
       button.mat-button.o-form-toolbar-button,
@@ -260,7 +260,6 @@
   }
 }
 @mixin o-button-class() {
-
   button {
     &.o-button-danger,
     &.o-button-default,
