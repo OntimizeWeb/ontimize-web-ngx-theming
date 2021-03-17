@@ -1,8 +1,9 @@
 @import 'node_modules/@angular/material/theming';
 @import './flat/variables.scss';
-@mixin ontimize-flat-styles($theme, $typography: null) {
+@mixin ontimize-flat-styles($theme, $color_states:null ) {
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
+  @include set-color-states($color_states);
 
   .text-muted {
     color: $default-color;
@@ -16,40 +17,29 @@
     color: $primary-color;
   }
 
-  a.text-primary:hover {
-    color: $primary-color-hover;
-  }
-
   .text-warning {
     color: $warning-color;
-  }
-
-  a.text-warning:hover {
-    color: $warning-color-hover;
   }
 
   .text-danger {
     color: $danger-color;
   }
 
-  a.text-danger:hover {
-    color: $danger-color-hover;
-  }
-
   .text-success {
     color: $success-color;
-  }
-
-  a.text-success:hover {
-    color: $success-color-hover;
   }
 
   .text-info {
     color: $info-color;
   }
 
-  a.text-info:hover {
-    color: $info-color-hover;
+  a.text-danger:hover,
+  a.text-inverse:hover,
+  a.text-muted:hover,
+  a.text-primary:hover,
+  a.text-success:hover,
+  a.text-warning:hover {
+    opacity: .85;
   }
 
   .o-form .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools .o-form-toolbar-button.mat-stroked-button,
@@ -66,6 +56,7 @@
   button.mat-stroked-button {
     &:not(.mat-icon-button):not(.mat-fab):not(.mat-mini-fab) {
       border-radius: 0;
+      border: none;
     }
 
     &:hover {
@@ -73,6 +64,7 @@
         opacity: .10;
       }
     }
+
   }
 
   /* O-BUTTON STYLES */
@@ -80,11 +72,17 @@
     border: none;
     border-radius: 0;
 
-    button:not(.mat-button-base) {
-      color: white;
+    &.o-button-danger,
+    &.o-button-default,
+    &.o-button-info,
+    &.o-button-primary,
+    &.o-button-success {
+      button {
+        color: white;
+      }
     }
 
-    &.o-button-info button {
+    &.o-button-info button{
       background-color: $info-color;
     }
 
@@ -119,6 +117,10 @@
         border: 0;
       }
 
+      button {
+        color: white;
+      }
+
       &.o-table-button-add button {
         background-color: $primary-color;
       }
@@ -136,7 +138,7 @@
       border-radius: 0;
     }
   }
-  //form
+
   .o-form {
     .o-form-toolbar-header.mat-toolbar {
       border-radius: 0;
@@ -149,6 +151,7 @@
 
       button.mat-button.o-form-toolbar-button,
       button.o-form-toolbar-button {
+
         &:not([disabled]),
         &[disabled] {
           color: #fff;
@@ -188,7 +191,6 @@
         box-shadow: none;
         border-right: 1px solid mat-color($foreground, divider);
       }
-
     }
 
     .mat-menu-panel {
@@ -214,7 +216,6 @@
       padding: 0;
     }
   }
-
   //o-row, o-column
   o-column.o-column,
   o-row.o-row {
@@ -259,6 +260,7 @@
   }
 }
 @mixin o-button-class() {
+
   button {
     &.o-button-danger,
     &.o-button-default,
@@ -289,5 +291,17 @@
     &.o-button-danger {
       background-color: $danger-color;
     }
+  }
+}
+@mixin set-color-states($color_states) {
+   @if $color_states!=null{
+    $success-color: if(map-has-key($color_states, success),map-get($color_states, success), $success-color) !global;
+    $danger-color: if(map-has-key($color_states, danger),map-get($color_states, danger), $danger-color) !global;
+    $primary-color: if(map-has-key($color_states, primary),map-get($color_states, primary), $primary-color) !global;
+    $warning-color: if(map-has-key($color_states, warning),map-get($color_states, warning), $warning-color) !global;
+    $info-color: if(map-get($color_states, info),map-get($color_states, info), $info-color) !global;
+    $default-color: if(map-has-key($color_states, default),map-get($color_states, default), $default-color) !global;
+    $inverse-color: if(map-has-key($color_states, inverse),map-get($color_states, inverse), $inverse-color) !global;
+    $disable-color: if(map-has-key($color_states, disable),map-get($color_states, disable), $disable-color) !global;
   }
 }
