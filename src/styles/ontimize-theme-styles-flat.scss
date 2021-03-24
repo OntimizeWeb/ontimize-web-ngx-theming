@@ -194,6 +194,11 @@
       mat-sidenav.mat-drawer.o-app-sidenav-sidenav {
         box-shadow: none;
         border-right: 1px solid mat-color($foreground, divider);
+
+        .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul {
+          box-shadow: none;
+          background: none;
+        }
       }
     }
 
