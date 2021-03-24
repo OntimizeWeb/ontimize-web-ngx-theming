@@ -75,7 +75,8 @@
     &.o-button-default,
     &.o-button-info,
     &.o-button-primary,
-    &.o-button-success {
+    &.o-button-success,
+    &.o-button-warning {
       button {
         color: white;
       }
@@ -99,6 +100,10 @@
 
     &.o-button-danger button {
       background-color: $danger-color;
+    }
+
+    &.o-button-warning button {
+      background-color: $warning-color;
     }
   }
 
@@ -151,7 +156,6 @@
 
       button.mat-button.o-form-toolbar-button,
       button.o-form-toolbar-button {
-
         &:not([disabled]),
         &[disabled] {
           color: #fff;
@@ -265,7 +269,8 @@
     &.o-button-default,
     &.o-button-info,
     &.o-button-primary,
-    &.o-button-success {
+    &.o-button-success,
+    &.o-button-warning {
       border: none;
       border-radius: 0;
       color: white;
@@ -289,6 +294,10 @@
 
     &.o-button-danger {
       background-color: $danger-color;
+    }
+
+    &.o-button-warning {
+      background-color: $warning-color;
     }
   }
 }
