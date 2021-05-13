@@ -72,9 +72,6 @@
 
     .mat-form-field-prefix,
     .mat-form-field-suffix {
-      // Allow icons in a prefix or suffix to adapt to the correct size.
-      padding: $infix-padding 0;
-
       .mat-icon {
         font-size: $prefix-suffix-icon-font-size;
         // line-height: $line-height!important;
@@ -134,6 +131,10 @@
       // so we move it up by the padding amount (adjusted for the smaller font size);
       top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
+  }
+
+  .o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-flex .mat-form-field-prefix {
+    padding-bottom: 0;
   }
   @include o-mat-checkbox-typography($config);
   @include o-mat-form-field-legacy-typography($config);
