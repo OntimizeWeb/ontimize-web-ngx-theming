@@ -1,4 +1,9 @@
+# 8.0.2
+### Bug Fixing
+* **styles**: fix table filter icon alignment.
+
 # 8.0.1 (2021-02-26)
+### Features
 * **styles:**:
   * Updated styles for '*ontimize-web-ngx@8.2.0*'
 
@@ -48,7 +53,7 @@
 * **styles:** updating styles for '*ontimize-web-ngx@3.0.0-rc.0*'
 
 # 1.0.6 (2018-02-22)
-#Bug Fixing
+### Bug Fixing
 * **styles**: fixing styling bugs.
 
 # 1.0.5 (2018-02-21)
