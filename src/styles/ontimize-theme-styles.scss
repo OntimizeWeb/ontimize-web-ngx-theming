@@ -10,7 +10,7 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $container-background: mat-color($background, 'card');
-  $border-radius: 6px;
+  $border-radius: 2px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
