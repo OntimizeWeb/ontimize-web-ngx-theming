@@ -73,48 +73,10 @@
         }
       }
 
-
       .mat-table {
         .mat-form-field {
           .mat-form-field-infix {
             border-top: 0;
-          }
-        }
-
-        &.small {
-          .mat-row .mat-cell {
-            .image-avatar {
-              width: 20px;
-              height: 20px;
-            }
-          }
-        }
-
-        &.medium {
-          .column-filter-icon,
-          .mat-sort-header-arrow {
-            margin-top: 2px;
-          }
-
-          .mat-row .mat-cell {
-            .image-avatar {
-              width: 26px;
-              height: 26px;
-            }
-          }
-        }
-
-        &.large {
-          .column-filter-icon,
-          .mat-sort-header-arrow {
-            margin-top: 3px;
-          }
-
-          .mat-row .mat-cell {
-            .image-avatar {
-              width: 30px;
-              height: 30px;
-            }
           }
         }
 
