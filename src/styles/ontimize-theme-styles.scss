@@ -43,9 +43,12 @@
     color: #aaaaaa;
   }
   /* USER INFO */
-  o-app-header .o-app-header-title,
-  o-user-info {
+  o-app-header .o-app-header-title {
     font-weight: 700;
+  }
+
+  .o-app-header {
+    background-color: $container-background;
   }
   /* FORM */
   .o-form-toolbar {
