@@ -31,6 +31,7 @@
 
     .mat-form-field-wrapper {
       padding-bottom: 0;
+
     }
 
     .mat-form-field-infix {
@@ -57,9 +58,35 @@
 
   }
 
-  .o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-flex .mat-form-field-prefix {
-    padding-bottom: $mat-form-field-outline-label-overlap;
-    padding-right: $infix-padding;
+  .o-table-quickfilter .quickFilter .mat-form-field {
+    .mat-form-field-wrapper {
+      margin: 0;
+
+      .mat-form-field-flex {
+        margin-top: 0;
+        height: 32px;
+        line-height: 32px;
+
+        .mat-form-field-outline {
+          top: 0;
+        }
+
+        .mat-form-field-prefix {
+          padding-bottom: 0;
+          padding-right: $infix-padding;
+        }
+        .mat-form-field-suffix,
+        .mat-form-field-prefix{
+          top:0
+
+        }
+
+        .mat-form-field-infix {
+          padding: 0;
+          border-top: 0;
+        }
+      }
+    }
   }
 }
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
