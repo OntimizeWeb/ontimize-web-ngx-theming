@@ -18,6 +18,12 @@
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
   $fill-background-input: mat-color($foreground, base,0.1);
+  $is-dark-theme: map-get($theme, is-dark);
+
+  // $background-tab-active: mat-color($background, 800);
+  $background-tab-inactive-on-dark: #686868;
+  $background-tab-inactive-on-light: #D7DDE0;
+  $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include layout-padding-margin();
   /* CONTAINER */
@@ -79,9 +85,11 @@
   .mat-tab-group {
     .mat-tab-label,
     .mat-tab-link {
-      font-family: mat-font-family($typography, input);
-      font-size: mat-font-size($typography, input);
-      font-weight: mat-font-weight($typography, input);
+      opacity: .75;
+
+      &.mat-tab-label-active {
+        opacity: .95;
+      }
     }
     // Ontimize tabs
     &.o-tab-ontimize {
@@ -89,13 +97,49 @@
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
-          border-top-left-radius: $border-radius;
-          border-top-right-radius: $border-radius;
-          opacity: $inactive-tab-opacity;
+          background: $background-tab-inactive;
+          padding: 0;
+
+          span.tab-label {
+            text-overflow: clip;
+            position: relative;
+
+            span.gradient-layer {
+              width: 12px;
+
+              background: linear-gradient(to right, transparent, $background-tab-inactive 100%);
+              height: 100%;
+              position: absolute;
+              right: 0;
+            }
+          }
+
+          &:not(.mat-tab-label-active) {
+            &:not(:last-child) {
+              + .mat-tab-label:not(.mat-tab-label-active) {
+                .mat-tab-label-content {
+                  border-left: 1px solid mat-color($foreground, divider);
+
+                }
+              }
+            }
+          }
+
+          .mat-tab-label-content {
+            padding: 0 8px;
+            width: 100%;
+          }
 
           &.mat-tab-label-active {
             background: $container-background;
-            opacity: 1;
+
+            span.tab-label {
+              span.gradient-layer {
+                background: linear-gradient(to right, transparent, $container-background 100%);
+
+              }
+            }
+
           }
         }
 
@@ -124,8 +168,8 @@
     &.mat-button,
     &.mat-flat-button,
     &.mat-icon-button,
-    &.mat-stroked-button,
-    &.mat-raised-button {
+    &.mat-raised-button,
+    &.mat-stroked-button {
       border-radius: $border-radius;
     }
   }
