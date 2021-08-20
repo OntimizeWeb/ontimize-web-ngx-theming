@@ -63,22 +63,6 @@
       background-color: mat-color($background, background);
       border-radius: $border-radius;
       min-height: initial;
-
-      .mat-icon-button:not([disabled]) .mat-icon {
-        color: mat-color($foreground, secondary-text);
-      }
-
-      .o-form-toolbar-button {
-        line-height: $button-line-height;
-
-        &.mat-stroked-button {
-          margin: 0 $basic-padding-size;
-        }
-
-        &.mat-stroked-button:not([disabled]) {
-          color: mat-color($foreground, secondary-text);
-        }
-      }
     }
   }
   /* TABS */
