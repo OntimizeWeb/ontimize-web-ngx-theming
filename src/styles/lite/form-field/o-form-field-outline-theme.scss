@@ -18,17 +18,8 @@
   $outline-appearance-label-offset: -0.25em;
   // The amount of overlap between the label and the outline.
   $mat-form-field-outline-label-overlap: .25em;
-  $border-radius: 2px;
 
   .mat-form-field.mat-form-field-appearance-outline {
-    .mat-form-field-outline-start {
-      border-radius: $border-radius 0 0 $border-radius;
-    }
-
-    .mat-form-field-outline-end {
-      border-radius: 0 $border-radius $border-radius 0;
-    }
-
     .mat-form-field-wrapper {
       padding-bottom: 0;
 
@@ -58,36 +49,7 @@
 
   }
 
-  .o-table-quickfilter .quickFilter .mat-form-field {
-    .mat-form-field-wrapper {
-      margin: 0;
 
-      .mat-form-field-flex {
-        margin-top: 0;
-        height: 32px;
-        line-height: 32px;
-
-        .mat-form-field-outline {
-          top: 0;
-        }
-
-        .mat-form-field-prefix {
-          padding-bottom: 0;
-          padding-right: $infix-padding;
-        }
-
-        .mat-form-field-prefix,
-        .mat-form-field-suffix {
-          top: 0;
-        }
-
-        .mat-form-field-infix {
-          padding: 0;
-          border-top: 0;
-        }
-      }
-    }
-  }
 }
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
   transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale);

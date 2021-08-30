@@ -237,14 +237,6 @@
     }
   }
 
-  /*MAT MENU*/
-  .mat-menu-panel {
-    .mat-menu-item {
-      line-height: 32px;
-      height: 32px;
-    }
-  }
-
 }
 @mixin o-form-theme() {
   $mat-toolbar-height-desktop: 36px;
