@@ -1,4 +1,9 @@
 # 8.0.2
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@8.5.0*'
+  * Set Poppins the default application font
+
 ### Bug Fixing
 * **styles**: fix table filter icon alignment.
 
