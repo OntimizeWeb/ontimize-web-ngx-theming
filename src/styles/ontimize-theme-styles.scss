@@ -3,7 +3,7 @@
 @import './default/typography/ontimize.scss';
 @mixin ontimize-theme-styles($theme, $typography: null) {
    @if $typography != null{
-    $default-typography: map-merge($default-typography, $typography);
+    $typography: map-merge($default-typography, $typography);
   }
 
   $primary: map-get($theme, primary);

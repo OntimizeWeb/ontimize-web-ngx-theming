@@ -2,7 +2,7 @@
 @import './o-table-typography.scss';
 
 $default-typography: mat-typography-config( $font-family: 'Poppins, "Helvetica Neue", sans-serif' );
-$default-typography: map-merge($typography, $table-typography);
+$default-typography: map-merge($default-typography, $table-typography);
 
 $mat-calendar-body-font-size: 11px;
 $mat-calendar-weekday-table-font-size: 9px;

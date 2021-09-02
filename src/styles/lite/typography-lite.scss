@@ -254,15 +254,25 @@
         font-size: 16px;
 
         &.breadcrumb {
+          height: 28px;
           padding: 8px;
           min-height: $mat-toolbar-breadcrumb-height-desktop;
           max-height: $mat-toolbar-breadcrumb-height-desktop;
         }
 
+        .mat-toolbar-tools {
+          .o-form-toolbar-button,
+          .o-form-toolbar-button[disabled] {
+            border-radius: 0;
 
-        .o-breadcrumb {
-          height: 28px;
+            &.mat-icon-button {
+              height: $mat-icon-button-size;
+              line-height: $mat-icon-button-size;
+              width: $mat-icon-button-size;
+            }
+          }
         }
+
       }
     }
   }
