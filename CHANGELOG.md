@@ -2,10 +2,11 @@
 ### Features
 * **styles:**:
   * Updated styles for '*ontimize-web-ngx@8.5.0*'
-  * Set Poppins the default application font
+  * Set Poppins the default application font ([9698684](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/9698684))
+
 ### BREAKING CHANGES
 * **preconfigured themes**:
-  * New color values from a theme ontimize.scss([d3d97cf](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/d3d97cf))
+  * New color values from a theme ontimize.scss ([d3d97cf](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/d3d97cf))
   * Replace latest version of ontimize.scss with ontimize-black-yellow.scss  ([814e9f5](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/814e9f5))
 
 ### Bug Fixing
