@@ -8,6 +8,7 @@
 * **preconfigured themes**:
   * New color values from a theme ontimize.scss ([d3d97cf](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/d3d97cf))
   * Replace latest version of ontimize.scss with ontimize-black-yellow.scss  ([814e9f5](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/814e9f5))
+* **ontimize-theme-styles**: adding '*default-typography*' parameter for overriding default angular material typography ([fead731](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/fead731))
 
 ### Bug Fixing
 * **styles**: fix table filter icon alignment.
