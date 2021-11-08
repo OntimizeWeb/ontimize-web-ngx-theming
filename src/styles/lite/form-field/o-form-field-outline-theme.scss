@@ -16,10 +16,13 @@
   $wrapper-padding-bottom: ($subscript-margin-top + $line-height) * $subscript-font-scale;
   // The amount we offset the label from the input text in the outline appearance.
   $outline-appearance-label-offset: -0.25em;
+  // The amount of overlap between the label and the outline.
+  $mat-form-field-outline-label-overlap: .25em;
 
   .mat-form-field.mat-form-field-appearance-outline {
     .mat-form-field-wrapper {
       padding-bottom: 0;
+
     }
 
     .mat-form-field-infix {
@@ -45,6 +48,8 @@
     }
 
   }
+
+
 }
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
   transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale);

@@ -1,4 +1,20 @@
+# 8.1.0
+### Features
+* **styles:**:
+  * Updated styles for '*ontimize-web-ngx@8.5.0*'
+  * Set Poppins the default application font ([9698684](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/9698684))
+
+### BREAKING CHANGES
+* **preconfigured themes**:
+  * New color values from a theme ontimize.scss ([d3d97cf](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/d3d97cf))
+  * Replace latest version of ontimize.scss with ontimize-black-yellow.scss  ([814e9f5](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/814e9f5))
+* **ontimize-theme-styles**: adding '*default-typography*' parameter for overriding default angular material typography ([fead731](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/fead731))
+
+### Bug Fixing
+* **styles**: fix table filter icon alignment.
+
 # 8.0.1 (2021-02-26)
+### Features
 * **styles:**:
   * Updated styles for '*ontimize-web-ngx@8.2.0*'
 
@@ -48,7 +64,7 @@
 * **styles:** updating styles for '*ontimize-web-ngx@3.0.0-rc.0*'
 
 # 1.0.6 (2018-02-22)
-#Bug Fixing
+### Bug Fixing
 * **styles**: fixing styling bugs.
 
 # 1.0.5 (2018-02-21)

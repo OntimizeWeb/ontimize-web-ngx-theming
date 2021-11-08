@@ -11,9 +11,11 @@
 
   @if $typography != null {
     $typography: map-merge($lite-typography, $typography);
-  } else {
+  } @else {
     $typography: $lite-typography;
   }
+
+
 
   @include ontimize-theme-styles($theme, $typography);
 

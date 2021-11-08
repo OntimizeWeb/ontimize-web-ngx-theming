@@ -15,6 +15,11 @@ Ontimize web module for applications theming through '*scss*' files loading .
     * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';`
     * `@include ontimize-theme-styles($theme);`
 
-  Also, if you want to use compact styles for *'Ontimize Web'* components, you have to include the following lines (theme definition is mandatory, optionally you can add a angular material typography configuration):
+  After define theme, it is necessary to transfer color and default typography to Ontimize Web framework(theme definition and default typography are mandatory):
+
+  * `@import "~ontimize-web-ngx/theme.scss";`
+  * `@include o-material-theme($theme, $default-typography);`
+
+  Also, if you want to use compact styles for *'Ontimize Web'* components instead of the previous lines, you have to include the following lines (theme definition is mandatory, optionally you can add a angular material typography configuration):
   * `@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';`
   * `@include ontimize-theme-styles-lite($theme, $typography);`

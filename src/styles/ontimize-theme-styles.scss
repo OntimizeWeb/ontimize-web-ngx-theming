@@ -1,16 +1,18 @@
 @import 'node_modules/@angular/material/theming';
 @import './lite/layout.scss';
+@import './default/typography/ontimize.scss';
 @mixin ontimize-theme-styles($theme, $typography: null) {
-   @if $typography == null{
-    $typography: mat-typography-config();
+   @if $typography != null{
+    $typography: map-merge($default-typography, $typography);
   }
+
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $container-background: mat-color($background, 'card');
-  $border-radius: 6px;
+  $border-radius: 2px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
   // $tabs-header-border: 1px solid mat-color($foreground, divider);
@@ -18,6 +20,12 @@
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
   $fill-background-input: mat-color($foreground, base,0.1);
+  $is-dark-theme: map-get($theme, is-dark);
+
+  // $background-tab-active: mat-color($background, 800);
+  $background-tab-inactive-on-dark: #686868;
+  $background-tab-inactive-on-light: #D7DDE0;
+  $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include layout-padding-margin();
   /* CONTAINER */
@@ -43,9 +51,12 @@
     color: #aaaaaa;
   }
   /* USER INFO */
-  o-app-header .o-app-header-title,
-  o-user-info {
+  o-app-header .o-app-header-title {
     font-weight: 700;
+  }
+
+  .o-app-header {
+    background-color: $container-background;
   }
   /* FORM */
   .o-form-toolbar {
@@ -54,31 +65,17 @@
       background-color: mat-color($background, background);
       border-radius: $border-radius;
       min-height: initial;
-
-      .mat-icon-button:not([disabled]) .mat-icon {
-        color: mat-color($foreground, secondary-text);
-      }
-
-      .o-form-toolbar-button {
-        line-height: $button-line-height;
-
-        &.mat-stroked-button {
-          margin: 0 $basic-padding-size;
-        }
-
-        &.mat-stroked-button:not([disabled]) {
-          color: mat-color($foreground, secondary-text);
-        }
-      }
     }
   }
   /* TABS */
   .mat-tab-group {
     .mat-tab-label,
     .mat-tab-link {
-      font-family: mat-font-family($typography, input);
-      font-size: mat-font-size($typography, input);
-      font-weight: mat-font-weight($typography, input);
+      opacity: .75;
+
+      &.mat-tab-label-active {
+        opacity: .95;
+      }
     }
     // Ontimize tabs
     &.o-tab-ontimize {
@@ -86,13 +83,49 @@
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
-          border-top-left-radius: $border-radius;
-          border-top-right-radius: $border-radius;
-          opacity: $inactive-tab-opacity;
+          background: $background-tab-inactive;
+          padding: 0;
+
+          span.tab-label {
+            text-overflow: clip;
+            position: relative;
+
+            span.gradient-layer {
+              width: 12px;
+
+              background: linear-gradient(to right, transparent, $background-tab-inactive 100%);
+              height: 100%;
+              position: absolute;
+              right: 0;
+            }
+          }
+
+          &:not(.mat-tab-label-active) {
+            &:not(:last-child) {
+              + .mat-tab-label:not(.mat-tab-label-active) {
+                .mat-tab-label-content {
+                  border-left: 1px solid mat-color($foreground, divider);
+
+                }
+              }
+            }
+          }
+
+          .mat-tab-label-content {
+            padding: 0 8px;
+            width: 100%;
+          }
 
           &.mat-tab-label-active {
             background: $container-background;
-            opacity: 1;
+
+            span.tab-label {
+              span.gradient-layer {
+                background: linear-gradient(to right, transparent, $container-background 100%);
+
+              }
+            }
+
           }
         }
 
@@ -113,6 +146,17 @@
       .mat-tab-body-wrapper {
         padding: $basic-padding-size;
       }
+    }
+  }
+
+  /* BUTTON */
+  button {
+    &.mat-button,
+    &.mat-flat-button,
+    &.mat-icon-button,
+    &.mat-raised-button,
+    &.mat-stroked-button {
+      border-radius: $border-radius;
     }
   }
   /* TABLE */
