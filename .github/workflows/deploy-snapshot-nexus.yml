@@ -53,9 +53,13 @@ jobs:
           npm run build
 
       - name: Publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_NEXUS_AUTH_TOKEN }}
-          registry: ${{ env.NEXUS_REGISTRY }}
-          package: dist/package.json
+        run: |
+          cd dist
+          npm set registry=${{ env.NEXUS_REGISTRY }}
+          npm set _auth=$NPM_AUTH_TOKEN
+          npm publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_NEXUS_AUTH_TOKEN }}
+
+
 
