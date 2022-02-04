@@ -39,7 +39,7 @@ jobs:
       - name: obtain package.json version
         id: project
         run: |
-          node -pe "require('./package.json')['version']"
+          echo ::set-output name=version::$(node -pe "require('./package.json')['version']")
 
       - name: abort if not SNAPSHOT
         if: "!contains(steps.project.outputs.version, 'SNAPSHOT')"
