@@ -1,7 +1,6 @@
 @import 'node_modules/@angular/material/theming';
 @import './fashion/typography-fashion.scss';
 @import './fashion/variables.scss';
-
 @mixin mat-checkbox-theme($theme) {
   $is-dark-theme: map-get($theme, is-dark);
   $primary: map-get($theme, primary);
@@ -32,7 +31,6 @@
     // !important is needed here because a stroke must be set as an
     // attribute on the SVG in order for line animation to work properly.
     stroke: $checkbox-mark-color !important;
-
     @include cdk-high-contrast(black-on-white) {
       // Having the one above be !important ends up overriding the browser's automatic
       // color inversion so we need to re-invert it ourselves for black-on-white.
@@ -44,8 +42,8 @@
     background-color: $checkbox-mark-color;
   }
 
-  .mat-checkbox-indeterminate,
-  .mat-checkbox-checked {
+  .mat-checkbox-checked,
+  .mat-checkbox-indeterminate {
     &.mat-primary .mat-checkbox-background {
       background-color: mat-color($foreground, icon);
     }
@@ -76,9 +74,8 @@
     .mat-checkbox-label {
       color: mat-color($foreground, secondary-text);
     }
-
     @include cdk-high-contrast {
-      opacity: 0.5;
+      opacity: .5;
     }
   }
 
@@ -112,7 +109,6 @@
     }
   }
 }
-
 @mixin mat-pseudo-checkbox-theme($theme) {
   $is-dark-theme: map-get($theme, is-dark);
   $primary: map-get($theme, primary);
@@ -151,10 +147,10 @@
   // don't attach to the `mat-*` classes. Also note that this needs to be below `.mat-primary`
   // in order to allow for the color to be overwritten if the checkbox is inside a parent that
   // has `mat-accent` and is placed inside another parent that has `mat-primary`.
-  .mat-pseudo-checkbox-checked,
-  .mat-pseudo-checkbox-indeterminate,
   .mat-accent .mat-pseudo-checkbox-checked,
-  .mat-accent .mat-pseudo-checkbox-indeterminate {
+  .mat-accent .mat-pseudo-checkbox-indeterminate,
+  .mat-pseudo-checkbox-checked,
+  .mat-pseudo-checkbox-indeterminate {
     background: mat-color($foreground, icon);
   }
 
@@ -170,20 +166,17 @@
     }
   }
 }
-
 @mixin implatform-fashion-theme-styles($theme, $typography: null) {
-  @if $typography != null {
+   @if $typography != null{
     $typography: map-merge($lite-typography, $typography);
-  } @else {
+  }
+  @else {
     $typography: $lite-typography;
   }
-
   @include mat-checkbox-theme($theme);
   @include mat-pseudo-checkbox-theme($theme);
-
   @include o-table-typography-fashion($typography);
   @include o-common-typography-fashion($typography);
-
   @include o-form-theme-fashion($typography);
 
   $background: map-get($theme, background);
@@ -197,21 +190,24 @@
       &.o-app-header-primary {
         background-color: $sidenav-background-color;
       }
+
       &.o-app-header-accent {
         background-color: $sidenav-background-color;
       }
+
       .o-app-header-title {
         color: mat-color($primary);
       }
     }
   }
+
   .o-app-sidenav {
     font-weight: 400;
 
     .o-app-sidenav-menu-group,
     .o-app-sidenav-menu-item {
       a {
-        margin-left: 0px !important;
+        margin-left: 0 !important;
         border-left: 8px solid transparent;
       }
 
@@ -223,6 +219,7 @@
           background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 96%); //#525252 4%
           border-left: 8px solid mat-color($primary);
         }
+
         a.o-app-sidenav-viewer-sidenav-item-selected {
           color: mat-color($foreground, text);
           background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 98%); //#525252 2%
@@ -263,15 +260,12 @@
             }
           }
         }
+
         .o-app-sidenav-menu-item {
           &:not([disabled='true']) {
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix(
-                $sidenav-background-color,
-                mat-color($background, sidenav-overlay),
-                94%
-              ); //#525252 6%
+              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 94% ); //#525252 6%
             }
           }
         }
@@ -287,15 +281,12 @@
             }
           }
         }
+
         .o-app-sidenav-menu-item {
           &:not([disabled='true']) {
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix(
-                $sidenav-background-color,
-                mat-color($background, sidenav-overlay),
-                88%
-              ); //#525252 12%
+              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 88% ); //#525252 12%
             }
           }
         }
@@ -357,6 +348,10 @@
       color: mat-color($foreground, text);
       font-size: 11px;
     }
+
+    .o-table-button .mat-icon {
+      fill: mat-color($foreground, icon);
+    }
   }
 
   .o-table {
@@ -382,7 +377,6 @@
         //         font-weight: 600;
         //         background-color: if($is-dark-theme, #7a7a7a, #f9f9f9);
         //       }
-
         &:hover:not(.o-table-group-row) {
           cursor: pointer;
           background-color: #f5f5f5;
@@ -403,7 +397,7 @@
   .o-form {
     .o-form-toolbar {
       .o-form-toolbar-header {
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
         background-color: mat-color($background, card);
 
         .mat-toolbar-tools {
@@ -432,8 +426,8 @@
         padding: 20px 0;
       }
 
-      > .o-container-header,
-      > .o-container-title,
+       > .o-container-header,
+       > .o-container-title,
       > .mat-expansion-panel-header {
         border-bottom: none;
         color: mat-color($foreground, title);
@@ -444,7 +438,7 @@
         }
       }
 
-      > .o-container-title,
+       > .o-container-title,
       > .mat-expansion-panel-header .o-container-title {
         span {
           font: {
@@ -468,27 +462,27 @@
   }
 
   /*background levels */
+  .bg-level-0,
   o-column.o-column.bg-level-0,
-  o-row.o-row.bg-level-0,
-  .bg-level-0 {
+  o-row.o-row.bg-level-0 {
     background-color: mat-color($background, level-0);
   }
 
+  .bg-level-06,
   o-column.o-column.bg-level-06,
-  o-row.o-row.bg-level-06,
-  .bg-level-06 {
+  o-row.o-row.bg-level-06 {
     background-color: mat-color($background, level-06);
   }
 
+  .bg-level-08,
   o-column.o-column.bg-level-08,
-  o-row.o-row.bg-level-08,
-  .bg-level-08 {
+  o-row.o-row.bg-level-08 {
     background-color: mat-color($background, level-08);
   }
 
+  .bg-level-1,
   o-column.o-column.bg-level-1,
-  o-row.o-row.bg-level-1,
-  .bg-level-1 {
+  o-row.o-row.bg-level-1 {
     background-color: mat-color($background, level-1);
   }
 }
