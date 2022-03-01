@@ -336,17 +336,18 @@
     background: mat-color($background, status-bar);
   }
 
+  /* MAT PAGINATOR*/
+  .mat-paginator {
+    color: mat-color($foreground, text);
+    font-size: 11px;
+  }
+
   .ontimize-table.o-table {
     background: mat-color($background, card);
 
     tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
     thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
       background-color: mat-color($foreground, icon);
-    }
-
-    .mat-paginator {
-      color: mat-color($foreground, text);
-      font-size: 11px;
     }
 
     .o-table-button .mat-icon {
