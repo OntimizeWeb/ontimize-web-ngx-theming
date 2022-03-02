@@ -336,6 +336,10 @@
     background: mat-color($background, status-bar);
   }
 
+  .mat-tab-group .mat-tab-label.mat-tab-label-active {
+    color: mat-color($foreground, title);
+  }
+
   /* MAT PAGINATOR*/
   .mat-paginator {
     color: mat-color($foreground, text);
@@ -351,7 +355,7 @@
     }
 
     .o-table-button .mat-icon {
-      fill: mat-color($foreground, icon);
+      color: mat-color($foreground, icon);
     }
   }
 
@@ -397,6 +401,8 @@
   /* FORM */
   .o-form {
     .o-form-toolbar {
+      margin-bottom: 20px;
+
       .o-form-toolbar-header {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
         background-color: mat-color($background, card);
