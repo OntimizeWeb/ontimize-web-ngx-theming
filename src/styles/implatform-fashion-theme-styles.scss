@@ -402,8 +402,9 @@
         background-color: mat-color($background, card);
 
         .mat-toolbar-tools {
-          .o-form-toolbar-back {
+          button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
             color: mat-color($foreground, text);
+            margin-right: 32px;
           }
 
           .o-form-navigation {
