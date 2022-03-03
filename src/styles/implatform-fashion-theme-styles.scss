@@ -183,8 +183,6 @@
   $foreground: map-get($theme, foreground);
   $sidenav-background-color: mat-color($background, status-bar);
 
-  $border-radius: 4px;
-
   .o-app-header {
     nav {
       &.o-app-header-primary {
@@ -409,15 +407,50 @@
 
         .mat-toolbar-tools {
           button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
-            color: mat-color($foreground, text);
             margin-right: 32px;
           }
 
-          .o-form-navigation {
-            .o-form-toolbar-button {
-              color: mat-color($foreground, text);
-            }
-          }
+        }
+      }
+    }
+  }
+
+  .mat-dialog-actions,
+  .o-form .o-form-toolbar,
+  .ontimize-table.o-table .o-table-container .toolbar .buttons {
+    button:not([disabled]) {
+      &.mat-button-base.mat-primary,
+      &.mat-button-base.o-button-primary,
+      &.mat-button-base[ng-reflect-dialog-result="0"],
+      &.mat-button-base[ng-reflect-dialog-result="true"] {
+        color: mat-color($primary,500);
+        background-color: #ffffff;
+        border-color: mat-color($foreground, text, 0.32);
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: mat-color($primary, 500);
+          background-color: mat-color($primary,100);
+          border-color: transparent;
+
+        }
+
+      }
+
+      &.mat-button-base,
+      &.mat-button-base.mat-accent,
+      &.mat-button-base.o-button-default,
+      &.mat-button-base[ng-reflect-dialog-result="1"],
+      &.mat-button-base[ng-reflect-dialog-result="false"] {
+        color: mat-color($foreground, text);
+        background-color: #ffffff;
+        border-color: mat-color($foreground, text, 0.32);
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: mat-color($primary,500);
+          background-color: mat-color($primary,100);
+          border-color: transparent;
         }
       }
     }
@@ -427,7 +460,7 @@
   o-column.o-column,
   o-row.o-row {
     background: mat-color($background, card);
-    border-radius: 4px;
+    border-radius: $border-radius;
 
     .o-container {
       .o-container-title {
