@@ -414,45 +414,45 @@
     }
   }
 
-  .mat-dialog-actions,
-  .o-form .o-form-toolbar,
-  .o-grid .o-grid-container .mat-toolbar-tools > ,
-  .o-list .mat-toolbar-tools > ,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons {
-    button:not([disabled]) {
-      &.mat-button-base.mat-primary,
-      &.mat-button-base.o-button-primary,
-      &.mat-button-base[ng-reflect-dialog-result="0"],
-      &.mat-button-base[ng-reflect-dialog-result="true"] {
-        color: mat-color($primary,500);
-        background-color: #ffffff;
-        border-color: mat-color($foreground, text, 0.32);
+  .mat-dialog-actions button:not([disabled]),
+  .o-form .o-form-toolbar button:not([disabled]),
+  .o-grid .mat-toolbar-tools > button:not([disabled]),
+  .o-grid .o-grid-footer button:not([disabled]),
+  .o-list .mat-toolbar-tools > button:not([disabled]),
+  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]),
+  button.mat-stroked-button:not([disabled]) {
+    &.mat-button-base.mat-primary,
+    &.mat-button-base.o-button-primary,
+    &.mat-button-base[ng-reflect-dialog-result="0"],
+    &.mat-button-base[ng-reflect-dialog-result="true"] {
+      color: mat-color($primary,500);
+      background-color: #ffffff;
+      border-color: mat-color($foreground, text, 0.32);
 
-        &:hover,
-        .mat-button-focus-overlay {
-          color: mat-color($primary, 500);
-          background-color: mat-color($primary,100);
-          border-color: transparent;
-
-        }
+      &:hover,
+      .mat-button-focus-overlay {
+        color: mat-color($primary, 500);
+        background-color: mat-color($primary,100);
+        border-color: transparent;
 
       }
 
-      &.mat-button-base,
-      &.mat-button-base.mat-accent,
-      &.mat-button-base.o-button-default,
-      &.mat-button-base[ng-reflect-dialog-result="1"],
-      &.mat-button-base[ng-reflect-dialog-result="false"] {
-        color: mat-color($foreground, text);
-        background-color: #ffffff;
-        border-color: mat-color($foreground, text, 0.32);
+    }
 
-        &:hover,
-        .mat-button-focus-overlay {
-          color: mat-color($primary,500);
-          background-color: mat-color($primary,100);
-          border-color: transparent;
-        }
+    &.mat-button-base,
+    &.mat-button-base.mat-accent,
+    &.mat-button-base.o-button-default,
+    &.mat-button-base[ng-reflect-dialog-result="1"],
+    &.mat-button-base[ng-reflect-dialog-result="false"] {
+      color: mat-color($foreground, text);
+      background-color: #ffffff;
+      border-color: mat-color($foreground, text, 0.32);
+
+      &:hover,
+      .mat-button-focus-overlay {
+        color: mat-color($primary,500);
+        background-color: mat-color($primary,100);
+        border-color: transparent;
       }
     }
   }
@@ -468,9 +468,9 @@
         padding: 20px 0;
       }
 
-       > .o-container-header,
+       > .mat-expansion-panel-header,
        > .o-container-title,
-      > .mat-expansion-panel-header {
+      > .o-container-header {
         border-bottom: none;
         color: mat-color($foreground, title);
 
@@ -480,8 +480,8 @@
         }
       }
 
-       > .o-container-title,
-      > .mat-expansion-panel-header .o-container-title {
+       > .mat-expansion-panel-header .o-container-title,
+      > .o-container-title {
         span {
           font: {
             size: mat-font-size($typography, title);
