@@ -2,22 +2,20 @@
   .o-table.o-table {
     .o-table-container {
       .toolbar .buttons .o-table-button .mat-button {
-        border-radius: 2;
+        border-radius: $border-radius;
 
         &.disabled {
-          border-radius: 2;
+          border-radius: $border-radius;
         }
 
         &:not(.disabled):hover {
-          border-radius: 2;
+          border-radius: $border-radius;
         }
       }
     }
   }
 }
 @mixin o-common-typography-fashion($config) {
-  $font-size-title-container: 0.75;
-
   .o-column-collapsible,
   .o-row-collapsible {
     > .o-container.mat-expansion-panel .mat-expansion-panel-header {
@@ -87,7 +85,7 @@
         .mat-toolbar-tools {
           .o-form-toolbar-button,
           .o-form-toolbar-button[disabled] {
-            border-radius: 2px;
+            border-radius: $border-radius;
           }
         }
       }
@@ -111,17 +109,18 @@
     }
   }
 
-  o-row.o-row.main-form-container.container-gap,
-  o-column.o-column.main-form-container.container-gap {
+  o-column.o-column.main-form-container.container-gap,
+  o-row.o-row.main-form-container.container-gap {
     > .o-container:first-child {
       > .o-container-scroll:first-child {
-        padding: 0px 16px 16px;
+        padding: 0 16px 16px;
       }
     }
+
     .o-form.flat-form-toolbar:first-child {
       .o-form-toolbar {
         .o-form-toolbar-header {
-          padding: 0px;
+          padding: 0;
         }
       }
     }
