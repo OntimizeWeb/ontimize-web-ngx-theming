@@ -417,6 +417,8 @@
 
   .mat-dialog-actions,
   .o-form .o-form-toolbar,
+  .o-grid .o-grid-container .mat-toolbar-tools > ,
+  .o-list .mat-toolbar-tools > ,
   .ontimize-table.o-table .o-table-container .toolbar .buttons {
     button:not([disabled]) {
       &.mat-button-base.mat-primary,
