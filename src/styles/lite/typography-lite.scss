@@ -49,30 +49,6 @@
         }
       }
 
-      .mat-paginator-container {
-        min-height: 0;
-
-        .mat-paginator-page-size {
-          align-items: center;
-
-          .mat-paginator-page-size-select {
-            margin: 6px 0;
-
-            .mat-select-arrow-wrapper {
-              transform: initial;
-            }
-
-            .mat-form-field-infix {
-              border-top: 0;
-            }
-          }
-        }
-
-        .mat-paginator-range-actions {
-          min-height: 0;
-        }
-      }
-
       .mat-table {
         .mat-form-field {
           .mat-form-field-infix {
@@ -186,6 +162,31 @@
   .mat-tab-group.mat-tab-group {
     > .mat-tab-header .mat-tab-label {
       height: 32px;
+    }
+  }
+
+  /* MAT-PAGINATOR */
+  .mat-paginator-container {
+    min-height: 0;
+
+    .mat-paginator-page-size {
+      align-items: center;
+
+      .mat-paginator-page-size-select {
+        margin: 6px 0;
+
+        .mat-select-arrow-wrapper {
+          transform: initial;
+        }
+
+        .mat-form-field-infix {
+          border-top: 0;
+        }
+      }
+    }
+
+    .mat-paginator-range-actions {
+      min-height: 0;
     }
   }
 

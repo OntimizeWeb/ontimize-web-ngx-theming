@@ -39,7 +39,7 @@ jobs:
       - name: obtain package.json version
         id: project
         run: |
-          node -pe "require('./package.json')['version']"
+          echo ::set-output name=version::$(node -pe "require('./package.json')['version']")
 
       - name: abort if not SNAPSHOT
         if: "!contains(steps.project.outputs.version, 'SNAPSHOT')"
@@ -54,9 +54,12 @@ jobs:
 
       - name: Publish
         run: |
-          npm config set ${{ env.NEXUS_REGISTRY }}:_authToken=$NPM_AUTH_TOKEN
+          cd dist
+          npm set registry=${{ env.NEXUS_REGISTRY }}
+          npm set _auth=$NPM_AUTH_TOKEN
           npm publish
         env:
-          WORKING_DIR: dist
           NPM_AUTH_TOKEN: ${{ secrets.NPM_NEXUS_AUTH_TOKEN }}
+
+
 
