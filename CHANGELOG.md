@@ -1,6 +1,6 @@
 # 8.2.0 (2022-03-04)
 ### Features
-  * New **fashion theme** available only en light mode
+  * New **fashion theme** available only in light mode
 
 # 8.1.0
 ### Features
