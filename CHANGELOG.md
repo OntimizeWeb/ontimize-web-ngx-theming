@@ -2,7 +2,7 @@
 ### Features
   * New **fashion theme** available only in light mode
 
-# 8.1.0 (2021-11-08)
+# 8.1.0 (2021-09-09)
 ### Features
 * **styles:**:
   * Updated styles for '*ontimize-web-ngx@8.5.0*'
