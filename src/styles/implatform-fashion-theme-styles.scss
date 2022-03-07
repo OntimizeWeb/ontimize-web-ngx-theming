@@ -450,8 +450,8 @@
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary,500);
-        background-color: mat-color($primary,100);
+        color: mat-color($accent,500);
+        background-color: mat-color($accent,100);
         border-color: transparent;
       }
     }
