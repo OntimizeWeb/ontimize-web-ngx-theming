@@ -40,6 +40,7 @@ const FILES = [
   'ontimize-theme.scss',
   'ontimize-theme-lite.scss',
   'ontimize-theme-flat.scss',
+  'implatform-fashion-theme.scss',
   'CHANGELOG.md',
   'LICENSE',
   'README.md',
