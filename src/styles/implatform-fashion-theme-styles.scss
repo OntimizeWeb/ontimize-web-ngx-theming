@@ -457,6 +457,18 @@
     }
   }
 
+  .o-grid .mat-toolbar-tools,
+  .o-list .mat-toolbar-tools,
+  .ontimize-table.o-table .o-table-container .toolbar .buttons {
+    button.mat-icon-button:not(.mat-menu-trigger) {
+      border-color: mat-color($foreground, text, 0.32);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: $border-radius;
+      line-height: $button-line-heigh-width-border;
+    }
+  }
+
   // O-ROW, O-COLUMN
   o-column.o-column,
   o-row.o-row {
@@ -468,9 +480,9 @@
         padding: 20px 0;
       }
 
-       > .o-container-header,
+       > .mat-expansion-panel-header,
        > .o-container-title,
-      > .mat-expansion-panel-header {
+      > .o-container-header {
         border-bottom: none;
         color: mat-color($foreground, title);
 
@@ -480,8 +492,8 @@
         }
       }
 
-       > .o-container-title,
-      > .mat-expansion-panel-header .o-container-title {
+       > .mat-expansion-panel-header .o-container-title,
+      > .o-container-title {
         span {
           font: {
             size: mat-font-size($typography, title);
