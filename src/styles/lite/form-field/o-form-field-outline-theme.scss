@@ -51,9 +51,11 @@
 
 
 }
+
+$mat-form-field-outline-dedupe: null;
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
   transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-outline-dedupe) scale($font-scale);
   width: 100% / $font-scale + $mat-form-field-outline-dedupe;
 
-  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + .00001;
+  $mat-form-field-outline-dedupe: $mat-form-field-outline-dedupe + .00001 !global;
 }

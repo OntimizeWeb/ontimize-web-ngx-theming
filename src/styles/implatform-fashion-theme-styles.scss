@@ -398,7 +398,7 @@
   /* FORM */
   .o-form {
     .o-form-toolbar {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
 
       .o-form-toolbar-header {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
@@ -450,11 +450,28 @@
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary,500);
-        background-color: mat-color($primary,100);
+        color: mat-color($accent,500);
+        background-color: mat-color($accent,100);
         border-color: transparent;
       }
     }
+  }
+
+  .o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button,
+  .o-grid .mat-toolbar-tools button,
+  .o-list .mat-toolbar-tools button,
+  .ontimize-table.o-table .o-table-container .toolbar .buttons button {
+    &.mat-icon-button:not(.mat-menu-trigger) {
+      border-color: mat-color($foreground, text, 0.32);
+      border-style: solid;
+      border-width: 1px;
+      border-radius: $border-radius;
+      line-height: $button-line-height-width-border;
+    }
+  }
+
+  .o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger) {
+    margin: 0 6px;
   }
 
   // O-ROW, O-COLUMN
@@ -468,9 +485,9 @@
         padding: 20px 0;
       }
 
-       > .mat-expansion-panel-header,
+       > .o-container-header,
        > .o-container-title,
-      > .o-container-header {
+      > .mat-expansion-panel-header {
         border-bottom: none;
         color: mat-color($foreground, title);
 
@@ -480,8 +497,8 @@
         }
       }
 
-       > .mat-expansion-panel-header .o-container-title,
-      > .o-container-title {
+       > .o-container-title,
+      > .mat-expansion-panel-header .o-container-title {
         span {
           font: {
             size: mat-font-size($typography, title);
@@ -526,5 +543,12 @@
   o-column.o-column.bg-level-1,
   o-row.o-row.bg-level-1 {
     background-color: mat-color($background, level-1);
+  }
+
+  .o-form-content-wrapper,
+  .o-form-toolbar {
+    &[layout-padding] {
+      padding: 0;
+    }
   }
 }
