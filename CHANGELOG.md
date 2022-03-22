@@ -3,7 +3,7 @@
 * Fixing bug in input placeholder overlapping ([34ecd5d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/34ecd5d))
 * **Fashion theme**
   * Fixed hover styles in the buttons with class mat-accent ([6d8d9e](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/6d8d9e))
-  * Set border in buttons without text in the form toolbar, grid and table ([52dca9](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/52dca9))
+  * Set border in buttons without text in the form, grid and table toolbar([52dca9](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/52dca9))
 
 # 8.2.0 (2022-03-04)
 ### Features
