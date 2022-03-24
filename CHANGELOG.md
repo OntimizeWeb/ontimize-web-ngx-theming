@@ -1,3 +1,7 @@
+# 8.2.2
+### Bug fixes
+* Replace an invalid pseudo class `:label-shown` by a valid `:placeholder-shown` pseudo class ([43d385d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/43d385d)) Closes [#55](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/55)
+
 # 8.2.1 (2022-03-22)
 ### Bugfix
 * Fixing bug in input placeholder overlapping ([34ecd5d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/34ecd5d))
