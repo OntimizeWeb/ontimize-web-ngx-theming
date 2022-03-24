@@ -1,5 +1,9 @@
+# 8.2.2
+### Bug fixes
+* **o-combo**: Fixed the height of the o-combo is not same than other input component with theme lite ([8d6024a](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/8d6024a)) Closes [#53](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/53)
+
 # 8.2.1 (2022-03-22)
-### Bugfix
+### Bug fixes
 * Fixing bug in input placeholder overlapping ([34ecd5d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/34ecd5d))
 * **Fashion theme**
   * Fixed hover styles in the buttons with class mat-accent ([6d8d9e](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/6d8d9e))
