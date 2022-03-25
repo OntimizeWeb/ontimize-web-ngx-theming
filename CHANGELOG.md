@@ -1,7 +1,8 @@
 # 8.2.2
 ### Bug fixes
-* Replace an invalid pseudo class `:label-shown` by a valid `:placeholder-shown` pseudo class ([43d385d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/43d385d)) Closes [#55](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/55)
+* **o-combo**: Fixed the height of the o-combo is not same than other input component with theme lite ([8d6024a](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/8d6024a)) Closes [#53](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/53)
 * Fixed unexpected shorthand "border-radius" after "border-top-right-radius" ([fbb8cce](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/fbb8cce)) Closes [#57](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/57)
+* Replace an invalid pseudo class `:label-shown` by a valid `:placeholder-shown` pseudo class ([43d385d](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/43d385d)) Closes [#55](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/55)
 
 # 8.2.1 (2022-03-22)
 ### Bug fixes
