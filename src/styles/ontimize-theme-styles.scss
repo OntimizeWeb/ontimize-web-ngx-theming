@@ -1,6 +1,8 @@
 @import 'node_modules/@angular/material/theming';
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
+@import './default/addons/report-on-demand.scss';
+
 @mixin ontimize-theme-styles($theme, $typography: null) {
    @if $typography != null{
     $typography: map-merge($default-typography, $typography);
@@ -27,6 +29,7 @@
   $background-tab-inactive-on-light: #D7DDE0;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
   // $mat-font-family: 'Lato', sans-serif !default;
+  @include report-on-demand($theme);
   @include layout-padding-margin();
   /* CONTAINER */
   .rounded-panel,
