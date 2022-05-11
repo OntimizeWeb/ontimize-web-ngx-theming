@@ -1,4 +1,4 @@
-# 8.2.2
+# 8.2.2 (2022-05-11)
 ### Bug fixes
 * **o-combo**: Fixed the height of the o-combo is not same than other input component with theme lite ([8d6024a](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/8d6024a)) Closes [#53](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/53)
 * Fixed unexpected shorthand "border-radius" after "border-top-right-radius" ([fbb8cce](https://github.com/OntimizeWeb/ontimize-web-ngx/commit/fbb8cce)) Closes [#57](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/57)
