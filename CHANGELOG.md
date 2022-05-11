@@ -1,3 +1,4 @@
+# 8.3.0
 # 8.2.2 (2022-05-11)
 ### Bug fixes
 * **o-combo**: Fixed the height of the o-combo is not same than other input component with theme lite ([8d6024a](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/8d6024a)) Closes [#53](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/53)
