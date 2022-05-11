@@ -42,7 +42,7 @@
 
       // Server-side rendered matInput with a label attribute but label not shown
       // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:label-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
+      .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
         @include o_mat-form-field-outline-label-floating( $subscript-font-scale, $infix-padding + $outline-appearance-label-offset, $infix-margin-top);
       }
     }

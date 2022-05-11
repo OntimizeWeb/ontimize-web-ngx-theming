@@ -42,8 +42,12 @@ $o-mat-lite-typography: mat-typography-config(
   $body-1:        mat-typography-level(12px, 15px, 400),
   $caption:       mat-typography-level(11px, 15px, 400),
   $button:        mat-typography-level(13px, 14px, 500),
-  // Line-height must be unit-less fraction of the font-size.
+  /* Line-height must be unit-less fraction of the font-size
+   but it doesnot work on input because the line-height of the user agent remains
+   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
+   */
   $input:         mat-typography-level(14px, 1, 400)
+
 );
 
 $lite-typography: map-merge($o-mat-lite-typography, $table-typography);
