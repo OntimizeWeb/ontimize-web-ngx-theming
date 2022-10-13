@@ -1,4 +1,6 @@
 # 8.4.0
+## BREAKING CHANGES
+Resolving breaking changes of ontimize-web-ngx related to issue [#1044](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1044) ([8986c98](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/8986c98))
 # 8.3.0 (2022-06-22)
 ### Features
 * **styles:**:
