@@ -1,7 +1,7 @@
 @mixin o-table-typography-fashion($config) {
   .o-table.o-table {
     .o-table-container {
-      .toolbar .buttons .o-table-button .mat-button {
+      .o-table-toolbar .buttons .o-table-button .mat-button {
         border-radius: $border-radius;
 
         &.disabled {
