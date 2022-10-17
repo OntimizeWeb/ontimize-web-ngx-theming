@@ -416,10 +416,10 @@
 
   .mat-dialog-actions button:not([disabled]),
   .o-form .o-form-toolbar button:not([disabled]),
-  .o-grid .mat-toolbar-tools > button:not([disabled]),
   .o-grid .o-grid-footer button:not([disabled]),
-  .o-list .mat-toolbar-tools > button:not([disabled]),
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button:not([disabled]),
+  .o-grid .o-grid-toolbar > button:not([disabled]),
+  .o-list .o-list-toolbar > button:not([disabled]),
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
   button.mat-stroked-button:not([disabled]) {
     &.mat-button-base.mat-primary,
     &.mat-button-base.o-button-primary,
@@ -458,9 +458,9 @@
   }
 
   .o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button,
-  .o-grid .mat-toolbar-tools button,
-  .o-list .mat-toolbar-tools button,
-  .ontimize-table.o-table .o-table-container .toolbar .buttons button {
+  .o-grid .o-grid-toolbar button,
+  .o-list .o-list-toolbar button,
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button {
     &.mat-icon-button:not(.mat-menu-trigger) {
       border-color: mat-color($foreground, text, 0.32);
       border-style: solid;
