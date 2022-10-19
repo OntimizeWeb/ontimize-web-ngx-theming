@@ -2,7 +2,6 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
-
 @mixin ontimize-theme-styles($theme, $typography: null) {
    @if $typography != null{
     $typography: map-merge($default-typography, $typography);
@@ -174,6 +173,7 @@
       /*Toolbar*/
       .o-table-toolbar {
         margin: 0 0 4px;
+        padding-top: $basic-padding-size;
       }
 
       .o-table-menu {
