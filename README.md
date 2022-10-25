@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="#-introduction">Introduction</a> •
-  <a href="#-usage">Usage</a> •
+  <a href="#rocket-usage">Usage</a> •
   <a href="#-ideas">Ideas</a> •
   <a href="#gear-development">Development</a>
 </p>
@@ -21,7 +21,7 @@ The Ontimize Web Theming is library for web applications based in [OntimizeWeb](
 
 Check out our [documentation site](https://ontimizeweb.github.io/docs/v8/theming/) to know more details.
 
-## Usage
+## :rocket: Usage
   In your application main style file ('*app.scss*' if you are using ontimize-web pre-built apps) import one of the available themes file for loading its content:
   If you only want to load a pre-built theme of '*@angular/material*', load one of the following files:
 
