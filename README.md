@@ -36,6 +36,7 @@ Check out our [documentation site](https://ontimizeweb.github.io/docs/v8/theming
     ```
 
   In other case you can define your own theme, and, if you want, use the ontimize styles for a better component rendering including the following lines:
+
     ```scss
     @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
     @include ontimize-theme-styles($theme);
