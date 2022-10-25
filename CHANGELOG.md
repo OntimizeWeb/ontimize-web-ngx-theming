@@ -1,3 +1,7 @@
+# 8.4.0 (2022-10-25)
+## BREAKING CHANGES
+Resolving breaking changes of ontimize-web-ngx related to the issue https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1044 of allowing custom toolbar content to be added to the `o-table`, `o-list` and `o-table` components.
+
 # 8.3.0 (2022-06-22)
 ### Features
 * **styles:**:

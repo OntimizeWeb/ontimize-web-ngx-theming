@@ -2,7 +2,6 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
-
 @mixin ontimize-theme-styles($theme, $typography: null) {
    @if $typography != null{
     $typography: map-merge($default-typography, $typography);
@@ -170,28 +169,11 @@
       border: none;
       border-radius: $border-radius;
       box-sizing: border-box;
+
       /*Toolbar*/
-      .toolbar {
+      .o-table-toolbar {
         margin: 0 0 4px;
         padding-top: $basic-padding-size;
-
-        .buttons .o-table-button .mat-button {
-          line-height: inherit;
-          height: 32px;
-          border: 1px solid mat-color($primary);
-          border-radius: $border-radius;
-          margin: 0 $basic-padding-size;
-
-          &.disabled {
-            border: 1px solid mat-color($background, disabled-button);
-          }
-
-          &:not(.disabled):hover {
-            border: 1px solid mat-color($primary);
-            border-radius: $border-radius;
-            margin: 0 $basic-padding-size;
-          }
-        }
       }
 
       .o-table-menu {
