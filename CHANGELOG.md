@@ -1,3 +1,6 @@
+# 8.4.1
+* **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
+
 # 8.4.0 (2022-10-25)
 ## BREAKING CHANGES
 Resolving breaking changes of ontimize-web-ngx related to the issue https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1044 of allowing custom toolbar content to be added to the `o-table`, `o-list` and `o-table` components.
