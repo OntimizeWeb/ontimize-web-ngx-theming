@@ -79,6 +79,7 @@ $light-focused: rgba(white, 0.12);
     disabled-list-option: #eeeeee,
     sidenav-overlay: #525252,
     level-0: mix($app-background-color, mat-color($primary), 97.2%),
+    level-04: #f2f2f2,
     level-06: #f6f6f6,
     level-08: #fafafa,
     level-1: white
@@ -102,7 +103,12 @@ $light-focused: rgba(white, 0.12);
     disabled-button-toggle: black,
     unselected-chip: #616161,
     disabled-list-option: black,
-    sidenav-overlay: #525252
+    sidenav-overlay: #525252,
+    level-0: mix(#171717, mat-color($primary), 94%),
+    level-04: mix(#1E1E1E, mat-color($primary), 94%),
+    level-06: mix(#2C2C2C, mat-color($primary), 94%),
+    level-08: mix(#333333, mat-color($primary), 94%),
+    level-1: mix(#383838, mat-color($primary), 94%)
   );
 }
 
