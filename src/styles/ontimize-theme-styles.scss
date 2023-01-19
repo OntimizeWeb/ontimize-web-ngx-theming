@@ -226,4 +226,36 @@
   .mat-menu-panel.o-search-input-menu .mat-checkbox {
     padding: 2px 0;
   }
+
+    /*background levels */
+    .bg-level-0,
+    o-column.o-column.bg-level-0,
+    o-row.o-row.bg-level-0 {
+      background-color: mat-color($background, level-0);
+    }
+
+    .bg-level-04,
+    o-column.o-column.bg-level-04,
+    o-row.o-row.bg-level-04 {
+      background-color: mat-color($background, level-04);
+    }
+
+    .bg-level-06,
+    o-column.o-column.bg-level-06,
+    o-row.o-row.bg-level-06 {
+      background-color: mat-color($background, level-06);
+    }
+
+    .bg-level-08,
+    o-column.o-column.bg-level-08,
+    o-row.o-row.bg-level-08 {
+      background-color: mat-color($background, level-08);
+    }
+
+    .bg-level-1,
+    o-column.o-column.bg-level-1,
+    o-row.o-row.bg-level-1 {
+      background-color: mat-color($background, level-1);
+    }
+
 }
