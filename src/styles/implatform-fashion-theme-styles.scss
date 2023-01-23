@@ -187,6 +187,7 @@
   @include o-common-typography-fashion($typography);
   @include o-form-theme-fashion($typography);
 
+  $is-dark-theme: map-get($theme, is-dark);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $sidenav-background-color: mat-color($background, status-bar);
@@ -442,28 +443,28 @@
       background-color: transparent;
 
       @if $is-dark-theme {
-        color: mat-color(#ffffff, 0.6);
-        border-color: mat-color(#ffffff, 0.12);
+        color: rgba(#ffffff, 60%);
+        border-color: rgba(#ffffff, 12%);
       }
 
       @else {
         color: #525252;
-        border-color: mat-color(#000000, 0.12);
+        border-color: rgba(#000000, 12%);
       }
 
       &:hover,
       .mat-button-focus-overlay {
 
-        background-color: mat-color($primary, 0.4);
+        background-color: rgba(mat-color($primary, 500), 4%);
 
         @if $is-dark-theme {
           color: mat-color($primary, 200);
-          border-color: mat-color(#ffffff, 0.12);
+          border-color: rgba(#ffffff, 12%);
         }
 
         @else {
           color: mat-color($primary, 500);
-          border-color: mat-color(#000000, 0.12);
+          border-color: rgba(#000000, 12%);
         }
 
       }
@@ -478,28 +479,28 @@
       background-color: transparent;
 
       @if $is-dark-theme {
-        color: mat-color(#ffffff, 0.6);
-        border-color: mat-color(#ffffff, 0.12);
+        color: rgba(#ffffff, 60%);
+        border-color: rgba(#ffffff, 12%);
       }
 
       @else {
         color: #525252;
-        border-color: mat-color(#000000, 0.12);
+        border-color: rgba(#000000, 12%);
       }
 
       &:hover,
       .mat-button-focus-overlay {
 
-        background-color: mat-color($primary, 0.4);
+        background-color: rgba(mat-color($primary, 500), 4%);
 
         @if $is-dark-theme {
           color: mat-color($primary, 200);
-          border-color: mat-color(#ffffff, 0.12);
+          border-color: rgba(#ffffff, 12%);
         }
 
         @else {
           color: mat-color($primary, 500);
-          border-color: mat-color(#000000, 0.12);
+          border-color: rgba(#000000, 12%);
         }
 
       }
