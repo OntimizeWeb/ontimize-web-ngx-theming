@@ -63,26 +63,17 @@ $app-background-color: #eaeaea;
     level-1: mix(#383838, mat-color($primary), 94%));
 }
 
-
-
-
-
 // Creates a container object for a light theme to be given to individual component theme mixins.
 @function o-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
   $mat-theme: mat-light-theme($primary, $accent, $warn);
-  @debug "material theme: #{$mat-theme}";
   $background: map-get($mat-theme, background);
   $o-mat-light-theme-background: map_merge(ontimize-light-theme-background($primary), $background);
-  @debug "ontimize l theme background: #{ontimize-light-theme-background($primary)}";
-  @debug "material background: #{$background}";
-  $return: (primary: $primary,
+  @return (primary: $primary,
     accent: $accent,
     warn: $warn,
     is-dark: false,
     foreground: map-get($mat-theme, foreground),
     background: $o-mat-light-theme-background);
-  @debug "return theme #{$return}";
-  @return $return;
 }
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
