@@ -46,47 +46,45 @@ $accent: mat-palette($mat-custom-accent);
 $app-background-color: #eaeaea;
 
 // Background palette for light themes.
-@function ontimize-light-theme-background($primary) {
-  @return (level-0: mix($app-background-color, mat-color($primary), 97.2%),
+@function ontimize-light-theme-background($mat-theme) {
+  $background: map-get($mat-theme, background);
+  @return map_merge((level-0: $app-background-color,
     level-04: #f2f2f2,
     level-06: #f6f6f6,
     level-08: #fafafa,
-    level-1: white);
+    level-1: white), $background);
 }
 
 // Background palette for dark themes.
-@function ontimize-dark-theme-background($primary) {
-  @return (level-0: mix(#171717, mat-color($primary), 94%),
-    level-04: mix(#1E1E1E, mat-color($primary), 94%),
-    level-06: mix(#2C2C2C, mat-color($primary), 94%),
-    level-08: mix(#333333, mat-color($primary), 94%),
-    level-1: mix(#383838, mat-color($primary), 94%));
+@function ontimize-dark-theme-background($mat-theme) {
+  $background: map-get($mat-theme, background);
+  @return map_merge((level-0: #171717,
+      level-04: #1E1E1E,
+      level-06: #2C2C2C,
+      level-08: #333333,
+      level-1: #383838), $background);
 }
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
 @function o-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
   $mat-theme: mat-light-theme($primary, $accent, $warn);
-  $background: map-get($mat-theme, background);
-  $o-mat-light-theme-background: map_merge(ontimize-light-theme-background($primary), $background);
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
     is-dark: false,
     foreground: map-get($mat-theme, foreground),
-    background: $o-mat-light-theme-background);
+    background: ontimize-light-theme-background($mat-theme));
 }
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
 @function o-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
   $mat-theme: mat-dark-theme($primary, $accent, $warn);
-  $background: map-get($mat-theme, background);
-  $o-mat-dark-theme-background: map_merge(ontimize-dark-theme-background($primary), $background);
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
     is-dark: true,
     foreground: map-get($mat-theme, foreground),
-    background: $o-mat-dark-theme-background);
+    background: ontimize-dark-theme-background($mat-theme));
 }
 
 /* Light theme */
