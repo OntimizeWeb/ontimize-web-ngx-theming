@@ -443,12 +443,12 @@
       background-color: transparent;
 
       @if $is-dark-theme {
-        color: rgba(#ffffff, 60%);
+        color: rgba(#ffffff, 74%);
         border-color: rgba(#ffffff, 12%);
       }
 
       @else {
-        color: #525252;
+        color: rgba(#000000, 74%);
         border-color: rgba(#000000, 12%);
       }
 
@@ -479,12 +479,12 @@
       background-color: transparent;
 
       @if $is-dark-theme {
-        color: rgba(#ffffff, 60%);
+        color: rgba(#ffffff, 74%);
         border-color: rgba(#ffffff, 12%);
       }
 
       @else {
-        color: #525252;
+        color: rgba(#000000, 74%);
         border-color: rgba(#000000, 12%);
       }
 
