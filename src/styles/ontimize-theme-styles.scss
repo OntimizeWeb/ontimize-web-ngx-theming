@@ -10,7 +10,8 @@
 
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
-  // $warn: map-get($theme, warn);
+  $warn: map-get($theme, warn);
+
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $container-background: mat-color($background, 'card');
@@ -161,6 +162,7 @@
   }
 
   /* BUTTON */
+
   button {
 
     &.mat-button,
@@ -172,84 +174,86 @@
     }
   }
 
-  .mat-dialog-actions button:not([disabled]),
-  .o-form .o-form-toolbar button:not([disabled]),
-  .o-grid .o-grid-footer button:not([disabled]),
-  .o-grid .o-grid-toolbar>button:not([disabled]),
-  .o-list .o-list-toolbar>button:not([disabled]),
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
-  button.mat-stroked-button:not([disabled]) {
+  .o-button {
 
-    &.mat-button-base.mat-primary,
-    &.mat-button-base.o-button-primary,
-    &.mat-button-base[ng-reflect-dialog-result="0"],
-    &.mat-button-base[ng-reflect-dialog-result="true"] {
-
-      background-color: transparent !important;
+    .mat-stroked-button.mat-button-base {
+      background-color: transparent;
 
       @if $is-dark-theme {
-        color: rgba(#ffffff, 60%);
+        color: rgba(#ffffff, 74%);
         border-color: rgba(#ffffff, 12%);
       }
 
       @else {
-        color: #525252;
+        color: rgba(#000000, 74%);
         border-color: rgba(#000000, 12%);
       }
-
-      &:hover,
-      .mat-button-focus-overlay {
-
-        background-color: rgba(mat-color($primary, 500), 4%);
-
-        @if $is-dark-theme {
-          color: mat-color($primary, 200);
-          border-color: rgba(#ffffff, 12%);
-        }
-
-        @else {
-          color: mat-color($primary, 500);
-          border-color: rgba(#000000, 12%);
-        }
-
-      }
-
     }
 
-    &.mat-button-base,
-    &.mat-button-base.mat-accent,
-    &.mat-button-base.o-button-default,
-    &.mat-button-base[ng-reflect-dialog-result="1"],
-    &.mat-button-base[ng-reflect-dialog-result="false"] {
-      background-color: transparent !important;
+    .mat-stroked-button.mat-primary {
+      background-color: transparent;
+      color: rgba(mat-color($primary, 500), 74%);
 
       @if $is-dark-theme {
-        color: rgba(#ffffff, 60%);
         border-color: rgba(#ffffff, 12%);
       }
 
       @else {
-        color: #525252;
         border-color: rgba(#000000, 12%);
       }
 
-      &:hover,
-      .mat-button-focus-overlay {
-
+      :hover {
         background-color: rgba(mat-color($primary, 500), 4%);
-
-        @if $is-dark-theme {
-          color: mat-color($primary, 200);
-          border-color: rgba(#ffffff, 12%);
-        }
-
-        @else {
-          color: mat-color($primary, 500);
-          border-color: rgba(#000000, 12%);
-        }
-
       }
     }
+
+    .mat-stroked-button.mat-accent {
+      background-color: transparent;
+      color: rgba(mat-color($accent, 500), 74%);
+
+      @if $is-dark-theme {
+        border-color: rgba(#ffffff, 12%);
+      }
+
+      @else {
+        border-color: rgba(#000000, 12%);
+      }
+
+      :hover {
+        background-color: rgba(mat-color($accent, 500), 4%);
+      }
+    }
+
+    .mat-stroked-button.mat-warn {
+      background-color: transparent;
+      color: rgba(mat-color($warn, 500), 74%);
+
+      @if $is-dark-theme {
+        border-color: rgba(#ffffff, 12%);
+      }
+
+      @else {
+        border-color: rgba(#000000, 12%);
+      }
+
+      :hover {
+        background-color: rgba(mat-color($warn, 500), 4%);
+      }
+    }
+
+    /*.mat-stroked-button.mat-button-base:disabled {
+      background-color: transparent;
+
+      @if $is-dark-theme {
+        color: rgba(#ffffff, 38%);
+        border-color: rgba(#ffffff, 12%);
+      }
+
+      @else {
+        color: rgba(#000000, 38%);
+        border-color: rgba(#000000, 12%);
+      }
+    }*/
   }
 
   /* TABLE */
