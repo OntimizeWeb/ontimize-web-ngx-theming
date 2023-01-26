@@ -2,9 +2,8 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
-
 @mixin ontimize-theme-styles($theme, $typography: null) {
-  @if $typography !=null {
+   @if $typography !=null{
     $typography: map-merge($default-typography, $typography);
   }
 
@@ -78,7 +77,6 @@
 
   /* TABS */
   .mat-tab-group {
-
     .mat-tab-label,
     .mat-tab-link {
       opacity: .75;
@@ -90,7 +88,7 @@
 
     // Ontimize tabs
     &.o-tab-ontimize {
-      >.mat-tab-header {
+      > .mat-tab-header {
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
@@ -145,7 +143,7 @@
         }
       }
 
-      >.mat-tab-body-wrapper {
+      > .mat-tab-body-wrapper {
         background: $container-background;
         border-radius: $border-radius;
         border-top: $tabs-header-border;
@@ -164,7 +162,6 @@
   /* BUTTON */
 
   button {
-
     &.mat-button,
     &.mat-flat-button,
     &.mat-icon-button,
@@ -175,15 +172,12 @@
   }
 
   .o-button {
-
     .mat-stroked-button.mat-button-base {
       background-color: transparent;
-
       @if $is-dark-theme {
         color: rgba(#ffffff, 74%);
         border-color: rgba(#ffffff, 12%);
       }
-
       @else {
         color: rgba(#000000, 74%);
         border-color: rgba(#000000, 12%);
@@ -193,11 +187,9 @@
     .mat-stroked-button.mat-primary {
       background-color: transparent;
       color: rgba(mat-color($primary, 500), 74%);
-
       @if $is-dark-theme {
         border-color: rgba(#ffffff, 12%);
       }
-
       @else {
         border-color: rgba(#000000, 12%);
       }
@@ -210,11 +202,9 @@
     .mat-stroked-button.mat-accent {
       background-color: transparent;
       color: rgba(mat-color($accent, 500), 74%);
-
       @if $is-dark-theme {
         border-color: rgba(#ffffff, 12%);
       }
-
       @else {
         border-color: rgba(#000000, 12%);
       }
@@ -227,11 +217,9 @@
     .mat-stroked-button.mat-warn {
       background-color: transparent;
       color: rgba(mat-color($warn, 500), 74%);
-
       @if $is-dark-theme {
         border-color: rgba(#ffffff, 12%);
       }
-
       @else {
         border-color: rgba(#000000, 12%);
       }
