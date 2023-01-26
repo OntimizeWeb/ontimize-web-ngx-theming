@@ -2,14 +2,15 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
+
 @mixin ontimize-theme-styles($theme, $typography: null) {
-   @if $typography != null{
+  @if $typography !=null {
     $typography: map-merge($default-typography, $typography);
   }
 
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
-  // $warn: map-get($theme, warn);
+  $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $container-background: mat-color($background, 'card');
@@ -20,7 +21,7 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
-  $fill-background-input: mat-color($foreground, base,0.1);
+  $fill-background-input: mat-color($foreground, base, 0.1);
   $is-dark-theme: map-get($theme, is-dark);
 
   // $background-tab-active: mat-color($background, 800);
@@ -30,6 +31,7 @@
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
   @include layout-padding-margin();
+
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
@@ -47,11 +49,13 @@
       padding: $basic-padding-size*2;
     }
   }
+
   /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
+
   /* USER INFO */
   o-app-header .o-app-header-title {
     font-weight: 700;
@@ -60,6 +64,7 @@
   .o-app-header {
     background-color: $container-background;
   }
+
   /* FORM */
   .o-form-toolbar {
     .mat-toolbar {
@@ -69,8 +74,10 @@
       min-height: initial;
     }
   }
+
   /* TABS */
   .mat-tab-group {
+
     .mat-tab-label,
     .mat-tab-link {
       opacity: .75;
@@ -79,9 +86,10 @@
         opacity: .95;
       }
     }
+
     // Ontimize tabs
     &.o-tab-ontimize {
-      > .mat-tab-header {
+      >.mat-tab-header {
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
@@ -104,7 +112,7 @@
 
           &:not(.mat-tab-label-active) {
             &:not(:last-child) {
-              + .mat-tab-label:not(.mat-tab-label-active) {
+              +.mat-tab-label:not(.mat-tab-label-active) {
                 .mat-tab-label-content {
                   border-left: 1px solid mat-color($foreground, divider);
 
@@ -136,13 +144,14 @@
         }
       }
 
-      > .mat-tab-body-wrapper {
+      >.mat-tab-body-wrapper {
         background: $container-background;
         border-radius: $border-radius;
         border-top: $tabs-header-border;
         border-top-left-radius: initial;
       }
     }
+
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -153,6 +162,7 @@
 
   /* BUTTON */
   button {
+
     &.mat-button,
     &.mat-flat-button,
     &.mat-icon-button,
@@ -161,6 +171,88 @@
       border-radius: $border-radius;
     }
   }
+
+  .o-button {
+    .mat-stroked-button.mat-button-base {
+      background-color: transparent;
+
+      @if $is-dark-theme {
+        color: #ffffffbd;
+        border-color: #ffffff1f;
+      }
+
+      @else {
+        color: #000000bd;
+        border-color: #0000001f;
+      }
+    }
+
+    .mat-stroked-button.mat-primary {
+      background-color: transparent !important;
+      color: mat-color($primary, 500, 0.74);
+
+      @if $is-dark-theme {
+        border-color: #ffffff1f !important;
+      }
+
+      @else {
+        border-color: #0000001f !important;
+      }
+
+      :hover {
+        background-color: mat-color($primary, 500, 0.04) !important;
+      }
+    }
+
+    .mat-stroked-button.mat-accent {
+      background-color: transparent !important;
+      color: mat-color($accent, 500, 0.74);
+
+      @if $is-dark-theme {
+        border-color: #ffffff1f !important;
+      }
+
+      @else {
+        border-color: #0000001f !important;
+      }
+
+      :hover {
+        background-color: mat-color($accent, 500, 0.04) !important;
+      }
+    }
+
+    .mat-stroked-button.mat-warn {
+      background-color: transparent;
+      color: mat-color($warn, 500, 0.74);
+
+      @if $is-dark-theme {
+        border-color: #ffffff1f;
+      }
+
+      @else {
+        border-color: #0000001f;
+      }
+
+      :hover {
+        background-color: mat-color($warn, 500, 0.04);
+      }
+    }
+
+    .mat-stroked-button.mat-button-base[disabled] {
+      background-color: transparent;
+
+      @if $is-dark-theme {
+        color: #ffffff61;
+        border-color: #ffffff1f;
+      }
+
+      @else {
+        color: #00000061;
+        border-color: #0000001f;
+      }
+    }
+  }
+
   /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
