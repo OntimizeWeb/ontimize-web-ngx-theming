@@ -1,13 +1,10 @@
-name: Build CI
+name: Build manually
 
 on:
-  pull_request:
-    types: [closed]
-    branches: [8.x.x, hotfix/8.*]
+  workflow_dispatch:
 
 jobs:
   build:
-    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
