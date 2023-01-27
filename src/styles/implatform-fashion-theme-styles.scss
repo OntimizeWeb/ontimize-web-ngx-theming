@@ -191,6 +191,7 @@
   $foreground: map-get($theme, foreground);
   $sidenav-background-color: mat-color($background, status-bar);
   $is-dark-theme: map-get($theme, is-dark);
+  $warn: map-get($theme, warn);
 
   .o-app-header {
     nav {
@@ -435,38 +436,45 @@
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
   button.mat-stroked-button:not([disabled]) {
 
+    &.mat-stroked-button.mat-button-base {
+      color: mat-color($foreground, text);
+    }
+
     &.mat-button-base.mat-primary,
     &.mat-button-base.o-button-primary,
     &.mat-button-base[ng-reflect-dialog-result="0"],
     &.mat-button-base[ng-reflect-dialog-result="true"] {
       color: mat-color($primary, 500);
       background-color: transparent;
-      border-color: mat-color($foreground, text, 0.32);
+      border-color: mat-color($foreground, text, 0.12);
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary, 500);
-        background-color: mat-color($primary, 100);
-        border-color: transparent;
-
+        background-color: mat-color($primary, 500, 0.04) !important;
       }
 
     }
 
-    &.mat-button-base,
     &.mat-button-base.mat-accent,
     &.mat-button-base.o-button-default,
     &.mat-button-base[ng-reflect-dialog-result="1"],
     &.mat-button-base[ng-reflect-dialog-result="false"] {
-      color: mat-color($foreground, text);
+      color: mat-color($accent, 500);
       background-color: transparent;
-      border-color: mat-color($foreground, text, 0.32);
+      border-color: mat-color($foreground, text, 0.12);
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($accent, 500);
-        background-color: mat-color($accent, 100);
-        border-color: transparent;
+        background-color: mat-color($accent, 500, 0.04) !important;
+      }
+    }
+
+    &.mat-button-base.mat-warn {
+      color: mat-color($warn, 500);
+
+      &:hover,
+      .mat-button-focus-overlay {
+        background-color: mat-color($warn, 500, 0.04);
       }
     }
   }

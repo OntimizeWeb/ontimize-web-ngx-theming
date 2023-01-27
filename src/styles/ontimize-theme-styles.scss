@@ -188,7 +188,7 @@
     }
 
     .mat-stroked-button.mat-primary {
-      background-color: transparent !important;
+      background-color: transparent;
       color: mat-color($primary, 500, 0.74);
 
       @if $is-dark-theme {
@@ -205,7 +205,7 @@
     }
 
     .mat-stroked-button.mat-accent {
-      background-color: transparent !important;
+      background-color: transparent;
       color: mat-color($accent, 500, 0.74);
 
       @if $is-dark-theme {
