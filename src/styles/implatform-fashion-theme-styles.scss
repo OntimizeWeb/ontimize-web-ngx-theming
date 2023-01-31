@@ -2,6 +2,121 @@
 @import './fashion/typography-fashion.scss';
 @import './fashion/variables.scss';
 
+/*Application background-color*/
+$app-background-color: #eaeaea;
+/*Sidenav background-color*/
+$sidenav-background-color: #f5f5f5;
+
+// Background palette for light themes.
+@function fashion-light-theme-background($primary) {
+  $primary-500: mat-color($primary, 500);
+  @return (level-0: mix($app-background-color, $primary-500, 98%),
+    level-04: #f2f2f2,
+    level-06: #f6f6f6,
+    level-08: #fafafa,
+    level-1: white,
+    sidenav-overlay: #525252,
+    status-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
+    app-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
+    background: mix($app-background-color, mat-color($primary), 97.2%),
+    hover: rgba(black, 0.04),
+    card: white,
+    dialog: white,
+    disabled-button: rgba(black, 0.12),
+    raised-button: white,
+    focused-button: $dark-focused,
+    selected-button: #e0e0e0,
+    selected-disabled-button: #bdbdbd,
+    disabled-button-toggle: #eeeeee,
+    unselected-chip: #e0e0e0,
+    disabled-list-option: #eeeeee);
+}
+
+// Background palette for dark themes.
+@function fashion-dark-theme-background($primary) {
+  $primary-500: mat-color($primary, 500);
+  @return (level-0: mix(#171717, $primary-500, 94%),
+    level-04: mix(#1E1E1E, $primary-500, 94%),
+    level-06: mix(#2C2C2C, $primary-500, 94%),
+    level-08: mix(#333333, $primary-500, 94%),
+    level-1: mix(#383838, $primary-500, 94%),
+    sidenav-overlay: #525252,
+    status-bar: black,
+    app-bar: #212121,
+    background: #303030,
+    hover: rgba(white, 0.04),
+    card: #424242,
+    dialog: #424242,
+    disabled-button: rgba(white, 0.12),
+    raised-button: #424242,
+    focused-button: $light-focused,
+    selected-button: #212121,
+    selected-disabled-button: #424242,
+    disabled-button-toggle: black,
+    unselected-chip: #616161,
+    disabled-list-option: black);
+}
+
+// Foreground palette for light themes.
+@function fashion-light-theme-foreground() {
+  @return (base: rgba(black, 0.6),
+    divider: rgba(black, 0.12),
+    dividers: rgba(black, 0.12),
+    disabled: rgba(black, 0.38),
+    disabled-button: rgba(black, 0.38),
+    disabled-text: rgba(black, 0.38),
+    elevation: black,
+    hint-text: rgba(black, 0.38),
+    secondary-text: rgba(black, 0.54),
+    title: rgba(black, 0.87),
+    icon: rgba(black, 0.6),
+    icons: rgba(black, 0.6),
+    text: rgba(black, 0.87),
+    slider-min: rgba(black, 0.38),
+    slider-off: rgba(black, 0.38),
+    slider-off-active: rgba(black, 0.38));
+}
+
+// Foreground palette for dark themes.
+@function fashion-dark-theme-foreground() {
+  @return (base: rgba(white, 0.6),
+    divider: rgba(white, 0.12),
+    dividers: rgba(white, 0.12),
+    disabled: rgba(white, 0.38),
+    disabled-button: rgba(white, 0.38),
+    disabled-text: rgba(white, 0.38),
+    elevation: white,
+    hint-text: rgba(white, 0.38),
+    secondary-text: rgba(white, 0.54),
+    title: rgba(white, 0.87),
+    icon: rgba(white, 0.6),
+    icons: rgba(white, 0.6),
+    text: rgba(white, 0.87),
+    slider-min: rgba(white, 0.38),
+    slider-off: rgba(white, 0.38),
+    slider-off-active: rgba(white, 0.38));
+}
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function fashion-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: fashion-light-theme-foreground(),
+    background: fashion-light-theme-background($primary));
+}
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function fashion-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: fashion-dark-theme-foreground(),
+    background: fashion-dark-theme-background($primary));
+}
+
 @mixin mat-checkbox-theme($theme) {
   $is-dark-theme: map-get($theme, is-dark);
   $primary: map-get($theme, primary);
