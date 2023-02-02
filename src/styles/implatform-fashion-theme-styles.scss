@@ -86,7 +86,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
 @function fashion-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  $mat-theme: mat-light-theme($primary, $accent, $warn);
+  $mat-theme: mat-dark-theme($primary, $accent, $warn);
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
