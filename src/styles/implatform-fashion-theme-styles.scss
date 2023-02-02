@@ -86,7 +86,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
 @function fashion-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  $mat-theme: mat-light-theme($primary, $accent, $warn);
+  $mat-theme: mat-dark-theme($primary, $accent, $warn);
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
@@ -521,13 +521,16 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     }
   }
 
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base {
+    background-color: transparent;
+  }
+
   .mat-dialog-actions button:not([disabled]),
   .o-form .o-form-toolbar button:not([disabled]),
   .o-grid .o-grid-footer button:not([disabled]),
   .o-grid .o-grid-toolbar>button:not([disabled]),
   .o-list .o-list-toolbar>button:not([disabled]),
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
-  button.mat-stroked-button:not([disabled]) {
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]) {
 
     &.mat-stroked-button.mat-button-base {
       color: mat-color($foreground, text);
