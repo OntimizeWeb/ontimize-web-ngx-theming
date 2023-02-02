@@ -1,4 +1,7 @@
 # 8.5.0
+### Features
+* **styles:**:
+  * Added new styles for '*ontimize-web-ngx-charts@8.2.0*'
 
 # 8.4.1 (2022-12-19)
 * **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
