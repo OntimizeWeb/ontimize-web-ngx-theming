@@ -2,8 +2,58 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
+
+$background-color: #eceff1;
+/*Application background-color*/
+$app-background-color: #eaeaea;
+
+// Background palette for light themes.
+@function ontimize-light-theme-background($mat-theme) {
+  $background: map-get($mat-theme, background);
+  @return map_merge($mat-background,
+    (level-0: $app-background-color,
+      level-04: #f2f2f2,
+      level-06: #f6f6f6,
+      level-08: #fafafa,
+      level-1: white,
+      background: $background-color));
+}
+
+// Background palette for dark themes.
+@function ontimize-dark-theme-background($mat-theme) {
+  $background: map-get($mat-theme, background);
+  @return map_merge($background,
+    (level-0: #171717,
+      level-04: #1E1E1E,
+      level-06: #2C2C2C,
+      level-08: #333333,
+      level-1: #383838));
+}
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function o-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  $mat-theme: mat-light-theme($primary, $accent, $warn);
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: map-get($mat-theme, foreground),
+    background: ontimize-light-theme-background($mat-theme));
+}
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function o-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  $mat-theme: mat-dark-theme($primary, $accent, $warn);
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: map-get($mat-theme, foreground),
+    background: ontimize-dark-theme-background($mat-theme));
+}
+
 @mixin ontimize-theme-styles($theme, $typography: null) {
-   @if $typography != null{
+  @if $typography !=null {
     $typography: map-merge($default-typography, $typography);
   }
 
@@ -20,7 +70,7 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
-  $fill-background-input: mat-color($foreground, base,0.1);
+  $fill-background-input: mat-color($foreground, base, 0.1);
   $is-dark-theme: map-get($theme, is-dark);
 
   // $background-tab-active: mat-color($background, 800);
@@ -30,6 +80,7 @@
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
   @include layout-padding-margin();
+
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
@@ -47,11 +98,13 @@
       padding: $basic-padding-size*2;
     }
   }
+
   /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
+
   /* USER INFO */
   o-app-header .o-app-header-title {
     font-weight: 700;
@@ -60,6 +113,7 @@
   .o-app-header {
     background-color: $container-background;
   }
+
   /* FORM */
   .o-form-toolbar {
     .mat-toolbar {
@@ -69,8 +123,10 @@
       min-height: initial;
     }
   }
+
   /* TABS */
   .mat-tab-group {
+
     .mat-tab-label,
     .mat-tab-link {
       opacity: .75;
@@ -79,9 +135,10 @@
         opacity: .95;
       }
     }
+
     // Ontimize tabs
     &.o-tab-ontimize {
-      > .mat-tab-header {
+      >.mat-tab-header {
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
@@ -104,7 +161,7 @@
 
           &:not(.mat-tab-label-active) {
             &:not(:last-child) {
-              + .mat-tab-label:not(.mat-tab-label-active) {
+              +.mat-tab-label:not(.mat-tab-label-active) {
                 .mat-tab-label-content {
                   border-left: 1px solid mat-color($foreground, divider);
 
@@ -136,13 +193,14 @@
         }
       }
 
-      > .mat-tab-body-wrapper {
+      >.mat-tab-body-wrapper {
         background: $container-background;
         border-radius: $border-radius;
         border-top: $tabs-header-border;
         border-top-left-radius: initial;
       }
     }
+
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -153,6 +211,7 @@
 
   /* BUTTON */
   button {
+
     &.mat-button,
     &.mat-flat-button,
     &.mat-icon-button,
@@ -161,6 +220,7 @@
       border-radius: $border-radius;
     }
   }
+
   /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;
@@ -226,4 +286,36 @@
   .mat-menu-panel.o-search-input-menu .mat-checkbox {
     padding: 2px 0;
   }
+
+  /*background levels */
+  .bg-level-0,
+  o-column.o-column.bg-level-0,
+  o-row.o-row.bg-level-0 {
+    background-color: mat-color($background, level-0);
+  }
+
+  .bg-level-04,
+  o-column.o-column.bg-level-04,
+  o-row.o-row.bg-level-04 {
+    background-color: mat-color($background, level-04);
+  }
+
+  .bg-level-06,
+  o-column.o-column.bg-level-06,
+  o-row.o-row.bg-level-06 {
+    background-color: mat-color($background, level-06);
+  }
+
+  .bg-level-08,
+  o-column.o-column.bg-level-08,
+  o-row.o-row.bg-level-08 {
+    background-color: mat-color($background, level-08);
+  }
+
+  .bg-level-1,
+  o-column.o-column.bg-level-1,
+  o-row.o-row.bg-level-1 {
+    background-color: mat-color($background, level-1);
+  }
+
 }
