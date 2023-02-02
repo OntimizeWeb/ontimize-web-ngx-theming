@@ -221,12 +221,26 @@ $app-background-color: #eaeaea;
     }
   }
 
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]).mat-button-base {
+    background-color: transparent !important;
+
+    @if $is-dark-theme {
+      color: #ffffff !important;
+      border-color: #ffffff1f !important;
+    }
+
+    @else {
+      color: #000000bd !important;
+      border-color: #0000001f !important;
+    }
+  }
+
   .o-button {
     .mat-stroked-button.mat-button-base {
       background-color: transparent !important;
 
       @if $is-dark-theme {
-        color: #ffffffbd !important;
+        color: #ffffff !important;
         border-color: #ffffff1f !important;
       }
 
