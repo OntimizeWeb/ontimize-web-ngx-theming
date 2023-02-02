@@ -10,7 +10,7 @@ $app-background-color: #eaeaea;
 // Background palette for light themes.
 @function ontimize-light-theme-background($mat-theme) {
   $background: map-get($mat-theme, background);
-  @return map_merge($mat-background,
+  @return map_merge($background,
     (level-0: $app-background-color,
       level-04: #f2f2f2,
       level-06: #f6f6f6,
@@ -223,22 +223,22 @@ $app-background-color: #eaeaea;
 
   .o-button {
     .mat-stroked-button.mat-button-base {
-      background-color: transparent;
+      background-color: transparent !important;
 
       @if $is-dark-theme {
-        color: #ffffffbd;
-        border-color: #ffffff1f;
+        color: #ffffffbd !important;
+        border-color: #ffffff1f !important;
       }
 
       @else {
-        color: #000000bd;
-        border-color: #0000001f;
+        color: #000000bd !important;
+        border-color: #0000001f !important;
       }
     }
 
     .mat-stroked-button.mat-primary {
-      background-color: transparent;
-      color: mat-color($primary, 500, 0.74);
+      background-color: transparent !important;
+      color: mat-color($primary, 500, 0.74) !important;
 
       @if $is-dark-theme {
         border-color: #ffffff1f !important;
@@ -254,8 +254,8 @@ $app-background-color: #eaeaea;
     }
 
     .mat-stroked-button.mat-accent {
-      background-color: transparent;
-      color: mat-color($accent, 500, 0.74);
+      background-color: transparent !important;
+      color: mat-color($accent, 500, 0.74) !important;
 
       @if $is-dark-theme {
         border-color: #ffffff1f !important;
@@ -271,33 +271,33 @@ $app-background-color: #eaeaea;
     }
 
     .mat-stroked-button.mat-warn {
-      background-color: transparent;
-      color: mat-color($warn, 500, 0.74);
+      background-color: transparent !important;
+      color: mat-color($warn, 500, 0.74) !important;
 
       @if $is-dark-theme {
-        border-color: #ffffff1f;
+        border-color: #ffffff1f !important;
       }
 
       @else {
-        border-color: #0000001f;
+        border-color: #0000001f !important;
       }
 
       :hover {
-        background-color: mat-color($warn, 500, 0.04);
+        background-color: mat-color($warn, 500, 0.04) !important;
       }
     }
 
     .mat-stroked-button.mat-button-base[disabled] {
-      background-color: transparent;
+      background-color: transparent !important;
 
       @if $is-dark-theme {
-        color: #ffffff61;
-        border-color: #ffffff1f;
+        color: #ffffff61 !important;
+        border-color: #ffffff1f !important;
       }
 
       @else {
-        color: #00000061;
-        border-color: #0000001f;
+        color: #00000061 !important;
+        border-color: #0000001f !important;
       }
     }
   }
