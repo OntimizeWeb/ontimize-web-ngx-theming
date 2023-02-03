@@ -2,6 +2,7 @@
 @import './lite/layout.scss';
 @import './default/typography/ontimize.scss';
 @import './default/addons/report-on-demand.scss';
+@import './default/addons/charts-on-demand.scss';
 
 $background-color: #eceff1;
 /*Application background-color*/
@@ -79,6 +80,7 @@ $app-background-color: #eaeaea;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
+  @include o-chart-on-demand($theme);
   @include layout-padding-margin();
 
   /* CONTAINER */
