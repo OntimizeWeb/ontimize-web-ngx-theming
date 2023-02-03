@@ -11,7 +11,7 @@ $app-background-color: #eaeaea;
 // Background palette for light themes.
 @function ontimize-light-theme-background($mat-theme) {
   $background: map-get($mat-theme, background);
-  @return map_merge($mat-background,
+  @return map_merge($background,
     (level-0: $app-background-color,
       level-04: #f2f2f2,
       level-06: #f6f6f6,
