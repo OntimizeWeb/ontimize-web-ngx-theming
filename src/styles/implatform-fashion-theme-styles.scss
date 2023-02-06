@@ -285,7 +285,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   $sidenav-background-color: mat-color($background, status-bar);
   $is-dark-theme: map-get($theme, is-dark);
   $background-primary-button: if($is-dark-theme, transparent, #ffffff);
-  $background-primary-button: if($is-dark-theme, transparent, #ffffff);
+  $background-accent-button: if($is-dark-theme, transparent, #ffffff);
 
   .o-app-header {
     nav {
