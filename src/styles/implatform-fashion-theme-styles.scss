@@ -538,6 +538,10 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       background-color: $background-primary-button;
       border-color: mat-color($foreground, text, 0.32);
 
+      .mat-icon {
+        color: mat-color($primary, 500);
+      }
+
       &:hover,
       .mat-button-focus-overlay {
         color: mat-color($primary, 500);
@@ -556,6 +560,10 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       color: mat-color($foreground, text);
       background-color: $background-accent-button;
       border-color: mat-color($foreground, text, 0.32);
+
+      .mat-icon {
+        color: mat-color($primary, 500);
+      }
 
       &:hover,
       .mat-button-focus-overlay {
