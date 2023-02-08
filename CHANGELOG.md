@@ -1,6 +1,6 @@
 # 8.5.0
 ### Features
-* New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0*.
+* New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0* ([b275a17](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b275a17)) Closes [#105](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues/105)
 
 # 8.4.1 (2022-12-19)
 * **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
