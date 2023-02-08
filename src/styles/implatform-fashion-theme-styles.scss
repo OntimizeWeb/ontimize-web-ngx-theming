@@ -283,6 +283,9 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $sidenav-background-color: mat-color($background, status-bar);
+  $is-dark-theme: map-get($theme, is-dark);
+  $background-primary-button: if($is-dark-theme, transparent, #ffffff);
+  $background-accent-button: if($is-dark-theme, transparent, #ffffff);
 
   .o-app-header {
     nav {
@@ -532,8 +535,12 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     &.mat-button-base[ng-reflect-dialog-result="0"],
     &.mat-button-base[ng-reflect-dialog-result="true"] {
       color: mat-color($primary, 500);
-      background-color: #ffffff;
+      background-color: $background-primary-button;
       border-color: mat-color($foreground, text, 0.32);
+
+      .mat-icon {
+        color: mat-color($primary, 500);
+      }
 
       &:hover,
       .mat-button-focus-overlay {
@@ -551,8 +558,12 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     &.mat-button-base[ng-reflect-dialog-result="1"],
     &.mat-button-base[ng-reflect-dialog-result="false"] {
       color: mat-color($foreground, text);
-      background-color: #ffffff;
+      background-color: $background-accent-button;
       border-color: mat-color($foreground, text, 0.32);
+
+      .mat-icon {
+        color: mat-color($accent, 500);
+      }
 
       &:hover,
       .mat-button-focus-overlay {
