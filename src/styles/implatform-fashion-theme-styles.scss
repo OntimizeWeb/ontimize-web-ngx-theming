@@ -562,7 +562,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       border-color: mat-color($foreground, text, 0.32);
 
       .mat-icon {
-        color: mat-color($primary, 500);
+        color: mat-color($accent, 500);
       }
 
       &:hover,
