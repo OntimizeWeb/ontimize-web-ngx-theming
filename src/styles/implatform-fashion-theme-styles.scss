@@ -533,11 +533,16 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
 
   /* Buttons */
 
+  .mat-dialog-actions button:not([disabled]),
+  .o-form .o-form-toolbar button:not([disabled]),
+  .o-grid .o-grid-footer button:not([disabled]),
+  .o-grid .o-grid-toolbar>button:not([disabled]),
+  .o-list .o-list-toolbar>button:not([disabled]),
+  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
   button.mat-stroked-button:not([disabled]) {
 
     &.mat-button-base {
-      border-color: mat-color($foreground, divider);
-      color: mat-color($foreground, button);
+      border-color: mat-color($foreground, text, 0.32);
     }
 
     &.mat-button-base.mat-primary,
@@ -546,7 +551,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     &.mat-button-base[ng-reflect-dialog-result="true"] {
       color: mat-color($primary, 500);
       background-color: $background-primary-button;
-      border-color: mat-color($foreground, divider);
+      border-color: mat-color($foreground, text, 0.32);
 
       .mat-icon {
         color: mat-color($primary, 500);
@@ -556,7 +561,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       .mat-button-focus-overlay {
         color: mat-color($primary, 500);
         background-color: $background-hover-primary-button;
-        border-color: mat-color($foreground, divider);
+        border-color: mat-color($foreground, text, 0.32);
 
       }
 
@@ -568,7 +573,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     &.mat-button-base[ng-reflect-dialog-result="false"] {
       color: mat-color($accent, 500);
       background-color: $background-accent-button;
-      border-color: mat-color($foreground, divider);
+      border-color: mat-color($foreground, text, 0.32);
 
       .mat-icon {
         color: mat-color($accent, 500);
@@ -578,49 +583,17 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       .mat-button-focus-overlay {
         color: mat-color($accent, 500);
         background-color: $background-hover-accent-button;
-        border-color: mat-color($foreground, divider);
+        border-color: mat-color($foreground, text, 0.32);
       }
     }
 
     &.mat-button-base.mat-warn {
       color: mat-color($warn);
-      border-color: mat-color($foreground, divider);
+      border-color: mat-color($foreground, text, 0.32);
 
       &:hover {
         background-color: $background-hover-warn-button;
-        border-color: mat-color($foreground, divider);
-      }
-    }
-  }
-
-  .mat-dialog-actions button:not([disabled]),
-  .o-form .o-form-toolbar button:not([disabled]),
-  .o-grid .o-grid-footer button:not([disabled]),
-  .o-grid .o-grid-toolbar>button:not([disabled]),
-  .o-list .o-list-toolbar>button:not([disabled]),
-  .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]) {
-
-    &.mat-button-base,
-    &.mat-button-base.mat-primary,
-    &.mat-button-base.o-button-primary,
-    &.mat-button-base[ng-reflect-dialog-result="0"],
-    &.mat-button-base[ng-reflect-dialog-result="true"],
-    &.mat-button-base.mat-accent,
-    &.mat-button-base.o-button-default,
-    &.mat-button-base[ng-reflect-dialog-result="1"],
-    &.mat-button-base[ng-reflect-dialog-result="false"],
-    &.mat-button-base.mat-warn {
-      background-color: transparent;
-      border-color: mat-color($foreground, divider);
-      color: mat-color($foreground, icon);
-
-      .mat-icon {
-        color: mat-color($foreground, icon);
-      }
-
-      &:hover,
-      .mat-button-focus-overlay {
-        background-color: rgba(0, 0, 0, 0.04);
+        border-color: mat-color($foreground, text, 0.32);
       }
     }
   }
