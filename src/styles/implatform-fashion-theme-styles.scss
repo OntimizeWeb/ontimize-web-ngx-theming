@@ -112,6 +112,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   $white-30pct-opacity-on-dark: #686868;
   $black-26pct-opacity-on-light: #b0b0b0;
   $disabled-color: if($is-dark-theme, $white-30pct-opacity-on-dark, $black-26pct-opacity-on-light);
+  $checkbox-background-color: if($is-dark-theme, $black-26pct-opacity-on-light, mat-color($background, sidenav-overlay));
 
   .mat-checkbox-frame {
     border-color: mat-color($foreground, secondary-text);
@@ -140,11 +141,11 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   .mat-checkbox-checked,
   .mat-checkbox-indeterminate {
     &.mat-primary .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: $checkbox-background-color;
     }
 
     &.mat-accent .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: $checkbox-background-color;
     }
 
     &.mat-warn .mat-checkbox-background {
@@ -283,9 +284,17 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   $sidenav-background-color: mat-color($background, status-bar);
+  $primary: mat-color($theme, primary);
+  $accent: mat-color($theme, accent);
+  $warn: mat-color($theme, warn);
   $is-dark-theme: map-get($theme, is-dark);
   $background-primary-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-primary-button: if($is-dark-theme, mat-color($primary, 500, 0.04), mat-color($primary, 100));
   $background-accent-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-accent-button: if($is-dark-theme, mat-color($accent, 500, 0.04), mat-color($accent, 100));
+  $background-hover-warn-button: if($is-dark-theme, mat-color($warn, 500, 0.04), mat-color($warn, 100));
+  $table-row-over-background: if($is-dark-theme, #ffffff1f, #f5f5f5);
+  $table-row-selected-background: if($is-dark-theme, #f1f6fa80, #eaeaea);
 
   .o-app-header {
     nav {
@@ -489,11 +498,11 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
         //       }
         &:hover:not(.o-table-group-row) {
           cursor: pointer;
-          background-color: #f5f5f5;
+          background-color: $table-row-over-background;
         }
 
         &.selected {
-          background: #eaeaea;
+          background: $table-row-selected-background;
         }
 
         .mat-cell {
@@ -530,6 +539,10 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
   button.mat-stroked-button:not([disabled]) {
 
+    &.mat-button-base {
+      border-color: mat-color($foreground, text, 0.32);
+    }
+
     &.mat-button-base.mat-primary,
     &.mat-button-base.o-button-primary,
     &.mat-button-base[ng-reflect-dialog-result="0"],
@@ -545,19 +558,18 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       &:hover,
       .mat-button-focus-overlay {
         color: mat-color($primary, 500);
-        background-color: mat-color($primary, 100);
-        border-color: transparent;
+        background-color: $background-hover-primary-button;
+        border-color: mat-color($foreground, text, 0.32);
 
       }
 
     }
 
-    &.mat-button-base,
     &.mat-button-base.mat-accent,
     &.mat-button-base.o-button-default,
     &.mat-button-base[ng-reflect-dialog-result="1"],
     &.mat-button-base[ng-reflect-dialog-result="false"] {
-      color: mat-color($foreground, text);
+      color: mat-color($accent, 500);
       background-color: $background-accent-button;
       border-color: mat-color($foreground, text, 0.32);
 
@@ -568,8 +580,18 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       &:hover,
       .mat-button-focus-overlay {
         color: mat-color($accent, 500);
-        background-color: mat-color($accent, 100);
-        border-color: transparent;
+        background-color: $background-hover-accent-button;
+        border-color: mat-color($foreground, text, 0.32);
+      }
+    }
+
+    &.mat-button-base.mat-warn {
+      color: mat-color($warn);
+      border-color: mat-color($foreground, text, 0.32);
+
+      &:hover {
+        background-color: $background-hover-warn-button;
+        border-color: mat-color($foreground, text, 0.32);
       }
     }
   }
