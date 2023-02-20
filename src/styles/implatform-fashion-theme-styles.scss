@@ -451,9 +451,6 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     }
   }
 
-  .mat-tab-group.o-tab-ontimize>.mat-tab-body-wrapper {
-    background: mat-color($background, status-bar);
-  }
 
   .mat-tab-group .mat-tab-label.mat-tab-label-active {
     color: mat-color($foreground, title);
