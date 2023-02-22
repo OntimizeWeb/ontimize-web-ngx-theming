@@ -132,8 +132,6 @@
       top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
     }
   }
-  @include o-combo();
-  @include o-phone();
   @include o-mat-checkbox-typography($config);
   @include o-mat-form-field-legacy-typography($config);
   @include o-mat-form-field-fill-typography($config);
@@ -173,19 +171,3 @@
   }
 }
 
-/*
-  Fixes https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/53
-   set line-height to normal as user-agent set in the inputs
-   https://bugzilla.mozilla.org/show_bug.cgi?id=349259
-*/
-@mixin o-combo() {
-  .o-combo mat-select {
-    line-height: normal;
-  }
-}
-
-@mixin o-phone() {
-  .o-phone-input mat-select {
-    line-height: normal;
-  }
-}
