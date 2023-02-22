@@ -471,6 +471,15 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   }
 
   .o-table {
+
+    .o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
+      border-color: mat-color($foreground, text, 0.32);
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline{
+      color: mat-color($foreground, text, 0.32);
+    }
+
     .mat-table {
       .mat-row {
         //TO BE DEFINED
