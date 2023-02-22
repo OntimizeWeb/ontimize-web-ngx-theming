@@ -1,13 +1,16 @@
 # 8.5.0
-### BREAKING CHANGES
-* Changed the theme name functions to `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and to `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
-
 ### Features
 * New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0* ([b275a17](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b275a17)) Closes [#105](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues/105)
 * Fixed buttons style on Implatform Fashion theme on dark mode ([9978321](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/9978321)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
 * Added background levels `level-0`, `level-04`, `level-06`, `level-08` and `level-1` on dark mode backgrounds. New `level-04` improved on dark and light mode. Improved background and foreground functions on `ontimize-theme-styles.scss` and `implatform-fashion-theme-styles.scss` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
 * Fixed checkbox background on `implatform-fashion-default-theme.scss` ([4a9e2a0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/4a9e2a0))
 * Changed theme file structure ([cb5678b](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/cb5678b)) Closes [#95](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/95)
+
+### Bug fixes
+* **o-textarea**: Set `line-height:1.125` in inputs in the lite theme Closes[#109](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/109)
+
+### BREAKING CHANGES
+* Changed the theme name functions to `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and to `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
 
 # 8.4.1 (2022-12-19)
 * **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
