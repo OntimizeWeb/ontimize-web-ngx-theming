@@ -556,10 +556,8 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary, 500);
         background-color: $background-hover-primary-button;
         border-color: mat-color($foreground, text, 0.32);
-
       }
 
     }
@@ -568,8 +566,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     &.mat-button-base.o-button-default,
     &.mat-button-base[ng-reflect-dialog-result="1"],
     &.mat-button-base[ng-reflect-dialog-result="false"] {
-      color: mat-color($accent, 500);
-      background-color: $background-accent-button;
+      color: mat-color($foreground, text);
       border-color: mat-color($foreground, text, 0.32);
 
       .mat-icon {
@@ -592,6 +589,12 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
         background-color: $background-hover-warn-button;
         border-color: mat-color($foreground, text, 0.32);
       }
+    }
+  }
+
+  .o-button button.mat-stroked-button:not([disabled]).mat-button-base {
+    &.mat-accent {
+      color: mat-color($accent, 500);
     }
   }
 
