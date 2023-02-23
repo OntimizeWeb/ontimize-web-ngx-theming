@@ -323,6 +323,9 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       a {
         margin-left: 0 !important;
         border-left: 8px solid transparent;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
       }
 
       &:not([disabled='true']) {
@@ -476,7 +479,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       border-color: mat-color($foreground, text, 0.32);
     }
 
-    .mat-form-field-appearance-outline .mat-form-field-outline{
+    .mat-form-field-appearance-outline .mat-form-field-outline {
       color: mat-color($foreground, text, 0.32);
     }
 
