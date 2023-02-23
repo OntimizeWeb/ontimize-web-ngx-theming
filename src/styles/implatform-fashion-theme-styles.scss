@@ -414,6 +414,23 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
         color: mat-color($foreground, text);
       }
     }
+
+    .o-app-sidenav-container {
+      .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed {
+        nav {
+
+          .o-app-sidenav-menu-group,
+          .o-app-sidenav-menu-item {
+
+            a {
+              width: 100%;
+              min-width: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 
   o-app-sidenav.o-app-sidenav,
@@ -476,7 +493,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       border-color: mat-color($foreground, text, 0.32);
     }
 
-    .mat-form-field-appearance-outline .mat-form-field-outline{
+    .mat-form-field-appearance-outline .mat-form-field-outline {
       color: mat-color($foreground, text, 0.32);
     }
 
