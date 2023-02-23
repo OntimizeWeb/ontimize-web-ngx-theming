@@ -7,7 +7,9 @@
 * Changed theme file structure ([cb5678b](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/cb5678b)) Closes [#95](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/95)
 
 ### Bug fixes
-* **o-textarea**: Set `line-height:1.125` in inputs in the lite theme Closes[#109](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/109)
+* **o-textarea**: Set `line-height:1.125` in inputs in the lite theme Closes [#109](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/109)
+* Fixed table quickfilter border on Implatform Fashion theme ([7da1c38](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/7da1c38)) Closes [#111](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/111)
+* Changes on some foreground color values on Implatform Fashion theme ([7232e37](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/7232e37)) Closes [#104](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/104)
 
 ### BREAKING CHANGES
 * Changed the theme name functions to `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and to `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
