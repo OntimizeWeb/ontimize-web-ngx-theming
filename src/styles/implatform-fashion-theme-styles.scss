@@ -415,11 +415,21 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       }
     }
 
-    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed nav .o-app-sidenav-menu-group a,
-    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed nav .o-app-sidenav-menu-item a {
-      width: 100%;
-      min-width: 100%;
-      max-width: 100%;
+    .o-app-sidenav-container {
+      .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed {
+        nav {
+
+          .o-app-sidenav-menu-group,
+          .o-app-sidenav-menu-item {
+
+            a {
+              width: 100%;
+              min-width: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 
