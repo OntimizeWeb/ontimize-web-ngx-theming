@@ -323,9 +323,6 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       a {
         margin-left: 0 !important;
         border-left: 8px solid transparent;
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
       }
 
       &:not([disabled='true']) {
@@ -416,6 +413,13 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
       li a {
         color: mat-color($foreground, text);
       }
+    }
+
+    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed nav .o-app-sidenav-menu-group a,
+    .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed nav .o-app-sidenav-menu-item a {
+      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
     }
   }
 
