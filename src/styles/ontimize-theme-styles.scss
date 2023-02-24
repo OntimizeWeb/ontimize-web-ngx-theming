@@ -78,10 +78,28 @@ $app-background-color: #eaeaea;
   $background-tab-inactive-on-dark: #686868;
   $background-tab-inactive-on-light: #D7DDE0;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
+
+  $background-accent-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-accent-button: if($is-dark-theme, mat-color($accent, 500, 0.04), mat-color($accent, 100));
+  $font-color-hover-accent-button: if($is-dark-theme, mat-color($accent, 500), mat-color($accent, 800));
+  $border-color-accent-button: if($is-dark-theme, mat-color($foreground, divider), transparent);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
   @include o-chart-on-demand($theme);
   @include layout-padding-margin();
+
+  .cancel,
+  .o-button-default {
+    color: mat-color($accent);
+    background-color: $background-accent-button;
+
+    &:hover,
+    .mat-button-focus-overlay {
+      color: $font-color-hover-accent-button;
+      background-color: $background-hover-accent-button;
+      border-color: $border-color-accent-button;
+    }
+  }
 
   /* CONTAINER */
   .rounded-panel,
