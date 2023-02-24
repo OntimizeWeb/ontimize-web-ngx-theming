@@ -83,6 +83,8 @@ $app-background-color: #eaeaea;
   $background-hover-accent-button: if($is-dark-theme, mat-color($accent, 500, 0.04), mat-color($accent, 100));
   $font-color-hover-accent-button: if($is-dark-theme, mat-color($accent, 500), mat-color($accent, 800));
   $border-color-accent-button: if($is-dark-theme, mat-color($foreground, divider), transparent);
+  $background-primary-button: if($is-dark-theme, mat-color($primary, 500), mat-color($primary, 100));
+  $background-hover-primary-button: if($is-dark-theme, transparent, #ffffff);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
   @include o-chart-on-demand($theme);
@@ -98,6 +100,29 @@ $app-background-color: #eaeaea;
       color: $font-color-hover-accent-button;
       background-color: $background-hover-accent-button;
       border-color: $border-color-accent-button;
+    }
+  }
+
+  .mat-dialog-actions {
+
+    button:not([disabled]) {
+
+      &.o-button-primary.mat-stroked-button.mat-button-base,
+      &.mat-button-base.mat-primary,
+      &.mat-button-base.o-button-primary,
+      &.mat-button-base[ng-reflect-dialog-result="0"],
+      &.mat-button-base[ng-reflect-dialog-result="true"] {
+        color: mat-color($primary, 900);
+        background-color: $background-primary-button;
+        border-color: transparent;
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: mat-color($primary);
+          background-color: $background-hover-primary-button;
+          border-color: mat-color($foreground, divider);
+        }
+      }
     }
   }
 
