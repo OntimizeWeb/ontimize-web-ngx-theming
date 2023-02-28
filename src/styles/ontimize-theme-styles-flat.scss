@@ -1,6 +1,7 @@
 @import 'node_modules/@angular/material/theming';
 @import './flat/variables.scss';
-@mixin ontimize-flat-styles($theme, $color_states:null ) {
+
+@mixin ontimize-flat-styles($theme, $color_states:null) {
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
   @include set-color-states($color_states);
@@ -149,13 +150,14 @@
       border-radius: 0;
     }
 
-    .o-form-toolbar > .mat-toolbar {
+    .o-form-toolbar>.mat-toolbar {
       .mat-stroked-button {
         border: none;
       }
 
       button.mat-button.o-form-toolbar-button,
       button.o-form-toolbar-button {
+
         &:not([disabled]),
         &[disabled] {
           color: #fff;
@@ -195,7 +197,7 @@
         box-shadow: none;
         border-right: 1px solid mat-color($foreground, divider);
 
-        .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul {
+        .o-app-sidenav-menugroup.active+.o-app-sidenav-menugroup-items-container ul {
           box-shadow: none;
           background: none;
         }
@@ -215,18 +217,21 @@
       }
     }
   }
+
   //TABS
   .mat-tab-group.o-tab-ontimize {
+
     .mat-tab-header .mat-tab-label-container .mat-tab-list .mat-tab-label,
     div.mat-tab-body-wrapper {
       border-radius: 0;
       padding: 0;
     }
   }
+
   //o-row, o-column
   o-column.o-column,
   o-row.o-row {
-    background: mat-color($background,background);
+    background: mat-color($background, background);
     border-radius: 4px;
 
     .o-container {
@@ -250,25 +255,15 @@
 
       .mat-dialog-actions {
         @include o-button-class();
-
-        button.mat-button-base[ng-reflect-dialog-result="0"],
-        button.mat-button-base[ng-reflect-dialog-result="true"] {
-          color: white;
-          background-color: $primary-color;
-        }
-
-        button.mat-button-base[ng-reflect-dialog-result="1"],
-        button.mat-button-base[ng-reflect-dialog-result="false"] {
-          color: white;
-          background-color: $default-color;
-        }
       }
     }
   }
 
 }
+
 @mixin o-button-class() {
   button {
+
     &.o-button-danger,
     &.o-button-default,
     &.o-button-info,
@@ -305,15 +300,16 @@
     }
   }
 }
+
 @mixin set-color-states($color_states) {
-   @if $color_states!=null{
-    $success-color: if(map-has-key($color_states, success),map-get($color_states, success), $success-color) !global;
-    $danger-color: if(map-has-key($color_states, danger),map-get($color_states, danger), $danger-color) !global;
-    $primary-color: if(map-has-key($color_states, primary),map-get($color_states, primary), $primary-color) !global;
-    $warning-color: if(map-has-key($color_states, warning),map-get($color_states, warning), $warning-color) !global;
-    $info-color: if(map-get($color_states, info),map-get($color_states, info), $info-color) !global;
-    $default-color: if(map-has-key($color_states, default),map-get($color_states, default), $default-color) !global;
-    $inverse-color: if(map-has-key($color_states, inverse),map-get($color_states, inverse), $inverse-color) !global;
-    $disable-color: if(map-has-key($color_states, disable),map-get($color_states, disable), $disable-color) !global;
+  @if $color_states !=null {
+    $success-color: if(map-has-key($color_states, success), map-get($color_states, success), $success-color) !global;
+    $danger-color: if(map-has-key($color_states, danger), map-get($color_states, danger), $danger-color) !global;
+    $primary-color: if(map-has-key($color_states, primary), map-get($color_states, primary), $primary-color) !global;
+    $warning-color: if(map-has-key($color_states, warning), map-get($color_states, warning), $warning-color) !global;
+    $info-color: if(map-get($color_states, info), map-get($color_states, info), $info-color) !global;
+    $default-color: if(map-has-key($color_states, default), map-get($color_states, default), $default-color) !global;
+    $inverse-color: if(map-has-key($color_states, inverse), map-get($color_states, inverse), $inverse-color) !global;
+    $disable-color: if(map-has-key($color_states, disable), map-get($color_states, disable), $disable-color) !global;
   }
 }
