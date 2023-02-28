@@ -88,19 +88,6 @@ $app-background-color: #eaeaea;
   @include o-chart-on-demand($theme);
   @include layout-padding-margin();
 
-  button:not([disabled]).o-button-default.cancel.mat-stroked-button.mat-button-base {
-    color: mat-color($accent);
-    background-color: $background-accent-button;
-    border-color: mat-color($foreground, divider);
-
-    &:hover,
-    .mat-button-focus-overlay {
-      color: #303030;
-      background-color: $background-hover-accent-button;
-      border-color: transparent;
-    }
-  }
-
   .mat-dialog-actions {
 
     button:not([disabled]) {
@@ -121,6 +108,20 @@ $app-background-color: #eaeaea;
           border-color: mat-color($foreground, divider);
         }
       }
+
+      &.o-button-default.cancel {
+        color: mat-color($accent);
+        background-color: $background-accent-button;
+        border-color: mat-color($foreground, divider);
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: #303030;
+          background-color: $background-hover-accent-button;
+          border-color: transparent;
+        }
+      }
+
     }
   }
 
