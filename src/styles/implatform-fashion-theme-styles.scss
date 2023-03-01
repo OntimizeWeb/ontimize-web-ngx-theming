@@ -569,9 +569,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     }
 
     &.mat-button-base.mat-primary,
-    &.mat-button-base.o-button-primary,
-    &.mat-button-base[ng-reflect-dialog-result="0"],
-    &.mat-button-base[ng-reflect-dialog-result="true"] {
+    &.mat-button-base.o-button-primary {
       color: mat-color($primary, 500);
       background-color: $background-primary-button;
       border-color: mat-color($foreground, text, 0.32);
@@ -589,9 +587,7 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
     }
 
     &.mat-button-base.mat-accent,
-    &.mat-button-base.o-button-default,
-    &.mat-button-base[ng-reflect-dialog-result="1"],
-    &.mat-button-base[ng-reflect-dialog-result="false"] {
+    &.mat-button-base.o-button-default {
       color: mat-color($foreground, text);
       border-color: mat-color($foreground, text, 0.32);
 
