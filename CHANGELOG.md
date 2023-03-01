@@ -1,4 +1,4 @@
-# 8.5.0
+# 8.5.0 (2023-03-02)
 ### Features
 * New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0* ([b275a17](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b275a17)) Closes [#105](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues/105)
 * Added new background surfaces `level-0`, `level-04`, `level-06`, `level-08` and `level-1` on Ontimize theme backgrounds ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
@@ -16,27 +16,33 @@
   * Fixed checkbox background ([4a9e2a0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/4a9e2a0))
 
 ### BREAKING CHANGES
-* New functions improved `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme  replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
+* New functions `o-mat-light-theme`, `o-mat-dark-theme` on **Ontimize themes** replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
 
   - Before:
-
-```css
-$theme: mat-light-theme($primary, $accent, $warn);
-$dark-theme: mat-dark-theme($primary, $accent, $warn);
-```
+    ```scss
+    $theme: mat-light-theme($primary, $accent, $warn);
+    $dark-theme: mat-dark-theme($primary, $accent, $warn);
+    ```
 
   - After:
+    ```scss
+    $theme: o-mat-light-theme($primary, $accent, $warn);
+    $dark-theme: o-mat-dark-theme($primary, $accent, $warn);
+    ```
 
-```css
-$theme: o-mat-light-theme($primary, $accent, $warn);
-$dark-theme: o-mat-dark-theme($primary, $accent, $warn);
-```
-```css
-$theme: fashion-mat-light-theme($primary, $accent, $warn);
-$dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);
-```
+* New functions `fashion-mat-light-theme`, `fashion-mat-dark-theme` on **Implatform Fashion theme**  replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
+  - Before:
+    ```css
+    $theme: mat-light-theme($primary, $accent, $warn);
+    $dark-theme: mat-dark-theme($primary, $accent, $warn);
+    ```
+  - After:
+    ```css
+    $theme: fashion-mat-light-theme($primary, $accent, $warn);
+    $dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);
+    ```
 
-* Removed `ng-reflect-dialog-result` reference from dialog scss selectors ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
+* Removed `ng-reflect-dialog-result` scss selectors which affected dialog buttons styling ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
 
 # 8.4.1 (2022-12-19)
 * **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
