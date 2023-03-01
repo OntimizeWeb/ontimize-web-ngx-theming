@@ -16,6 +16,7 @@
 
 ### BREAKING CHANGES
 * New functions improved `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme  replazing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
+* Removed `ng-reflect-dialog-result` reference from scss selectors ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
 
 # 8.4.1 (2022-12-19)
 * **o-phone-input**: Fixed the height of the `o-phone-input` is not same than other input component with theme lite ([5e522c0](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/5e522c0)) Closes [#1079](https://github.com/OntimizeWeb/ontimize-web-ngx/issues/1079)
