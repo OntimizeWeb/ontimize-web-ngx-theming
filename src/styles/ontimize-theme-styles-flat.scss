@@ -255,6 +255,18 @@
 
       .mat-dialog-actions {
         @include o-button-class();
+
+        button.mat-button-base[ng-reflect-dialog-result="0"],
+        button.mat-button-base[ng-reflect-dialog-result="true"] {
+          color: white;
+          background-color: $primary-color;
+        }
+
+        button.mat-button-base[ng-reflect-dialog-result="1"],
+        button.mat-button-base[ng-reflect-dialog-result="false"] {
+          color: white;
+          background-color: $default-color;
+        }
       }
     }
   }
