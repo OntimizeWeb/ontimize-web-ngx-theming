@@ -25,10 +25,12 @@ $dark-theme: mat-dark-theme($primary, $accent, $warn);
 ```
   * After:
 ```css
-/*$theme: fashion-mat-light-theme($primary, $accent, $warn);*/
 $theme: o-mat-light-theme($primary, $accent, $warn);
-/*$dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);*/
 $dark-theme: o-mat-dark-theme($primary, $accent, $warn);
+```
+```css
+$theme: fashion-mat-light-theme($primary, $accent, $warn);
+$dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);
 ```
 
 * Removed `ng-reflect-dialog-result` reference from dialog scss selectors ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
