@@ -23,7 +23,7 @@
 $theme: mat-light-theme($primary, $accent, $warn);
 $dark-theme: mat-dark-theme($primary, $accent, $warn);
 ```
-   * After:
+    * After:
 ```css
 $theme: o-mat-light-theme($primary, $accent, $warn);
 $dark-theme: o-mat-dark-theme($primary, $accent, $warn);
