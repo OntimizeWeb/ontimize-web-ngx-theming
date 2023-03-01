@@ -18,14 +18,14 @@
 ### BREAKING CHANGES
 * New functions improved `o-mat-light-theme`, `o-mat-dark-theme` on Ontimize themes and `fashion-mat-light-theme`, `fashion-mat-dark-theme` on Implatform Fashion theme  replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
 
-  * Before:
+  - Before:
 
 ```css
 $theme: mat-light-theme($primary, $accent, $warn);
 $dark-theme: mat-dark-theme($primary, $accent, $warn);
 ```
 
-  * After:
+  - After:
 
 ```css
 $theme: o-mat-light-theme($primary, $accent, $warn);
