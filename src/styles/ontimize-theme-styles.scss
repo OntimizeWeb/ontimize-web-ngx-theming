@@ -94,9 +94,7 @@ $app-background-color: #eaeaea;
 
       &.o-button-primary.mat-stroked-button.mat-button-base,
       &.mat-button-base.mat-primary,
-      &.mat-button-base.o-button-primary,
-      &.mat-button-base[ng-reflect-dialog-result="0"],
-      &.mat-button-base[ng-reflect-dialog-result="true"] {
+      &.mat-button-base.o-button-primary {
         color: #303030;
         background-color: $background-primary-button;
         border-color: transparent;
