@@ -78,10 +78,50 @@ $app-background-color: #eaeaea;
   $background-tab-inactive-on-dark: #686868;
   $background-tab-inactive-on-light: #D7DDE0;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
+
+  $background-accent-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-accent-button: if($is-dark-theme, mat-color($accent, 500), mat-color($accent, 100));
+  $background-primary-button: if($is-dark-theme, mat-color($primary, 500), mat-color($primary, 100));
+  $background-hover-primary-button: if($is-dark-theme, transparent, #ffffff);
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand($theme);
   @include o-chart-on-demand($theme);
   @include layout-padding-margin();
+
+  .mat-dialog-actions {
+
+    button:not([disabled]) {
+
+      &.o-button-primary.mat-stroked-button.mat-button-base,
+      &.mat-button-base.mat-primary,
+      &.mat-button-base.o-button-primary {
+        color: #303030;
+        background-color: $background-primary-button;
+        border-color: transparent;
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: mat-color($primary);
+          background-color: $background-hover-primary-button;
+          border-color: mat-color($foreground, divider);
+        }
+      }
+
+      &.o-button-default.cancel {
+        color: mat-color($accent);
+        background-color: $background-accent-button;
+        border-color: mat-color($foreground, divider);
+
+        &:hover,
+        .mat-button-focus-overlay {
+          color: #303030;
+          background-color: $background-hover-accent-button;
+          border-color: transparent;
+        }
+      }
+
+    }
+  }
 
   /* CONTAINER */
   .rounded-panel,
