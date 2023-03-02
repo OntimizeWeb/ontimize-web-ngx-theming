@@ -1,6 +1,103 @@
 @import 'node_modules/@angular/material/theming';
 @import './fashion/typography-fashion.scss';
 @import './fashion/variables.scss';
+
+/*Application background-color*/
+$app-background-color: #eaeaea;
+/*Sidenav background-color*/
+$sidenav-background-color: #f5f5f5;
+
+// Background palette for light themes.
+@function fashion-light-theme-background($primary, $mat-theme) {
+  $primary-500: mat-color($primary, 500);
+  $background: map-get($mat-theme, background);
+  @return map_merge($background,
+    (level-0: mix($app-background-color, $primary-500, 98%),
+      level-04: #f2f2f2,
+      level-06: #f6f6f6,
+      level-08: #fafafa,
+      level-1: white,
+      sidenav-overlay: #525252,
+      status-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
+      app-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
+      background: mix($app-background-color, mat-color($primary), 97.2%)));
+}
+
+// Background palette for dark themes.
+@function fashion-dark-theme-background($primary, $mat-theme) {
+  $primary-500: mat-color($primary, 500);
+  $background: map-get($mat-theme, background);
+  @return map_merge($background,
+    (level-0: mix(#171717, $primary-500, 94%),
+      level-04: mix(#1E1E1E, $primary-500, 94%),
+      level-06: mix(#2C2C2C, $primary-500, 94%),
+      level-08: mix(#333333, $primary-500, 94%),
+      level-1: mix(#383838, $primary-500, 94%),
+      sidenav-overlay: #525252,
+      status-bar: mix(#272727, $primary-500, 94%)));
+}
+
+// Foreground palette for light themes.
+$fashion-light-theme-foreground: (base: rgba(black, 0.6),
+  divider: rgba(black, 0.12),
+  dividers: rgba(black, 0.12),
+  disabled: rgba(black, 0.38),
+  disabled-button: rgba(black, 0.38),
+  disabled-text: rgba(black, 0.38),
+  elevation: black,
+  hint-text: rgba(black, 0.38),
+  secondary-text: rgba(black, 0.54),
+  title: rgba(black, 0.87),
+  icon: rgba(black, 0.6),
+  icons: rgba(black, 0.6),
+  text: rgba(black, 0.87),
+  slider-min: rgba(black, 0.38),
+  slider-off: rgba(black, 0.38),
+  slider-off-active: rgba(black, 0.38),
+  button: rgba(black, 0.74));
+
+// Foreground palette for dark themes.
+$fashion-dark-theme-foreground: (base: rgba(white, 0.6),
+  divider: rgba(white, 0.12),
+  dividers: rgba(white, 0.12),
+  disabled: rgba(white, 0.38),
+  disabled-button: rgba(white, 0.38),
+  disabled-text: rgba(white, 0.38),
+  elevation: black,
+  hint-text: rgba(white, 0.38),
+  secondary-text: rgba(white, 0.54),
+  title: rgba(white, 0.87),
+  icon: rgba(white, 0.6),
+  icons: rgba(white, 0.6),
+  text: rgba(white, 0.87),
+  slider-min: rgba(white, 0.38),
+  slider-off: rgba(white, 0.38),
+  slider-off-active: rgba(white, 0.38),
+  button: rgba(white, 0.74));
+
+
+// Creates a container object for a light theme to be given to individual component theme mixins.
+@function fashion-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  $mat-theme: mat-light-theme($primary, $accent, $warn);
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $fashion-light-theme-foreground,
+    background: fashion-light-theme-background($primary, $mat-theme));
+}
+
+// Creates a container object for a dark theme to be given to individual component theme mixins.
+@function fashion-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  $mat-theme: mat-dark-theme($primary, $accent, $warn);
+  @return (primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: true,
+    foreground: $fashion-dark-theme-foreground,
+    background: fashion-dark-theme-background($primary, $mat-theme));
+}
+
 @mixin mat-checkbox-theme($theme) {
   $is-dark-theme: map-get($theme, is-dark);
   $primary: map-get($theme, primary);
@@ -18,6 +115,7 @@
   $white-30pct-opacity-on-dark: #686868;
   $black-26pct-opacity-on-light: #b0b0b0;
   $disabled-color: if($is-dark-theme, $white-30pct-opacity-on-dark, $black-26pct-opacity-on-light);
+  $checkbox-background-color: if($is-dark-theme, $black-26pct-opacity-on-light, mat-color($background, sidenav-overlay));
 
   .mat-checkbox-frame {
     border-color: mat-color($foreground, secondary-text);
@@ -31,6 +129,7 @@
     // !important is needed here because a stroke must be set as an
     // attribute on the SVG in order for line animation to work properly.
     stroke: $checkbox-mark-color !important;
+
     @include cdk-high-contrast(black-on-white) {
       // Having the one above be !important ends up overriding the browser's automatic
       // color inversion so we need to re-invert it ourselves for black-on-white.
@@ -45,11 +144,11 @@
   .mat-checkbox-checked,
   .mat-checkbox-indeterminate {
     &.mat-primary .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: $checkbox-background-color;
     }
 
     &.mat-accent .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: $checkbox-background-color;
     }
 
     &.mat-warn .mat-checkbox-background {
@@ -58,6 +157,7 @@
   }
 
   .mat-checkbox-disabled {
+
     &.mat-checkbox-checked,
     &.mat-checkbox-indeterminate {
       .mat-checkbox-background {
@@ -74,6 +174,7 @@
     .mat-checkbox-label {
       color: mat-color($foreground, secondary-text);
     }
+
     @include cdk-high-contrast {
       opacity: .5;
     }
@@ -109,6 +210,7 @@
     }
   }
 }
+
 @mixin mat-pseudo-checkbox-theme($theme) {
   $is-dark-theme: map-get($theme, is-dark);
   $primary: map-get($theme, primary);
@@ -166,13 +268,16 @@
     }
   }
 }
+
 @mixin implatform-fashion-theme-styles($theme, $typography: null) {
-   @if $typography != null{
+  @if $typography !=null {
     $typography: map-merge($lite-typography, $typography);
   }
+
   @else {
     $typography: $lite-typography;
   }
+
   @include mat-checkbox-theme($theme);
   @include mat-pseudo-checkbox-theme($theme);
   @include o-table-typography-fashion($typography);
@@ -181,7 +286,18 @@
 
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $sidenav-background-color: mat-color($background, status-bar);
+  $primary: mat-color($theme, primary);
+  $accent: mat-color($theme, accent);
+  $warn: mat-color($theme, warn);
+  $is-dark-theme: map-get($theme, is-dark);
+  $background-primary-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-primary-button: if($is-dark-theme, mat-color($primary, 500, 0.04), mat-color($primary, 100));
+  $background-accent-button: if($is-dark-theme, transparent, #ffffff);
+  $background-hover-accent-button: if($is-dark-theme, mat-color($accent, 500, 0.04), mat-color($accent, 100));
+  $background-hover-warn-button: if($is-dark-theme, mat-color($warn, 500, 0.04), mat-color($warn, 100));
+  $table-row-over-background: if($is-dark-theme, #ffffff1f, #f5f5f5);
+  $table-row-selected-background: if($is-dark-theme, #f1f6fa80, #eaeaea);
+  $sidenav-background-color: if($is-dark-theme, mix(#1e1e1e, mat-color($primary, 500), 94%), mat-color($background, status-bar));
 
   .o-app-header {
     nav {
@@ -194,7 +310,7 @@
       }
 
       .o-app-header-title {
-        color: mat-color($primary);
+        color: mat-color($foreground, button);
       }
     }
   }
@@ -213,13 +329,13 @@
         border-left-color: transparent;
 
         a:hover {
-          color: mat-color($foreground, text);
+          color: mat-color($foreground, button);
           background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 96%); //#525252 4%
           border-left: 8px solid mat-color($primary);
         }
 
         a.o-app-sidenav-viewer-sidenav-item-selected {
-          color: mat-color($foreground, text);
+          color: mat-color($foreground, button);
           background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 98%); //#525252 2%
           border-left: 8px solid mat-color($primary);
         }
@@ -230,17 +346,19 @@
       background: $sidenav-background-color;
 
       .sidenav-toggle {
-        color: mat-color($foreground, icon);
+        color: mat-color($foreground, button);
       }
 
       .o-app-sidenav-item {
-        color: mat-color($foreground, text);
+        color: mat-color($foreground, button);
 
         &.o-user-info {
+
           &:focus,
           &:hover {
             color: inherit;
           }
+
           color: inherit;
 
           .o-user-info-menu-item .o-user-info-item {
@@ -253,7 +371,7 @@
       .o-app-sidenav-menu-group-level-1 {
         .o-app-sidenav-menugroup {
           &.opened {
-            + .o-app-sidenav-menugroup-items-container ul {
+            +.o-app-sidenav-menugroup-items-container ul {
               background: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 94%); //#525252 6%
             }
           }
@@ -261,9 +379,10 @@
 
         .o-app-sidenav-menu-item {
           &:not([disabled='true']) {
+
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 94% ); //#525252 6%
+              background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 94%); //#525252 6%
             }
           }
         }
@@ -274,7 +393,7 @@
       .o-app-sidenav-menu-group-level-4 {
         .o-app-sidenav-menugroup {
           &.opened {
-            + .o-app-sidenav-menugroup-items-container ul {
+            +.o-app-sidenav-menugroup-items-container ul {
               background: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 88%); //#525252 12%
             }
           }
@@ -282,9 +401,10 @@
 
         .o-app-sidenav-menu-item {
           &:not([disabled='true']) {
+
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 88% ); //#525252 12%
+              background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 88%); //#525252 12%
             }
           }
         }
@@ -292,6 +412,23 @@
 
       li a {
         color: mat-color($foreground, text);
+      }
+    }
+
+    .o-app-sidenav-container {
+      .mat-drawer.o-app-sidenav-sidenav.mat-drawer-closed {
+        nav {
+
+          .o-app-sidenav-menu-group,
+          .o-app-sidenav-menu-item {
+
+            a {
+              width: 100%;
+              min-width: 100%;
+              max-width: 100%;
+            }
+          }
+        }
       }
     }
   }
@@ -309,7 +446,7 @@
         box-shadow: none;
         border-right: none;
 
-        .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul {
+        .o-app-sidenav-menugroup.active+.o-app-sidenav-menugroup-items-container ul {
           box-shadow: none;
           background: none;
         }
@@ -318,6 +455,7 @@
 
     .mat-menu-panel {
       border: 1px solid mat-color($foreground, divider);
+
     }
 
     .o-app-header {
@@ -330,9 +468,6 @@
     }
   }
 
-  .mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
-    background: mat-color($background, status-bar);
-  }
 
   .mat-tab-group .mat-tab-label.mat-tab-label-active {
     color: mat-color($foreground, title);
@@ -350,13 +485,18 @@
     thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
       background-color: mat-color($foreground, icon);
     }
-
-    .o-table-button .mat-icon {
-      color: mat-color($foreground, icon);
-    }
   }
 
   .o-table {
+
+    .o-table-quickfilter .quickFilter .mat-form-field .mat-form-field-wrapper .mat-form-field-flex .mat-form-field-prefix div {
+      border-color: mat-color($foreground, text, 0.32);
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: mat-color($foreground, text, 0.32);
+    }
+
     .mat-table {
       .mat-row {
         //TO BE DEFINED
@@ -381,15 +521,15 @@
         //       }
         &:hover:not(.o-table-group-row) {
           cursor: pointer;
-          background-color: #f5f5f5;
+          background-color: $table-row-over-background;
         }
 
         &.selected {
-          background: #eaeaea;
+          background: $table-row-selected-background;
         }
 
         .mat-cell {
-          color: mat-color($foreground, text);
+          color: mat-color($foreground, base);
         }
       }
     }
@@ -414,50 +554,73 @@
     }
   }
 
+  /* Buttons */
+
   .mat-dialog-actions button:not([disabled]),
   .o-form .o-form-toolbar button:not([disabled]),
   .o-grid .o-grid-footer button:not([disabled]),
-  .o-grid .o-grid-toolbar > button:not([disabled]),
-  .o-list .o-list-toolbar > button:not([disabled]),
+  .o-grid .o-grid-toolbar>button:not([disabled]),
+  .o-list .o-list-toolbar>button:not([disabled]),
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button:not([disabled]),
   button.mat-stroked-button:not([disabled]) {
-    &.mat-button-base.mat-primary,
-    &.mat-button-base.o-button-primary,
-    &.mat-button-base[ng-reflect-dialog-result="0"],
-    &.mat-button-base[ng-reflect-dialog-result="true"] {
-      color: mat-color($primary,500);
-      background-color: #ffffff;
+
+    &.mat-button-base {
       border-color: mat-color($foreground, text, 0.32);
+    }
+
+    &.mat-button-base.mat-primary,
+    &.mat-button-base.o-button-primary {
+      color: mat-color($primary, 500);
+      background-color: $background-primary-button;
+      border-color: mat-color($foreground, text, 0.32);
+
+      .mat-icon {
+        color: mat-color($primary, 500);
+      }
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary, 500);
-        background-color: mat-color($primary,100);
-        border-color: transparent;
-
+        background-color: $background-hover-primary-button;
+        border-color: mat-color($foreground, text, 0.32);
       }
 
     }
 
-    &.mat-button-base,
     &.mat-button-base.mat-accent,
-    &.mat-button-base.o-button-default,
-    &.mat-button-base[ng-reflect-dialog-result="1"],
-    &.mat-button-base[ng-reflect-dialog-result="false"] {
+    &.mat-button-base.o-button-default {
       color: mat-color($foreground, text);
-      background-color: #ffffff;
       border-color: mat-color($foreground, text, 0.32);
+
+      .mat-icon {
+        color: mat-color($accent, 500);
+      }
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($accent,500);
-        background-color: mat-color($accent,100);
-        border-color: transparent;
+        color: mat-color($accent, 500);
+        background-color: $background-hover-accent-button;
+        border-color: mat-color($foreground, text, 0.32);
+      }
+    }
+
+    &.mat-button-base.mat-warn {
+      color: mat-color($warn);
+      border-color: mat-color($foreground, text, 0.32);
+
+      &:hover {
+        background-color: $background-hover-warn-button;
+        border-color: mat-color($foreground, text, 0.32);
       }
     }
   }
 
-  .o-form .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button,
+  .o-button button.mat-stroked-button:not([disabled]).mat-button-base {
+    &.mat-accent {
+      color: mat-color($accent, 500);
+    }
+  }
+
+  .o-form .mat-toolbar-tools .o-form-navigation~.o-form-toolbar-button,
   .o-grid .o-grid-toolbar button,
   .o-list .o-list-toolbar button,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button {
@@ -470,7 +633,7 @@
     }
   }
 
-  .o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation ~ .o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger) {
+  .o-form .o-form-toolbar-header .mat-toolbar-tools .o-form-navigation~.o-form-toolbar-button.mat-icon-button:not(.mat-menu-trigger) {
     margin: 0 6px;
   }
 
@@ -485,9 +648,9 @@
         padding: 20px 0;
       }
 
-       > .o-container-header,
-       > .o-container-title,
-      > .mat-expansion-panel-header {
+      >.o-container-header,
+      >.o-container-title,
+      >.mat-expansion-panel-header {
         border-bottom: none;
         color: mat-color($foreground, title);
 
@@ -497,8 +660,8 @@
         }
       }
 
-       > .o-container-title,
-      > .mat-expansion-panel-header .o-container-title {
+      >.o-container-title,
+      >.mat-expansion-panel-header .o-container-title {
         span {
           font: {
             size: mat-font-size($typography, title);
@@ -525,6 +688,12 @@
   o-column.o-column.bg-level-0,
   o-row.o-row.bg-level-0 {
     background-color: mat-color($background, level-0);
+  }
+
+  .bg-level-04,
+  o-column.o-column.bg-level-04,
+  o-row.o-row.bg-level-04 {
+    background-color: mat-color($background, level-04);
   }
 
   .bg-level-06,

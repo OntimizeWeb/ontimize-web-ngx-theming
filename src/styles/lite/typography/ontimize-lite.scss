@@ -46,7 +46,7 @@ $o-mat-lite-typography: mat-typography-config(
    but it doesnot work on input because the line-height of the user agent remains
    https://bugzilla.mozilla.org/show_bug.cgi?id=349259
    */
-  $input:         mat-typography-level(14px, 1, 400)
+  $input:         mat-typography-level(14px, 1.125, 400)
 
 );
 
