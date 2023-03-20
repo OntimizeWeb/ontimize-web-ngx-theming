@@ -113,10 +113,6 @@
       padding-top: $infix-margin-top;
     }
 
-    .mat-form-field-label {
-      top: $infix-margin-top + $infix-padding;
-    }
-
     .mat-form-field-underline {
       // We want the underline to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount.
