@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-theming",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "An implementation of themes manager for Ontimize Web applications",
   "scripts": {
     "rimraf": "rimraf",
@@ -24,7 +24,6 @@
   "typings": "./index.d.ts",
   "peerDependencies": {},
   "devDependencies": {
-    "@angular-devkit/schematics": "^10.2.4",
     "copyfiles": "1.2.0",
     "gulp": "4.0.2",
     "gulp-cssimport": "^7.0.0",
