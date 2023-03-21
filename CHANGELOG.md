@@ -1,3 +1,7 @@
+# 8.5.1 (2023-03-21)
+### Bug fixes
+* Fixed input fields label on **standard appearance** and **lite style** ([dbe3cb4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/dbe3cb4)) Closes [#125](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/125)
+
 # 8.5.0 (2023-03-02)
 ### Features
 * New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0* ([b275a17](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b275a17)) Closes [#105](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues/105)
