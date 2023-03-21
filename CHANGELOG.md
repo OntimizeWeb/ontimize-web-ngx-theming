@@ -1,6 +1,6 @@
 # 8.5.1 (2023-03-21)
 ### Bug fixes
-* Fixed input fields label on **standard appearance** and **lite style** ([dbe3cb4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/dbe3cb4)) Closes [#125](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/125)
+* Fixed that the labels of the inputs were cut off with the **standard appearance**  in  **lite style**  ([dbe3cb4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/dbe3cb4)) Closes [#125](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/125)
 
 # 8.5.0 (2023-03-02)
 ### Features
