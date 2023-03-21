@@ -1,3 +1,7 @@
+# 8.5.1 (2023-03-21)
+### Bug fixes
+* Fixed that the labels of the inputs were cut off with the **standard appearance**  in  **lite style**  ([dbe3cb4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/dbe3cb4)) Closes [#125](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/125)
+
 # 8.5.0 (2023-03-02)
 ### Features
 * New CSS class `title-sidenav-content` for *ontimize-web-ngx-charts@8.2.0* ([b275a17](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/b275a17)) Closes [#105](https://github.com/OntimizeWeb/ontimize-web-ngx-charts/issues/105)
@@ -28,18 +32,6 @@
     ```scss
     $theme: o-mat-light-theme($primary, $accent, $warn);
     $dark-theme: o-mat-dark-theme($primary, $accent, $warn);
-    ```
-
-* New functions `fashion-mat-light-theme`, `fashion-mat-dark-theme` on **Implatform Fashion theme**  replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
-  - Before:
-    ```scss
-    $theme: mat-light-theme($primary, $accent, $warn);
-    $dark-theme: mat-dark-theme($primary, $accent, $warn);
-    ```
-  - After:
-    ```scss
-    $theme: fashion-mat-light-theme($primary, $accent, $warn);
-    $dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);
     ```
 
 * Removed `ng-reflect-dialog-result` scss selectors which affected dialog buttons styling ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
