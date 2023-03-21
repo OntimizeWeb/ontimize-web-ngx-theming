@@ -34,18 +34,6 @@
     $dark-theme: o-mat-dark-theme($primary, $accent, $warn);
     ```
 
-* New functions `fashion-mat-light-theme`, `fashion-mat-dark-theme` on **Implatform Fashion theme**  replacing the material functions `mat-light-theme`, `mat-dark-theme` ([f329cad](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/f329cad)) Closes [#81](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/81)
-  - Before:
-    ```scss
-    $theme: mat-light-theme($primary, $accent, $warn);
-    $dark-theme: mat-dark-theme($primary, $accent, $warn);
-    ```
-  - After:
-    ```scss
-    $theme: fashion-mat-light-theme($primary, $accent, $warn);
-    $dark-theme: fashion-mat-dark-theme($primary, $accent, $warn);
-    ```
-
 * Removed `ng-reflect-dialog-result` scss selectors which affected dialog buttons styling ([0c2501f](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/0c2501f)) Closes [#118](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/118)
 
 # 8.4.1 (2022-12-19)
