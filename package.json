@@ -1,6 +1,6 @@
 {
   "name": "ontimize-web-ngx-theming",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "An implementation of themes manager for Ontimize Web applications",
   "scripts": {
     "rimraf": "rimraf",
