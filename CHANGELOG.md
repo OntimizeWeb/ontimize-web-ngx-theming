@@ -1,3 +1,6 @@
+# 8.5.2 (2023-05-05)
+### Bug fixes
+Now the primary and accent palette are the same in **Implatform Fashion theme** ([cdd53a4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/cdd53a4)) Closes [#134](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/134)
 # 8.5.1 (2023-03-21)
 ### Bug fixes
 * Fixed that the labels of the inputs were cut off with the **standard appearance**  in  **lite style**  ([dbe3cb4](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/commit/dbe3cb4)) Closes [#125](https://github.com/OntimizeWeb/ontimize-web-ngx-theming/issues/125)
