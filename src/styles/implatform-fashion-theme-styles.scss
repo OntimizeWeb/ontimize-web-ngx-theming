@@ -269,7 +269,17 @@ $fashion-dark-theme-foreground: (base: rgba(white, 0.6),
   }
 }
 
-@mixin implatform-fashion-theme-styles($theme, $typography) {
+@mixin implatform-fashion-theme-styles($theme, $typography: null) {
+  $current-typography: if($lite-typography == null, $default-typography, $lite-typography );
+
+  @if $typography !=null {
+    $typography: map-merge($current-typography, $typography);
+  }
+
+  @else {
+    $typography: $current-typography;
+  }
+
   @include mat-checkbox-theme($theme);
   @include mat-pseudo-checkbox-theme($theme);
   @include o-table-typography-fashion($typography);
