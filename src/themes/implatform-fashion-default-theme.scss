@@ -34,7 +34,7 @@ $default-palette: (50: #e8e3f4,
 
 // Define a theme.
 $primary: mat-palette($default-palette);
-$accent: mat-palette($default-palette, A100, A200, A400, A700);
+$accent: mat-palette($default-palette);
 
 /* Light theme */
 $theme: fashion-mat-light-theme($primary, $accent);
