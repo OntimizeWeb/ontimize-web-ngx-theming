@@ -1,4 +1,3 @@
-@import 'node_modules/@angular/material/theming';
 
 //Define Font
 @font-face {
@@ -8,6 +7,7 @@
   src: url('https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJbecmNE.woff2') format('woff2');
   unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Poppins';
@@ -16,6 +16,7 @@
   src: url('https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJnecmNE.woff2') format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Poppins';
@@ -26,29 +27,24 @@
     U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-@import './../../default/typography/o-table-typography.scss';
-
-$o-mat-lite-typography: mat-typography-config(
-  $font-family:   'Poppins, "Helvetica Neue", sans-serif',
-  $display-4:     mat-typography-level(84px, 92px, 300),
-  $display-3:     mat-typography-level(42px, 42px, 400),
-  $display-2:     mat-typography-level(34px, 36px, 400),
-  $display-1:     mat-typography-level(26px, 30px, 400),
-  $headline:      mat-typography-level(24px, 24px, 400),
-  $title:         mat-typography-level(18px, 24px, 500),
-  $subheading-2:  mat-typography-level(14px, 21px, 600),
-  $subheading-1:  mat-typography-level(14px, 18px, 400),
-  $body-2:        mat-typography-level(12px, 18px, 500),
-  $body-1:        mat-typography-level(12px, 15px, 400),
-  $caption:       mat-typography-level(11px, 15px, 400),
-  $button:        mat-typography-level(13px, 14px, 500),
+$o-mat-lite-typography: mat-typography-config($font-family: 'Poppins, "Helvetica Neue", sans-serif',
+  $display-4: mat-typography-level(84px, 92px, 300),
+  $display-3: mat-typography-level(42px, 42px, 400),
+  $display-2: mat-typography-level(34px, 36px, 400),
+  $display-1: mat-typography-level(26px, 30px, 400),
+  $headline: mat-typography-level(24px, 24px, 400),
+  $title: mat-typography-level(18px, 24px, 500),
+  $subheading-2: mat-typography-level(14px, 21px, 600),
+  $subheading-1: mat-typography-level(14px, 18px, 400),
+  $body-2: mat-typography-level(12px, 18px, 500),
+  $body-1: mat-typography-level(12px, 15px, 400),
+  $caption: mat-typography-level(11px, 15px, 400),
+  $button: mat-typography-level(13px, 14px, 500),
   /* Line-height must be unit-less fraction of the font-size
    but it doesnot work on input because the line-height of the user agent remains
    https://bugzilla.mozilla.org/show_bug.cgi?id=349259
    */
-  $input:         mat-typography-level(14px, 1, 400)
-
-);
+  $input: mat-typography-level(14px, 1, 400));
 
 $lite-typography: map-merge($o-mat-lite-typography, $table-typography);
 
