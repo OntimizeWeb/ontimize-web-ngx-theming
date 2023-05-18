@@ -69,14 +69,14 @@
         max-height: 64px;
         padding: 0 24px;
         font: {
-          size: mat-font-size($typography, headline);
+          size: mat.get-color-from-palette($typography, headline);
           weight: bold;
         }
 
         .o-form-navigation {
           span {
             font: {
-              size: mat-font-size($typography, subheading-1);
+              size: mat.get-color-from-palette($typography, subheading-1);
               weight: normal;
             }
           }

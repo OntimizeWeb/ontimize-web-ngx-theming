@@ -3,7 +3,7 @@
 @import './o-form-field-outline-theme.scss';
 @import './o-form-field-standard-theme.scss';
 @mixin o-mat-form-field-typography-lite($config) {
-  $line-height: mat-line-height($config, input);
+  $line-height: mat.line-height($config, input);
 
   // The amount to scale the font for the floating label and subscript.
   $subscript-font-scale: .75;
@@ -36,7 +36,7 @@
       }
     }
 
-    font-size: mat-font-size($config, input);
+    font-size: mat.get-color-from-palette($config, input);
 
     &.icon-field .mat-form-field-suffix .icon-btn,
     &.icon-field .mat-form-field-suffix .mat-icon-button,
@@ -155,7 +155,7 @@
 
   .o-checkbox {
     .mat-checkbox {
-      font-size: mat-font-size($config, input);
+      font-size: mat.get-color-from-palette($config, input);
 
       .mat-checkbox-ripple {
         left: calc(50% - #{$mat-checkbox-ripple-radius});

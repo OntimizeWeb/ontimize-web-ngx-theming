@@ -1,10 +1,9 @@
-@import 'node_modules/@angular/material/theming';
+@use '~@angular/material'as mat;
 // Include non-theme styles for core.
-@include mat-core();
+@include mat.core();
 
 //Definition primary and accent palettes
-$default-palette: (
-  50: #e8e3f4,
+$default-palette: (50: #e8e3f4,
   100: #c5b9e4,
   200: #9f8ad2,
   300: #795bc0,
@@ -18,8 +17,7 @@ $default-palette: (
   A200: #8775ff,
   A400: #5b42ff,
   A700: #4428ff,
-  contrast: (
-    50: #000000,
+  contrast: (50: #000000,
     100: #000000,
     200: #000000,
     300: #ffffff,
@@ -37,8 +35,8 @@ $default-palette: (
 );
 
 // Define a theme.
-$primary: mat-palette($default-palette);
-$accent: mat-palette($default-palette, A100, A200, A400, A700);
+$primary: mat.define-palette($default-palette);
+$accent: mat.define-palette($default-palette, A100, A200, A400, A700);
 
 /*Application background-color*/
 $app-background-color: #eaeaea;
@@ -62,10 +60,9 @@ $light-focused: rgba(white, 0.12);
 
 // Background palette for light themes.
 @function fashion-mat-light-theme-background($primary) {
-  @return (
-    status-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
-    app-bar: mix($sidenav-background-color, mat-color($primary), 97.2%),
-    background: mix($app-background-color, mat-color($primary), 97.2%),
+  @return (status-bar: mix($sidenav-background-color, mat.get-color-from-palette($primary), 97.2%),
+    app-bar: mix($sidenav-background-color, mat.get-color-from-palette($primary), 97.2%),
+    background: mix($app-background-color, mat.get-color-from-palette($primary), 97.2%),
     hover: rgba(black, 0.04),
     card: white,
     dialog: white,
@@ -78,17 +75,15 @@ $light-focused: rgba(white, 0.12);
     unselected-chip: #e0e0e0,
     disabled-list-option: #eeeeee,
     sidenav-overlay: #525252,
-    level-0: mix($app-background-color, mat-color($primary), 97.2%),
+    level-0: mix($app-background-color, mat.get-color-from-palette($primary), 97.2%),
     level-06: #f6f6f6,
     level-08: #fafafa,
-    level-1: white
-  );
+    level-1: white);
 }
 
 // Background palette for dark themes.
 @function fashion-mat-dark-theme-background($primary) {
-  @return (
-    status-bar: black,
+  @return (status-bar: black,
     app-bar: #212121,
     background: #303030,
     hover: rgba(white, 0.04),
@@ -102,13 +97,11 @@ $light-focused: rgba(white, 0.12);
     disabled-button-toggle: black,
     unselected-chip: #616161,
     disabled-list-option: black,
-    sidenav-overlay: #525252
-  );
+    sidenav-overlay: #525252);
 }
 
 // Foreground palette for light themes.
-$fashion-mat-light-theme-foreground: (
-  base: $foreground-color,
+$fashion-mat-light-theme-foreground: (base: $foreground-color,
   divider: $dark-dividers,
   dividers: $dark-dividers,
   disabled: $dark-disabled-text,
@@ -127,8 +120,7 @@ $fashion-mat-light-theme-foreground: (
 );
 
 // Foreground palette for dark themes.
-$fashion-mat-dark-theme-foreground: (
-  base: white,
+$fashion-mat-dark-theme-foreground: (base: white,
   divider: $light-dividers,
   dividers: $light-dividers,
   disabled: $light-disabled-text,
@@ -147,27 +139,23 @@ $fashion-mat-dark-theme-foreground: (
 );
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
-@function fashion-mat-light-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
+@function fashion-mat-light-theme($primary, $accent, $warn: mat.define-palette($mat-red)) {
+  @return (primary: $primary,
     accent: $accent,
     warn: $warn,
     is-dark: false,
     foreground: $fashion-mat-light-theme-foreground,
-    background: fashion-mat-light-theme-background($primary)
-  );
+    background: fashion-mat-light-theme-background($primary));
 }
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
-@function fashion-mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red)) {
-  @return (
-    primary: $primary,
+@function fashion-mat-dark-theme($primary, $accent, $warn: mat.define-palette($mat-red)) {
+  @return (primary: $primary,
     accent: $accent,
     warn: $warn,
     is-dark: true,
     foreground: $fashion-mat-dark-theme-foreground,
-    background: fashion-mat-dark-theme-background($primary)
-  );
+    background: fashion-mat-dark-theme-background($primary));
 }
 
 /* Light theme */

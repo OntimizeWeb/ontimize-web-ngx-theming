@@ -12,18 +12,18 @@
   // $warn: map-get($theme, warn);
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $container-background: mat-color($background, 'card');
+  $container-background: mat.get-color-from-palette($background, 'card');
   $border-radius: 2px;
   $button-line-height: 30px;
   $basic-padding-size: 8px;
-  // $tabs-header-border: 1px solid mat-color($foreground, divider);
+  // $tabs-header-border: 1px solid mat.get-color-from-palette($foreground, divider);
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
-  $fill-background-input: mat-color($foreground, base,0.1);
+  $fill-background-input: mat.get-color-from-palette($foreground, base,0.1);
   $is-dark-theme: map-get($theme, is-dark);
 
-  // $background-tab-active: mat-color($background, 800);
+  // $background-tab-active: mat.get-color-from-palette($background, 800);
   $background-tab-inactive-on-dark: #686868;
   $background-tab-inactive-on-light: #D7DDE0;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
@@ -64,7 +64,7 @@
   .o-form-toolbar {
     .mat-toolbar {
       box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.24);
-      background-color: mat-color($background, background);
+      background-color: mat.get-color-from-palette($background, background);
       border-radius: $border-radius;
       min-height: initial;
     }
@@ -106,7 +106,7 @@
             &:not(:last-child) {
               + .mat-tab-label:not(.mat-tab-label-active) {
                 .mat-tab-label-content {
-                  border-left: 1px solid mat-color($foreground, divider);
+                  border-left: 1px solid mat.get-color-from-palette($foreground, divider);
 
                 }
               }
@@ -178,7 +178,7 @@
 
       .o-table-menu {
         .o-table-option-active {
-          background: mat-color($foreground, divider);
+          background: mat.get-color-from-palette($foreground, divider);
         }
       }
 
@@ -193,7 +193,7 @@
 
       tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
       thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-        background-color: mat-color($accent);
+        background-color: mat.get-color-from-palette($accent);
       }
 
       .mat-header-cell {

@@ -187,12 +187,12 @@
     .o-app-sidenav-container {
       .o-app-header {
         box-shadow: none;
-        border-bottom: 1px solid mat-color($foreground, divider);
+        border-bottom: 1px solid mat.get-color-from-palette($foreground, divider);
       }
 
       mat-sidenav.mat-drawer.o-app-sidenav-sidenav {
         box-shadow: none;
-        border-right: 1px solid mat-color($foreground, divider);
+        border-right: 1px solid mat.get-color-from-palette($foreground, divider);
 
         .o-app-sidenav-menugroup.active + .o-app-sidenav-menugroup-items-container ul {
           box-shadow: none;
@@ -202,7 +202,7 @@
     }
 
     .mat-menu-panel {
-      border: 1px solid mat-color($foreground, divider);
+      border: 1px solid mat.get-color-from-palette($foreground, divider);
     }
 
     .o-app-header {
@@ -225,7 +225,7 @@
   //o-row, o-column
   o-column.o-column,
   o-row.o-row {
-    background: mat-color($background,background);
+    background: mat.get-color-from-palette($background,background);
     border-radius: 4px;
 
     .o-container {
@@ -233,7 +233,7 @@
         padding: 20px 0;
 
         span {
-          color: mat-color($foreground, text);
+          color: mat.get-color-from-palette($foreground, text);
           font-weight: 500;
         }
       }

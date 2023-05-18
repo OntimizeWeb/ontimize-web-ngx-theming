@@ -3,7 +3,7 @@
 
   .report-on-demand-sidenav {
     .mat-expansion-panel  {
-      background-color: mat-color($background, background);
+      background-color: mat.get-color-from-palette($background, background);
     }
   }
 }

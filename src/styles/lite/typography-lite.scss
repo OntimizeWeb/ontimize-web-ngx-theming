@@ -4,7 +4,7 @@
     $mat-checkbox-size: 16px;
 
     .mat-checkbox {
-      font-size: mat-font-size($config, input);
+      font-size: mat.get-color-from-palette($config, input);
 
       .mat-checkbox-inner-container {
         width: $mat-checkbox-size;
@@ -229,7 +229,7 @@
     $mat-checkbox-size: 16px;
 
     .mat-checkbox {
-      font-size: mat-font-size($config, input);
+      font-size: mat.get-color-from-palette($config, input);
 
       .mat-checkbox-inner-container {
         width: $mat-checkbox-size;

@@ -9,7 +9,7 @@
   $foreground: map-get($theme, foreground);
 
   // The color of the checkbox's checkmark / mixedmark.
-  $checkbox-mark-color: mat-color($background, background);
+  $checkbox-mark-color: mat.get-color-from-palette($background, background);
 
   // NOTE(traviskaufman): While the spec calls for translucent blacks/whites for disabled colors,
   // this does not work well with elements layered on top of one another. To get around this we
@@ -19,7 +19,7 @@
   $disabled-color: if($is-dark-theme, $white-30pct-opacity-on-dark, $black-26pct-opacity-on-light);
 
   .mat-checkbox-frame {
-    border-color: mat-color($foreground, secondary-text);
+    border-color: mat.get-color-from-palette($foreground, secondary-text);
   }
 
   .mat-checkbox-checkmark {
@@ -44,15 +44,15 @@
   .mat-checkbox-checked,
   .mat-checkbox-indeterminate {
     &.mat-primary .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: mat.get-color-from-palette($foreground, icon);
     }
 
     &.mat-accent .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: mat.get-color-from-palette($foreground, icon);
     }
 
     &.mat-warn .mat-checkbox-background {
-      background-color: mat-color($warn);
+      background-color: mat.get-color-from-palette($warn);
     }
   }
 
@@ -71,7 +71,7 @@
     }
 
     .mat-checkbox-label {
-      color: mat-color($foreground, secondary-text);
+      color: mat.get-color-from-palette($foreground, secondary-text);
     }
     @include cdk-high-contrast {
       opacity: .5;
@@ -96,15 +96,15 @@
   .mat-checkbox-checked:not(.mat-checkbox-disabled),
   .mat-checkbox:active:not(.mat-checkbox-disabled) {
     &.mat-primary .mat-ripple-element {
-      background: mat-color($foreground, icon);
+      background: mat.get-color-from-palette($foreground, icon);
     }
 
     &.mat-accent .mat-ripple-element {
-      background: mat-color($foreground, icon);
+      background: mat.get-color-from-palette($foreground, icon);
     }
 
     &.mat-warn .mat-ripple-element {
-      background: mat-color($warn);
+      background: mat.get-color-from-palette($warn);
     }
   }
 }
@@ -125,10 +125,10 @@
   $colored-box-selector: '.mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate';
 
   .mat-pseudo-checkbox {
-    color: mat-color(map-get($theme, foreground), secondary-text);
+    color: mat.get-color-from-palette(map-get($theme, foreground), secondary-text);
 
     &::after {
-      color: mat-color($background, background);
+      color: mat.get-color-from-palette($background, background);
     }
   }
 
@@ -138,7 +138,7 @@
 
   .mat-primary .mat-pseudo-checkbox-checked,
   .mat-primary .mat-pseudo-checkbox-indeterminate {
-    background: mat-color($foreground, icon);
+    background: mat.get-color-from-palette($foreground, icon);
   }
 
   // Default to the accent color. Note that the pseudo checkboxes are meant to inherit the
@@ -150,12 +150,12 @@
   .mat-accent .mat-pseudo-checkbox-indeterminate,
   .mat-pseudo-checkbox-checked,
   .mat-pseudo-checkbox-indeterminate {
-    background: mat-color($foreground, icon);
+    background: mat.get-color-from-palette($foreground, icon);
   }
 
   .mat-warn .mat-pseudo-checkbox-checked,
   .mat-warn .mat-pseudo-checkbox-indeterminate {
-    background: mat-color(map-get($theme, warn));
+    background: mat.get-color-from-palette(map-get($theme, warn));
   }
 
   .mat-pseudo-checkbox-checked,
@@ -180,7 +180,7 @@
 
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
-  $sidenav-background-color: mat-color($background, status-bar);
+  $sidenav-background-color: mat.get-color-from-palette($background, status-bar);
 
   .o-app-header {
     nav {
@@ -193,7 +193,7 @@
       }
 
       .o-app-header-title {
-        color: mat-color($primary);
+        color: mat.get-color-from-palette($primary);
       }
     }
   }
@@ -212,15 +212,15 @@
         border-left-color: transparent;
 
         a:hover {
-          color: mat-color($foreground, text);
-          background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 96%); //#525252 4%
-          border-left: 8px solid mat-color($primary);
+          color: mat.get-color-from-palette($foreground, text);
+          background-color: mix($sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 96%); //#525252 4%
+          border-left: 8px solid mat.get-color-from-palette($primary);
         }
 
         a.o-app-sidenav-viewer-sidenav-item-selected {
-          color: mat-color($foreground, text);
-          background-color: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 98%); //#525252 2%
-          border-left: 8px solid mat-color($primary);
+          color: mat.get-color-from-palette($foreground, text);
+          background-color: mix($sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 98%); //#525252 2%
+          border-left: 8px solid mat.get-color-from-palette($primary);
         }
       }
     }
@@ -229,11 +229,11 @@
       background: $sidenav-background-color;
 
       .sidenav-toggle {
-        color: mat-color($foreground, icon);
+        color: mat.get-color-from-palette($foreground, icon);
       }
 
       .o-app-sidenav-item {
-        color: mat-color($foreground, text);
+        color: mat.get-color-from-palette($foreground, text);
 
         &.o-user-info {
           &:focus,
@@ -243,7 +243,7 @@
           color: inherit;
 
           .o-user-info-menu-item .o-user-info-item {
-            background: mat-color($primary, default-contrast, 0.74);
+            background: mat.get-color-from-palette($primary, default-contrast, 0.74);
           }
         }
       }
@@ -253,7 +253,7 @@
         .o-app-sidenav-menugroup {
           &.opened {
             + .o-app-sidenav-menugroup-items-container ul {
-              background: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 94%); //#525252 6%
+              background: mix($sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 94%); //#525252 6%
             }
           }
         }
@@ -262,7 +262,7 @@
           &:not([disabled='true']) {
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 94% ); //#525252 6%
+              background-color: mix( $sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 94% ); //#525252 6%
             }
           }
         }
@@ -274,7 +274,7 @@
         .o-app-sidenav-menugroup {
           &.opened {
             + .o-app-sidenav-menugroup-items-container ul {
-              background: mix($sidenav-background-color, mat-color($background, sidenav-overlay), 88%); //#525252 12%
+              background: mix($sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 88%); //#525252 12%
             }
           }
         }
@@ -283,14 +283,14 @@
           &:not([disabled='true']) {
             // a.o-app-sidenav-viewer-sidenav-item-selected,
             a:hover {
-              background-color: mix( $sidenav-background-color, mat-color($background, sidenav-overlay), 88% ); //#525252 12%
+              background-color: mix( $sidenav-background-color, mat.get-color-from-palette($background, sidenav-overlay), 88% ); //#525252 12%
             }
           }
         }
       }
 
       li a {
-        color: mat-color($foreground, text);
+        color: mat.get-color-from-palette($foreground, text);
       }
     }
   }
@@ -300,7 +300,7 @@
     .o-app-sidenav-container {
       .o-app-header {
         /*box-shadow: none;*/
-        border-bottom: 1px solid mat-color($foreground, divider);
+        border-bottom: 1px solid mat.get-color-from-palette($foreground, divider);
         background-color: $sidenav-background-color;
       }
 
@@ -316,7 +316,7 @@
     }
 
     .mat-menu-panel {
-      border: 1px solid mat-color($foreground, divider);
+      border: 1px solid mat.get-color-from-palette($foreground, divider);
     }
 
     .o-app-header {
@@ -330,28 +330,28 @@
   }
 
   .mat-tab-group.o-tab-ontimize > .mat-tab-body-wrapper {
-    background: mat-color($background, status-bar);
+    background: mat.get-color-from-palette($background, status-bar);
   }
 
   .mat-tab-group .mat-tab-label.mat-tab-label-active {
-    color: mat-color($foreground, title);
+    color: mat.get-color-from-palette($foreground, title);
   }
 
   /* MAT PAGINATOR*/
   .mat-paginator {
-    color: mat-color($foreground, text);
+    color: mat.get-color-from-palette($foreground, text);
   }
 
   .ontimize-table.o-table {
-    background: mat-color($background, card);
+    background: mat.get-color-from-palette($background, card);
 
     tbody td.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background,
     thead tr th.o-table-column-select-checkbox .mat-checkbox-inner-container .mat-checkbox-background {
-      background-color: mat-color($foreground, icon);
+      background-color: mat.get-color-from-palette($foreground, icon);
     }
 
     .o-table-button .mat-icon {
-      color: mat-color($foreground, icon);
+      color: mat.get-color-from-palette($foreground, icon);
     }
   }
 
@@ -388,7 +388,7 @@
         }
 
         .mat-cell {
-          color: mat-color($foreground, text);
+          color: mat.get-color-from-palette($foreground, text);
         }
       }
     }
@@ -401,7 +401,7 @@
 
       .o-form-toolbar-header {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.24);
-        background-color: mat-color($background, card);
+        background-color: mat.get-color-from-palette($background, card);
 
         .mat-toolbar-tools {
           button.o-form-toolbar-button.o-form-toolbar-back.mat-icon-button {
@@ -424,14 +424,14 @@
     &.mat-button-base.o-button-primary,
     &.mat-button-base[ng-reflect-dialog-result="0"],
     &.mat-button-base[ng-reflect-dialog-result="true"] {
-      color: mat-color($primary,500);
+      color: mat.get-color-from-palette($primary,500);
       background-color: #ffffff;
-      border-color: mat-color($foreground, text, 0.32);
+      border-color: mat.get-color-from-palette($foreground, text, 0.32);
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($primary, 500);
-        background-color: mat-color($primary,100);
+        color: mat.get-color-from-palette($primary, 500);
+        background-color: mat.get-color-from-palette($primary,100);
         border-color: transparent;
 
       }
@@ -443,14 +443,14 @@
     &.mat-button-base.o-button-default,
     &.mat-button-base[ng-reflect-dialog-result="1"],
     &.mat-button-base[ng-reflect-dialog-result="false"] {
-      color: mat-color($foreground, text);
+      color: mat.get-color-from-palette($foreground, text);
       background-color: #ffffff;
-      border-color: mat-color($foreground, text, 0.32);
+      border-color: mat.get-color-from-palette($foreground, text, 0.32);
 
       &:hover,
       .mat-button-focus-overlay {
-        color: mat-color($accent,500);
-        background-color: mat-color($accent,100);
+        color: mat.get-color-from-palette($accent,500);
+        background-color: mat.get-color-from-palette($accent,100);
         border-color: transparent;
       }
     }
@@ -461,7 +461,7 @@
   .o-list .o-list-toolbar button,
   .ontimize-table.o-table .o-table-container .o-table-toolbar .buttons button {
     &.mat-icon-button:not(.mat-menu-trigger) {
-      border-color: mat-color($foreground, text, 0.32);
+      border-color: mat.get-color-from-palette($foreground, text, 0.32);
       border-style: solid;
       border-width: 1px;
       border-radius: $border-radius;
@@ -476,7 +476,7 @@
   // O-ROW, O-COLUMN
   o-column.o-column,
   o-row.o-row {
-    background: mat-color($background, card);
+    background: mat.get-color-from-palette($background, card);
     border-radius: $border-radius;
 
     .o-container {
@@ -488,11 +488,11 @@
        > .o-container-title,
       > .mat-expansion-panel-header {
         border-bottom: none;
-        color: mat-color($foreground, title);
+        color: mat.get-color-from-palette($foreground, title);
 
         .mat-tab-label,
         .mat-tab-link {
-          color: mat-color($foreground, title);
+          color: mat.get-color-from-palette($foreground, title);
         }
       }
 
@@ -500,7 +500,7 @@
       > .mat-expansion-panel-header .o-container-title {
         span {
           font: {
-            size: mat-font-size($typography, title);
+            size: mat.get-color-from-palette($typography, title);
             weight: bold;
           }
         }
@@ -523,25 +523,25 @@
   .bg-level-0,
   o-column.o-column.bg-level-0,
   o-row.o-row.bg-level-0 {
-    background-color: mat-color($background, level-0);
+    background-color: mat.get-color-from-palette($background, level-0);
   }
 
   .bg-level-06,
   o-column.o-column.bg-level-06,
   o-row.o-row.bg-level-06 {
-    background-color: mat-color($background, level-06);
+    background-color: mat.get-color-from-palette($background, level-06);
   }
 
   .bg-level-08,
   o-column.o-column.bg-level-08,
   o-row.o-row.bg-level-08 {
-    background-color: mat-color($background, level-08);
+    background-color: mat.get-color-from-palette($background, level-08);
   }
 
   .bg-level-1,
   o-column.o-column.bg-level-1,
   o-row.o-row.bg-level-1 {
-    background-color: mat-color($background, level-1);
+    background-color: mat.get-color-from-palette($background, level-1);
   }
 
   .o-form-content-wrapper,
