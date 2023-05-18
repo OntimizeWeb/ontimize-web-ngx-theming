@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../../default/typography/o-table-typography";
+
 
 //Define Font
 @font-face {
@@ -46,7 +49,7 @@ $o-mat-lite-typography: mat.define-typography-config($font-family: 'Poppins, "He
    */
   $input: mat.define-typography-level(14px, 1, 400));
 
-$lite-typography: map-merge($o-mat-lite-typography, $table-typography);
+$lite-typography: map.merge($o-mat-lite-typography, o-table-typography.$table-typography);
 
 $mat-calendar-body-font-size: 11px;
 $mat-calendar-weekday-table-font-size: 9px;

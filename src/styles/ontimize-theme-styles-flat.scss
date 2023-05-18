@@ -1,11 +1,12 @@
-@import './flat/variables.scss';
+@use "sass:map";
+@use 'flat/variables.scss';
 @mixin ontimize-flat-styles($theme, $color_states:null ) {
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
   @include set-color-states($color_states);
 
   .text-muted {
-    color: $default-color;
+    color: variables.$default-color;
   }
 
   .text-inverse {
@@ -13,23 +14,23 @@
   }
 
   .text-primary {
-    color: $primary-color;
+    color: variables.$primary-color;
   }
 
   .text-warning {
-    color: $warning-color;
+    color: variables.$warning-color;
   }
 
   .text-danger {
-    color: $danger-color;
+    color: variables.$danger-color;
   }
 
   .text-success {
-    color: $success-color;
+    color: variables.$success-color;
   }
 
   .text-info {
-    color: $info-color;
+    color: variables.$info-color;
   }
 
   a.text-danger:hover,
@@ -82,27 +83,27 @@
     }
 
     &.o-button-info button {
-      background-color: $info-color;
+      background-color: variables.$info-color;
     }
 
     &.o-button-default button {
-      background-color: $default-color;
+      background-color: variables.$default-color;
     }
 
     &.o-button-success button {
-      background-color: $success-color;
+      background-color: variables.$success-color;
     }
 
     &.o-button-primary button {
-      background-color: $primary-color;
+      background-color: variables.$primary-color;
     }
 
     &.o-button-danger button {
-      background-color: $danger-color;
+      background-color: variables.$danger-color;
     }
 
     &.o-button-warning button {
-      background-color: $warning-color;
+      background-color: variables.$warning-color;
     }
   }
 
@@ -126,15 +127,15 @@
       }
 
       &.o-table-button-add button {
-        background-color: $primary-color;
+        background-color: variables.$primary-color;
       }
 
       &.o-table-button-refresh button {
-        background-color: $default-color;
+        background-color: variables.$default-color;
       }
 
       &.o-table-button-delete button {
-        background-color: $danger-color;
+        background-color: variables.$danger-color;
       }
     }
 
@@ -163,20 +164,20 @@
         &.o-form-toolbar-button-insert,
         &.o-form-toolbar-button-new,
         &.o-form-toolbar-button-save {
-          background-color: $primary-color;
+          background-color: variables.$primary-color;
         }
 
         &.o-form-toolbar-button-refresh {
-          background-color: $default-color;
+          background-color: variables.$default-color;
         }
 
         &.o-form-toolbar-button-cancel,
         &.o-form-toolbar-button-delete {
-          background-color: $danger-color;
+          background-color: variables.$danger-color;
         }
 
         &.o-form-toolbar-button-undo {
-          background-color: $warning-color;
+          background-color: variables.$warning-color;
         }
       }
     }
@@ -244,7 +245,7 @@
   .o-dialog-class {
     mat-dialog-container.mat-dialog-container {
       .mat-dialog-title {
-        border-bottom-color: $default-color;
+        border-bottom-color: variables.$default-color;
       }
 
       .mat-dialog-actions {
@@ -253,13 +254,13 @@
         button.mat-button-base[ng-reflect-dialog-result="0"],
         button.mat-button-base[ng-reflect-dialog-result="true"] {
           color: white;
-          background-color: $primary-color;
+          background-color: variables.$primary-color;
         }
 
         button.mat-button-base[ng-reflect-dialog-result="1"],
         button.mat-button-base[ng-reflect-dialog-result="false"] {
           color: white;
-          background-color: $default-color;
+          background-color: variables.$default-color;
         }
       }
     }
@@ -279,39 +280,39 @@
     }
 
     &.o-button-info {
-      background-color: $info-color;
+      background-color: variables.$info-color;
     }
 
     &.o-button-default {
-      background-color: $default-color;
+      background-color: variables.$default-color;
     }
 
     &.o-button-success {
-      background-color: $success-color;
+      background-color: variables.$success-color;
     }
 
     &.o-button-primary {
-      background-color: $primary-color;
+      background-color: variables.$primary-color;
     }
 
     &.o-button-danger {
-      background-color: $danger-color;
+      background-color: variables.$danger-color;
     }
 
     &.o-button-warning {
-      background-color: $warning-color;
+      background-color: variables.$warning-color;
     }
   }
 }
 @mixin set-color-states($color_states) {
    @if $color_states!=null{
-    $success-color: if(map-has-key($color_states, success),map-get($color_states, success), $success-color) !global;
-    $danger-color: if(map-has-key($color_states, danger),map-get($color_states, danger), $danger-color) !global;
-    $primary-color: if(map-has-key($color_states, primary),map-get($color_states, primary), $primary-color) !global;
-    $warning-color: if(map-has-key($color_states, warning),map-get($color_states, warning), $warning-color) !global;
-    $info-color: if(map-get($color_states, info),map-get($color_states, info), $info-color) !global;
-    $default-color: if(map-has-key($color_states, default),map-get($color_states, default), $default-color) !global;
-    $inverse-color: if(map-has-key($color_states, inverse),map-get($color_states, inverse), $inverse-color) !global;
-    $disable-color: if(map-has-key($color_states, disable),map-get($color_states, disable), $disable-color) !global;
+    variables.$success-color: if(map.has-key($color_states, success),map.get($color_states, success), variables.$success-color) !global;
+    variables.$danger-color: if(map.has-key($color_states, danger),map.get($color_states, danger), variables.$danger-color) !global;
+    variables.$primary-color: if(map.has-key($color_states, primary),map.get($color_states, primary), variables.$primary-color) !global;
+    variables.$warning-color: if(map.has-key($color_states, warning),map.get($color_states, warning), variables.$warning-color) !global;
+    variables.$info-color: if(map.get($color_states, info),map.get($color_states, info), variables.$info-color) !global;
+    variables.$default-color: if(map.has-key($color_states, default),map.get($color_states, default), variables.$default-color) !global;
+    variables.$inverse-color: if(map.has-key($color_states, inverse),map.get($color_states, inverse), variables.$inverse-color) !global;
+    variables.$disable-color: if(map.has-key($color_states, disable),map.get($color_states, disable), variables.$disable-color) !global;
   }
 }

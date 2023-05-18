@@ -1,15 +1,17 @@
+@use "variables";
+
 @mixin o-table-typography-fashion($config) {
   .o-table.o-table {
     .o-table-container {
       .o-table-toolbar .buttons .o-table-button .mat-button {
-        border-radius: $border-radius;
+        border-radius: variables.$border-radius;
 
         &.disabled {
-          border-radius: $border-radius;
+          border-radius: variables.$border-radius;
         }
 
         &:not(.disabled):hover {
-          border-radius: $border-radius;
+          border-radius: variables.$border-radius;
         }
       }
     }
@@ -64,7 +66,7 @@
   .o-form {
     .o-form-toolbar {
       .o-form-toolbar-header {
-        border-radius: $border-radius;
+        border-radius: variables.$border-radius;
         min-height: 64px;
         max-height: 64px;
         padding: 0 24px;
@@ -85,7 +87,7 @@
         .mat-toolbar-tools {
           .o-form-toolbar-button,
           .o-form-toolbar-button[disabled] {
-            border-radius: $border-radius;
+            border-radius: variables.$border-radius;
           }
         }
       }

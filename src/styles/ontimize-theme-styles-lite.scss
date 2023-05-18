@@ -1,27 +1,28 @@
 
-@import './lite/layout-lite.scss';
-@import './lite/typography-lite.scss';
-@import './lite/typography/ontimize-lite.scss';
-@import './lite/form-field/o-form-field-theme.scss';
-@import './ontimize-theme-styles.scss';
+@use "sass:map";
+@use 'lite/layout-lite.scss';
+@use 'lite/typography-lite.scss';
+@use 'lite/typography/ontimize-lite.scss';
+@use 'lite/form-field/o-form-field-theme.scss';
+@use 'ontimize-theme-styles.scss';
 
 @mixin ontimize-theme-styles-lite($theme, $typography: null) {
 
   @if $typography != null {
-    $typography: map-merge($lite-typography, $typography);
+    $typography: map.merge(ontimize-lite.$lite-typography, $typography);
   } @else {
-    $typography: $lite-typography;
+    $typography: ontimize-lite.$lite-typography;
   }
 
 
 
-  @include ontimize-theme-styles($theme, $typography);
+  @include ontimize-theme-styles.ontimize-theme-styles($theme, $typography);
 
-  @include o-table-typography-lite($typography);
-  @include o-mat-form-field-typography-lite($typography);
-  @include o-common-typography-lite($typography);
-  @include layout-padding-margin-lite();
+  @include typography-lite.o-table-typography-lite($typography);
+  @include o-form-field-theme.o-mat-form-field-typography-lite($typography);
+  @include typography-lite.o-common-typography-lite($typography);
+  @include layout-lite.layout-padding-margin-lite();
 
-  @include o-form-theme();
+  @include typography-lite.o-form-theme();
 
 }

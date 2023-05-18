@@ -1,7 +1,9 @@
-@import './o-form-field-fill-theme.scss';
-@import './o-form-field-legacy-theme.scss';
-@import './o-form-field-outline-theme.scss';
-@import './o-form-field-standard-theme.scss';
+@use 'o-form-field-fill-theme.scss';
+@use 'o-form-field-legacy-theme.scss';
+@use 'o-form-field-outline-theme.scss';
+@use 'o-form-field-standard-theme.scss';
+@use "@angular/material/theming";
+
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat.line-height($config, input);
 
@@ -135,16 +137,16 @@
   @include o-combo();
   @include o-phone();
   @include o-mat-checkbox-typography($config);
-  @include o-mat-form-field-legacy-typography($config);
-  @include o-mat-form-field-fill-typography($config);
-  @include o-mat-form-field-outline-typography($config);
-  @include o-mat-form-field-standard-typography($config);
+  @include o-form-field-legacy-theme.o-mat-form-field-legacy-typography($config);
+  @include o-form-field-fill-theme.o-mat-form-field-fill-typography($config);
+  @include o-form-field-outline-theme.o-mat-form-field-outline-typography($config);
+  @include o-form-field-standard-theme.o-mat-form-field-standard-typography($config);
 }
 @mixin o_mat-form-field-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + $mat-form-field-dedupe) scale($font-scale);
-  width: 100% / $font-scale + $mat-form-field-dedupe;
+  transform: translateY(-$infix-margin-top - $infix-padding + theming.$mat-form-field-dedupe) scale($font-scale);
+  width: 100% / $font-scale + theming.$mat-form-field-dedupe;
 
-  $mat-form-field-dedupe: $mat-form-field-dedupe + .00001 !global;
+  $mat-form-field-dedupe: theming.$mat-form-field-dedupe + .00001 !global;
 }
 
 /*it's necessary redefined the font size of the checkbox*/

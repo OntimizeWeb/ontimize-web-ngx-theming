@@ -1,7 +1,10 @@
-@import './o-table-typography.scss';
+@use "sass:map";
+@use 'o-table-typography.scss';
+@use "~@angular/material/theming";
+
 
 $default-typography: mat.define-typography-config( $font-family: 'Poppins, "Helvetica Neue", sans-serif' );
-$default-typography: map-merge($default-typography, $table-typography);
+$default-typography: map.merge($default-typography, o-table-typography.$table-typography);
 
-$mat-calendar-body-font-size: 11px;
-$mat-calendar-weekday-table-font-size: 9px;
+theming.$mat-calendar-body-font-size: 11px;
+theming.$mat-calendar-weekday-table-font-size: 9px;

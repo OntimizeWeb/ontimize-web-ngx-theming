@@ -1,17 +1,18 @@
-@import '~@angular/material/theming';
-@import './lite/layout.scss';
-@import './default/typography/ontimize.scss';
-@import './default/addons/report-on-demand.scss';
+@use "sass:map";
+@use '~@angular/material/theming';
+@use 'lite/layout.scss';
+@use 'default/typography/ontimize.scss';
+@use 'default/addons/report-on-demand.scss';
 @mixin ontimize-theme-styles($theme, $typography: null) {
    @if $typography != null{
-    $typography: map-merge($default-typography, $typography);
+    $typography: map.merge(ontimize.$default-typography, $typography);
   }
 
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
   // $warn: map-get($theme, warn);
-  $background: map-get($theme, background);
-  $foreground: map-get($theme, foreground);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
   $container-background: mat.get-color-from-palette($background, 'card');
   $border-radius: 2px;
   $button-line-height: 30px;
@@ -21,15 +22,15 @@
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
   $fill-background-input: mat.get-color-from-palette($foreground, base,0.1);
-  $is-dark-theme: map-get($theme, is-dark);
+  $is-dark-theme: map.get($theme, is-dark);
 
   // $background-tab-active: mat.get-color-from-palette($background, 800);
   $background-tab-inactive-on-dark: #686868;
   $background-tab-inactive-on-light: #D7DDE0;
   $background-tab-inactive: if($is-dark-theme, $background-tab-inactive-on-dark, $background-tab-inactive-on-light);
   // $mat-font-family: 'Lato', sans-serif !default;
-  @include report-on-demand($theme);
-  @include layout-padding-margin();
+  @include report-on-demand.report-on-demand($theme);
+  @include layout.layout-padding-margin();
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,

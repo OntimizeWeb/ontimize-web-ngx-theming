@@ -1,4 +1,4 @@
-@import './form-field/o-form-field-theme.scss';
+@use 'form-field/o-form-field-theme.scss';
 @mixin o-table-typography-lite($config) {
   .o-table-quickfilter-menu {
     $mat-checkbox-size: 16px;

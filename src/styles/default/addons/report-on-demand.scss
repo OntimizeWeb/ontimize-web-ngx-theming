@@ -1,5 +1,6 @@
+@use "sass:map";
 @mixin report-on-demand($theme) {
-  $background: map-get($theme, background);
+  $background: map.get($theme, background);
 
   .report-on-demand-sidenav {
     .mat-expansion-panel  {
