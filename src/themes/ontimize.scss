@@ -1,3 +1,4 @@
+@use "sass:map";
 @use '@angular/material'as mat;
 // Include non-theme styles for core.
 @include mat.core();
@@ -16,10 +17,10 @@ $background-color: #eceff1;
 $theme: mat.define-light-theme($primary, $accent);
 
 // Insert custom background color
-$background: map-get($theme, background);
-$background: map_merge($background, (background: $background-color));
+$background: map.get($theme, background);
+$background: map.merge($background, (background: $background-color));
 
-$theme: map_merge($theme, (background: $background));
+$theme: map.merge($theme, (background: $background));
 /* Dark theme */
 $primary-dark: mat.define-palette($mat-custom-primary);
 $accent-dark: mat.define-palette($mat-custom-accent);
