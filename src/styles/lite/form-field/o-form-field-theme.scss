@@ -2,7 +2,8 @@
 @use 'o-form-field-legacy-theme.scss';
 @use 'o-form-field-outline-theme.scss';
 @use 'o-form-field-standard-theme.scss';
-@use "@angular/material/theming";
+@use '@angular/material'as mat;
+@use 'sass:math';
 
 @mixin o-mat-form-field-typography-lite($config) {
   $line-height: mat.line-height($config, input);
@@ -24,7 +25,7 @@
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
   // size.
-  $subscript-margin-top: .3em / $subscript-font-scale;
+  $subscript-margin-top: math.div(.3em, $subscript-font-scale);
   // The padding applied to the form-field-wrapper to reserve space for the subscript, since it's
   // absolutely positioned. This is a combination of the subscript's margin and line-height, but we
   // need to multiply by the subscript font scale factor since the wrapper has a larger font size.
@@ -38,7 +39,7 @@
       }
     }
 
-    font-size: mat.get-color-from-palette($config, input);
+    font-size: mat.font-size($config, input);
 
     &.icon-field .mat-form-field-suffix .icon-btn,
     &.icon-field .mat-form-field-suffix .mat-icon-button,
@@ -58,6 +59,7 @@
     }
 
     &.mat-form-field-appearance-legacy {
+
       .mat-form-field-prefix,
       .mat-form-field-suffix {
         .mat-icon-button {
@@ -98,15 +100,16 @@
     }
 
     .mat-form-field-can-float {
+
       &.mat-form-field-should-float .mat-form-field-label,
-      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-        @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+      .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+        @include o_mat-form-field-label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
       }
 
       // Server-side rendered matInput with a label attribute but label not shown
       // (used as a pure CSS stand-in for mat-form-field-should-float).
-      .mat-input-server[label]:not(:placeholder-shown) + .mat-form-field-label-wrapper .mat-form-field-label {
-        @include o_mat-form-field-label-floating( $subscript-font-scale, $infix-padding, $infix-margin-top);
+      .mat-input-server[label]:not(:placeholder-shown)+.mat-form-field-label-wrapper .mat-form-field-label {
+        @include o_mat-form-field-label-floating($subscript-font-scale, $infix-padding, $infix-margin-top);
       }
     }
 
@@ -131,9 +134,10 @@
 
       // We want the subscript to start at the end of the content box, not the padding box,
       // so we move it up by the padding amount (adjusted for the smaller font size);
-      top: calc(100% - #{$wrapper-padding-bottom / $subscript-font-scale});
+      top: calc(100% - #{math.div($wrapper-padding-bottom , $subscript-font-scale)});
     }
   }
+
   @include o-combo();
   @include o-phone();
   @include o-mat-checkbox-typography($config);
@@ -142,11 +146,14 @@
   @include o-form-field-outline-theme.o-mat-form-field-outline-typography($config);
   @include o-form-field-standard-theme.o-mat-form-field-standard-typography($config);
 }
-@mixin o_mat-form-field-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + theming.$mat-form-field-dedupe) scale($font-scale);
-  width: 100% / $font-scale + theming.$mat-form-field-dedupe;
 
-  $mat-form-field-dedupe: theming.$mat-form-field-dedupe + .00001 !global;
+$dedupe: 0;
+
+@mixin o_mat-form-field-label-floating($font-scale, $infix-padding, $infix-margin-top) {
+  transform: translateY(-$infix-margin-top - $infix-padding + $dedupe) scale($font-scale);
+  width: math.div(100%, $font-scale) + $dedupe;
+
+  $dedupe: $dedupe + 0.00001 !global;
 }
 
 /*it's necessary redefined the font size of the checkbox*/
@@ -157,7 +164,7 @@
 
   .o-checkbox {
     .mat-checkbox {
-      font-size: mat.get-color-from-palette($config, input);
+      font-size: mat.font-size($config, input);
 
       .mat-checkbox-ripple {
         left: calc(50% - #{$mat-checkbox-ripple-radius});

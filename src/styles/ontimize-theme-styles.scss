@@ -1,10 +1,11 @@
 @use "sass:map";
-@use '~@angular/material/theming';
 @use 'lite/layout.scss';
 @use 'default/typography/ontimize.scss';
 @use 'default/addons/report-on-demand.scss';
+@use '@angular/material' as mat;
+
 @mixin ontimize-theme-styles($theme, $typography: null) {
-   @if $typography != null{
+  @if $typography !=null {
     $typography: map.merge(ontimize.$default-typography, $typography);
   }
 
@@ -21,7 +22,7 @@
   $tabs-header-border: none;
   $inactive-tab-opacity: .35;
   $font-size-title-container: 1;
-  $fill-background-input: mat.get-color-from-palette($foreground, base,0.1);
+  $fill-background-input: mat.get-color-from-palette($foreground, base, 0.1);
   $is-dark-theme: map.get($theme, is-dark);
 
   // $background-tab-active: mat.get-color-from-palette($background, 800);
@@ -31,6 +32,7 @@
   // $mat-font-family: 'Lato', sans-serif !default;
   @include report-on-demand.report-on-demand($theme);
   @include layout.layout-padding-margin();
+
   /* CONTAINER */
   .rounded-panel,
   .standalone-chart-container,
@@ -48,11 +50,13 @@
       padding: $basic-padding-size*2;
     }
   }
+
   /* APP SIDENAV */
   .o-app-sidenav {
     font-weight: 400;
     color: #aaaaaa;
   }
+
   /* USER INFO */
   o-app-header .o-app-header-title {
     font-weight: 700;
@@ -61,6 +65,7 @@
   .o-app-header {
     background-color: $container-background;
   }
+
   /* FORM */
   .o-form-toolbar {
     .mat-toolbar {
@@ -70,8 +75,10 @@
       min-height: initial;
     }
   }
+
   /* TABS */
   .mat-tab-group {
+
     .mat-tab-label,
     .mat-tab-link {
       opacity: .75;
@@ -80,9 +87,10 @@
         opacity: .95;
       }
     }
+
     // Ontimize tabs
     &.o-tab-ontimize {
-      > .mat-tab-header {
+      >.mat-tab-header {
         border: none;
 
         .mat-tab-label-container .mat-tab-label {
@@ -105,7 +113,7 @@
 
           &:not(.mat-tab-label-active) {
             &:not(:last-child) {
-              + .mat-tab-label:not(.mat-tab-label-active) {
+              +.mat-tab-label:not(.mat-tab-label-active) {
                 .mat-tab-label-content {
                   border-left: 1px solid mat.get-color-from-palette($foreground, divider);
 
@@ -137,13 +145,14 @@
         }
       }
 
-      > .mat-tab-body-wrapper {
+      >.mat-tab-body-wrapper {
         background: $container-background;
         border-radius: $border-radius;
         border-top: $tabs-header-border;
         border-top-left-radius: initial;
       }
     }
+
     // All tabs
     &.mat-tab-group {
       .mat-tab-body-wrapper {
@@ -154,6 +163,7 @@
 
   /* BUTTON */
   button {
+
     &.mat-button,
     &.mat-flat-button,
     &.mat-icon-button,
@@ -162,6 +172,7 @@
       border-radius: $border-radius;
     }
   }
+
   /* TABLE */
   .ontimize-table.o-table {
     font-weight: 400;

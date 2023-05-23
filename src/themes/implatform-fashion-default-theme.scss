@@ -1,5 +1,5 @@
 @use "sass:color";
-@use '~@angular/material'as mat;
+@use '@angular/material'as mat;
 // Include non-theme styles for core.
 @include mat.core();
 
@@ -140,7 +140,7 @@ $fashion-mat-dark-theme-foreground: (base: white,
 );
 
 // Creates a container object for a light theme to be given to individual component theme mixins.
-@function fashion-mat-light-theme($primary, $accent, $warn: mat.define-palette($mat-red)) {
+@function fashion-mat-light-theme($primary, $accent, $warn: mat.define-palette(mat.$red-palette)) {
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
@@ -150,7 +150,7 @@ $fashion-mat-dark-theme-foreground: (base: white,
 }
 
 // Creates a container object for a dark theme to be given to individual component theme mixins.
-@function fashion-mat-dark-theme($primary, $accent, $warn: mat.define-palette($mat-red)) {
+@function fashion-mat-dark-theme($primary, $accent, $warn: mat.define-palette(mat.$red-palette)) {
   @return (primary: $primary,
     accent: $accent,
     warn: $warn,
