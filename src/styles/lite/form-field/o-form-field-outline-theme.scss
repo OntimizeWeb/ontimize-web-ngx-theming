@@ -9,7 +9,7 @@
   // The padding above and below the infix.
   $infix-padding: .3em;
   // The margin applied to the form-field-infix to reserve space for the floating label.
-  $infix-margin-top: 1em * $line-height * $subscript-font-scale;
+  $infix-margin-top: $subscript-font-scale * if(math.is-unitless($line-height), 1em * $line-height, $line-height);
   // The space between the bottom of the .mat-form-field-flex area and the subscript wrapper.
   // Mocks show half of the text size, but this margin is applied to an element with the subscript
   // text font size, so we need to divide by the scale factor to make it half of the original text
@@ -56,12 +56,11 @@
 
 }
 
-$outline-dedupe: null;
+$outline-dedupe: 0;
 
 @mixin o_mat-form-field-outline-label-floating($font-scale, $infix-padding, $infix-margin-top) {
-  transform: translateY(-$infix-margin-top - $infix-padding + outline-dedupe) scale($font-scale);
-  width: math.div(100%, $font-scale) + outline-dedupe;
+  transform: translateY(-$infix-margin-top - $infix-padding + $outline-dedupe) scale($font-scale);
+  width: math.div(100%, $font-scale) + $outline-dedupe;
 
-  $outline-dedupe: $outline-dedupe + .00001 !global;
+  $outline-dedupe: $outline-dedupe + 0.00001 !global;
 }
-
