@@ -4,8 +4,9 @@
 @use 'src/styles/default/addons/report-on-demand.scss';
 @use '@angular/material'as mat;
 
+$typography: ontimize-typography.$default-typography;
+
 @mixin ontimize-theme-styles($theme, $typographyConfig: null) {
-  $typography: ontimize-typography.$default-typography;
 
   @if $typographyConfig !=null {
     $typography: map.merge(ontimize-typography.$default-typography, $typographyConfig);
