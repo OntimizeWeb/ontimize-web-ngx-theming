@@ -1,3 +1,5 @@
+@use "layout-lite";
+
 /*
 *
 *  Responsive attributes
@@ -14,15 +16,15 @@
 // Layout
 // ------------------------------
 $baseline-grid: 4px !default;
-$layout-gutter-width-vertical: $baseline-grid;
+layout-lite.$layout-gutter-width-vertical: $baseline-grid;
 $layout-gutter-width-horizontal: 14px !default;
 @mixin layout-padding-margin() {
   [layout-padding-vertical] {
-    padding: $layout-gutter-width-vertical 0;
+    padding: layout-lite.$layout-gutter-width-vertical 0;
   }
 
   [layout-margin-vertical] {
-    margin: $layout-gutter-width-vertical 0;
+    margin: layout-lite.$layout-gutter-width-vertical 0;
   }
 
   [layout-padding-horizontal] {
@@ -50,19 +52,19 @@ $layout-gutter-width-horizontal: 14px !default;
   }
 
   [layout-padding-top] {
-    padding-top: $layout-gutter-width-vertical;
+    padding-top: layout-lite.$layout-gutter-width-vertical;
   }
 
   [layout-margin-top] {
-    margin-top: $layout-gutter-width-vertical;
+    margin-top: layout-lite.$layout-gutter-width-vertical;
   }
 
   [layout-padding-bottom] {
-    padding-bottom: $layout-gutter-width-vertical;
+    padding-bottom: layout-lite.$layout-gutter-width-vertical;
   }
 
   [layout-margin-bottom] {
-    margin-bottom: $layout-gutter-width-vertical;
+    margin-bottom: layout-lite.$layout-gutter-width-vertical;
   }
 
 }
