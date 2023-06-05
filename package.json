@@ -22,7 +22,6 @@
   "main": "./index.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
-  "peerDependencies": {},
   "devDependencies": {
     "@angular/cdk": "^12.2.13",
     "@angular/material": "^12.2.13",
@@ -34,6 +33,7 @@
     "sass-migrator": "^1.7.3"
   },
   "dependencies": {
-    "@angular-devkit/schematics": "^13.3.11"
+    "@angular-devkit/schematics": "^13.3.11",
+    "@angular/core": "^13.4.0"
   }
 }
