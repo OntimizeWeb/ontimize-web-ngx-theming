@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
-    "target": "es2015",
+    "target": "ES2020",
     "module": "es2020",
     "moduleResolution": "node",
     "declaration": true,
@@ -21,7 +21,7 @@
     ],
     "lib": [
       "dom",
-      "es2018"
+      "es2020"
     ]
   },
   "exclude": [
