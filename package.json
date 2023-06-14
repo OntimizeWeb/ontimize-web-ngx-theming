@@ -23,8 +23,8 @@
   "module": "./index.js",
   "typings": "./index.d.ts",
   "devDependencies": {
-    "@angular/cdk": "^13.3.9",
-    "@angular/material": "^13.3.9",
+    "@angular/cdk": "^14.2.7",
+    "@angular/material": "^14.2.7",
     "copyfiles": "1.2.0",
     "gulp": "4.0.2",
     "gulp-cssimport": "^7.0.0",
